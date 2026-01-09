@@ -30,16 +30,6 @@
         height: 100%;
       }
     }
-
-    @media screen and (max-width: 749px) {
-      #shopify-section-{{ section.id }} .shop-the-look-drawer__trigger {
-        width: 70%;
-        padding: calc(20 * 100vw / 720) calc(40 * 100vw / 720);
-        font-size: calc(24px - 12 / 370 * (750px - 100vw));
-        margin-top: calc(42 * 100vw / 720);
-        font-weight: 600;
-      }
-    }
   {%- endstyle -%}
 
   <div class="color-{{ section.settings.color_scheme }} gradient">
@@ -165,9 +155,6 @@
             {% if section.blocks[0].settings.product != blank %}
               <shop-the-look-drawer id="shop-the-look-drawer-{{- section.id -}}" style="display: none">
                 <div class="shop-the-look-drawer__blocks slim-scrollbar color-{{ section.settings.color_scheme }}">
-                  <div class="shop-the-look-drawer__handle">
-                    <div class="shop-the-look-drawer__handle-line">&nbsp</div>
-                  </div>
                   <div class="shop-the-look-drawer__header">
                     {%- if section.settings.heading != blank -%}
                       <h3 class="shop-the-look__title">
@@ -180,7 +167,7 @@
                       aria-label="{{ 'theme.actions.close' | t }}"
                       tabindex="-1"
                       onclick="document.getElementById('shop-the-look-drawer-{{- section.id -}}').style.display = 'none'"
-                    >
+                    >{%- render 'icon', icon_name: 'theme-close' -%}
                     </button>
                   </div>
                   <div class="shop-the-look-drawer__main container">

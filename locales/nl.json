@@ -4,7 +4,7 @@
       "open_in_new_window": "Opent in een nieuw venster.",
       "refresh_page": "Een selectie kiezen resulteert in een volledige paginavernieuwing.",
       "skip_to_content": "Ga naar inhoud",
-      "slideshow": "Gebruik de pijlen naar links\/rechts om de diavoorstelling te navigeren of veeg naar links\/rechts als u een mobiel apparaat gebruikt"
+      "slideshow": "Gebruik de pijlen naar links/rechts om de diavoorstelling te navigeren of veeg naar links/rechts als u een mobiel apparaat gebruikt"
     },
     "actions": {
       "add": "Toevoegen",
@@ -39,7 +39,7 @@
       "search": "Zoeken"
     },
     "date": {
-      "format_day_month_year": "%d\/%m\/%Y",
+      "format_day_month_year": "%d/%m/%Y",
       "format_month_year": "%B %Y",
       "format_numbers": "%d.%m.%Y",
       "format_short": "%B %d, %Y"
@@ -153,7 +153,16 @@
     "preorder_badge": "Pre-order",
     "preorder_info": "Dit product is momenteel beschikbaar voor pre-order.",
     "preorder_notice": "Dit product wordt verzonden op {{date}}.",
-    "preorder_warning_html": "* Door op 'Pre-order' te klikken, <strong>erken ik dat ik een pre-order artikel koop, geen product op voorraad</strong>, en ga ik akkoord met de Voorwaarden van het pre-order proces."
+    "preorder_warning_html": "* Door op 'Pre-order' te klikken, <strong>erken ik dat ik een pre-order artikel koop, geen product op voorraad</strong>, en ga ik akkoord met de Voorwaarden van het pre-order proces.",
+    "badges": {
+      "new": "Nieuw",
+      "best_seller": "Bestseller",
+      "featured": "Aanbevolen",
+      "on_sale": "In de aanbieding",
+      "coming_soon": "Binnenkort beschikbaar",
+      "pre_order": "Pre-orderen",
+      "sold_out": "Uitverkocht"
+    }
   },
   "collection": {
     "label": "Collectie",
@@ -304,7 +313,7 @@
       "city_placeholder": "Voer uw stad in",
       "province": "Provincie",
       "province_placeholder": "Voer uw provincie in",
-      "country": "Land \/ Regio",
+      "country": "Land / Regio",
       "zip": "Postcode",
       "zip_placeholder": "Voer uw postcode in",
       "phone": "Telefoon",
@@ -405,7 +414,7 @@
     "button": "Betreed met wachtwoord",
     "submit": "Betreed",
     "error": "Het ingevoerde wachtwoord is onjuist. Probeer het opnieuw.",
-    "admin_link_html": "Bent u de winkeleigenaar? <a href=\"\/admin\">Log hier in<\/a>",
+    "admin_link_html": "Bent u de winkeleigenaar? <a href=\"/admin\">Log hier in</a>",
     "powered_by_shopify_html": "Deze winkel wordt aangedreven door {{shopify}}"
   },
   "sections": {

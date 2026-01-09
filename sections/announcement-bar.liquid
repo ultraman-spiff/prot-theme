@@ -14,6 +14,8 @@
 {%- style -%}
   #shopify-section-{{ section.id }} .text--label,
   #shopify-section-{{ section.id }} .text--link,
+  #shopify-section-{{ section.id }} .text-label,
+  #shopify-section-{{ section.id }} .text-link,
   #shopify-section-{{ section.id }} .countdown-timer__message {
     font-weight: {{ section.settings.font_weight }};
   }
@@ -140,12 +142,14 @@
 
           {%- case block.type -%}
             {%- when 'link' -%}
-              <a href="{{ block.settings.link }}" class="announcement-bar__link icon text--link {{ show_on_class }}" aria-label="{{ block.settings.link_label }}">
-                {% liquid
-                  assign icon_alt = block.settings.link_label
-                  render 'icon', icon_name: block.settings.icon, custom_icon: block.settings.custom_icon, icon_alt: icon_alt
-                %}
-                {{ block.settings.link_label }}
+              <a href="{{ block.settings.link }}" class="announcement-bar__link icon text-link {{ show_on_class }}" aria-label="{{ block.settings.link_label }}">
+                <span class="text-link--on-hover">
+                  {% liquid
+                    assign icon_alt = block.settings.link_label
+                    render 'icon', icon_name: block.settings.icon, custom_icon: block.settings.custom_icon, icon_alt: icon_alt
+                  %}
+                  {{ block.settings.link_label }}
+                </span>
               </a>
 
             {%- when 'text-slide' -%}
@@ -159,7 +163,7 @@
               {%- endif -%}
 
             {%- when 'timer' -%}
-              <div class="announcement-bar__timer text--label {{ show_on_class }}" {{ block.shopify_attributes }}>
+              <div class="announcement-bar__timer text-label {{ show_on_class }}" {{ block.shopify_attributes }}>
                 {%- render 'countdown-timer',
                   id: block.id,
                   column_type: 'row',

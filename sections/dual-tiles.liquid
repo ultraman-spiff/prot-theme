@@ -12,19 +12,28 @@
       #shopify-section-{{ section.id }} .grid {
         gap: 0;
       }
-      #shopify-section-{{ section.id }} .section-dual-tiles__block:nth-of-type(1) {
+      #shopify-section-{{ section.id }} .container .section-dual-tiles__block:nth-of-type(1) {
         border-radius: var(--card-corner-radius) var(--card-corner-radius) 0 0;
       }
-      #shopify-section-{{ section.id }} .section-dual-tiles__block:nth-of-type(2) {
+      #shopify-section-{{ section.id }} .container .section-dual-tiles__block:nth-of-type(2) {
         border-radius: 0 0 var(--card-corner-radius) var(--card-corner-radius);
       }
       @media screen and (min-width: 750px) {
-        #shopify-section-{{ section.id }} .section-dual-tiles__block:nth-of-type(1) {
-          border-radius: var(--card-corner-radius) 0 0 var(--card-corner-radius);
+        #shopify-section-{{ section.id }} .container .section-dual-tiles__block:nth-of-type(1) {
+          border-start-start-radius: var(--card-corner-radius);
+          border-start-end-radius: 0;
+          border-end-start-radius: var(--card-corner-radius);
+          border-end-end-radius: 0;
         }
-        #shopify-section-{{ section.id }} .section-dual-tiles__block:nth-of-type(2) {
-          border-radius: 0 var(--card-corner-radius) var(--card-corner-radius) 0;
+        #shopify-section-{{ section.id }} .container .section-dual-tiles__block:nth-of-type(2) {
+          border-start-start-radius: 0;
+          border-start-end-radius: var(--card-corner-radius);
+          border-end-start-radius: 0;
+          border-end-end-radius: var(--card-corner-radius);
         }
+      }
+      #shopify-section-{{ section.id }} .container.max-w-full .section-dual-tiles__block {
+        border-radius: 0;
       }
     {%- endif -%}
   {%- endstyle -%}
@@ -189,7 +198,7 @@
                     </h2>
                   {%- endif -%}
                   {%- if block.settings.text != blank -%}
-                    <div class="richtext">
+                    <div class="rte">
                       {{- block.settings.text -}}
                     </div>
                   {%- endif -%}

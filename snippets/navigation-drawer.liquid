@@ -27,14 +27,14 @@
             <ul>
               {% for link in menu.links %}
                 {% liquid
+                  assign link_item_index = forloop.index
                   assign link_handle = link.title | handleize
                   assign count_of_cards = 0
                   assign count_of_items = 0
 
                   for block in section.blocks
-                    assign block_link_handle = block.settings.menu_link_title | handleize
 
-                    if link_handle != block_link_handle
+                    if link_item_index != block.settings.menu_item_position
                       continue
                     endif
 
@@ -62,14 +62,13 @@
           </div>
           {% for link in menu.links %}
             {% liquid
+              assign link_item_index = forloop.index
               assign link_handle = link.title | handleize
               assign count_of_cards = 0
               assign count_of_items = 0
 
               for block in section.blocks
-                assign block_link_handle = block.settings.menu_link_title | handleize
-
-                if link_handle != block_link_handle
+                if link_item_index != block.settings.menu_item_position
                   continue
                 endif
 
@@ -111,10 +110,28 @@
                     }
                   {%- endstyle -%}
                   <li class="menu-card-group">
+                    {%- assign link_item_index = forloop.index -%}
+
+                    {%- style -%}
+                      {%- for block in section.blocks -%}
+                        {%- assign card_aspect_ratio = section.settings.card_aspect_ratio -%}
+                        {% if block.settings.card_aspect_ratio != 'same_as_section' %}
+                          {%- assign card_aspect_ratio = block.settings.card_aspect_ratio -%}
+                        {% endif %}
+                        .block-{{ block.id }} {
+                          --header-nav-group-card-aspect-ratio: {{ section.settings.card_aspect_ratio_mobile }};
+                        }
+                        @media screen and (min-width: 750px) {
+                          .block-{{ block.id }} {
+                            --header-nav-group-card-aspect-ratio: {{ card_aspect_ratio }};
+                          }
+                        }
+                      {%- endfor -%}
+                    {%- endstyle -%}
+
                     {% for block in section.blocks %}
                       {%- liquid
                         assign link_handle = link.title | handleize
-                        assign block_link_handle = block.settings.menu_link_title | handleize
                         assign show_on_class = block.settings.show_on
                         if show_on_class == 'mobile'
                           assign show_on_class = 'large-up-hide'
@@ -124,16 +141,16 @@
                           assign show_on_class = ''
                         endif
                       -%}
-                      {%- if block_link_handle == link_handle -%}
-                        <div class="card header__card header__card-text color-{{ block.settings.color_scheme }} block-{{ block.id }} {{ show_on_class }}">
+                      {%- if link_item_index == block.settings.menu_item_position -%}
+                        <div class="card header__card header__card-text color-{{ block.settings.color_scheme }} block-{{ block.id }} {{ show_on_class }} media-position--background">
                           {%- if block.settings.image != blank -%}
-                            <div class="media media--overlay card__media media--{{ block.settings.card_media_aspect_ratio }}">
+                            <div class="media media--overlay card__media media--{{ block.settings.card_aspect_ratio }}">
                               {%- render 'image', image: block.settings.image, alt: block.settings.image.alt | escape -%}
                             </div>
                           {%- endif -%}
 
                           {%- if block.settings.title != blank or block.settings.subtitle != blank -%}
-                            <div class="card__content {{ block.settings.content_position_horizontal }} {{ block.settings.content_position_vertical }}">
+                            <div class="content {{ block.settings.content_position_horizontal }} {{ block.settings.content_position_vertical }}">
                               {%- if block.settings.subtitle != blank -%}
                                 <span class="card__subtitle">
                                   {{- block.settings.subtitle -}}

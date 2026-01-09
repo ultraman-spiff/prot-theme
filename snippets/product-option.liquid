@@ -1,6 +1,10 @@
 {%- liquid
   assign swatch_value = swatch_value | default: value.swatch
 
+  if swatch_value == blank
+    assign swatch_value = false
+  endif
+
   if where == 'facet'
     assign swatch_shape = 'square'
   else

@@ -68,10 +68,6 @@ html.no-js .card-product-slider__slide + .card-product-slider__slide {
     overflow: hidden;
   }
 
-  html.js .card-product-slider.overflow-unset {
-    overflow: unset;
-  }
-
   .card-product-slider__buttons > :not(.swiper-button-lock) {
     margin-block-start: 3.2rem;
   }
@@ -246,6 +242,7 @@ html.no-js .card-product-slider__slide + .card-product-slider__slide {
 }
 
 .section-featured-products .text--label {
+  display: flex;
   font-size: var(--font-size-static-sm);
   font-weight: var(--font-weight-normal);
   line-height: var(--line-height-static-sm);

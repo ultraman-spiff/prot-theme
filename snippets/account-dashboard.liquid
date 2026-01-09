@@ -243,7 +243,7 @@
                               {%- endif -%}
                             </div>
                             {%- unless line_item.selling_plan_allocation == nil and line_item.properties.size == 0 -%}
-                              <div class="font-size-s">
+                              <div class="font-size-sm">
                                 {%- unless line_item.product.has_only_default_variant -%}
                                   <div class="account-dashboard__table-info">
                                     {{- line_item.variant.title -}}
@@ -272,7 +272,7 @@
                               </div>
                             {%- endunless -%}
                             {%- if line_item.line_level_discount_allocations != blank -%}
-                              <ul role="list" aria-label="{{ 'customer.order.discount' | t }}" class="account-dashboard__table-info list-unstyled font-size-s">
+                              <ul role="list" aria-label="{{ 'customer.order.discount' | t }}" class="account-dashboard__table-info list-unstyled font-size-sm">
                                 {%- for discount_allocation in line_item.line_level_discount_allocations -%}
                                   <li>
                                     {%- render 'icon', icon_name: 'theme-sale-tag' -%}
@@ -282,7 +282,7 @@
                               </ul>
                             {%- endif -%}
                             {%- if line_item.fulfillment -%}
-                              <div class="account-dashboard__table-info font-size-s">
+                              <div class="account-dashboard__table-info font-size-sm">
                                 {%- assign created_at = line_item.fulfillment.created_at | time_tag: format: 'date' -%}
                                 <span>{{- 'customer.order.fulfilled_on_html' | t: date: created_at -}}</span>
                                 {%- if line_item.fulfillment.tracking_url -%}

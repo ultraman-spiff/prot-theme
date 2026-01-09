@@ -28,7 +28,7 @@
 }
 
 .section-testimonials__ratings {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
@@ -44,17 +44,9 @@
   display: block;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.15rem;
-  font-size: 16px;
+  letter-spacing: 0.2rem;
+  font-size: var(--font-size-static-sm);
   margin-block-end: 2.8rem;
-  font-family: var(--font-button-family);
-  font-weight: 400;
-}
-
-@media screen and (max-width: 749px) {
-  .section-testimonials__subheading {
-    font-size: 12px !important;
-  }
 }
 
 .section-testimonials__footer {
@@ -140,8 +132,6 @@
 
 .testimonials__block {
   height: auto;
-  border-radius: 10px;
-  overflow: hidden;
 }
 
 .testimonials__block blockquote {

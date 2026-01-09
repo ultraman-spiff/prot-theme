@@ -115,8 +115,14 @@ if (!customElements.get("quick-cart-drawer")) {
       const trigger = event.target.closest("[data-product-url]");
       trigger.classList.toggle("is--loading");
       try {
+        // if root contains locale, add locale to productUrl as prefix
+        let fetchPrefix = '';
+        if (window.Shopify.routes.root.includes(`/${window.Shopify.locale}/`)) {
+          fetchPrefix = `/${window.Shopify.locale}`;
+        }
+
         const productCardResponse = await fetch(
-          `${trigger.dataset.productUrl}/?view=quick-cart`
+          `${fetchPrefix}${trigger.dataset.productUrl}/?view=quick-cart`
         );
         if (!productCardResponse) return;
 

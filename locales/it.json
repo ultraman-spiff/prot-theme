@@ -4,7 +4,7 @@
       "open_in_new_window": "Si apre in una nuova finestra.",
       "refresh_page": "La scelta di una selezione comporta l'aggiornamento completo della pagina.",
       "skip_to_content": "Salta al contenuto",
-      "slideshow": "Usa le frecce sinistra\/destra per navigare nella presentazione o scorri verso sinistra\/destra se utilizzi un dispositivo mobile"
+      "slideshow": "Usa le frecce sinistra/destra per navigare nella presentazione o scorri verso sinistra/destra se utilizzi un dispositivo mobile"
     },
     "actions": {
       "add": "Aggiungi",
@@ -39,7 +39,7 @@
       "search": "Cerca"
     },
     "date": {
-      "format_day_month_year": "%d\/%m\/%Y",
+      "format_day_month_year": "%d/%m/%Y",
       "format_month_year": "%B %Y",
       "format_numbers": "%d.%m.%Y",
       "format_short": "%B %d, %Y"
@@ -153,7 +153,16 @@
     "preorder_badge": "Pre-ordine",
     "preorder_info": "Questo prodotto è attualmente in pre-ordine.",
     "preorder_notice": "Questo prodotto sarà spedito il {{date}}.",
-    "preorder_warning_html": "* Cliccando su 'Pre-ordine', <strong>riconosco che sto acquistando un articolo in pre-ordine, non un prodotto disponibile in magazzino</strong> e accetto i Termini e Condizioni del processo di pre-ordine."
+    "preorder_warning_html": "* Cliccando su 'Pre-ordine', <strong>riconosco che sto acquistando un articolo in pre-ordine, non un prodotto disponibile in magazzino</strong> e accetto i Termini e Condizioni del processo di pre-ordine.",
+    "badges": {
+      "new": "Nuovo",
+      "best_seller": "Più venduto",
+      "featured": "In primo piano",
+      "on_sale": "In offerta",
+      "coming_soon": "In arrivo",
+      "pre_order": "Pre-ordine",
+      "sold_out": "Esaurito"
+    }
   },
   "collection": {
     "label": "Collezione",
@@ -304,7 +313,7 @@
       "city_placeholder": "Inserisci la tua città",
       "province": "Provincia",
       "province_placeholder": "Inserisci la tua provincia",
-      "country": "Paese \/ Regione",
+      "country": "Paese / Regione",
       "zip": "CAP",
       "zip_placeholder": "Inserisci il tuo CAP",
       "phone": "Telefono",
@@ -405,7 +414,7 @@
     "button": "Entra usando la password",
     "submit": "Invia",
     "error": "La password inserita non è corretta. Per favore riprova.",
-    "admin_link_html": "Sei il proprietario del negozio? <a href=\"\/admin\">Accedi qui<\/a>",
+    "admin_link_html": "Sei il proprietario del negozio? <a href=\"/admin\">Accedi qui</a>",
     "powered_by_shopify_html": "Questo negozio sarà alimentato da {{shopify}}"
   },
   "sections": {

@@ -1,115 +1,158 @@
 /**
  * Intersection Observer
- * Companent for multiple sections animations
- * */
-document
-  .querySelectorAll("[data-intersection-observer]")
-  .forEach((intersectElement, i) => {
-    const intersectionID = intersectElement.dataset.id;
-    const observerElement = document.querySelector(
-      `[data-id="${intersectionID}"]`
-    );
+ * Component for multiple sections animations
+ * Optimized for performance and iOS compatibility
+ */
 
-    const intersectOnce =
-      observerElement.dataset.intersectOnce || true;
-    const observerOptions = {
-      rootMargin: "0px 0px -50% 0px",
-      threshold: 0,
-      ...(JSON.parse(
-        observerElement.dataset.intersectionObserver || "{}"
-      ) || {})
-    };
+// Cache frequently used values
+const MOBILE_BREAKPOINT = 750;
+const DEFAULT_DELAY = 300;
+const DEFAULT_DURATION = 900;
 
-    const animationBody = observerElement.querySelector(
-      ".full-width-banner__animation--body"
-    );
-    const animationElements = observerElement.querySelectorAll(
-      ".full-width-banner__animation"
-    );
+// Performance helper functions
+const parseIntSafe = (value, fallback) => {
+  const parsed = parseInt(value);
+  return isNaN(parsed) ? fallback : parsed;
+};
 
-    const intersectionObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          if (intersectionID !== entry.target.dataset.id) {
-            return;
-          }
-          // console.log("intersectionObserver", observerElement.dataset.id);
+const isMobileDevice = () => window.innerWidth < MOBILE_BREAKPOINT;
 
-          /** check if already animated */
-          if (
-            observerElement.classList.contains("isAnimated") &&
-            intersectOnce
-          ) {
-            return;
-          }
+document.querySelectorAll("[data-intersection-observer]").forEach((intersectElement, i) => {
+  // Cache DOM queries
+  const intersectionID = intersectElement.dataset.id;
+  const observerElement = document.querySelector(`[data-id="${intersectionID}"]`);
 
-          observerElement.classList.remove("inAnimation");
+  // Early return if observer element not found
+  if (!observerElement) {
+    console.warn(`Observer element not found for ID: ${intersectionID}`);
+    return;
+  }
 
-          let animationDelay =
-            animationBody.dataset.animationDelay || 300;
-          let animationDuration =
-            animationBody.dataset.animationDuration || 900;
+  const intersectOnce = observerElement.dataset.intersectOnce !== "false";
+  const observerOptions = {
+    rootMargin: "0px 0px -50% 0px",
+    threshold: 0,
+    ...((() => {
+      try {
+        return JSON.parse(observerElement.dataset.intersectionObserver || "{}");
+      } catch {
+        return {};
+      }
+    })())
+  };
 
-          setAnimation({
-            observerElement,
-            animationBody,
-            animationElements
-          });
+  // Cache animation elements
+  const animationBody = observerElement.querySelector(".full-width-banner__animation--body");
+  const animationElements = observerElement.querySelectorAll(".full-width-banner__animation");
 
-          setTimeout(() => {
-            if (
-              observerElement.classList.contains("isAnimated") &&
-              intersectOnce
-            ) {
-              intersectionObserver.unobserve(observerElement);
-            } else if (
-              observerElement.classList.contains(
-                "isAnimated" && !intersectOnce
-              )
-            ) {
-              observerElement.classList.remove("isAnimated");
-            }
-          }, animationElements.length * (animationDelay + animationDuration) + animationDelay);
+  const intersectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting || intersectionID !== entry.target.dataset.id) {
+        return;
+      }
+
+      const isMobile = isMobileDevice();
+      const allowMobileAnimation = observerElement.dataset.animationMobile !== "false";
+
+      // Exit if mobile and mobile animation is disabled
+      if (isMobile && !allowMobileAnimation) {
+        return;
+      }
+
+      // Check if already animated
+      if (observerElement.classList.contains("isAnimated") && intersectOnce) {
+        return;
+      }
+
+      // Clear previous animation classes
+      observerElement.classList.remove("inAnimation", "isAnimated");
+
+      // Get timing values
+      const animationDelay = animationBody ? parseIntSafe(animationBody.dataset.animationDelay, DEFAULT_DELAY) : DEFAULT_DELAY;
+      const animationDuration = animationBody ? parseIntSafe(animationBody.dataset.animationDuration, DEFAULT_DURATION) : DEFAULT_DURATION;
+
+      setAnimation({ observerElement, animationBody, animationElements });
+
+      // Cleanup timeout
+      const cleanupDelay = (animationElements.length * animationDelay) + (animationDelay + animationDuration);
+      setTimeout(() => {
+        if (observerElement.classList.contains("isAnimated") && intersectOnce) {
+          intersectionObserver.unobserve(observerElement);
+        } else if (observerElement.classList.contains("isAnimated") && !intersectOnce) {
+          observerElement.classList.remove("isAnimated");
         }
-      });
-    }, observerOptions);
+      }, cleanupDelay);
+    });
+  }, observerOptions);
 
-    intersectionObserver.observe(observerElement);
+  intersectionObserver.observe(observerElement);
 
-    function setAnimation(params) {
-      const { observerElement, animationBody, animationElements } =
-        params;
+  function setAnimation(params) {
+    const { observerElement, animationBody, animationElements } = params;
 
-      let animationDelay =
-        animationBody.dataset.animationDelay || 300;
-      let animationDuration =
-        animationBody.dataset.animationDuration || 900;
+    if (!animationElements?.length) {
+      // If no animation elements, still add isAnimated class
+      observerElement.classList.add("isAnimated");
+      return;
+    }
 
-      animationElements.forEach((element, i) => {
-        i++;
-        animationDelay =
-          element.dataset.animationDelay || animationDelay;
-        animationDuration =
-          element.dataset.animationDuration || animationDuration;
-        setTimeout(() => {
+    // Get base timing values
+    const baseAnimationDelay = animationBody ? parseIntSafe(animationBody.dataset.animationDelay, DEFAULT_DELAY) : DEFAULT_DELAY;
+    const baseAnimationDuration = animationBody ? parseIntSafe(animationBody.dataset.animationDuration, DEFAULT_DURATION) : DEFAULT_DURATION;
+
+    // Add inAnimation class to observer element
+    observerElement.classList.add("inAnimation");
+
+    let completedAnimations = 0;
+    const totalAnimations = animationElements.length;
+
+    // Use requestAnimationFrame for better performance
+    const scheduleAnimation = (element, index) => {
+      const elementDelay = parseIntSafe(element.dataset.animationDelay, baseAnimationDelay);
+      const elementDuration = parseIntSafe(element.dataset.animationDuration, baseAnimationDuration);
+      const startDelay = (index + 1) * elementDelay;
+      const endDelay = startDelay + elementDuration;
+
+      // Start animation
+      setTimeout(() => {
+        requestAnimationFrame(() => {
           element.classList.add("inAnimation");
-          element.querySelector(
-            "*"
-          ).style.animationDuration = `${animationDuration}ms`;
-        }, i * animationDelay);
+          const childElement = element.querySelector("*");
+          if (childElement) {
+            childElement.style.animationDuration = `${elementDuration}ms`;
+          }
+        });
+      }, startDelay);
 
-        setTimeout(() => {
-          element.querySelector("*").style.animationDuration = "";
-          if (element.querySelector("*").style.length === 0) {
-            element.querySelector("*").removeAttribute("style");
+      // End animation
+      setTimeout(() => {
+        requestAnimationFrame(() => {
+          const childElement = element.querySelector("*");
+          if (childElement) {
+            childElement.style.animationDuration = "";
+            if (!childElement.style.length) {
+              childElement.removeAttribute("style");
+            }
           }
           element.classList.remove("inAnimation");
           element.classList.add("isAnimated");
-          if (i === animationElements.length) {
+
+          completedAnimations++;
+
+          // Mark observer element as animated when all animations complete
+          if (completedAnimations === totalAnimations) {
             observerElement.classList.remove("inAnimation");
             observerElement.classList.add("isAnimated");
           }
-        }, i * (animationDelay + animationDuration));
-      });
-    }
-  });
+        });
+      }, endDelay);
+    };
+
+    // Schedule all animations
+    animationElements.forEach((element, i) => {
+      if (element) {
+        scheduleAnimation(element, i);
+      }
+    });
+  }
+});

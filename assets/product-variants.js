@@ -406,6 +406,11 @@ if (!customElements.get('product-info')) {
           this.updateVariantInputs(variant?.id);
           this.updateVariantDiscountBadge(variant?.price, variant?.compare_at_price);
           this.updateVariantDetails(variant?.id);
+          // Inserted logic for pickupAvailability after updateVariantDetails
+          if (this.pickupAvailability && variant?.id) {
+            this.pickupAvailability.dataset.variantId = variant.id;
+            this.pickupAvailability.fetchAvailability(variant.id);
+          }
 
           if (this.productMediaGallery && this.productMediaGallery.dataset.hideOtherVariantsMedia === 'true') {
             this.updateVariantMedia(html);
@@ -620,6 +625,20 @@ if (!customElements.get('product-info')) {
 
       updateMedia(variantFeaturedMediaId) {
         if (!variantFeaturedMediaId) return;
+
+        // if layout is grid, add .active class to the relevant swiper-slide
+        const gridLayout = this.querySelector('.main-product__media--grid');
+        if (gridLayout) {
+          // remove active class from all swiper-slides
+          gridLayout.querySelectorAll('.swiper-slide').forEach(item => {
+            item.classList.remove('active');
+          });
+          // add .active class to the swiper-slide with the matching data-media-id
+          const activeSlide = gridLayout.querySelector(`.swiper-slide[data-media-id="${variantFeaturedMediaId}"]`);
+          if (activeSlide) {
+            activeSlide.classList.add('active');
+          }
+        }
 
         if (
           this.querySelector(".main-product__media")?.hasAttribute(
@@ -947,3 +966,8 @@ if (!customElements.get('product-form')) {
   );
 }
 
+document.querySelectorAll('.product__content > *').forEach((el) => {
+  if (!el.textContent.trim()) {
+    el.textContent = '';
+  }
+});

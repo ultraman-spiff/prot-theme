@@ -99,10 +99,6 @@
                 {%- endif -%}
 
                 <div class="form-row">
-                    <a href="https://protgold.com/a/account/login"
-     class="button button--outlined uppercase full-width-btn">
-    Manage Subscription
-  </a>
                   {%- if shop.features.login_with_shop_classic_customer_accounts? -%}
                   <section name="sign-in-with-shop-provider" class="sign-in-with-shop-provider">
                     {{ shop | login_button: hide_button: hide_shop_login_button }}

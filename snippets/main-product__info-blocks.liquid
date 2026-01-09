@@ -60,7 +60,7 @@
         {%- endif -%}
         {%- assign product_block_class = 'product__text' | append: ' ' | append: product_block_class -%}
         <div
-          class="{{ product_block_class }} product__text--{{- block.settings.link_to_resource }} {% unless block.settings.link_to_resource == 'none' %}product__text--link{% else %}product__text--body{% if block.settings.heading_secondary != blank %}-animated{% endif %}{% endunless %}{% if block.settings.text_before_link and block.settings.link_to_resource != 'none' %} product__text--before-link{% endif %} caption caption--small"
+          class="{{ product_block_class }} product__text--{{- block.settings.link_to_resource }} {% unless block.settings.link_to_resource == 'none' %}product__text--link{% else %}product__text--body{% if block.settings.heading_secondary != blank %}-animated{% endif %}{% endunless %}{% if block.settings.text_before_link and block.settings.link_to_resource != 'none' %} product__text--before-link{% endif %} font-size-sm"
           {{ block.shopify_attributes }}
         >
           {% capture metafield_for_product_variant %}
@@ -337,7 +337,9 @@
         {%- if is_gift_card -%}
           {%- continue -%}
         {%- endif -%}
-        {{- block.settings.custom_liquid -}}
+        <div class="{{ product_block_class }}" {{ block.shopify_attributes }}>
+          {{- block.settings.custom_liquid -}}
+        </div>
 
       {%- when 'variant_picker' -%}
         {%- assign product_block_class = 'product__variant-picker' | append: ' ' | append: product_block_class -%}
@@ -354,9 +356,6 @@
           product_form_id: product_form_id,
           product_block_class: product_block_class
         -%}
-      
-      {%- when 'skio-plan-picker' -%}
-        {%- render 'skio-app-block', block: block, product: product -%}
 
       {%- when 'buy_buttons' -%}
         {%- assign product_block_class = 'product__buy-buttons' | append: ' ' | append: product_block_class -%}
@@ -760,7 +759,7 @@
           </div>
         {% endif %}
       {%- when 'richtext' -%}
-        {%- assign product_block_class = 'product__text' | append: ' ' | append: product_block_class -%}
+        {%- assign product_block_class = 'product__text font-size-sm' | append: ' ' | append: product_block_class -%}
         <div class="{{ product_block_class }}" {{ block.shopify_attributes }}>
           {{- block.settings.text -}}
         </div>

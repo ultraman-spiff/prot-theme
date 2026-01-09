@@ -81,6 +81,7 @@
             "spaceBetweenMobile": {{ settings.spacing_mobile | times: 10 | round: 0 }},
             {% if section.settings.card_layout == 'text' %}
               "slidesPerView": "auto",
+              "cssMode": "true",
             {% else %}
               "slidesPerView": "{{ section.settings.slides_per_view_mobile |  plus: 0.3 }}",
             {% endif %}

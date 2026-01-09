@@ -4,7 +4,7 @@
       "open_in_new_window": "Öffnet in einem neuen Fenster.",
       "refresh_page": "Die Auswahl einer Option führt zu einem vollständigen Seitenaktualisierung.",
       "skip_to_content": "Zum Inhalt springen",
-      "slideshow": "Verwenden Sie die linken\/rechten Pfeile, um die Diashow zu navigieren oder wischen Sie nach links\/rechts, wenn Sie ein mobiles Gerät verwenden"
+      "slideshow": "Verwenden Sie die linken/rechten Pfeile, um die Diashow zu navigieren oder wischen Sie nach links/rechts, wenn Sie ein mobiles Gerät verwenden"
     },
     "actions": {
       "add": "Hinzufügen",
@@ -39,7 +39,7 @@
       "search": "Suche"
     },
     "date": {
-      "format_day_month_year": "%d\/%m\/%Y",
+      "format_day_month_year": "%d/%m/%Y",
       "format_month_year": "%B %Y",
       "format_numbers": "%d.%m.%Y",
       "format_short": "%d. %B %Y"
@@ -153,7 +153,16 @@
     "preorder_badge": "Vorbestellung",
     "preorder_info": "Dieses Produkt ist derzeit als Vorbestellung verfügbar.",
     "preorder_notice": "Dieses Produkt wird am {{date}} versendet.",
-    "preorder_warning_html": "* Durch Klicken auf 'Vorbestellen' <strong>erkenne ich an, dass ich einen vorbestellten Artikel kaufe, keinen vorrätigen Artikel</strong> und stimme den Allgemeinen Geschäftsbedingungen des Vorbestellprozesses zu."
+    "preorder_warning_html": "* Durch Klicken auf 'Vorbestellen' <strong>erkenne ich an, dass ich einen vorbestellten Artikel kaufe, keinen vorrätigen Artikel</strong> und stimme den Allgemeinen Geschäftsbedingungen des Vorbestellprozesses zu.",
+    "badges": {
+      "new": "Neu",
+      "best_seller": "Bestseller",
+      "featured": "Empfohlen",
+      "on_sale": "Im Angebot",
+      "coming_soon": "Bald verfügbar",
+      "pre_order": "Vorbestellung",
+      "sold_out": "Ausverkauft"
+    }
   },
   "collection": {
     "label": "Kollektion",
@@ -304,7 +313,7 @@
       "city_placeholder": "Geben Sie Ihre Stadt ein",
       "province": "Provinz",
       "province_placeholder": "Geben Sie Ihre Provinz ein",
-      "country": "Land \/ Region",
+      "country": "Land / Region",
       "zip": "Postleitzahl",
       "zip_placeholder": "Geben Sie Ihre Postleitzahl ein",
       "phone": "Telefon",
@@ -405,7 +414,7 @@
     "button": "Mit Passwort eintreten",
     "submit": "Eintreten",
     "error": "Das eingegebene Passwort ist falsch. Bitte versuchen Sie es erneut.",
-    "admin_link_html": "Sind Sie der Ladenbesitzer? <a href=\"\/admin\">Hier anmelden<\/a>",
+    "admin_link_html": "Sind Sie der Ladenbesitzer? <a href=\"/admin\">Hier anmelden</a>",
     "powered_by_shopify_html": "Dieser Shop wird betrieben von {{shopify}}"
   },
   "sections": {

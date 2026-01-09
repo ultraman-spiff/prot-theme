@@ -353,6 +353,10 @@ cart-drawer .cart-item__price {
   margin: 0 0 1.2rem;
 }
 
+.cart-drawer .cart-item__actions--price > * {
+  flex-direction: column;
+}
+
 @media screen and (min-width: 990px) {
   .cart-drawer__empty {
     padding-block-start: 4rem;

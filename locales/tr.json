@@ -153,7 +153,16 @@
     "preorder_badge": "Ön sipariş",
     "preorder_info": "Bu ürün şu anda ön sipariştedir.",
     "preorder_notice": "Bu ürün {{date}} tarihinde gönderilecektir.",
-    "preorder_warning_html": "* 'Ön sipariş ver' butonuna tıklayarak, <strong>stokta olan bir ürün değil, bir ön sipariş ürünü satın aldığımı kabul ediyorum</strong> ve ön sipariş sürecinin Şartlar ve Koşullarını kabul ediyorum."
+    "preorder_warning_html": "* 'Ön sipariş ver' butonuna tıklayarak, <strong>stokta olan bir ürün değil, bir ön sipariş ürünü satın aldığımı kabul ediyorum</strong> ve ön sipariş sürecinin Şartlar ve Koşullarını kabul ediyorum.",
+    "badges": {
+      "new": "Yeni",
+      "best_seller": "En çok satan",
+      "featured": "Öne çıkan",
+      "on_sale": "İndirimde",
+      "coming_soon": "Yakında",
+      "pre_order": "Ön sipariş",
+      "sold_out": "Tükendi"
+    }
   },
   "collection": {
     "label": "Koleksiyon",

@@ -93,7 +93,7 @@ html.js .drawer--start>.drawer__container>.drawer__content {
 html.js .drawer--start >.drawer__container > .drawer__content {
   transform: translateX(-100%);
 }
-html[dir='rtl'].js .drawer--start >.drawer__container > .drawer__content {
+html[dir='rtl'].js .drawer--start >.drawer__container > .drawer__content:not(.drawer__content--nav) {
   transform: translateX(100%);
 }
 
@@ -108,7 +108,7 @@ html.js .drawer__content {
   transition: transform var(--drawer-transition-duration) var(--drawer-transition-timing-function),
     visibility var(--drawer-transition-duration) var(--drawer-transition-timing-function);
 }
-html[dir='rtl'].js .drawer__content {
+html[dir='rtl'].js .drawer__content:not(.drawer__content--search) {
   transform: translateX(-100%);
 }
 
@@ -193,7 +193,7 @@ html.no-js .drawer__container[open] > .drawer__button::after,
   height: 2.4rem;
   display: block;
   margin-block-end: 0;
-  padding: 0.5rem;
+  padding: var(--spacing-1);
   z-index: 2;
   cursor: pointer;
 }
@@ -203,8 +203,6 @@ html.no-js .drawer__container[open] > .drawer__button::after,
   height: auto;
   pointer-events: none;
 }
-
-
 
 @media screen and (max-width: 749px) {
   .section-complete-the-set .drawer__content {
@@ -244,7 +242,7 @@ html.no-js .drawer__container[open] > .drawer__button::after,
   color: rgb(var(--color-foreground));
 }
 
-.drawer__row:last-child {
+.drawer__row:not(.drawer__row--bottom):last-child {
   margin-block-end: 0;
   padding-block-end: 0;
   border-block-end: none;
@@ -432,6 +430,13 @@ html.no-js .drawer__nav details[open] .drawer__nav-link svg {
 }
 
 .drawer__row--bottom {
+  /* position: fixed;
+  inset-block-end: 0;
+  padding-block-end: var(--spacing-5);
+
+  width: calc(100% - var(--page-gutter) * 2);
+  background-color: rgb(var(--color-background)); */
+
   padding-block-start: var(--spacing-2);
   margin-block-start: auto;
   border-block-start: 0.1rem solid rgba(var(--color-border), var(--alpha-border));

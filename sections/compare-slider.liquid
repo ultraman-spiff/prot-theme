@@ -90,13 +90,15 @@
         </div>
         <div class="before-and-after__mobile-footer">
           {%- if section.settings.button_label != blank -%}
-            {%- render 'button',
-              type: 'link',
-              class: 'button',
-              button_style: section.settings.button_style,
-              value: section.settings.button_label,
-              href: section.settings.button_link
-            -%}
+            <div>
+              {%- render 'button',
+                type: 'link',
+                class: 'button',
+                button_style: section.settings.button_style,
+                value: section.settings.button_label,
+                href: section.settings.button_link
+              -%}
+            </div>
           {%- endif -%}
         </div>
       </div>

@@ -26,7 +26,7 @@ html.js .hero__animation.in-delay>* {
   opacity: 0;
   transform: translateY(200%);
 }
-.hero__content--single .hero__animation>*,
+ .hero__content--single .hero__animation>*,
 html.js .hero__swiper-slide.swiper-slide-active .hero__animation:not(.in-delay)>* {
   animation-name: heroContentAnimation;
   animation-timing-function: cubic-bezier(0.22, 1.00, 0.36, 1.00);
@@ -54,6 +54,25 @@ html.js .hero__swiper-slide.swiper-slide-active .hero__animation:nth-child(3)>* 
 html.js .hero__swiper-slide.swiper-slide-active .hero__animation:nth-child(4)>* {
   animation-duration: 1400ms;
   /* animation-delay: 600ms */
+}
+
+@media screen and (max-width: 749px) {
+  .hero__content--single.hero__content__no-animation .hero__animation>* {
+    animation-name: none;
+    animation-timing-function: none;
+  }
+
+  /* on mobile, no animation */
+  html.js .hero__swiper-slide.swiper-slide-active .hero__content__no-animation .hero__animation:not(.in-delay)>* {
+    animation-name: none;
+    animation-timing-function: none;
+  }
+
+  html.js .hero__swiper-slide.swiper-slide-active .hero__content__no-animation .hero__animation.in-delay>*,
+  html.js .hero__content__no-animation .hero__animation.in-delay>* {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @keyframes heroContentAnimation {
@@ -90,7 +109,8 @@ html.no-js .hero__swiper-slide {
 }
 
 .hero__inner {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   grid-template-rows: 1fr;
 
   --inner-vertical-padding: 4rem;
@@ -101,6 +121,11 @@ html.no-js .hero__swiper-slide {
   z-index: 3;
 
   background-color: rgb(var(--color-background));
+}
+
+.hero__inner.hero-banner--30-70 > *,
+.hero__inner.hero-banner--70-30 > * {
+  flex: 1 0 50%;
 }
 
 .hero__content {
@@ -214,7 +239,6 @@ html.no-js .hero__swiper-slide {
   font-weight: var(--font-weight-normal);
   text-transform: uppercase;
   margin-block-end: 2rem;
-  font-family: var(--font-button-family);
 }
 
 .hero-banner .hero__heading {
@@ -228,9 +252,8 @@ html.no-js .hero__swiper-slide {
 }
 
 .hero__button {
-  display: flex;
+  display: inline-flex;
   flex-flow: row wrap;
-  justify-content: center;
   gap: var(--spacing-2);
 }
 
@@ -239,7 +262,6 @@ html.no-js .hero__swiper-slide {
 }
 .hero__entry p {
   margin-block-start: 0;
-  font-weight: var(--font-weight-semibold);
 }
 
 .hero__swiper:has(.swiper-pagination-horizontal) .hero__content {
@@ -419,8 +441,8 @@ html.no-js .hero__swiper-slide {
   content: '';
   width: 0.3rem;
   height: 0.3rem;
-  inset-block-start: 0;
-  inset-inline-start: -0.84rem;
+  inset-block-start: 0.6rem;
+  inset-inline-start: -0.8rem;
   position: absolute;
   background: #fff;
   border-radius: 100%;
@@ -437,6 +459,17 @@ html.no-js .hero__swiper-slide {
 .hero__swiper-pagination-horizontal .swiper-pagination-bullet span {
   opacity: 1;
   visibility: visible;
+}
+
+.hero-banner .swiper-pagination-horizontal {
+  height: 1.6rem;
+}
+.hero__swiper:has(.hero__swiper-pagination-horizontal) .hero-banner--30-70 .hero__content,
+.hero__swiper:has(.hero__swiper-pagination-horizontal) .hero-banner--70-30 .hero__content {
+  padding-block: 0;
+}
+.hero-banner:has(.swiper-pagination) .hero__content-inner {
+  margin-block-start: calc((var(--spacing-6) + 1.6rem) * -1);
 }
 
 .hero__swiper-buttons {

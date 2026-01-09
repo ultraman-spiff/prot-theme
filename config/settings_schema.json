@@ -2,7 +2,7 @@
   {
     "name": "theme_info",
     "theme_name": "Release",
-    "theme_version": "1.1.1",
+    "theme_version": "2.0.2",
     "theme_author": "DigiFist",
     "theme_documentation_url": "https://www.digifist.com/en/help-center/documentation/theme/release",
     "theme_support_url": "https://www.digifist.com"
@@ -136,16 +136,8 @@
             "label": "0"
           },
           {
-            "value": "0.05em",
-            "label": "0.05"
-          },
-          {
             "value": "0.1em",
             "label": "0.1"
-          },
-          {
-            "value": "0.15em",
-            "label": "0.15"
           },
           {
             "value": "0.2em",
@@ -544,23 +536,23 @@
             "label": "t:sections.global.aspect_ratio.options.auto.label"
           },
           {
-            "value": "1\/1",
+            "value": "1/1",
             "label": "1:1"
           },
           {
-            "value": "3\/4",
+            "value": "3/4",
             "label": "3:4"
           },
           {
-            "value": "4\/3",
+            "value": "4/3",
             "label": "4:3"
           },
           {
-            "value": "16\/9",
+            "value": "16/9",
             "label": "16:9"
           }
         ],
-        "default": "3\/4"
+        "default": "3/4"
       },
       {
         "type": "select",
@@ -572,23 +564,23 @@
             "label": "t:sections.global.aspect_ratio.options.auto.label"
           },
           {
-            "value": "1\/1",
+            "value": "1/1",
             "label": "1:1"
           },
           {
-            "value": "3\/4",
+            "value": "3/4",
             "label": "3:4"
           },
           {
-            "value": "4\/3",
+            "value": "4/3",
             "label": "4:3"
           },
           {
-            "value": "16\/9",
+            "value": "16/9",
             "label": "16:9"
           }
         ],
-        "default": "3\/4"
+        "default": "3/4"
       },
       {
         "type": "select",
@@ -1059,7 +1051,7 @@
         "content": "t:sections.global.header.cart_page.content"
       },
       {
-        "type": "liquid",
+        "type": "richtext",
         "id": "cart_terms",
         "label": "t:settings_schema.cart.settings.cart_terms.label",
         "info": "t:settings_schema.cart.settings.cart_terms.info"

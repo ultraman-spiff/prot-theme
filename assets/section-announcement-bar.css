@@ -10,7 +10,6 @@ announcement-bar-slider {
 .announcement-bar {
   color: rgb(var(--color-heading-text));
   font-size: var(--font-size-static-xs);
-  font-weight: var(--font-weight-normal);
   letter-spacing: var(--letter-spacing-small);
   line-height: var(--line-height-static-sm);
   text-transform: uppercase;
@@ -68,12 +67,6 @@ announcement-bar-slider {
   gap: 0.4rem;
   margin-inline: auto;
 }
-
-.announcement-bar__text-content a {
-  font-size: 13.5px;
-  font-family: var(--font-body-family-medium);
-}
-
 
 .announcement-bar .countdown-timer__column {
   line-height: var(--line-height-static-xs);

@@ -9,12 +9,12 @@
 <search-drawer class="drawer drawer--search">
   <details id="Search-drawer-{{- append_id -}}" class="drawer__container">
     <summary
-      class="header__utils-link drawer__button text--link {{ button_class }}"
+      class="header__utils-link drawer__button text-link {{ button_class }}"
       id="Search-drawer-button-{{- append_id -}}"
       aria-label="{{- 'search.heading' | t -}}"
     >
       {%- assign icon_text = 'search.heading' | t -%}
-      {%- render 'icon', icon_name: 'theme-search', text: icon_text, class: 'header__utils-link--icon' -%}
+      {%- render 'icon', icon_name: 'theme-search', text: icon_text, class: 'header__utils-link--icon text-link--on-hover' -%}
       <noscript>
         {%- render 'icon', icon_name: 'theme-close-small' -%}
       </noscript>

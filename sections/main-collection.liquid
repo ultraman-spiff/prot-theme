@@ -29,11 +29,7 @@
 {%- endif -%}
 
 {%- if section.settings.pagination_style == 'load_more' -%}
-  <script src="{{- 'collection-load-more.js' | asset_url -}}" defer="defer"></script>
-  <script src="{{- 'collection-load-previous.js' | asset_url -}}" defer="defer"></script>
-  {%- if section.settings.enable_infinity_scroll -%}
-    <script src="{{- 'collection-infinity-scroll.js' | asset_url -}}" defer="defer"></script>
-  {%- endif -%}
+  <script src="{{- 'dynamic-load-more.js' | asset_url -}}" defer="defer"></script>
 {%- endif -%}
 
 {%- liquid
@@ -65,7 +61,7 @@
 
   {{ facets_html }}
 
-  <div class="container {{ section.settings.section_width }} collection__container" id="ProductGridContainer">
+  <div class="container {{ section.settings.section_width }} collection__container{% if section.settings.pagination_style == 'load_more' and section.settings.enable_infinity_scroll %} infinity-scroll-active{% endif %}" id="ProductGridContainer">
     {%- paginate collection.products by products_per_page -%}
 
         {%- if section.settings.filters == 'sidebar' -%}
@@ -83,20 +79,19 @@
             </form>
           </facet-filters-form>
         {%- endif -%}
-        <div class="collection-grid-container collection-grid-container--{{ section.settings.filters }} js-collection-grid{% if section.settings.pagination_style == 'load_more' and section.settings.enable_infinity_scroll %} infinity-scroll-active{% endif %}">
+        <div class="collection-grid-container collection-grid-container--{{ section.settings.filters }} js-collection-grid">
 
           {% if section.settings.pagination_style == 'load_more' and paginate.previous and paginate.pages > 1 and paginate.current_page <= paginate.pages %}
-            <collection-load-previous class="text-center no-js-hidden color-{{ section.settings.color_scheme }}" data-current-page="{{- paginate.current_page -}}">
+            <dynamic-load-previous class="text-center no-js-hidden color-{{ section.settings.color_scheme }}" data-current-page="{{- paginate.current_page -}}">
               {%- liquid
                 assign load_more_button_data_href = 'data-href="' | append: paginate.previous.url | append: '"'
                 assign load_previous_value = 'theme.actions.load_previous' | t
                 render 'button', class: 'button js-btn-load-previous', button_style: 'button--outlined', attr: load_more_button_data_href, value: load_previous_value, loading_spinner: true
               -%}
-            </collection-load-previous>
+            </dynamic-load-previous>
           {% endif %}
-          <div
+          <div id="product-grid"
             class="collection__grid{% if section.settings.products_per_row_mobile != '2' %} collection__grid-single{% endif %}{% if section.settings.filters == 'drawer' %} collection-grid-container__products{% endif %}"
-            id="product-grid"
             data-id="{{- section.id -}}"
             data-cols="{{- section.settings.products_per_row -}}"
           >
@@ -137,14 +132,14 @@
 
           {%- if paginate.pages > 1 -%}
             {% if section.settings.pagination_style == 'load_more' %}
-              <collection-load-more class="text-center no-js-hidden{% unless paginate.next %} hidden{% endunless %} color-{{ section.settings.color_scheme }}" data-current-page="{{- paginate.current_page -}}">
+              <dynamic-load-more class="text-center no-js-hidden{% unless paginate.next %} hidden{% endunless %} color-{{ section.settings.color_scheme }}" data-current-page="{{- paginate.current_page -}}">
                 {%- liquid
                   assign load_more_button_data_href = 'data-href="' | append: paginate.next.url | append: '"'
                   assign load_more_value = 'theme.actions.load_more' | t
 
                   render 'button', class: 'button js-btn-load-more', button_style: 'button--outlined', attr: load_more_button_data_href, value: load_more_value, loading_spinner: true
                 -%}
-              </collection-load-more>
+              </dynamic-load-more>
             {% else %}
               <div class="collection__actions">
                 {%- render 'pagination', paginate: paginate, anchor: '' -%}

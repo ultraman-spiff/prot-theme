@@ -49,7 +49,7 @@
   endif
 
   if section.settings.page_menu
-    assign page_title_handle = page_title | handleize
+    assign page_title_handle = collection.title | handleize
     assign page_menu_links = ''
     for link in linklists[section.settings.page_menu].links
       if link.handle == page_title_handle and link.links.size > 0
@@ -158,19 +158,19 @@
         </div>
       {%- endif -%}
 
-      {%- if page_menu_links != '' -%}
-        <nav class="section-page-banner__menu">
-          <ul class="menu menu--horizontal list-unstyled no-scrollbar">
-            {%- for link in page_menu_links -%}
-              <li class="menu__item">
-                <a href="{{- link.url -}}" class="menu__link button button--outlined">{{- link.title -}}</a>
-              </li>
-            {%- endfor -%}
-          </ul>
-        </nav>
-      {%- endif -%}
     </div>
   </div>
+  {%- if page_menu_links != '' -%}
+    <nav class="section-page-banner__menu">
+      <ul class="menu menu--horizontal list-unstyled no-scrollbar">
+        {%- for link in page_menu_links -%}
+          <li class="menu__item">
+            <a href="{{- link.url -}}" class="menu__link button button--outlined">{{- link.title -}}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  {%- endif -%}
 </div>
 
 {% schema %}

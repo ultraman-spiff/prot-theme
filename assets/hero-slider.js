@@ -91,7 +91,16 @@ if(!customElements.get('hero-slider')) {
       if (!queryArray.length) {
         return;
       }
-
+      const isMobile = window.innerWidth < 750;
+      const allowMobileAnimation =
+        swiper.wrapperEl.closest(".hero__content")?.dataset
+          .animationMobile === "true";
+      if (!allowMobileAnimation && isMobile) {
+        queryArray.forEach((element) => {
+          element.classList.remove('in-delay');
+        });
+        return;
+      }
       // set all element in delay
       queryArray.forEach((element) => {
         element.classList.add('in-delay');
@@ -166,6 +175,3 @@ if(!customElements.get('hero-slider')) {
   }
   customElements.define('hero-slider', HeroSlider);
 }
-
-
-
