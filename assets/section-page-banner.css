@@ -127,6 +127,32 @@
   overflow: scroll;
 }
 
+.section-page-banner__menu .menu.menu--horizontal .menu__item:last-of-type {
+  margin-inline-end: var(--page-gutter);
+}
+
 .section-page-banner__menu .menu.menu--horizontal .menu__item a {
   white-space: nowrap;
+}
+
+.section-page-banner__menu .menu.menu--horizontal .menu__item a {
+  border-color: rgba(var(--color-outlined-button-text), 0);
+  padding: var(--spacing-3) var(--spacing-5);
+  background-color: rgba(var(--color-outlined-button-text), 0.1);
+  border-color: transparent;  
+  padding: var(--spacing-3) var(--spacing-5);
+  text-transform: unset;
+  font-family: var(--font-heading-family);
+  font-size: var(--font-size-static-md);
+  letter-spacing: var(--font-heading-letter-spacing);
+}
+.section-page-banner__menu .menu.menu--horizontal .menu__item a:hover,
+.section-page-banner__menu .menu.menu--horizontal .menu__item a.active {
+  background-color: var(--color-button-hover-background);
+}
+
+@media screen and (max-width: 749px) {
+  .section-page-banner__menu {
+    padding-inline-start: var(--page-gutter);
+  }
 }

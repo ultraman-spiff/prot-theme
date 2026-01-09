@@ -4,7 +4,7 @@
       "open_in_new_window": "Ouvre dans une nouvelle fenêtre.",
       "refresh_page": "Choisir une sélection entraîne un rechargement complet de la page.",
       "skip_to_content": "Passer au contenu",
-      "slideshow": "Utilisez les flèches gauche\/droite pour naviguer dans le diaporama ou balayez vers la gauche\/droite si vous utilisez un appareil mobile"
+      "slideshow": "Utilisez les flèches gauche/droite pour naviguer dans le diaporama ou balayez vers la gauche/droite si vous utilisez un appareil mobile"
     },
     "actions": {
       "add": "Ajouter",
@@ -39,7 +39,7 @@
       "search": "Recherche"
     },
     "date": {
-      "format_day_month_year": "%d\/%m\/%Y",
+      "format_day_month_year": "%d/%m/%Y",
       "format_month_year": "%B %Y",
       "format_numbers": "%d.%m.%Y",
       "format_short": "%d %B %Y"
@@ -106,7 +106,7 @@
     "price_from": "À partir de",
     "subscription": "Abonnement",
     "view_subscription_policy": "Voir la politique d'abonnement",
-    "from_price_per_html": "à partir de {{price}}\/chacun",
+    "from_price_per_html": "à partir de {{price}}/chacun",
     "inventory_in_stock": "En stock",
     "inventory_in_stock_show_count": "{{quantity}} en stock",
     "inventory_low_stock": "Il en reste peu. Commandez bientôt.",
@@ -115,9 +115,9 @@
     "inventory_out_of_stock_continue_selling": "En stock",
     "pickup_available": "Ramassage disponible",
     "pickup_availability": "Disponibilité du ramassage",
-    "pickup_available_at_html": "Ramassage disponible à <span class=\"color-foreground\">{{location_name}}<\/span>",
+    "pickup_available_at_html": "Ramassage disponible à <span class=\"color-foreground\">{{location_name}}</span>",
     "pickup_unavailable": "Ramassage indisponible",
-    "pickup_unavailable_at_html": "Ramassage actuellement indisponible à <span class=\"color-foreground\">{{location_name}}<\/span>",
+    "pickup_unavailable_at_html": "Ramassage actuellement indisponible à <span class=\"color-foreground\">{{location_name}}</span>",
     "pickup_refresh_availability": "Rafraîchir la disponibilité",
     "pickup_view_store_info": "Voir les informations du magasin",
     "pickup_check_other_stores": "Vérifier la disponibilité dans d'autres magasins",
@@ -127,7 +127,7 @@
     "quantity": "Quantité",
     "quantity_decrease_for_product": "Diminuer la quantité pour {{product}}",
     "quantity_increase_for_product": "Augmenter la quantité pour {{product}}",
-    "shipping_policy_html": "<a href=\"{{link}}\">Livraison<\/a> calculée lors du paiement.",
+    "shipping_policy_html": "<a href=\"{{link}}\">Livraison</a> calculée lors du paiement.",
     "media_gallery": "Galerie de médias",
     "media_open_with_index": "Ouvrir le média {{index}} dans une fenêtre modale",
     "media_xr_button": "Voir dans votre espace",
@@ -139,7 +139,7 @@
     "optional": "Optionnel",
     "variant_sold_out_or_unavailable": "Variante épuisée ou indisponible",
     "value_unavailable": "{{ option_value }} - Indisponible",
-    "quantity_in_cart_html": "<span class=\"quantity-cart\">{{quantity}}<\/span> dans le panier",
+    "quantity_in_cart_html": "<span class=\"quantity-cart\">{{quantity}}</span> dans le panier",
     "quantity_multiplies_of": "Multiples de {{quantity}}",
     "quantity_minimum_of": "Minimum de {{quantity}}",
     "quantity_maximum_of": "Maximum de {{quantity}}",
@@ -153,7 +153,16 @@
     "preorder_badge": "Précommande",
     "preorder_info": "Ce produit est actuellement en précommande.",
     "preorder_notice": "Ce produit sera expédié le {{date}}.",
-    "preorder_warning_html": "* En cliquant sur 'Précommande', <strong>je reconnais que j'achète un article en précommande, et non un produit en stock</strong>, et j'accepte les Termes et Conditions du processus de précommande."
+    "preorder_warning_html": "* En cliquant sur 'Précommande', <strong>je reconnais que j'achète un article en précommande, et non un produit en stock</strong>, et j'accepte les Termes et Conditions du processus de précommande.",
+    "badges": {
+      "new": "Nouveau",
+      "best_seller": "Best-seller",
+      "featured": "En vedette",
+      "on_sale": "En solde",
+      "coming_soon": "Bientôt disponible",
+      "pre_order": "Précommander",
+      "sold_out": "Épuisé"
+    }
   },
   "collection": {
     "label": "Collection",
@@ -304,7 +313,7 @@
       "city_placeholder": "Entrez votre ville",
       "province": "Province",
       "province_placeholder": "Entrez votre province",
-      "country": "Pays \/ Région",
+      "country": "Pays / Région",
       "zip": "Code postal",
       "zip_placeholder": "Entrez votre code postal",
       "phone": "Téléphone",
@@ -405,7 +414,7 @@
     "button": "Entrer en utilisant un mot de passe",
     "submit": "Entrer",
     "error": "Le mot de passe que vous avez entré est incorrect. Veuillez réessayer.",
-    "admin_link_html": "Êtes-vous le propriétaire de la boutique ? <a href=\"\/admin\">Connectez-vous ici<\/a>",
+    "admin_link_html": "Êtes-vous le propriétaire de la boutique ? <a href=\"/admin\">Connectez-vous ici</a>",
     "powered_by_shopify_html": "Cette boutique sera alimentée par {{shopify}}"
   },
   "sections": {

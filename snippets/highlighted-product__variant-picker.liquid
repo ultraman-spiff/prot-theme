@@ -63,7 +63,7 @@
 
         <fieldset class="product-selector__buttons product__variant-options js-product-variants{% if product.has_only_default_variant %} hidden {% endif %}" data-input-wrapper>
           {%- if block.settings.variant_picker_layout != 'product-selector--stacked' or block.settings.variant_picker_type == 'buttons' -%}
-            <legend class="product-selector__label font-subheading">
+            <legend class="product-selector__label">
               <span class="product-selector__label-text">
                 {{- option.name -}}
               </span>

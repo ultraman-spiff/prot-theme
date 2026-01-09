@@ -23,7 +23,9 @@
     {%- endif -%}
     --megamenu-dropdown-column-width: {{ section.settings.megamenu_dropdown_column_width }}rem;
   }
-
+  #shopify-section-{{ section.id }} > .header .text--link {
+    font-size: var(--font-size-static-{{ section.settings.link_size }});
+  }
   #shopify-section-{{ section.id }} .header__nav-item.megamenu .header__nav-links-item.has-dropdown > .header__nav-dropdown-link {
     font-size: var(--font-size-static-{{ section.settings.parent_link_size }});
   }
@@ -74,14 +76,15 @@
       color: rgb(var(--color-filled-button-text));
       background: rgb(var(--color-filled-button));
       position: absolute;
-      inset-block-end: 1.5rem;
-      inset-inline-start: 0.2rem;
+      inset-block-start: 0.2rem;
+      inset-inline-end: -0.4rem;
+      margin: 0;
     }
     @media screen and (min-width: 990px) {
       .header__utils-item .icon-with-text .icon {
         display: block;
       }
-      .header__utils-item .icon-with-text .icon__text {
+      .header__utils-item:has(.drawer--search) .icon-with-text .icon__text {
         display: none;
       }
     }
@@ -104,8 +107,27 @@
       }
     }
   {%- endif -%}
-{%- endstyle -%}
 
+  .header__logo {
+    width: {{ section.settings.logo_width_mobile | divided_by: 10.0 }}rem;
+  }
+  .header__logo.header__logo-text .h4 {
+    font-size: calc(var(--font-heading-scale) * 1.6rem * {{ section.settings.logo_font_size }});
+  }
+  @media screen and (min-width: 750px) {
+    .header__logo {
+      width: {{ section.settings.logo_width | divided_by: 10.0 }}rem;
+    }
+    .header__logo.header__logo-text .h4 {
+      font-size: calc(var(--font-heading-scale) * 1.8rem * {{ section.settings.logo_font_size }});
+    }
+  }
+
+  #shopify-section-{{ section.id }} .header__card.media-position--background {
+    --content-padding: calc(var(--section-spacing-unit-size) * 1.5);
+    height: 100%;
+  }
+{%- endstyle -%}
 
 <div id="header" class="header js-header{{ header_classes }} section-{{ section.id }} color-{{ section.settings.color_scheme }} gradient">
   <div class="container {{ section.settings.section_width }}">
@@ -128,10 +150,21 @@
 
                 {% liquid
                   assign link_item_index = forloop.index
+
+                  assign menu_item_style = false
+                  assign menu_item_style_color = ''
+                  assign menu_item_badge = ''
+
                   assign count_of_images = 0
                   for block in section.blocks
                     if link_item_index != block.settings.menu_item_position
                       continue
+                    endif
+
+                    if block.type == 'menu-item-style'
+                      assign menu_item_style = true
+                      assign menu_item_style_color = block.settings.color_scheme
+                      assign menu_item_badge = block.settings.menu_item_badge
                     endif
 
                     if block.settings.title != blank or block.settings.subtitle != blank or block.settings.image != blank
@@ -168,9 +201,11 @@
                       {%- continue -%}
                     {%- endif -%}
 
-                    {%- assign menu_dropdown_items_size = menu_dropdown_items_size | plus: 1 -%}
+                    {%- if block.type == 'image-link-text' -%}
+                      {%- assign menu_dropdown_items_size = menu_dropdown_items_size | plus: 1 -%}
+                    {%- endif -%}
 
-                    {%- if block.settings.title != blank or block.settings.subtitle != blank or block.settings.image != blank-%}
+                    {%- if block.type == 'image-link-text' -%}
                       {%- liquid
                         assign show_on_class = block.settings.show_on
                         if show_on_class == 'mobile'
@@ -183,28 +218,26 @@
                       -%}
 
                       <li class="header__nav-links-item header__nav-links-item--card block-{{ block.id }} {{ show_on_class }}" {{ block.shopify_attributes }}>
-                        <div class="card header__card header__card-text color-{{ block.settings.color_scheme }}">
+                        <div class="card header__card header__card-text color-{{ block.settings.color_scheme }} media-position--background">
                           {%- if block.settings.image != blank -%}
                           <div class="media media--overlay card__media">
                             {%- render 'image', image: block.settings.image, loading: 'eager' -%}
                           </div>
                           {%- endif -%}
 
-                          {%- if block.settings.title != blank or block.settings.subtitle != blank -%}
-                            <div class="card__content {{ block.settings.content_position_horizontal }} {{ block.settings.content_position_vertical }}">
-                              {%- if block.settings.subtitle != blank -%}
-                                <span class="card__subtitle">
-                                  {{- block.settings.subtitle -}}
-                                </span>
-                              {%- endif -%}
+                          <div class="content {{ block.settings.content_position_horizontal }} {{ block.settings.content_position_vertical }}">
+                            {%- if block.settings.subtitle != blank -%}
+                              <span class="card__subtitle">
+                                {{- block.settings.subtitle -}}
+                              </span>
+                            {%- endif -%}
 
-                              {%- if block.settings.title != blank -%}
-                                <h6 class="card__title h4">
-                                  {{- block.settings.title -}}
-                                </h6>
-                              {%- endif -%}
-                            </div>
-                          {%- endif -%}
+                            {%- if block.settings.title != blank -%}
+                              <h6 class="card__title h4">
+                                {{- block.settings.title -}}
+                              </h6>
+                            {%- endif -%}
+                          </div>
                           {%- if block.settings.link -%}
                             <a href="{{- block.settings.link -}}" class="card__link">
                               <span class="visually-hidden">{{- block.settings.title -}}</span>
@@ -271,13 +304,21 @@
                     title="{{- link.title | escape -}}"
                     {% if link.current %}aria-current="page"{% endif %}
                   >
-                    {{- link.title | escape -}}
+                    {%- if menu_item_style -%}
+                      <span{% if menu_item_badge == blank %} class="header__tag--without color-{{ menu_item_style_color }}"{% endif %}>
+                        {{- link.title | escape -}}
+                      </span>
+                      {%- if menu_item_badge != blank -%}
+                        <span class="header__tag color-{{ menu_item_style_color }}">{{ menu_item_badge }}</span>
+                      {%- endif -%}
+                    {%- else -%}
+                      {{- link.title | escape -}}
+                    {%- endif -%}
+
                     {% if has_dropdown %}
                       {% render 'icon', icon_name: 'theme-chevron', class: 'icon icon--rotate-90' %}
                     {% endif %}
                   </a>
-
-
 
                   {%- if has_dropdown -%}
                     <div class="header__nav-dropdown js-dropdown" data-menu-content="{{ link.title | escape }}">
@@ -321,12 +362,8 @@
                                     <ul class="header__nav-sublinks list-unstyled" data-child-menu-content="{{- child_link.title | escape -}}">
                                       {%- for grand_child_link in child_link.links -%}
                                         <li class="header__nav-sublinks-item">
-                                          <a
-                                            href="{{- grand_child_link.url -}}"
-                                            class="header__nav-dropdown-link header__nav-childlink{% if grand_child_link.current %} is-current{% endif %}"
-                                            {% if grand_child_link.current %} aria-current="page"{% endif %}
-                                          >
-                                            {{- grand_child_link.title | escape -}}
+                                          <a href="{{- grand_child_link.url -}}" class="header__nav-dropdown-link header__nav-childlink text-link{% if grand_child_link.current %} is-current{% endif %}" {% if grand_child_link.current %} aria-current="page"{% endif %}>
+                                            <span class="text-link--on-hover">{{- grand_child_link.title | escape -}}</span>
                                           </a>
                                         </li>
                                       {%- endfor -%}
@@ -336,7 +373,6 @@
                               {%- endfor -%}
                             </div>
                           {% endif %}
-
                           {%- if count_of_images > 0 -%}
                             {%- style -%}
                               .header__nav-item-{{ forloop.index }}.megamenu {
@@ -348,7 +384,6 @@
                               {{ menu_dropdown_items }}
                             </div>
                           {%- endif -%}
-
                         </ul>
                       </div>
                     </div>
@@ -356,7 +391,7 @@
                 </li>
               {%- endfor -%}
 
-              @@additional_links_placeholder@@
+            @@additional_links_placeholder@@
             </ul>
           </nav>
         {%- endcapture -%}
@@ -364,73 +399,73 @@
 
       {%- capture header_logo -%}
 
-      {%- liquid
-        assign header_logo_text_class = ''
-        if section.settings.logo_svg_code == blank and section.settings.logo == blank
-          assign header_logo_text_class = 'header__logo-text'
-        endif
-      -%}
+        {%- liquid
+          assign header_logo_text_class = ''
+          if section.settings.logo_svg_code == blank and section.settings.logo == blank
+            assign header_logo_text_class = 'header__logo-text'
+          endif
+        -%}
 
-      <div class="header__logo {{ header_logo_text_class }}">
-        <a href="{{- routes.root_url -}}" class="full-unstyled-link">
-          {%- if section.settings.logo_svg_code != blank -%}
-            {{- section.settings.logo_svg_code -}}
-          {%- elsif section.settings.logo != blank -%}
-            {% liquid
-              assign logo_image_size_double = section.settings.logo_width | times: 2 | at_most: 5760
-              capture logo_srcset
-                assign logo_srcset = section.settings.logo | image_url: width: section.settings.logo_width
-                assign logo_srcset_double = section.settings.logo | image_url: width: logo_image_size_double
-                echo logo_srcset | append: ' 1x' | append: ', ' | append: logo_srcset_double | append: ' 2x'
-              endcapture
-              assign logo_alt = section.settings.logo.alt | default: shop.name | escape
-            %}
+        <div class="header__logo {{ header_logo_text_class }}">
+          <a href="{{- routes.root_url -}}" class="full-unstyled-link">
+            {%- if section.settings.logo_svg_code != blank -%}
+              {{- section.settings.logo_svg_code -}}
+            {%- elsif section.settings.logo != blank -%}
+              {% liquid
+                assign logo_image_size_double = section.settings.logo_width | times: 2 | at_most: 5760
+                capture logo_srcset
+                  assign logo_srcset = section.settings.logo | image_url: width: section.settings.logo_width
+                  assign logo_srcset_double = section.settings.logo | image_url: width: logo_image_size_double
+                  echo logo_srcset | append: ' 1x' | append: ', ' | append: logo_srcset_double | append: ' 2x'
+                endcapture
+                assign logo_alt = section.settings.logo.alt | default: shop.name | escape
+              %}
 
-            {{ section.settings.logo
-              | image_url: width: section.settings.logo_width
-              | image_tag:
-                class: 'header__logo-image new',
-                width: section.settings.logo.width,
-                height: section.settings.logo.height,
-                srcset: logo_srcset,
-                alt: logo_alt,
-                preload: true
-            }}
+              {{ section.settings.logo
+                | image_url: width: section.settings.logo_width
+                | image_tag:
+                  class: 'header__logo-image new',
+                  width: section.settings.logo.width,
+                  height: section.settings.logo.height,
+                  srcset: logo_srcset,
+                  alt: logo_alt,
+                  preload: true
+              }}
 
-            {% liquid
-              assign logo_transparent_image_size_double = section.settings.logo_width | times: 2 | at_most: 5760
+              {% liquid
+                assign logo_transparent_image_size_double = section.settings.logo_width | times: 2 | at_most: 5760
 
-              if section.settings.logo_transparent
-                assign logo_transparent_image = section.settings.logo_transparent
-              else
-                assign logo_transparent_image = section.settings.logo
-              endif
+                if section.settings.logo_transparent
+                  assign logo_transparent_image = section.settings.logo_transparent
+                else
+                  assign logo_transparent_image = section.settings.logo
+                endif
 
-              capture logo_transparent_srcset
-                assign logo_srcset = logo_transparent_image | image_url: width: section.settings.logo_width
-                assign logo_srcset_double = logo_transparent_image | image_url: width: logo_transparent_image_size_double
-                echo logo_srcset | append: ' 1x' | append: ', ' | append: logo_srcset_double | append: ' 2x'
-              endcapture
-              assign logo_transparent_alt = logo_transparent_image.alt | default: shop.name | escape
-            %}
+                capture logo_transparent_srcset
+                  assign logo_srcset = logo_transparent_image | image_url: width: section.settings.logo_width
+                  assign logo_srcset_double = logo_transparent_image | image_url: width: logo_transparent_image_size_double
+                  echo logo_srcset | append: ' 1x' | append: ', ' | append: logo_srcset_double | append: ' 2x'
+                endcapture
+                assign logo_transparent_alt = logo_transparent_image.alt | default: shop.name | escape
+              %}
 
-            {{ logo_transparent_image
-              | image_url: width: section.settings.logo_width
-              | image_tag:
-                class: 'header__logo-image-transparent new',
-                width: section.settings.logo.width,
-                height: section.settings.logo.height,
-                srcset: logo_transparent_srcset,
-                alt: logo_transparent_alt,
-                preload: true
-            }}
+              {{ logo_transparent_image
+                | image_url: width: section.settings.logo_width
+                | image_tag:
+                  class: 'header__logo-image-transparent new',
+                  width: section.settings.logo.width,
+                  height: section.settings.logo.height,
+                  srcset: logo_transparent_srcset,
+                  alt: logo_transparent_alt,
+                  preload: true
+              }}
 
-          {%- else -%}
-            <span class="h4">{{- shop.name | escape -}}</span>
-          {%- endif -%}
-        </a>
-      </div>
-    {%- endcapture -%}
+            {%- else -%}
+              <span class="h4">{{- shop.name | escape -}}</span>
+            {%- endif -%}
+          </a>
+        </div>
+      {%- endcapture -%}
 
       {%- capture header_utils -%}
         <nav class="header__utils">
@@ -442,7 +477,7 @@
                 <desktop-drawer class="drawer">
                   {%- liquid
                     assign append_id = 'header-' | append: section.id
-                    render 'country-drawer', button_class: 'header__utils-link text--link', section: section, append_id: append_id
+                    render 'country-drawer', button_class: 'header__utils-link text-link', section: section, append_id: append_id
                   -%}
                 </desktop-drawer>
               </li>
@@ -453,27 +488,25 @@
             </li>
 
             {%- if shop.customer_accounts_enabled -%}
-              <li class="header__utils-item header__utils-item--account">
-                <a
-                  href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-                  class="header__utils-link text--link"
-                  title="{%- if customer -%}{{ 'customer.account.label' | t }}{%- else -%}{{ 'theme.actions.log_in' | t }}{%- endif -%}"
-                >
+              <li class="header__utils-item header__utils-item--account header__utils-item--mobile">
+                <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__utils-link text-link" title="{%- if customer -%}{{ 'customer.account.label' | t }}{%- else -%}{{ 'theme.actions.log_in' | t }}{%- endif -%}">
                   {%- liquid
                     if customer
                       assign icon_text = 'customer.account.label' | t
                     else
                       assign icon_text = 'theme.actions.log_in' | t
                     endif
-                    render 'icon', icon_name: 'theme-user', text: icon_text, class: 'header__utils-link--icon'
+                    render 'icon', icon_name: 'theme-user', text: icon_text, class: 'header__utils-link--icon text-link--on-hover'
                   -%}
                 </a>
               </li>
             {%- endif -%}
 
             <li class="header__utils-item header__utils-item--cart header__utils-item--mobile">
-              <a href="{{- routes.cart_url -}}" class="header__utils-link header__utils-link--cart text--link" title="{{- 'cart.label' | t -}}" id="cart-counter" data-cart-link>
-                {%- render 'cart-counter' -%}
+              <a href="{{- routes.cart_url -}}" class="header__utils-link header__utils-link--cart text-link" title="{{- 'cart.label' | t -}}" id="cart-counter" data-cart-link>
+                <div class="header__utils-link--icon text-link--on-hover">
+                  {%- render 'cart-counter' -%}
+                </div>
               </a>
             </li>
           </ul>
@@ -483,16 +516,20 @@
       {%- capture header_additional_links -%}
         {%- if section.settings.first_additional_link_title != blank and section.settings.first_additional_link_url != blank -%}
           <li class="header__@@type@@-item">
-            <a href="{{- section.settings.first_additional_link_url -}}" class="header__@@type@@-link text--link">
-              {{- section.settings.first_additional_link_title -}}
+            <a href="{{- section.settings.first_additional_link_url -}}" class="header__@@type@@-link text-link">
+              <span class="text-link--on-hover">
+                {{- section.settings.first_additional_link_title -}}
+              </span>
             </a>
           </li>
         {%- endif -%}
 
         {%- if section.settings.second_additional_link_title != blank and section.settings.second_additional_link_url != blank -%}
           <li class="header__@@type@@-item">
-            <a href="{{- section.settings.second_additional_link_url -}}" class="header__@@type@@-link text--link">
-              {{- section.settings.second_additional_link_title -}}
+            <a href="{{- section.settings.second_additional_link_url -}}" class="header__@@type@@-link text-link">
+              <span class="text-link--on-hover">
+                {{- section.settings.second_additional_link_title -}}
+              </span>
             </a>
           </li>
         {%- endif -%}
@@ -526,23 +563,6 @@
     </div>
   </div>
 </div>
-
-{% style %}
-  .header__logo {
-    width: {{ section.settings.logo_width_mobile | divided_by: 10.0 }}rem;
-  }
-  .header__logo.header__logo-text .h4 {
-    font-size: calc(var(--font-heading-scale) * 1.6rem * {{ section.settings.logo_font_size }});
-  }
-  @media screen and (min-width: 750px) {
-    .header__logo {
-      width: {{ section.settings.logo_width | divided_by: 10.0 }}rem;
-    }
-    .header__logo.header__logo-text .h4 {
-      font-size: calc(var(--font-heading-scale) * 1.8rem * {{ section.settings.logo_font_size }});
-    }
-  }
-{% endstyle %}
 
 <script type="application/ld+json">
   {
@@ -606,7 +626,8 @@
           "value": "header--logo-nav-aligned-start",
           "label": "t:sections.header.settings.layout.options.logo_nav_aligned_start.label"
         }
-      ]
+      ],
+      "default": ""
     },
     {
       "type": "checkbox",
@@ -803,6 +824,34 @@
     {
       "type": "header",
       "content": "t:sections.global.header.megamenu.content"
+    },
+    {
+      "type": "select",
+      "id": "link_size",
+      "label": "t:sections.header.settings.link_size.label",
+      "options": [
+        {
+          "value": "xs",
+          "label": "XS"
+        },
+        {
+          "value": "sm",
+          "label": "S"
+        },
+        {
+          "value": "md",
+          "label": "M"
+        },
+        {
+          "value": "lg",
+          "label": "L"
+        },
+        {
+          "value": "xl",
+          "label": "XL"
+        }
+      ],
+      "default": "xs"
     },
     {
       "type": "select",
@@ -1262,6 +1311,30 @@
           "type": "url",
           "id": "link",
           "label": "t:sections.global.element.link.label"
+        }
+      ]
+    },
+    {
+      "type": "menu-item-style",
+      "name": "t:sections.header.blocks.menu-item-style.name",
+      "settings": [
+        {
+          "type": "number",
+          "id": "menu_item_position",
+          "label": "t:sections.header.blocks.settings.menu_item_position.label",
+          "info": "t:sections.header.blocks.settings.menu_item_position.info"
+        },
+        {
+          "type": "text",
+          "id": "menu_item_badge",
+          "label": "t:sections.header.blocks.settings.menu_item_badge.label",
+          "info": "t:sections.header.blocks.settings.menu_item_badge.info"
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:sections.global.color_scheme.label",
+          "default": "scheme-1"
         }
       ]
     }

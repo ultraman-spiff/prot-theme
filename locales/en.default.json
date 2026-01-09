@@ -4,7 +4,7 @@
       "open_in_new_window": "Opens in a new window.",
       "refresh_page": "Choosing a selection results in a full page refresh.",
       "skip_to_content": "Skip to content",
-      "slideshow": "Use left\/right arrows to navigate the slideshow or swipe left\/right if using a mobile device"
+      "slideshow": "Use left/right arrows to navigate the slideshow or swipe left/right if using a mobile device"
     },
     "actions": {
       "add": "Add",
@@ -39,7 +39,7 @@
       "search": "Search"
     },
     "date": {
-      "format_day_month_year": "%d\/%m\/%Y",
+      "format_day_month_year": "%d/%m/%Y",
       "format_month_year": "%B %Y",
       "format_numbers": "%d.%m.%Y",
       "format_short": "%B %d, %Y"
@@ -153,7 +153,16 @@
     "preorder_badge": "Pre-order",
     "preorder_info": "This product is currently on pre-order.",
     "preorder_notice": "This product will ship on {{date}}.",
-    "preorder_warning_html": "* By clicking 'Pre-order', <strong>I acknowledge that I am purchasing a pre-order item, not an in-stock product</strong>, and agree to the Terms & Conditions of the pre-order process."
+    "preorder_warning_html": "* By clicking 'Pre-order', <strong>I acknowledge that I am purchasing a pre-order item, not an in-stock product</strong>, and agree to the Terms & Conditions of the pre-order process.",
+    "badges": {
+      "new": "New",
+      "best_seller": "Best seller",
+      "featured": "Featured",
+      "on_sale": "On sale",
+      "coming_soon": "Coming soon",
+      "pre_order": "Pre-order",
+      "sold_out": "Sold out"
+    }
   },
   "collection": {
     "label": "Collection",
@@ -304,9 +313,9 @@
       "city_placeholder": "Enter your city",
       "province": "Province",
       "province_placeholder": "Enter your province",
-      "country": "Country \/ Region",
-      "zip": "Postal\/ZIP code",
-      "zip_placeholder": "Enter your postal\/ZIP code",
+      "country": "Country / Region",
+      "zip": "Postal/ZIP code",
+      "zip_placeholder": "Enter your postal/ZIP code",
       "phone": "Phone",
       "phone_placeholder": "Enter your phone number",
       "default": "Default address",
@@ -405,7 +414,7 @@
     "button": "Enter using password",
     "submit": "Enter",
     "error": "The password you entered is incorrect. Please try again.",
-    "admin_link_html": "Are you the store owner? <a href=\"\/admin\">Log in here<\/a>",
+    "admin_link_html": "Are you the store owner? <a href=\"/admin\">Log in here</a>",
     "powered_by_shopify_html": "This shop will be powered by {{shopify}}"
   },
   "sections": {

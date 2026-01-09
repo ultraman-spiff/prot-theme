@@ -354,22 +354,22 @@
       --h5-multiplier: 2.7rem;
       --h6-multiplier: 2.1rem;
 
-    /* lowercase headings need more line-height */
-    {% if settings.heading_text_transform == 'uppercase' %}
-      --line-height-h1: 0.85;
-      --line-height-h2: 0.85;
-      --line-height-h3: 0.85;
-      --line-height-h4: 0.85;
-      --line-height-h5: 1.00;
-      --line-height-h6: 1.00;
-    {% else %}
-      --line-height-h1: 1.00;
-      --line-height-h2: 1.00;
-      --line-height-h3: 1.00;
-      --line-height-h4: 1.00;
-      --line-height-h5: 1.00;
-      --line-height-h6: 1.00;
-    {% endif %}
+      /* lowercase headings need more line-height */
+      {% if settings.heading_text_transform == 'uppercase' %}
+        --line-height-h1: 0.85;
+        --line-height-h2: 0.85;
+        --line-height-h3: 0.85;
+        --line-height-h4: 0.85;
+        --line-height-h5: 1.00;
+        --line-height-h6: 1.00;
+      {% else %}
+        --line-height-h1: 1.00;
+        --line-height-h2: 1.00;
+        --line-height-h3: 1.00;
+        --line-height-h4: 1.00;
+        --line-height-h5: 1.00;
+        --line-height-h6: 1.00;
+      {% endif %}
       /* typography - heading - end */
     }
   }

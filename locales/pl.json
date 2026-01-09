@@ -4,7 +4,7 @@
       "open_in_new_window": "Otwiera się w nowym oknie.",
       "refresh_page": "Wybranie selekcji powoduje odświeżenie całej strony.",
       "skip_to_content": "Przejdź do treści",
-      "slideshow": "Użyj strzałek w lewo\/w prawo, aby nawigować po pokazie slajdów lub przesuń w lewo\/w prawo, jeśli używasz urządzenia mobilnego"
+      "slideshow": "Użyj strzałek w lewo/w prawo, aby nawigować po pokazie slajdów lub przesuń w lewo/w prawo, jeśli używasz urządzenia mobilnego"
     },
     "actions": {
       "add": "Dodaj",
@@ -39,7 +39,7 @@
       "search": "Szukaj"
     },
     "date": {
-      "format_day_month_year": "%d\/%m\/%Y",
+      "format_day_month_year": "%d/%m/%Y",
       "format_month_year": "%B %Y",
       "format_numbers": "%d.%m.%Y",
       "format_short": "%d %B %Y"
@@ -153,7 +153,16 @@
     "preorder_badge": "Przedsprzedaż",
     "preorder_info": "Ten produkt jest obecnie dostępny w przedsprzedaży.",
     "preorder_notice": "Ten produkt zostanie wysłany {{date}}.",
-    "preorder_warning_html": "* Klikając 'Zamów w przedsprzedaży', <strong>akceptuję, że kupuję produkt w przedsprzedaży, a nie produkt dostępny w magazynie</strong> i zgadzam się z warunkami procesu przedsprzedaży."
+    "preorder_warning_html": "* Klikając 'Zamów w przedsprzedaży', <strong>akceptuję, że kupuję produkt w przedsprzedaży, a nie produkt dostępny w magazynie</strong> i zgadzam się z warunkami procesu przedsprzedaży.",
+    "badges": {
+      "new": "Nowy",
+      "best_seller": "Najlepiej sprzedający się",
+      "featured": "Wyróżniony",
+      "on_sale": "Na wyprzedaży",
+      "coming_soon": "Wkrótce dostępny",
+      "pre_order": "Zamów w przedsprzedaży",
+      "sold_out": "Wyprzedany"
+    }
   },
   "collection": {
     "label": "Kolekcja",
@@ -304,7 +313,7 @@
       "city_placeholder": "Wprowadź swoje miasto",
       "province": "Województwo",
       "province_placeholder": "Wprowadź swoje województwo",
-      "country": "Kraj \/ Region",
+      "country": "Kraj / Region",
       "zip": "Kod pocztowy",
       "zip_placeholder": "Wprowadź kod pocztowy",
       "phone": "Telefon",
@@ -405,7 +414,7 @@
     "button": "Wejdź za pomocą hasła",
     "submit": "Wyślij",
     "error": "Wprowadzone hasło jest nieprawidłowe. Proszę spróbuj ponownie.",
-    "admin_link_html": "Jesteś właścicielem sklepu? <a href=\"\/admin\">Zaloguj się tutaj<\/a>",
+    "admin_link_html": "Jesteś właścicielem sklepu? <a href=\"/admin\">Zaloguj się tutaj</a>",
     "powered_by_shopify_html": "Ten sklep będzie zasilany przez {{shopify}}"
   },
   "sections": {

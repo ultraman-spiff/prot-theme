@@ -964,33 +964,6 @@ export class SkioPlanPicker extends LitElement {
     `
   }
 
-    oneTimeContent() {
-    return html`
-      <div class="group-content ${this.options?.layout == 'horizontal' ? '' : this.options?.show_radio_selector && this.options?.dropdownPosition == 'inside' ? 'margin-left' : ''}">
-        
-      <div class='icon-group-wrapper'>
-          <div class="subscribe-order plan-icon-title">
-            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
-  <circle cx="11.5" cy="11.5" r="11.5" fill="#4a134a"/>
-  <path d="M8.04138 7.6805L15.6805 15.3196" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M8.04138 15.3195L15.6805 7.6804" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-</svg>
-            No free gifts or goodies
-          </div>
-          <div class="subscribe-order plan-icon-title">
-            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
-  <circle cx="11.5" cy="11.5" r="11.5" fill="#4a134a"/>
-  <path d="M8.04138 7.6805L15.6805 15.3196" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M8.04138 15.3195L15.6805 7.6804" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-</svg>
-            No extra discount
-          </div>
-        </div> 
-      
-      </div>
-    `
-  }
-
   showDetails() {
     return html`
       <details class="skio-details" @mouseover=${e => this.detailsMouseover()} @mouseleave=${e => this.detailsMouseleave()}>
@@ -1135,7 +1108,6 @@ export class SkioPlanPicker extends LitElement {
                       ${this.money(this.selectedVariant.price)}
                     </div>
                   </div>
-                  ${this.oneTimeContent()}
                 </label>
               </div>
             `

@@ -69,14 +69,6 @@
   aspect-ratio: 3 / 4;
   border-radius: var(--card-corner-radius);
   overflow: hidden;
-  display: flex;
-  align-items: center;
-}
-
-.product__media .media img {
-  border-radius: 10px;
-  overflow: hidden;
-  height: fit-content;
 }
 
 .product__media[data-auto-height="true"] .media {
@@ -711,6 +703,7 @@ product-modal {
   color: rgb(var(--color-primary-text));
   font-size: var(--font-size-static-lg) !important;
   line-height: var(--line-height-static-sm);
+  font-weight: var(--font-weight-heading-semibold);
   text-transform: uppercase;
   letter-spacing: normal;
   justify-content: flex-start;

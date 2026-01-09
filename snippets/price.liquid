@@ -48,6 +48,7 @@
   {%- if compare_at_price > price %} price--on-sale {% endif -%}
   {%- if product.price_varies == false and product.compare_at_price_varies %} price--no-compare{% endif -%}
 ">
+  <span class="visually-hidden">{{ money_price }}</span>
 
   <div class="price__container"
     data-label-price-regular="{{ 'product.price_regular' | t }}"
@@ -70,14 +71,14 @@
           <div class="{{ sale_container_class }}">
             <div class="price__sale-inner">
               <span class="visually-hidden">{{- 'product.price_regular' | t -}}</span>
-              <s>{{- compare_at_price_max | money -}}</s>
+              <s {{ rtl_attr }}>{{- compare_at_price_max | money -}}</s>
               <ins>
                 {{- 'product.price_from' | t -}}
                 <span class="visually-hidden">{{- 'product.price_min' | t -}}</span>
-                <span>{{- money_price_min -}}</span>
+                <span {{ rtl_attr }}>{{- money_price_min -}}</span>
                 <span aria-hidden="true">-</span>
                 <span class="visually-hidden">{{- 'product.price_max' | t -}}</span>
-                <span>{{- money_price_max -}}</span>
+                <span {{ rtl_attr }}>{{- money_price_max -}}</span>
               </ins>
             </div>
           </div>
@@ -85,10 +86,10 @@
         {% else %}
           <div class="price__regular">
             <span class="visually-hidden">{{- 'product.price_min' | t -}}</span>
-            <span>{{- money_price_min -}}</span>
+            <span {{ rtl_attr }}>{{- money_price_min -}}</span>
             <span aria-hidden="true">-</span>
             <span class="visually-hidden">{{- 'product.price_max' | t -}}</span>
-            <span>{{- money_price_max -}}</span>
+            <span {{ rtl_attr }}>{{- money_price_max -}}</span>
           </div>
         {%- endif -%}
 
@@ -99,10 +100,10 @@
             <div class="{{ sale_container_class }}">
               <div class="price__sale-inner">
                 <span class="visually-hidden">{{- 'product.price_regular' | t -}}</span>
-                <s>{{- compare_at_price | money -}}</s>
+                <s {{ rtl_attr }}>{{- compare_at_price | money -}}</s>
                 <ins>
                   <span class="visually-hidden">{{- 'product.price_sale' | t -}}</span>
-                  <ins>{{ money_price }}</ins>
+                  <ins {{ rtl_attr }}>{{ money_price }}</ins>
                 </ins>
               </div>
             </div>
@@ -111,17 +112,17 @@
             <div class="{{ sale_container_class }}">
               <div class="price__sale-inner">
                 <span class="visually-hidden">{{- 'product.price_regular' | t -}}</span>
-                <s>{{- product.compare_at_price_max | money -}}</s>
+                <s {{ rtl_attr }}>{{- product.compare_at_price_max | money -}}</s>
                 <ins>
                   {%- if price_min != price_max -%}
                   {{- 'product.price_from' | t -}}
                   {%- endif -%}
                   <span class="visually-hidden">{{- 'product.price_min' | t -}}</span>
-                  <span>{{- money_price_min -}}</span>
+                  <span {{ rtl_attr }}>{{- money_price_min -}}</span>
                   {%- if price_min != price_max -%}
                     <span aria-hidden="true">-</span>
                     <span class="visually-hidden">{{- 'product.price_max' | t -}}</span>
-                    <span>{{- money_price_max -}}</span>
+                    <span {{ rtl_attr }}>{{- money_price_max -}}</span>
                   {%- endif -%}
                 </ins>
               </div>
@@ -132,7 +133,7 @@
 
         <div class="price__regular">
           <span class="visually-hidden">{{- 'product.price_regular' | t -}}</span>
-          <span>{{ money_price }}</span>
+          <span {{ rtl_attr }}>{{ money_price }}</span>
         </div>
 
       {%- endif -%}

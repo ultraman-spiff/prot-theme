@@ -52,16 +52,6 @@
       }
     }
   {% endif %}
-
-  @media screen and (max-width: 749px) {
-    #shopify-section-{{ section.id }} a.section-multitile__content--button.button {
-      width: 100%;
-      padding: calc(20 * 100vw / 720) calc(40 * 100vw / 720);
-      font-size: calc(24px - 10 / 370 * (750px - 100vw));
-      margin-top: calc(42 * 100vw / 720);
-      font-weight: 600;
-    }
-  }
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
@@ -84,7 +74,13 @@
             {%- else -%}
               --block-height: 100%;
             {%- endif -%}
+
+            {% if block.type == 'slideshow' -%}
+              display: inline;
+              --block-slideshow-item-ratio: {{ block.settings.media_aspect_ratio | default: '16/9' }};
+            {% endif %}
           }
+
         {%- endstyle -%}
         {%- liquid
           assign show_on_class = block.settings.show_on
@@ -285,7 +281,7 @@
                     if item_heading != blank or item_text != blank or item_image != blank
                       capture slideshow_item
                         echo '<div class="swiper-slide section-multitile__swiper-slide">'
-                          echo '<div class="section-multitile__slideshow-item ' | append: media_position_class | append: '"">'
+                          echo '<div class="section-multitile__slideshow-item ' | append: media_position_class | append: '">'
                             if item_image != blank
                               echo '<div class="section-multitile__slideshow-item-media media" style="aspect-ratio:' | append: block.settings.media_aspect_ratio | append: ';">'
                                 render 'image', image: item_image
@@ -337,7 +333,7 @@
                   if item_heading != blank or item_text != blank or item_image != blank
                     capture slideshow_item
                       echo '<div class="swiper-slide section-multitile__swiper-slide">'
-                        echo '<div class="section-multitile__slideshow-item ' | append: media_position_class | append: '"">'
+                        echo '<div class="section-multitile__slideshow-item ' | append: media_position_class | append: '">'
                           if item_image != blank
                             echo '<div class="section-multitile__slideshow-item-media media" style="aspect-ratio:' | append: item_media_aspect_ratio | append: ';">'
                               render 'image', image: item_image
@@ -373,11 +369,11 @@
               endif
             -%}
             {% style %}
-              {%- if item_heading != blank or item_text != blank -%}
+              {% if item_heading != blank or item_text != blank %}
                 --block-aspect-ratio: auto;
-              {%- else -%}
+              {% else %}
                 --block-aspect-ratio: {{ block.settings.media_aspect_ratio | default: 'auto' }};
-              {%- endif -%}
+              {% endif %}
               .block-{{ block.id }} {
                 --block-aspect-ratio: {{ block.settings.media_aspect_ratio | default: 'auto' }};
               }
@@ -549,22 +545,26 @@
     {
       "type": "select",
       "id": "section_width",
+      "label": "t:sections.global.settings.section_width.label",
       "options": [
         {
           "value": "max-w-page",
-          "label": "t:sections.global.settings.section_width.options__1.label"
+          "label": "t:sections.global.section_width.options.page.label"
+        },
+        {
+          "value": "max-w-narrower",
+          "label": "t:sections.global.section_width.options.narrower.label"
         },
         {
           "value": "max-w-fluid",
-          "label": "t:sections.global.settings.section_width.options__2.label"
+          "label": "t:sections.global.section_width.options.fluid.label"
         },
         {
           "value": "max-w-full",
-          "label": "t:sections.global.settings.section_width.options__3.label"
+          "label": "t:sections.global.section_width.options.full.label"
         }
       ],
-      "default": "max-w-page",
-      "label": "t:sections.global.settings.section_width.label"
+      "default": "max-w-page"
     },
     {
       "type": "select",

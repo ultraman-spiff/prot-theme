@@ -57,11 +57,26 @@
     {%- endif -%}
     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
       <span itemprop="name">
-        {%- if template.name != 'search' -%}
+        {%- if template.name == 'index' -%}
+          {{- 'theme.breadcrumb.home' | t -}}
+        {%- elsif template.name == 'collection' -%}
+          {{- collection.title | escape -}}
+        {%- elsif template.name == 'product' -%}
+          {{- product.title | escape -}}
+        {%- elsif template.name == 'article' -%}
+          {{- article.title | escape -}}
+        {%- elsif template.name == 'page' -%}
+          {{- page_title | escape -}}
+        {%- elsif template.name == 'search' -%}
+          {{- 'theme.breadcrumb.search' | t -}}
+        {%- else -%}
+          {{- page_title | escape -}}
+        {%- endif -%}
+        {% comment %} {%- if template.name != 'search' -%}
           {{- page_title | escape -}}
         {%- else -%}
           {{- 'theme.breadcrumb.search' | t -}}
-        {%- endif -%}
+        {%- endif -%} {% endcomment %}
       </span>
       <meta itemprop="position" content="3" />
     </li>

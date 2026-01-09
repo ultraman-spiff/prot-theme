@@ -13,11 +13,7 @@
 {%- endstyle -%}
 
 {%- if section.settings.pagination_style == 'load_more' -%}
-  <script src="{{- 'collection-load-more.js' | asset_url -}}" defer="defer"></script>
-  <script src="{{- 'collection-load-previous.js' | asset_url -}}" defer="defer"></script>
-  {%- if section.settings.enable_infinity_scroll -%}
-    <script src="{{- 'collection-infinity-scroll.js' | asset_url -}}" defer="defer"></script>
-  {%- endif -%}
+  <script src="{{- 'dynamic-load-more.js' | asset_url -}}" defer="defer"></script>
 {%- endif -%}
 
 {%- paginate blog.articles by section.settings.articles_per_page -%}
@@ -69,22 +65,22 @@
       {%- endif -%}
       <div class="container {{ section.settings.section_width }}">
 
-        <div class="blog__articles" id="ProductGridContainer">
+        <div class="blog__articles{% if section.settings.pagination_style == 'load_more' and section.settings.enable_infinity_scroll %} infinity-scroll-active{% endif %}" id="ArticleGridContainer">
           {%- if blog.articles.size == 0 -%}
             <div class="blog__articles-empty text-center">
               <p>{{- 'blog.no_posts' | t -}}</p>
             </div>
           {%- else -%}
             {% if section.settings.pagination_style == 'load_more' and paginate.previous and paginate.pages > 1 and paginate.current_page <= paginate.pages %}
-              <collection-load-previous class="text-center no-js-hidden color-{{ section.settings.color_scheme }}" data-current-page="{{- paginate.current_page -}}">
+              <dynamic-load-previous class="text-center no-js-hidden color-{{ section.settings.color_scheme }}" data-current-page="{{- paginate.current_page -}}">
                 {%- liquid
                   assign load_more_button_data_href = 'data-href="' | append: paginate.previous.url | append: '"'
                   assign load_previous_value = 'theme.actions.load_previous' | t
                   render 'button', class: 'button js-btn-load-previous', button_style: 'button--outlined', attr: load_more_button_data_href, value: load_previous_value, loading_spinner: true
                 -%}
-              </collection-load-previous>
+              </dynamic-load-previous>
             {% endif %}
-            <div class="blog__articles-grid text-center{% if section.settings.pagination_style == 'load_more' and section.settings.enable_infinity_scroll %} infinity-scroll-active{% endif %}" id="product-grid">
+            <div id="article-grid" class="blog__articles-grid text-center">
               {%- liquid
                 for article in blog.articles
                   render 'card-article', article: article, class: 'blog__card-article', show_tags: section.settings.show_tags, show_date: section.settings.show_date, show_author: section.settings.show_author, show_excerpt: section.settings.show_excerpt, tags_count: section.settings.tags_count, content_alignment: section.settings.content_alignment
@@ -95,14 +91,14 @@
 
           {%- if paginate.pages > 1 -%}
             {% if section.settings.pagination_style == 'load_more' %}
-              <collection-load-more class="text-center no-js-hidden{% unless paginate.next %} hidden{% endunless %} color-{{ section.settings.color_scheme }}" data-current-page="{{- paginate.current_page -}}">
+              <dynamic-load-more class="text-center no-js-hidden{% unless paginate.next %} hidden{% endunless %} color-{{ section.settings.color_scheme }}" data-current-page="{{- paginate.current_page -}}">
                 {%- liquid
                   assign load_more_button_data_href = 'data-href="' | append: paginate.next.url | append: '"'
                   assign load_more_value = 'theme.actions.load_more' | t
 
                   render 'button', class: 'button js-btn-load-more', button_style: 'button--outlined', attr: load_more_button_data_href, value: load_more_value, loading_spinner: true
                 -%}
-              </collection-load-more>
+              </dynamic-load-more>
             {% else %}
               <div class="blog__actions">
                 {%- render 'pagination', paginate: paginate, anchor: '' -%}

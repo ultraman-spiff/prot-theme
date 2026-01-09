@@ -86,7 +86,7 @@
               if image_render_condition
                 render 'image', image: product_image, attr: attr, image_per_view: image_per_view, loading: loading
               else
-                render 'image', image: product_image, attr: attr, image_per_view: image_per_view, loading: loading
+                render 'image', image: product_image, attr: attr, image_per_view: image_per_view, loading: loading, class: 'hidden'
               endif
             endif
           endfor

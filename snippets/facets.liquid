@@ -25,7 +25,7 @@
   <div class="container {{ container_width }} collection-facets__container">
     <div class="collection-facets__inner">
       {%- unless filters == 'none' -%}
-        <div class="collection-facets__item facets__filters {{ section.settings.button_style }} {% if filters == 'sidebar' %}small-up-hide{% endif %}">
+        <div class="collection-facets__item facets__filters {{ section.settings.button_style }} {% if filters == 'sidebar' %}large-up-hide{% endif %}">
           <div class="facets">
             <form id="FacetFiltersForm" class="facets__form">
               {%- if results.terms -%}

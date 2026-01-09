@@ -2,6 +2,7 @@
 
 {%- style -%}
   #shopify-section-{{ section.id }} > div {
+    --section-vendor-list-logo-height: {{ section.settings.logo_height }}px;
     padding-block-start: calc(var(--section-spacing-unit-size) * {{ section.settings.spacing_top }});
     padding-block-end: calc(var(--section-spacing-unit-size) * {{ section.settings.spacing_bottom }});
   }
@@ -51,10 +52,14 @@
               {% for metaobject in shop.metaobjects.vendor.values %}
                 {% assign first_letter = metaobject.name.value | slice: 0, 1 | upcase %}
                 {% if first_letter == letter %}
-                  <a href="/collections/vendors?q={{ metaobject.name.value | url_encode }}">
+                  <a href="{{ routes.collections_url }}/vendors?q={{ metaobject.name.value | url_encode }}" class="section-vendor-list__item text-{{ section.settings.content_alignment }}">
                     {% if section.settings.show_vendor_logo %}
-                      {% if metaobject.logo.value == blank %}
+                      {% if metaobject.logo.value == blank and metaobject.image.value == blank %}
                         <span>{{ metaobject.name.value }}</span>
+                      {% elsif metaobject.image.value != blank %}
+                        <div class="section-vendor-list__logo">
+                          {%- render 'image', image: metaobject.image.value, alt: metaobject.image.alt -%}
+                        </div>
                       {% else %}
                         <div class="section-vendor-list__logo">{{ metaobject.logo.value }}</div>
                       {% endif %}
@@ -120,6 +125,17 @@
       "type": "text",
       "id": "metaobject_for_section",
       "label": "t:sections.vendor-list.settings.metaobject_for_section.label"
+    },
+    {
+      "type": "range",
+      "id": "logo_height",
+      "label": "t:sections.vendor-list.settings.logo_height.label",
+      "info": "t:sections.vendor-list.settings.logo_height.info",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 50
     },
     {
       "type": "header",

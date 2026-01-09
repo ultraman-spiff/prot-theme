@@ -4,7 +4,7 @@
       "open_in_new_window": "Abre em uma nova janela.",
       "refresh_page": "Escolher uma seleção resulta em uma atualização completa da página.",
       "skip_to_content": "Pular para o conteúdo",
-      "slideshow": "Use as setas esquerda\/direita para navegar na apresentação de slides ou deslize para a esquerda\/direita se estiver usando um dispositivo móvel"
+      "slideshow": "Use as setas esquerda/direita para navegar na apresentação de slides ou deslize para a esquerda/direita se estiver usando um dispositivo móvel"
     },
     "actions": {
       "add": "Adicionar",
@@ -39,7 +39,7 @@
       "search": "Buscar"
     },
     "date": {
-      "format_day_month_year": "%d\/%m\/%Y",
+      "format_day_month_year": "%d/%m/%Y",
       "format_month_year": "%B %Y",
       "format_numbers": "%d.%m.%Y",
       "format_short": "%B %d, %Y"
@@ -153,7 +153,16 @@
     "preorder_badge": "Pré-encomenda",
     "preorder_info": "Este produto está atualmente em pré-encomenda.",
     "preorder_notice": "Este produto será enviado em {{date}}.",
-    "preorder_warning_html": "* Ao clicar em 'Pré-encomenda', <strong>reconheço que estou comprando um item em pré-encomenda, não um produto em estoque</strong> e concordo com os Termos e Condições do processo de pré-encomenda."
+    "preorder_warning_html": "* Ao clicar em 'Pré-encomenda', <strong>reconheço que estou comprando um item em pré-encomenda, não um produto em estoque</strong> e concordo com os Termos e Condições do processo de pré-encomenda.",
+    "badges": {
+      "new": "Novo",
+      "best_seller": "Mais vendido",
+      "featured": "Em destaque",
+      "on_sale": "Em promoção",
+      "coming_soon": "Em breve",
+      "pre_order": "Pré-encomenda",
+      "sold_out": "Esgotado"
+    }
   },
   "collection": {
     "label": "Coleção",
@@ -304,7 +313,7 @@
       "city_placeholder": "Digite sua cidade",
       "province": "Província",
       "province_placeholder": "Digite sua província",
-      "country": "País \/ Região",
+      "country": "País / Região",
       "zip": "Código postal",
       "zip_placeholder": "Digite seu código postal",
       "phone": "Telefone",
@@ -405,7 +414,7 @@
     "button": "Entrar usando senha",
     "submit": "Enviar",
     "error": "A senha que você digitou está incorreta. Por favor, tente novamente.",
-    "admin_link_html": "Você é o dono da loja? <a href=\"\/admin\">Entre aqui<\/a>",
+    "admin_link_html": "Você é o dono da loja? <a href=\"/admin\">Entre aqui</a>",
     "powered_by_shopify_html": "Esta loja será alimentada por {{shopify}}"
   },
   "sections": {

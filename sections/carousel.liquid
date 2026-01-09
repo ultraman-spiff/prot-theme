@@ -3,21 +3,6 @@
     padding-block-start: calc(var(--section-spacing-unit-size) * {{ section.settings.spacing_top }});
     padding-block-end: calc(var(--section-spacing-unit-size) * {{ section.settings.spacing_bottom }});
   }
-  
-  .section-carousel__media {
-    border-radius: 10px;
-    overflow: hidden
-  }
-
-  @media screen and (max-width: 749px) {
-    .{{ section.id }}-carousel-button a {
-      width: 100%;
-      padding: calc(20 * 100vw / 720) calc(40 * 100vw / 720);
-      font-size: calc(24px - 10 / 370 * (750px - 100vw));
-      margin-top: calc(42 * 100vw / 720);
-      font-weight: 600;
-    }
-  }
 {%- endstyle -%}
 
 {%- liquid
@@ -161,23 +146,25 @@
                     {%- endif -%}
                   {%- endif -%}
 
-                  <div class="section-carousel__content content align-{{ block.settings.content_alignment }} text-{{ block.settings.content_alignment }} justify-{{ block.settings.content_position }} align-{{ block.settings.content_alignment_mobile }}--mobile text-{{ block.settings.content_alignment_mobile }}--mobile justify-{{ block.settings.content_position_mobile }}--mobile">
-                    <div>
-                      {%- if block.settings.heading != blank -%}
-                        <h2 class="inline-richtext {{ block.settings.heading_size }}">
-                          {{- block.settings.heading -}}
-                        </h2>
-                      {%- endif -%}
-                      {%- if block.settings.text != blank -%}
-                        <div class="section-carousel__text">
-                          {{- block.settings.text -}}
-                        </div>
+                  {%- if block.settings.heading != blank or block.settings.text != blank or block.settings.button_label != blank -%}
+                    <div class="section-carousel__content content align-{{ block.settings.content_alignment }} text-{{ block.settings.content_alignment }} justify-{{ block.settings.content_position }} align-{{ block.settings.content_alignment_mobile }}--mobile text-{{ block.settings.content_alignment_mobile }}--mobile justify-{{ block.settings.content_position_mobile }}--mobile">
+                      <div>
+                        {%- if block.settings.heading != blank -%}
+                          <h2 class="inline-richtext {{ block.settings.heading_size }}">
+                            {{- block.settings.heading -}}
+                          </h2>
+                        {%- endif -%}
+                        {%- if block.settings.text != blank -%}
+                          <div class="section-carousel__text">
+                            {{- block.settings.text -}}
+                          </div>
+                        {%- endif -%}
+                      </div>
+                      {%- if block.settings.button_label != blank -%}
+                        {%- render 'button', type: 'link', class: 'button section-carousel__content--button', button_style: block.settings.button_style, value: block.settings.button_label, href: block.settings.button_link -%}
                       {%- endif -%}
                     </div>
-                    {%- if block.settings.button_label != blank -%}
-                      {%- render 'button', type: 'link', class: 'button section-multitile__content--button', button_style: block.settings.button_style, value: block.settings.button_label, href: block.settings.button_link -%}
-                    {%- endif -%}
-                  </div>
+                  {%- endif -%}
                 </div>
               </div>
             {%- endfor -%}
@@ -186,7 +173,7 @@
       </div>
 
       <div class="section__foot">
-        <div class="section__head--buttons {{ section.id }}-carousel-button">
+        <div class="section__head--buttons">
           {{ section_button | replace_first: 'custom_class' }}
           {% if section.settings.show_navigation_arrows %}
             {% if section.settings.layout == 'layout-2'  %}

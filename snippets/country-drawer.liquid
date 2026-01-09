@@ -34,17 +34,23 @@
 
 <details id="Country-drawer-{{- append_id -}}" class="country-drawer drawer__container">
   <summary
-    class="drawer__button drawer__button--text text--link {{ button_class }}"
+    class="drawer__button drawer__button--text {{ button_class }}"
     id="Country-drawer-button-{{- append_id -}}"
     aria-label="{{- 'theme.localization.country' | t -}}"
   >
-    {%- if settings.country_drawer_display_option == 'flag' or settings.country_drawer_display_option == 'flag--country-name' -%}
-      <span class="drawer__button-flag">{{ localization.country | image_url: width: 18 | image_tag }}</span>
-    {%- endif -%}
-    <span class="drawer__button-text">{{- button_text -}}</span>
-    <noscript>
-      {%- render 'icon', icon_name: 'theme-arrow' -%}
-    </noscript>
+    <div class="text-link">
+      <span class="text-link--on-hover">
+        {%- if settings.country_drawer_display_option == 'flag' or settings.country_drawer_display_option == 'flag--country-name' -%}
+          <span class="drawer__button-flag">{{ localization.country | image_url: width: 18 | image_tag }}</span>
+        {%- endif -%}
+        {%- unless settings.country_drawer_display_option == 'flag' -%}
+          <span class="drawer__button-text">{{- button_text -}}</span>
+        {%- endunless -%}
+        <noscript>
+          {%- render 'icon', icon_name: 'theme-arrow' -%}
+        </noscript>
+      </span>
+    </div>
   </summary>
 
   <div class="drawer__content js-drawer color-{{ settings.color_scheme_for_drawers }} gradient" id="Country-menu-drawer-{{- append_id -}}" tabindex="-1">

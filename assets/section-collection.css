@@ -152,7 +152,7 @@
   }
 
   .collection .collection__grid[data-cols="4"] {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .collection__actions {
@@ -209,7 +209,11 @@
   }
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1200px) {
+  .collection .collection__grid[data-cols="4"] {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .collection__grid[data-cols="4"] {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -240,7 +244,7 @@
   position: relative;
   display: none;
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 990px) {
   .collection.filters--sidebar .collection__container {
     grid-template-columns: 1fr 3fr;
     gap: var(--grid-spacing);

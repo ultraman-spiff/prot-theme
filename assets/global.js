@@ -1,4 +1,4 @@
-/* Release Theme - v1.1.1 */
+/* Release Theme - v2.0.1 */
 
 /* Define Breakpoints -- START */
 const mobileWidth = 750;
@@ -37,8 +37,6 @@ const isHeaderSticky = header?.classList.contains('is-sticky');
 /* SECTION: Announcement Bars */
 const sectionsOfAnnouncementBar = document.querySelectorAll('.section-announcement-bar');
 if (sectionsOfAnnouncementBar) {
-  const headerIndex = Array.prototype.indexOf.call(document.body.children, document.querySelector('header'));
-  const mainIndex = Array.prototype.indexOf.call(main.parentNode.children, main);
 
   const setCustomProperty = (property, value) => {
     document.documentElement.style.setProperty(property, value);
@@ -57,22 +55,14 @@ if (sectionsOfAnnouncementBar) {
     let totalHeights = 0;
 
     sectionsOfAnnouncementBar.forEach((section) => {
-      const sectionIndex = Array.prototype.indexOf.call(section.parentNode.children, section);
-
-      if (sectionIndex < headerIndex) {
-        // calculate total heights and visible heights of all announcement bars before the header
-        Array.from(sectionsOfAnnouncementBar)
-          .filter((section) => {
-            const index = Array.prototype.indexOf.call(section.parentNode.children, section);
-            return index < headerIndex;
-          })
-          .forEach((section) => {
-            // console.log(sectionIndex, section);
-            const { height, visibleHeight } = calcSectionHeights(section);
-            totalHeights += height;
-            totalVisibleHeights += visibleHeight;
-        });
-      }
+      // calculate total heights and visible heights of all announcement bars before the header
+      Array.from(sectionsOfAnnouncementBar)
+        .forEach((section) => {
+          // console.log(sectionIndex, section);
+          const { height, visibleHeight } = calcSectionHeights(section);
+          totalHeights += height;
+          totalVisibleHeights += visibleHeight;
+      });
     });
     setCustomProperty(`--announcement-bars-before-header-heights`, `${parseFloat(totalHeights)}px`);
     setCustomProperty(`--announcement-bars-before-header-visible-heights`, `${parseFloat(totalVisibleHeights)}px`);
@@ -284,11 +274,20 @@ function setRootCustomProperties() {
   }
   document.addEventListener("DOMContentLoaded", setInitalProductMediaAreaHeight);
   window.addEventListener("resize", setInitalProductMediaAreaHeight);
-  window.addEventListener("change", setInitalProductMediaAreaHeight);
+  // window.addEventListener("change", setInitalProductMediaAreaHeight);
 
   document.addEventListener("DOMContentLoaded", setInitalProductMediaSwiperAreaHeight);
   window.addEventListener("resize", setInitalProductMediaSwiperAreaHeight);
-  window.addEventListener("change", setInitalProductMediaSwiperAreaHeight);
+  // window.addEventListener("change", setInitalProductMediaSwiperAreaHeight);
+  if (productMedia) {
+    const observer = new MutationObserver(() => {
+      setInitalProductMediaAreaHeight();
+      setInitalProductMediaSwiperAreaHeight();
+    });
+
+    observer.observe(productMedia, { childList: true, subtree: true });
+  }
+
   if (Shopify.designMode) {
     // window.addEventListener('shopify:section:load', setInitalProductMediaAreaHeight);
     window.addEventListener('shopify:section:load', setInitalProductMediaSwiperAreaHeight);
@@ -608,14 +607,15 @@ class MenuDrawer extends HTMLElement {
         this.parentDrawer = this.closest(".js-drawer");
         if (this.parentDrawer) {
           this.isParentDrawerOpen = true;
-          this.parentDrawer.style.overflow = "hidden";
+          // this.parentDrawer.style.overflow = "hidden";
         }
       } else {
         body.style.overflow = "hidden";
         body.classList.add("drawer--is-open");
-        document.documentElement.style.overflow = "hidden";
-        document.documentElement.style.position = "fixed";
-        document.documentElement.style.width = "100%";
+        this.scrollTopValue = window.scrollY;
+        body.style.top = `-${this.scrollTopValue}px`;
+        body.style.position = "fixed";
+        body.style.width = "100%";
       }
       var searchInput = this.querySelector("#search-desktop");
       if (searchInput) {
@@ -631,9 +631,10 @@ class MenuDrawer extends HTMLElement {
         toggleButton.setAttribute("aria-expanded", false);
       });
       body.style.overflow = "";
-      document.documentElement.style.overflow = "";
-      document.documentElement.style.position = "";
-      document.documentElement.style.width = "";
+      body.style.position = "";
+      body.style.top = "";
+      body.style.width = "";
+      window.scrollTo(0, this.scrollTopValue);
       body.classList.remove("drawer--is-open");
       if (this.isParentDrawerOpen) {
         this.parentDrawer.style.overflow = "";
@@ -810,7 +811,6 @@ class MenuDrawer extends HTMLElement {
     this.summary.setAttribute("aria-expanded", isDetailsOpen);
   }
 }
-
 customElements.define("menu-drawer", MenuDrawer);
 
 class HeaderDrawer extends MenuDrawer {
@@ -1067,8 +1067,9 @@ class ModalDialog extends HTMLElement {
     });
 
     this.addEventListener("click", event => {
-      if (event.target === this || event.target.closest("age-verification-popup, modal-dialog")) return;
-      this.hide();
+      if (event.target === this && !event.target.closest("age-verification-popup")) {
+        this.hide();
+      }
     });
 
     // Prevent closing the modal dialog when clicking inside the dialog holder
@@ -2532,7 +2533,7 @@ if (!customElements.get("product-card")) {
           priceContainer.dataset.labelPriceRegular;
         const labelPriceSale = priceContainer.dataset.labelPriceSale;
 
-        if (compare_at_price > price) {
+        if (parseFloat(compare_at_price) > parseFloat(price)) {
           // generate html block and append to price container
           const priceHtml = `
             <div class="price__sale">
@@ -3049,6 +3050,7 @@ class SwiperComponent extends HTMLElement {
       loop: swiperOptions.loop || false,
       rewind: swiperOptions.rewind || false,
       followFinger: swiperOptions.followFinger || false,
+      cssMode: swiperOptions.cssMode || false,
       enabled: option.enabled,
       watchOverflow: true,
       observer: true,

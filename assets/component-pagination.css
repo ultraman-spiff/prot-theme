@@ -39,6 +39,9 @@
 .pagination .pagination__prev-next {
   padding: .2rem;
 }
+[dir='rtl'] .pagination .pagination__prev-next {
+  transform: rotate(180deg);
+}
 
 .pagination span {
   color: var(--color-button-hover-text);

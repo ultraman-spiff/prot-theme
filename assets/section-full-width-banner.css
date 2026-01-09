@@ -36,19 +36,19 @@
   position: relative;
 }
 
-.section-full-width-banner .full-width-banner__animation--body .full-width-banner__animation>* {
+.section-full-width-banner .full-width-banner__animation--body .full-width-banner__animation > * {
   opacity: 0;
   transform: translateY(200%);
 }
 
-.section-full-width-banner .full-width-banner__animation--body .full-width-banner__animation.inAnimation>* {
+.section-full-width-banner .full-width-banner__animation--body .full-width-banner__animation.inAnimation > * {
   animation-name: fullWidthContentAnimation;
   animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1.00);
   /* animation-duration: 450ms; */
 }
 
-.section-full-width-banner .full-width-banner__animation--body .full-width-banner__animation.inAnimation>*,
-.section-full-width-banner .full-width-banner__animation--body .full-width-banner__animation.isAnimated>* {
+.section-full-width-banner .full-width-banner__animation--body .full-width-banner__animation.inAnimation > *,
+.section-full-width-banner .full-width-banner__animation--body .full-width-banner__animation.isAnimated > * {
   opacity: 1;
   transform: translateY(0%);
 }
@@ -139,11 +139,6 @@
   text-align: start;
 }
 
-.section-full-width-banner__entry span {
-  vertical-align: super;
-  font-size: 60%;
-}
-
 .section-full-width-banner__buttons {
   display: flex;
   flex-wrap: wrap;
@@ -151,21 +146,7 @@
   margin: var(--spacing-2) 0;
 }
 
-.section-full-width-banner__icon img {
-  width: 40px;
-  height: 40px;
-}
-
-@media screen and (min-width: 750px) {
-  .section-full-width-banner__icon img {
-    width: 40px;
-    height: 80px;
-  }
-}
-
 .section-full-width-banner__buttons .button {
-  flex: 1;
-
   min-width: fit-content;
   max-width: calc(100vw - 4rem);
   white-space: nowrap;
@@ -199,6 +180,14 @@
   .section-full-width-banner__buttons {
     justify-content: center;
   }
+  .section-full-width-banner .full-width-banner__animation--body.full-width-banner__no-animation .full-width-banner__animation>* {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  .section-full-width-banner .full-width-banner__animation--body.full-width-banner__no-animation .full-width-banner__animation.inAnimation>* {
+    animation-name: none;
+    animation-timing-function: none;
+  }
 }
 
 @media screen and (min-width: 750px) {
@@ -212,4 +201,8 @@
     width: 100%;
     height: 108%;
   }
+}
+
+.section-full-width-banner__buttons {
+  display: flex;
 }

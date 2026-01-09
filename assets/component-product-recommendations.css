@@ -36,16 +36,10 @@
   border-radius: var(--card-corner-radius);
   background-color: rgb(var(--color-background));
   overflow: hidden;
-  background-color: #fdf6ed;
-  border-radius: 10px;
-  overflow: hidden;
-  width: fit-content;
-  max-width: 340px;
 }
 
-.product-recommendations__item img {
-  mix-blend-mode: darken;
-  border-radius: 10px;
+.product-recommendations__item.swiper-slide {
+  width: 30rem;
 }
 
 .product-recommendations__item-media {
@@ -61,10 +55,7 @@
 
 h6.product-recommendations__item-title {
   margin: 0;
-  font-size: 16px;
-  font-weight: 400;
-  font-family: var(--font-body-family) !important;
-  line-height: 135%;
+  font-size: var(--font-size-static-sm);
 }
 
 .product-recommendations__item-price {
@@ -81,4 +72,10 @@ h6.product-recommendations__item-title {
 .product-recommendations__item.swiper-slide .quick-cart-drawer__trigger {
   width: auto;
   margin-block-start: 0.4rem;
+}
+
+@media screen and (min-width: 990px) {
+  .product-recommendations__item.swiper-slide {
+    width: 38rem;
+  }
 }

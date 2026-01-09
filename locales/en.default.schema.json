@@ -784,6 +784,9 @@
         "general": {
           "content": "General"
         },
+        "grid": {
+          "content": "Grid"
+        },
         "grid_layout": {
           "content": "Grid layout",
           "info": "The grid layout is used to divide the section into columns and rows."
@@ -1805,6 +1808,12 @@
         },
         "grid": {
           "label": "Grid",
+          "items_per_row": {
+            "label": "Items per row",
+            "on_mobile": {
+              "label": "Items per row on mobile"
+            }
+          },
           "blocks": {
             "settings": {
               "column_factor": {
@@ -2586,6 +2595,9 @@
             },
             "logo_nav_aligned_start": {
               "label": "Logo and navigation aligned to start"
+            },
+            "logo_centered_nav_below": {
+              "label": "Logo centered, navigation below"
             }
           }
         },
@@ -2671,6 +2683,9 @@
         "spacing_between_cards": {
           "label": "Spacing between cards"
         },
+        "link_size": {
+          "label": "Link size"
+        },
         "parent_link_size": {
           "label": "Parent link size"
         },
@@ -2686,6 +2701,14 @@
           "card_aspect_ratio": {
             "label": "Card aspect ratio",
             "info": "You can customize the aspect ratio of the card. Desktop only."
+          },
+          "menu_item_position": {
+            "label": "Menu item position",
+            "info": "Enter a tier 1 link position to tie the block to its parent element."
+          },
+          "menu_item_badge": {
+            "label": "Badge",
+            "info": "If set, only the badge will be displayed as colored."
           }
         },
         "image-link-text": {
@@ -2696,6 +2719,9 @@
               "info": "Enter a tier 1 link position to tie the block to its parent element."
             }
           }
+        },
+        "menu-item-style": {
+          "name": "Menu item style"
         }
       },
       "presets": {
@@ -3191,7 +3217,7 @@
           "info": "Only desktop. Product gallery is automatically optimized for mobile."
         },
         "grid_gap": {
-          "label": "Space between gallery and content"
+          "label": "Space between gallery and content on desktop"
         },
         "grid_content_spacing": {
           "label": "Content grid spacing",
@@ -3640,6 +3666,10 @@
     "hero-banner": {
       "name": "Hero banner",
       "settings": {
+        "slider_height_auto": {
+          "label": "Set hero height as auto",
+          "info": "If enabled, the height will be calculated based on the content."
+        },
         "slider_height": {
           "label": "Hero height",
           "info": "Set the height of the hero to change the height of the slide."
@@ -4352,7 +4382,7 @@
       }
     },
     "seo-content": {
-      "name": "SEO content"
+      "name": "Rich text"
     },
     "trust-indicators": {
       "name": "Trust indicators",
@@ -4648,6 +4678,15 @@
         }
       },
       "blocks": {
+        "custom_liquid": {
+          "name": "Custom liquid",
+          "settings": {
+            "custom_liquid": {
+              "label": "Liquid",
+              "info": "Add app snippets or other Liquid code to create advanced customizations."
+            }
+          }
+        },
         "follow_on_shop": {
           "name": "Follow on Shop",
           "settings": {
@@ -4857,6 +4896,10 @@
         },
         "metaobject_for_section": {
           "label": "Metaobject for vendor list"
+        },
+        "logo_height": {
+          "label": "Logo height",
+          "info": "You can adjust the height of the vendor logo. The default value is 50px."
         }
       }
     }
