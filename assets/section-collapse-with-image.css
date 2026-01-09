@@ -1,0 +1,343 @@
+  .collapse-with-image-container {
+    display: flex;
+    flex-direction: row;
+    gap: calc(var(--section_gap) * 100vw / 1920);
+    padding-top: calc(var(--section_padding_top) * 100vw / 1920);
+    padding-bottom: calc(var(--section_padding_bottom) * 100vw / 1920);
+  }
+
+  .collapse-with-image-container .image_title {
+    margin-bottom: calc(120 * 100vw / 1920);
+    font-size: calc(16px - 5.5 / 1170 * (1920px - 100vw));
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .collapse-with-image-container .image_container_desktop,
+  .collapse-with-image-container .image_container_mobile {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .collapse-with-image-container .image_container_desktop img {
+    width: var(--image_scale);
+    height: auto;
+  }
+
+  .collapse-with-image-container .image_container_desktop {
+    width: calc(100vw - (var(--section_collapse_width) + var(--section_gap)) * 100vw / 1920);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .collapse-with-image-container .image_container_mobile {
+    width: 100%;
+    display: none;
+  }
+
+  .collapse-with-image-container .image_container_mobile img {
+    width: 100%;
+    height: auto;
+  }
+
+  .row-reverse {
+    flex-direction: row-reverse
+  }
+
+  .collapse_contaier {
+    display: flex;
+    flex-direction: column;
+    gap: var(--section_container_gap);
+    width: calc(var(--section_collapse_width) * 100vw / 1920);
+  }
+
+  .collapse_header {
+    gap: calc(35 * 100vw / 1920);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .collapse_subtitle {
+    font-size: calc(16px - 5.5 / 1170 * (1920px - 100vw));
+    font-weight: 600;
+    font-family:var(--font-body-family);
+    margin: 0px;
+    text-transform: uppercase;
+  }
+
+  .collapse_title p {
+    font-size: calc(54px - 22 / 1170 * (1920px - 100vw));
+    line-height: 103%;
+    font-weight: 400;
+    font-family:var(--font-heading-family);
+    margin: 0px;
+  }
+
+  .collapse_description h6 {
+    font-size: calc(16px - 5.5 / 1170 * (1920px - 100vw));
+    font-weight: 600;
+    font-family: var(--font-body-family);
+  }
+
+  .collapse_description p {
+    font-size: calc(16px - 5.5 / 1170 * (1920px - 100vw));
+    font-weight: 400;
+  }
+
+  .collapse_card_container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .collapse_card_container_title {
+    font-size: calc(16px - 5.5 / 1170 * (1920px - 100vw));
+    font-weight: 600;
+    letter-spacing: 15%;
+    text-transform: uppercase;
+    margin-bottom: calc(21.5 * 100vw / 1920)
+  }
+
+  .collapse_card_list {
+    display: flex;
+    flex-direction: row;
+    gap: calc(18 * 100vw / 1920);
+  }
+
+  .collapse_card_item {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9.5px;
+    text-align: center;
+  }
+
+  .collapse_card_title p {
+    font-size: calc(19.44px - 7.92 / 1170 * (1920px - 100vw));
+    font-weight: 400;
+    font-family: var(--font-body-family);
+    margin-top: calc(32 * 100vw / 1920);
+    margin-bottom: 0px;
+    line-height: 120%;
+  }
+
+  .collapse_card_description p {
+    line-height: 1;
+    font-size: calc(64px - 26 / 1170 * (1920px - 100vw));
+    font-family:var(--font-heading-family);
+    font-style: italic;
+    font-weight: 300;
+    margin-top: 0px;
+    margin-bottom: calc(22.2 * 100vw / 1920);
+  }
+
+  .collapse-with-image-button {
+    padding: calc(13 * 100vw / 1920) calc(27 * 100vw / 1920);
+    border-radius: 50px;
+    font-size: calc(14px - 3 / 1170 * (1920px - 100vw));
+    font-weight: 600;
+    font-family: "Articulat CF";
+    text-transform: uppercase;
+    line-height: 135%;
+    color: currentColor;
+    border: 1px solid currentColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: fit-content;
+    white-space: nowrap;
+    font-family: var(--font-button-family);
+  }
+
+  /* Collapse List CSS */
+
+  .horizontal_bar {
+    height: 1px;
+    background-color: currentColor;
+    display: block !important;
+    margin-top: calc(28 * 100vw / 1920)
+  }
+
+  .horizontal_bar:first-child {
+    margin-top: 0px
+  }
+
+  .cwi-container {
+    background: transparent;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .cwi-accordion {
+    width: 100%;
+  }
+
+  .cwi-accordion-header {
+    padding: 0px;
+    width: 100%;
+    padding-top: calc(28 * 100vw / 1920);
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    background: none;
+    border: none;
+    color: currentColor;
+  }
+
+  .cwi-accordion-title {
+    flex: 1;
+    font-size: calc(24px - 8 / 1170 * (1920px - 100vw));
+    font-weight: 500;
+    color: currentColor;
+    font-family: var(--font-body-family);
+  }
+
+  .cwi-accordion-icon {
+    font-size: calc(24px - 8 / 1170 * (1920px - 100vw));
+    font-weight: 300;
+    transition: transform 0.3s ease;
+  }
+
+  .cwi-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .cwi-accordion-content.cwi-active {
+    max-height: 1000px;
+  }
+
+  .cwi-accordion-body {
+    padding-top: calc(11 * 100vw / 1920);
+  }
+
+  .cwi-accordion-body h6 {
+    margin: 0px;
+    font-weight: 600;
+    font-size: calc(16px - 5.5 / 1170 * (1920px - 100vw));
+    line-height: 150%;
+    font-family: var(--font-body-family);
+  }
+
+  .cwi-accordion-body p {
+    margin: 0px;
+    font-weight: 400;
+    font-size: calc(16px - 5.5 / 1170 * (1920px - 100vw));
+    line-height: 150%;
+    font-family: var(--font-body-family);
+  }
+
+  @media screen and (max-width: 749px) {
+    .collapse-with-image-container {
+      padding-bottom: calc(130 * 100vw / 720);
+      padding-top: calc(130 * 100vw / 720);
+    }
+
+    .collapse-with-image-container .image_title {
+      margin-bottom: calc(50 * 100vw / 720);
+      font-size: calc(21px * 25 / 24 - 7 / 370 * (750px - 100vw));
+    }
+
+    .collapse-with-image-container .image_container_mobile {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .collapse-with-image-container .image_container_desktop {
+      display: none;
+    }
+
+    .collapse_contaier {
+      width: 100%;
+      align-items: center;
+      gap: calc(100 * 100vw / 720);
+    }
+
+    .collapse_header {
+      gap: calc(35 * 100vw / 720);
+    }
+
+    .collapse_title p {
+      text-align: center;
+      font-size: calc(54px * 25 / 24 - 22 / 370 * (750px - 100vw));
+
+    }
+
+    .collapse_subtitle {
+      font-size: calc(21px * 25 / 24 - 7 / 370 * (750px - 100vw));
+      font-weight: 600;
+      font-family:var(--font-body-family);
+      margin: 0px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .collapse_description h6,
+    .collapse_description p {
+      text-align: center;
+      margin: 0px;
+      font-size: calc(24px * 25 / 24 - 12 / 370 * (750px - 100vw));
+    }
+
+    .collapse_card_container_title {
+      font-size: calc(21px * 25 / 24 - 7 / 370 * (750px - 100vw));
+      margin-bottom: calc(18 * 100vw / 720);
+    }
+
+    .collapse_card_title p {
+      font-size: calc(21px * 25 / 24 - 7 / 370 * (750px - 100vw));
+      margin-top: calc(34 * 100vw / 720);
+    }
+
+    .collapse_card_description p {
+      font-size: calc(64px * 25 / 24 - 26 / 370 * (750px - 100vw));
+      margin-bottom: calc(24 * 100vw / 1920);
+    }
+
+    .horizontal_bar {
+      margin-top: calc(33 * 100vw / 720);
+    }
+
+    .cwi-accordion-header {
+      padding-top: calc(33 * 100vw / 720);
+    }
+
+    .cwi-accordion-title,
+    .cwi-accordion-icon {
+      font-size: calc(28px * 25 / 24 - 10 / 370 * (750px - 100vw));
+    }
+
+    .collapse-with-image-button {
+      padding: calc(20 * 100vw / 720) calc(40 * 100vw / 720);
+      font-size: calc(24px - 10 / 370 * (750px - 100vw));
+    }
+
+    .cwi-accordion-body {
+      padding-top: calc(11 * 100vw / 1920);
+    }
+
+    .cwi-accordion-body h6 {
+      margin: 0px;
+      font-weight: 600;
+      font-size: calc(24px * 25 / 24 - 12 / 370 * (750px - 100vw));
+      line-height: 150%;
+    }
+
+    .cwi-accordion-body p {
+      margin: 0px;
+      font-weight: 400;
+      font-size: calc(24px * 25 / 24 - 12 / 370 * (750px - 100vw));
+      line-height: 150%;
+    }
+
+    .collapse_card_list {
+      gap: calc(20 * 100vw / 720);
+    }
+  }

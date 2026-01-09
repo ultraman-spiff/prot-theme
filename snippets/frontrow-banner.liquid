@@ -1,0 +1,21 @@
+{% if request.path contains '/products/prot-gold-medical-grade-collagen-protein' or request.path == '/' %}
+  <script async type="text/javascript" src="https://app.thefrontrowhealth.com/api/widgets/script?presentation_type=sticker&product_id=2117"></script>
+  <iframe data-state="max" class="iframe-frontrow-sticker" id="frontrow-sticker" frameborder="0" src="https://app.thefrontrowhealth.com/api/widgets?presentation_type=sticker&product_id=2117"></iframe>
+  
+{% endif %}
+
+<style>
+  #frontrow-sticker{
+    position:absolute;
+    z-index:3;
+    border-radius: 0 !important;
+  }
+  .iframe.frontrow{display:none;position:fixed;left:0;top:0;z-index:99999997;right:0;bottom:0;width:100%;height:100%;overflow:hidden}
+
+  @media (max-width: 768px) {
+    #frontrow-sticker {
+        top: 5px !important;
+    }
+}
+
+</style>

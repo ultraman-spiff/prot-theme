@@ -1,0 +1,346 @@
+{%- render 'css', css: 'section-collapse-with-image.css' -%}
+<script src="{{- 'collapse-with-image.js' | asset_url -}}" defer="defer"></script>
+
+<style>
+  .container--{{ section.id }} {
+    --section_gap: {{ section.settings.section_gap }};
+    --section_padding_top: {{ section.settings.padding_top }};
+    --section_padding_bottom: {{ section.settings.padding_bottom }};
+    --section_collapse_width: {{ section.settings.collapse_width }};
+    --section_container_gap: {{ section.settings.collapse_container_gap }}px;
+    --image_scale: {{ section.settings.image_scale }}%;
+    max-width: 100%;
+  }
+
+  .card_1-{{ section.id }} {
+    {%- if section.settings.card_border_1 -%}
+      border: 1.85px solid currentColor;
+    {%- endif -%}
+    background-color: rgba(var(--color-foreground), {{ section.settings.card_1_bg_opacity }}%);
+  }
+
+  .card_2-{{ section.id }} {
+    {%- if section.settings.card_border_2 -%}
+      border: 1.85px solid currentColor;
+    {%- endif -%}
+    background-color: rgba(var(--color-foreground), {{ section.settings.card_2_bg_opacity }}%);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const accordionElement = document.getElementById('cwi-accordion--{{ section.id }}');
+    new Accordion(accordionElement);
+  });
+</script>
+
+<div class="container container--{{ section.id }} color-{{ section.settings.color_scheme }} gradient">
+  <div class="collapse-with-image-container {% if section.settings.image_right %} row-reverse {% endif %}">
+    <div class="image_container_desktop">
+      {%- if section.settings.image_title != blank -%}
+        <div class="image_title">{{ section.settings.image_title }}</div>
+      {%- endif -%}
+      {{ section.settings.section_image | image_url: width: 2000 | image_tag }}
+    </div>
+    <div class="collapse_contaier">
+      <div class="collapse_header">
+        {%- if section.settings.collapse_subtitle != blank -%}
+          <div class="collapse_subtitle">{{ section.settings.collapse_subtitle }}</div>
+        {%- endif -%}
+        <div class="collapse_title">{{ section.settings.collapse_title }}</div>
+        {%- if section.settings.collapse_description != blank -%}
+          <div class="collapse_description">{{ section.settings.collapse_description }}</div>
+        {%- endif -%}
+      </div>
+      <div class="image_container_mobile">
+        {%- if section.settings.image_title != blank -%}
+          <div class="image_title">{{ section.settings.image_title }}</div>
+        {%- endif -%}
+        {{ section.settings.section_image | image_url: width: 2000 | image_tag }}
+      </div>
+      {%- if section.settings.card_show -%}
+        <div class="collapse_card_container">
+          <div class="collapse_card_container_title">{{ section.settings.card_title }}</div>
+          <div class="collapse_card_list">
+            <div class="card_1-{{ section.id }} collapse_card_item">
+              <div class="card_1_title collapse_card_title">{{ section.settings.card_title_1 }}</div>
+              <div class="card_1_description collapse_card_description">{{ section.settings.card_content_1 }}</div>
+            </div>
+            <div class="card_2-{{ section.id }} collapse_card_item">
+              <div class="card_2_title collapse_card_title">{{ section.settings.card_title_2 }}</div>
+              <div class="card_2_description collapse_card_description">{{ section.settings.card_content_2 }}</div>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+      <div class="cwi-container">
+        <div class="horizontal_bar"></div>
+        <div class="cwi-accordion" id="cwi-accordion--{{ section.id }}">
+          {% for block in section.blocks %}
+            <div class="cwi-accordion-item">
+              <button class="cwi-accordion-header">
+                <span class="cwi-accordion-title">{{ block.settings.item_title }}</span>
+                <span class="cwi-accordion-icon">+</span>
+              </button>
+              <div class="cwi-accordion-content">
+                <div class="cwi-accordion-body">
+                  {{ block.settings.item_description }}
+                </div>
+              </div>
+              <div class="horizontal_bar"></div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      {%- if section.settings.button_show -%}
+        <a class="collapse-with-image-button" href="{{ section.settings.button_link }}">
+          {{ section.settings.button_content }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collapse with Image",
+  "tag": "section",
+  "class": "collapse_with_image",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section layout"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_right",
+      "label": "Image right",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "image_title",
+      "label": "Image title",
+      "default": "Image title"
+    },
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "Section image"
+    },
+    {
+      "type": "range",
+      "id": "image_scale",
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "%",
+      "label": "Image scale",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 10,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding top",
+      "info": "Set the value of padding top when device width is 1920px",
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 10,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding bottom",
+      "info": "Set the value of padding bottom when device width is 1920px",
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "section_gap",
+      "min": 10,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Section gap",
+      "info": "Set the value of section gap when device width is 1920px",
+      "default": 200
+    },
+    {
+      "type": "header",
+      "content": "Collapse"
+    },
+    {
+      "type": "range",
+      "id": "collapse_width",
+      "min": 10,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "label": "Collapse width",
+      "info": "Set the Collapse block width when device width is 1920px",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "collapse_container_gap",
+      "min": 2,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap",
+      "default": 50
+    },
+    {
+      "type": "text",
+      "id": "collapse_subtitle",
+      "label": "Collapse subtitle"
+    },
+    {
+      "type": "richtext",
+      "id": "collapse_title",
+      "label": "Collapse title",
+      "default": "<p>Collapse title</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "collapse_description",
+      "label": "Collapse description"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_show",
+      "label": "Collapse card show",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "card_title",
+      "label": "Card title",
+      "default": "Card title",
+      "visible_if": "{{ section.settings.card_show }}"
+    },
+    {
+      "type": "richtext",
+      "id": "card_title_1",
+      "label": "Card title 1",
+      "default": "<p>Card title 1</p>",
+      "visible_if": "{{ section.settings.card_show }}"
+    },
+    {
+      "type": "richtext",
+      "id": "card_content_1",
+      "label": "Card content 1",
+      "visible_if": "{{ section.settings.card_show }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_border_1",
+      "label": "Card border 1",
+      "default": true,
+      "visible_if": "{{ section.settings.card_show }}"
+    },
+    {
+      "type": "range",
+      "id": "card_1_bg_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Card background opacity 1",
+      "default": 1
+    },
+    {
+      "type": "richtext",
+      "id": "card_title_2",
+      "label": "Card title 2",
+      "default": "<p>Card title 2</p>",
+      "visible_if": "{{ section.settings.card_show }}"
+    },
+    {
+      "type": "richtext",
+      "id": "card_content_2",
+      "label": "Card content 2",
+      "visible_if": "{{ section.settings.card_show }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_border_2",
+      "label": "Card border 2",
+      "default": true,
+      "visible_if": "{{ section.settings.card_show }}"
+    },
+    {
+      "type": "range",
+      "id": "card_2_bg_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Card background opacity 2",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_show",
+      "label": "Button show",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_content",
+      "label": "Button content",
+      "default": "Button content",
+      "visible_if": "{{ section.settings.button_show }}"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link",
+      "default": "/",
+      "visible_if": "{{ section.settings.button_show }}"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Collapse Item",
+      "type": "collapse_item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "item_title",
+          "label": "Item title",
+          "default": "Item title"
+        },
+        {
+          "type": "richtext",
+          "id": "item_description",
+          "label": "Item description",
+          "default": "<p>Item description</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collapse with Image",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
