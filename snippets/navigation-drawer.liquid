@@ -132,6 +132,7 @@
                     {% for block in section.blocks %}
                       {%- liquid
                         assign link_handle = link.title | handleize
+                        assign block_link_handle = block.settings.menu_link_title | handleize
                         assign show_on_class = block.settings.show_on
                         if show_on_class == 'mobile'
                           assign show_on_class = 'large-up-hide'

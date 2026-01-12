@@ -66,6 +66,8 @@
                 </span>
 
                 {%- if block.settings.blog_show_date -%}
+                  {%- assign date_format = 'theme.date.format_short' | t -%}
+                  {%- assign published_at = article.published_at | date: date_format -%}
                   <span class="article__date">
                     {{- 'blog.posted_on' | t: date: article.published_at | time_tag: format: 'date' | prepend: ' ' -}}
                   </span>
@@ -138,6 +140,7 @@
                         </span>
 
                         <span class="article__comment-date">
+                          {%- assign date_format = 'theme.date.format_short' | t -%}
                           {{- comment.created_at | time_tag: format: 'date' -}}
                         </span>
                       </footer>

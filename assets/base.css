@@ -1,9 +1,54 @@
-/* Release Theme - v2.0.1 */
+/* Release Theme - v1.1.1 */
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'QuincyCF';
+  src: url('https://cdn.shopify.com/s/files/1/0009/1117/9820/files/Quincy_CF_Regular.woff2?v=1749052050') format('woff2'),
+       url('https://cdn.shopify.com/s/files/1/0009/1117/9820/files/Quincy_CF_Regular.woff?v=1749052045') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ArticulatCF_Normal';
+  src: url('https://cdn.shopify.com/s/files/1/0009/1117/9820/files/Articulat_CF_Normal.woff2?v=1749052060') format('woff2'),
+       url('https://cdn.shopify.com/s/files/1/0009/1117/9820/files/Articulat_CF_Normal.woff?v=1749052055') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ArticulatCF_Demi_Bold';
+  src: url('https://cdn.shopify.com/s/files/1/0009/1117/9820/files/Articulat_CF_Demi_Bold.woff2?v=1752607263') format('woff2'),
+       url('https://cdn.shopify.com/s/files/1/0009/1117/9820/files/Articulat_CF_Demi_Bold.woff?v=1752607263') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ArticulatCF_Medium';
+  src: url('https://cdn.shopify.com/s/files/1/0009/1117/9820/files/Articulat_CF_Medium.woff2?v=1752680334') format('woff2'),
+       url('https://cdn.shopify.com/s/files/1/0009/1117/9820/files/Articulat_CF_Medium.woff?v=1752680335') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ArticulatCF_Regular';
+  src: url('https://cdn.shopify.com/s/files/1/0009/1117/9820/files/Articulat_CF_Regular.woff2?v=1753126569') format('woff2'),
+       url('https://cdn.shopify.com/s/files/1/0009/1117/9820/files/Articulat_CF_Regular.woff?v=1753126569') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {
@@ -22,6 +67,12 @@
   --spacing-9: calc(var(--spacing-unit) * 6); /* 9.6rem */
   --spacing-10: calc(var(--spacing-unit) * 8); /* 12.8rem */
   --spacing-11: calc(var(--spacing-unit) * 10); /* 16rem */
+
+  --font-heading-family: "QuincyCF", Arial, sans-serif;
+  --font-body-family: "ArticulatCF_Regular", Arial, sans-serif;
+  --font-button-family: "ArticulatCF_Demi_Bold", Arial, sans-serif;
+  --font-body-family-medium: "ArticulatCF_Medium", Arial, sans-serif;
+  --font-body-family-normal: "ArticulatCF_Normal", Arial, sans-serif;
 }
 
 html {
@@ -44,6 +95,7 @@ body {
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
+  letter-spacing: var(--font-body-letter-spacing);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* overscroll-behavior: none; */
@@ -76,23 +128,26 @@ html.no-js .no-js-hidden {
 body:has(.shopify-section:first-child .header-is-transparent):not(:has(.section-header ~ .shopify-section-group-header-group)) main {
   margin-block-start: calc(-1 * var(--header-height, 0px));
 }
-body:has(.shopify-section:first-child .header-is-transparent):not(:has(.section-header ~ .shopify-section-group-header-group)) main>.shopify-section.section-hero-banner:first-of-type .hero-banner--full .hero__content,
+body:has(.shopify-section:first-child .header-is-transparent):not(:has(.section-header ~ .shopify-section-group-header-group)) main>.shopify-section.section-hero-banner:first-of-type .hero__content,
 body:has(.shopify-section:first-child .header-is-transparent):not(:has(.section-header ~ .shopify-section-group-header-group)) main > .shopify-section.section-page-banner:first-of-type div.gradient {
   padding-block-start: calc(var(--header-height, 0px) + var(--section-spacing-unit-size) * 2) !important;
 }
 
 @media screen and (max-width: 989px) {
-  body.is-at-top:has(.shopify-section:first-child .header-is-transparent):not(:has(.section-header ~ .shopify-section-group-header-group)) .header:not(.menu-open) {
+  body.is-at-top:has(.shopify-section:first-child .header-is-transparent):not(:has( .section-header ~ .shopify-section-group-header-group)) .header:not(.menu-open) {
     --header-background-alpha: 0;
     --color-foreground: var(--transparent-header-menu-text-color);
     --header-inner-after-opacity: 0.1;
   }
-  body.is-at-top:has(.shopify-section:first-child .header-is-transparent):not(:has(.section-header ~ .shopify-section-group-header-group)) .header:not(.menu-open) .header__logo-image {
+  body.is-at-top:has(.shopify-section:first-child .header-is-transparent):not(:has( .section-header ~ .shopify-section-group-header-group)):not(:has(.color-primary)) .header:not(.menu-open) {
+    --color-foreground: var(--transparent-header-menu-text-color);
+  }
+  body.is-at-top:has(.shopify-section:first-child .header-is-transparent):not(:has( .section-header ~ .shopify-section-group-header-group)):not(:has(.color-primary)) .header:not(.menu-open) .header__logo-image {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
   }
-  body.is-at-top:has(.shopify-section:first-child .header-is-transparent):not(:has(.section-header ~ .shopify-section-group-header-group)) .header:not(.menu-open) .header__logo-image-transparent {
+  body.is-at-top:has(.shopify-section:first-child .header-is-transparent):not(:has( .section-header ~ .shopify-section-group-header-group)):not(:has(.color-primary)) .header:not(.menu-open) .header__logo-image-transparent {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -105,17 +160,20 @@ body:has(.shopify-section:first-child .header-is-transparent):not(:has(.section-
   } */
 }
 @media screen and (min-width: 990px) {
-  body.is-at-top:has(.shopify-section:first-child .header-is-transparent):not(:has(.section-header ~ .shopify-section-group-header-group)) .header:not(.is-megamenu-open) {
+  body.is-at-top:has(.shopify-section:first-child .header-is-transparent):not(:has( .section-header ~ .shopify-section-group-header-group)) .header:not(.is-megamenu-open) {
     --header-background-alpha: 0;
     --color-foreground: var(--transparent-header-menu-text-color);
     --header-inner-after-opacity: 0.1;
   }
-  body.is-at-top:has(.shopify-section:first-child .header-is-transparent):not(:has(.section-header ~ .shopify-section-group-header-group)) .header:not(.is-megamenu-open) .header__logo-image {
+  body.is-at-top:has(.shopify-section:first-child .header-is-transparent):not(:has( .section-header ~ .shopify-section-group-header-group)):not(:has(.color-primary)) .header:not(.is-megamenu-open) {
+    --color-foreground: var(--transparent-header-menu-text-color);
+  }
+  body.is-at-top:has(.shopify-section:first-child .header-is-transparent):not(:has( .section-header ~ .shopify-section-group-header-group)):not(:has(.color-primary)) .header:not(.is-megamenu-open) .header__logo-image {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
   }
-  body.is-at-top:has(.shopify-section:first-child .header-is-transparent):not(:has(.section-header ~ .shopify-section-group-header-group)) .header:not(.is-megamenu-open) .header__logo-image-transparent {
+  body.is-at-top:has(.shopify-section:first-child .header-is-transparent):not(:has(.section-header ~ .shopify-section-group-header-group)):not(:has(.color-primary)) .header:not(.is-megamenu-open) .header__logo-image-transparent {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -471,6 +529,10 @@ h6, .h6 {
   line-height: var(--line-height-h6);
 }
 
+h6, h5 strong {
+  font-family: var(--font-button-family) !important;
+}
+
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   letter-spacing: var(--font-heading-letter-spacing);
 }
@@ -598,6 +660,10 @@ p > a {
   text-underline-offset: 0.2rem;
   transition: text-decoration-color var(--duration-short);
   padding-block: 0.4rem;
+}
+
+.richtext p:empty {
+  display: flex;
 }
 
 /* NEW: Rotate */
@@ -977,6 +1043,10 @@ img:not(.lazy):not([loading='eager']) {
   transition: opacity 1000ms ease-in-out, transform 600ms ease;
 }
 
+/* img[loading='lazy'] {
+  opacity: 0;
+} */
+
 .icon {
   fill: currentColor;
 }
@@ -1155,6 +1225,8 @@ img:not(.lazy):not([loading='eager']) {
   width: 100%;
   height: 100%;
   display: flex;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .section-carousel__block.media-position--top .media,
 .section-carousel__block.media-position--bottom .media {
@@ -3322,6 +3394,9 @@ fieldset.product__product-group {
 .section.layout-1 .max-w-full .section__head {
   padding-inline-start: var(--page-gutter);
 }
+.section.layout-1 .section__foot {
+  padding-inline-end: var(--page-gutter);
+}
 @media screen and (min-width: 750px) {
   .section.layout-1 .section__head {
     height: 100%;
@@ -3537,7 +3612,7 @@ svg {
   font-size: var(--font-size-static-xs);
 }
 
-.font-size-sm {
+.font-size-s {
   font-size: var(--font-size-static-sm);
 }
 
@@ -4009,35 +4084,34 @@ svg {
   color: inherit;
 }
 
-.newsletter-form .field__input-wrapper {
-  display: flex;
-  outline: none;
-  border: 0.1rem solid rgba(var(--color-border), var(--alpha-border));
-  border-radius: var(--input-border-radius);
-  -webkit-appearance: none;
-  appearance: none;
-  transition: border-color var(--duration-default);
-  overflow: hidden;
+.newsletter__controls {
+  position: relative;
 }
-.newsletter-form .field__input-wrapper input {
-  flex: 1;
-  min-width: 0;
-  border: none;
-  border-radius: 0;
-  outline: none;
+
+.newsletter__field .field__message {
+  display: block;
+  margin-block-start: 0.8rem;
 }
-.newsletter-form .field__input-wrapper button {
-  padding: 0 var(--spacing-4);
-  white-space: nowrap;
-  font-size: var(--font-size-static-sm);
+
+.newsletter__button {
+  position: absolute;
+  inset-block-start: 0.1rem;
+  inset-inline-end: 0.1rem;
+  height: calc(5rem - 0.4rem);
+  padding: 0 2.4rem;
+  color: rgb(var(--color-link));
   letter-spacing: var(--letter-spacing-medium);
-  color: rgb(var(--color-black-rgb));
-  border-radius: 0;
-  background-color: rgb(var(--color-white-rgb));
+  font-size: var(--font-size-static-sm);
+  font-weight: var(--font-body-weight);
+  line-height: var(--line-height-static-sm);
+  text-transform: uppercase;
+  z-index: 2;
   transition: background-color var(--duration-default);
   align-items: center;
 }
-.newsletter-form .field__input-wrapper button:hover {
+
+@media (hover: hover) {
+  .newsletter__button:hover {
   background-color: rgba(var(--color-border), var(--alpha-border));
 }
 
@@ -4296,7 +4370,7 @@ html.js:not(.shopify-design-mode) .animation-none {
 }
 
 .entry {
-  color: rgba(var(--color-foreground), 0.7);
+  color: rgba(var(--color-foreground), 1);
   line-height: var(--line-height-static-sm);
 }
 

@@ -18,7 +18,7 @@ facets-clear-filters {
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width: 989px) {
+@media screen and (max-width: 750px) {
   .container.collection-facets__container:has(.active-facets__slider) {
     padding-inline-end: 0;
   }
@@ -34,7 +34,7 @@ facets-clear-filters {
   display: flex;
   flex-direction: column;
 }
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 750px) {
   .collection-facets__status .collection-facets__product-count {
     color: rgba(var(--color-foreground), 1);
     font-size: var(--font-size-static-md);
@@ -105,7 +105,7 @@ html.no-js .facets__actions-item {
   justify-content: center;
 }
 
-@media screen and (max-width: 989px) {
+@media screen and (max-width: 749px) {
   .button--filter .facets__custom-select .custom-select__btn,
   .button--filter .facets__custom-select .custom-select__option,
   .button--filter .facets__actions-button {
@@ -152,7 +152,7 @@ html.no-js .facets__actions-item {
   height: 100%;
 }
 
-@media screen and (max-width: 989px) {
+@media screen and (max-width: 749px) {
   html.js .facets__drawer .drawer__content {
     width: 88%;
   }
@@ -324,7 +324,7 @@ html.js .facets__drawer .drawer__content, html.no-js .facets__drawer .drawer__co
   border-radius: var(--input-border-radius);
   padding: var(--spacing-4) var(--spacing-5);
 }
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 750px) {
   .collection-facets__inner {
     flex-direction: row;
     justify-content: space-between;
@@ -343,7 +343,7 @@ html.js .facets__drawer .drawer__content, html.no-js .facets__drawer .drawer__co
   }
 }
 
-@media screen and (max-width: 989px) {
+@media screen and (max-width: 749px) {
   .collection-facets__status {
     flex-direction: row;
     color: rgba(var(--color-foreground), 0.75);
@@ -406,7 +406,7 @@ html.js .facets__drawer .drawer__content, html.no-js .facets__drawer .drawer__co
     grid-column: 4;
   }
 }
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 750px) {
   .collection-facets {
     --button-action-side-padding: 3.2rem;
   }
@@ -581,7 +581,7 @@ details[open].menu-opening>summary[aria-expanded="true"]~.drawer__content.drawer
   border: 0.1rem solid rgba(var(--color-border), var(--alpha-border));
   border-radius: var(--button-action-border-radius);
 }
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 750px) {
   .active-facets .swiper-wrapper {
     display: flex;
     flex-wrap: wrap;

@@ -175,3 +175,6 @@ if(!customElements.get('hero-slider')) {
   }
   customElements.define('hero-slider', HeroSlider);
 }
+
+
+

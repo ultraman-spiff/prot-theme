@@ -136,8 +136,16 @@
             "label": "0"
           },
           {
+            "value": "0.05em",
+            "label": "0.05"
+          },
+          {
             "value": "0.1em",
             "label": "0.1"
+          },
+          {
+            "value": "0.15em",
+            "label": "0.15"
           },
           {
             "value": "0.2em",
@@ -1051,7 +1059,7 @@
         "content": "t:sections.global.header.cart_page.content"
       },
       {
-        "type": "richtext",
+        "type": "liquid",
         "id": "cart_terms",
         "label": "t:settings_schema.cart.settings.cart_terms.label",
         "info": "t:settings_schema.cart.settings.cart_terms.info"

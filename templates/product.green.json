@@ -1,1 +1,779 @@
-{"sections":{"main":{"type":"main-product","blocks":{"breadcrumbs_JRrp9d":{"type":"breadcrumbs","settings":{}},"1e0c79e9-7de0-4eee-b9c5-f27132635fb8":{"type":"title","settings":{"heading_size":"h6","spacing_bottom":"1"}},"custom_liquid_GQU6MA":{"type":"custom_liquid","settings":{"spacing_bottom":"3","custom_liquid":"<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0009\/1117\/9820\/files\/Group_141.png?v=1753965024\" alt=\"Group 141\" style=\"max-width: 176px; height: auto; margin-bottom: 25px;\">"}},"sku_HNK7Ka":{"type":"sku","disabled":true,"settings":{"spacing_bottom":"1"}},"badge_dC66pN":{"type":"badge","settings":{"spacing_bottom":"1","show_badges":true,"show_badges_discount":true,"show_badges_sold":true}},"divider_HGwyhB":{"type":"divider","settings":{"spacing_bottom":"3"}},"1e939cd6-0958-4135-a9e5-c50faef01437":{"type":"variant_picker","settings":{"spacing_bottom":"3","title":"Variant picker","enable_back_in_stock":false,"picker_type":"swatch","variant_options_with_thumbnails":"Color","size_guide_page":"size-guide","sizes_option":"Size"}},"custom_liquid_iUafmW":{"type":"custom_liquid","settings":{"spacing_bottom":"1","custom_liquid":"<br>"}},"8604a6ff-ad0b-44dd-8068-1de4e062f8e8":{"type":"buy_buttons","settings":{"spacing_bottom":"3","show_quantity":true,"layout":"inline","show_dynamic_checkout":false,"show_gift_card_recipient":false}},"e6d841d6-2f71-40b3-956a-912df13f9f6e":{"type":"inventory_notice","settings":{"spacing_bottom":"1","inventory_threshold":15,"notice_just_text":false}},"7be6b89c-da83-4ff2-9b85-44fb28cbfa27":{"type":"pickup-availability","settings":{"spacing_bottom":"2"}},"divider_XYwkEk":{"type":"divider","settings":{"spacing_bottom":"1"}},"complementary_products_h7nWQd":{"type":"complementary_products","settings":{"spacing_bottom":"2","heading":"You may also like","icon":"theme-box","limit":2}}},"block_order":["breadcrumbs_JRrp9d","1e0c79e9-7de0-4eee-b9c5-f27132635fb8","custom_liquid_GQU6MA","sku_HNK7Ka","badge_dC66pN","divider_HGwyhB","1e939cd6-0958-4135-a9e5-c50faef01437","custom_liquid_iUafmW","8604a6ff-ad0b-44dd-8068-1de4e062f8e8","e6d841d6-2f71-40b3-956a-912df13f9f6e","7be6b89c-da83-4ff2-9b85-44fb28cbfa27","divider_XYwkEk","complementary_products_h7nWQd"],"custom_css":["skio-plan-picker {margin-top: -20px; margin-bottom: -30px;}"],"settings":{"product_media_layout":"product__media-layout--full","product_media_layout_mobile":"product__media-layout--full--sm","product_media_aspect_ratio":"auto","product_media_object_fit":"cover","product_slider_auto_height":false,"media_transparent_background":false,"display_media_zoom":"trigger","product_media_with_thumbs":"desktop_and_mobile","product_media_thumbs_ratio":"auto","product_media_thumbs_object_fit":"cover","gallery_arrows_show_on":"desktop","display_media_gallery_pagination":"none","media_gallery_info":"","metafield_as_seen_on":"","color_scheme_gallery":"scheme-1","enable_sticky_info":true,"enable_actions_bar":true,"media_grid_size":"large","media_grid_position":"start","grid_gap":"4","spacing_grid":1.6,"grid_content_alignment":"start","section_width":"max-w-fluid","color_scheme":"scheme-0ab4cd39-7d50-4fc3-8cf3-e26b2009fc9e","spacing_top":"1","spacing_bottom":"2"}},"complete_the_set_LAN4cq":{"type":"complete-the-set","blocks":{"collapsible_UeyH3r":{"type":"collapsible","settings":{"block_type":"collapsible","heading":"Description","link":"","content":"<p>Feel renewed vibrancy, energy, and vitality—every scoop is designed to support you thriving fully. <\/p><p>ProT Gold Daily Recovery Greens + Protein is the only recovery greens powder formulated with Nano Hydrolyzed Collagen® protein. This advanced formula combines clinically inspired innovation with complete protein, digestive support, and nutrient-dense superfoods to help you stay strong, resilient, and energized every day. <\/p><ul><li>Features Nano Hydrolyzed Collagen<span>®<\/span> for fast absorption; in vitro studies show full digestibility in under 15 minutes¹ <\/li><li>7 key amino acids to support daily protein needs and tissue maintenance <\/li><li>5B CFU probiotics + prebiotics to nourish gut health and support nutrient uptake <\/li><li>Antioxidants from fruits and greens to help fight oxidative stress <\/li><li>Adaptogens traditionally used to support balance and recovery<\/li><\/ul>","page":""}},"collapsible_BKp9Wy":{"type":"collapsible","settings":{"block_type":"collapsible","heading":"Directions for use","link":"","content":"<p>Combine 1 scoop with 10-12 oz of water or other liquid. Add more water for a lighter taste.<\/p>","page":""}},"collapsible_cc9jtz":{"type":"collapsible","settings":{"block_type":"collapsible","heading":"Nutritional facts","link":"","content":"<p>{{ product.metafields.custom.nutritional_facts_new.value }}<\/p>","page":""}},"collapsible_A663MD":{"type":"collapsible","settings":{"block_type":"collapsible","heading":"Shipping & returns","link":"","content":"<p><strong>Shipping information<\/strong> <\/p><ul><li>Free shipping in the USA on all orders. <\/li><li>Free shipping on international orders to select countries on orders over $184. <\/li><\/ul><p><strong>Returns Information<\/strong> <\/p><ul><li>Our return policy is good for 30 days from date of delivery. <\/li><li>To be eligible for a return, your item must be unused and in the same condition that you received it. It must also be in the original packaging. Non-returnable items: Gift cards Downloadable software products<\/li><\/ul><p><a href=\"\/policies\/shipping-policy\" title=\"Shipping Policy\"><strong>VIEW FULL POLICY<\/strong><\/a><\/p>","page":""}}},"block_order":["collapsible_UeyH3r","collapsible_BKp9Wy","collapsible_cc9jtz","collapsible_A663MD"],"custom_css":[".accordion__button span {font-family: \"ArticulatCF_Medium\";}",".section__media.media img {object-fit: scale-down;}"],"settings":{"heading":"","content_heading":"","heading_size":"h3","content_type":"image","featured_image":"shopify:\/\/shop_images\/ProT_-_ProT_Gold_Daily_Recovery_Greens_Protein_-_Tabs_Image.webp","featured_image_aspect_ratio":"1\/1","open_first_collapsible":false,"flip_desktop":true,"flip_mobile":false,"section_width":"max-w-fluid","color_scheme":"scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be","spacing_top":"2","spacing_bottom":"6"}},"hero_banner_FNU8BP":{"type":"hero-banner","blocks":{"slide_83rwDT":{"type":"slide","settings":{"banner_layout":"hero-banner--full","color_scheme":"scheme-8","header_menu_text_color":"#ffffff","heading":"<h5>“This product is an amazing addition to my daily fueling routine. It’s an easy way to add high-quality ingredients, which my body needs especially with high training demands.”<\/h5>","subheading":"Customer Voices","subheading_link":"","text":"<p>Claudia<\/p>","button_link_1":"\/","button_link_1_type":"button","button_label_1":"","button_style_1":"button--filled","button_link_2":"\/","button_label_2":"","button_style_2":"button--outlined","content_position":"start","content_alignment":"start","image":"shopify:\/\/shop_images\/ProT_-_ProT_Gold_Daily_Recovery_Greens_Protein_-_Reviews_1.jpg","video_external":"","show_controls_on_video":false,"enable_media_overlay_desktop":false,"content_position_mobile":"start","content_alignment_mobile":"center","image_mobile":"shopify:\/\/shop_images\/ProT_-_ProT_Gold_Daily_Recovery_Greens_Protein_-_Reviews_1_Mobile.jpg","video_external_mobile":"","show_controls_on_video_mobile":false,"enable_media_overlay_mobile":true}},"slide_An6GR9":{"type":"slide","settings":{"banner_layout":"hero-banner--full","color_scheme":"scheme-8","header_menu_text_color":"#ffffff","heading":"<h5>“Shocked. To this day, cannot count just one difference. All over improvement. Thank you for another wonderful productive product.”<\/h5>","subheading":"Customer Voices","subheading_link":"","text":"<p>Shana<\/p>","button_link_1":"\/","button_link_1_type":"button","button_label_1":"","button_style_1":"button--filled","button_link_2":"\/","button_label_2":"","button_style_2":"button--outlined","content_position":"start","content_alignment":"start","image":"shopify:\/\/shop_images\/ProT_-_ProT_Gold_Daily_Recovery_Greens_Protein_-_Reviews_2.webp","video_external":"","show_controls_on_video":false,"enable_media_overlay_desktop":true,"content_position_mobile":"start","content_alignment_mobile":"center","image_mobile":"shopify:\/\/shop_images\/ProT_-_ProT_Gold_Daily_Recovery_Greens_Protein_-_Reviews_2_Mobile.jpg","video_external_mobile":"","show_controls_on_video_mobile":false,"enable_media_overlay_mobile":true}},"slide_Cbr7BB":{"type":"slide","settings":{"banner_layout":"hero-banner--full","color_scheme":"scheme-8","header_menu_text_color":"#ffffff","heading":"<h5>“Wow, taste is a perfect mellow lemon-lime. I can feel more energy after drinking it. Great in the morning to get the party started.”<\/h5>","subheading":"Customer Voices","subheading_link":"","text":"<p>Pam<\/p>","button_link_1":"\/","button_link_1_type":"button","button_label_1":"","button_style_1":"button--filled","button_link_2":"\/","button_label_2":"","button_style_2":"button--outlined","content_position":"start","content_alignment":"start","image":"shopify:\/\/shop_images\/ProT_-_ProT_Gold_Daily_Recovery_Greens_Protein_-_Reviews_3.webp","video_external":"","show_controls_on_video":false,"enable_media_overlay_desktop":true,"content_position_mobile":"start","content_alignment_mobile":"center","image_mobile":"shopify:\/\/shop_images\/ProT_-_ProT_Gold_Daily_Recovery_Greens_Protein_-_Reviews_3_Mobile.webp","video_external_mobile":"","show_controls_on_video_mobile":true,"enable_media_overlay_mobile":true}}},"block_order":["slide_83rwDT","slide_An6GR9","slide_Cbr7BB"],"custom_css":["@media screen and (min-width: 1024px) {.hero__subheading {margin-block-end: 30rem; } h5 {max-width: 520px; } p {max-width: 470px; }}","@media screen and (max-width: 769px) {.swiper-slide[data-index=\"0\"] .hero__subheading {margin-block-end: 35rem; } .hero__subheading {margin-block-end: 40rem; } .img {min-width: 100%; min-height: 1231px; }}"],"name":"t:sections.hero-banner.name","settings":{"enable_transparent_header":false,"slider_height":100,"slideshow_autoplay_interval":15,"show_slideshow_navigation":true,"slideshow_navigation_position":"hero__swiper-buttons--start","color_scheme_arrows":"scheme-8","show_slideshow_pagination":true,"slideshow_pagination_style":"style-1","floating_bar":false}},"testimonials_9tgz69":{"type":"testimonials","blocks":{"testimonial_hxmnXp":{"type":"testimonial","settings":{"author":"Kathleen W.","quote":"<h6><br\/>Great product<\/h6><p>All Frog Fuel products are fantastic. The powdered collagen is perfect mixed into a smoothie or other liquids. It is a high quality grade without byproducts. I have noticed a big difference in recovery time and with as hard as I train at times, improvement in tendon quality and strength. I combine this with the single packaged servings at different times of day for an ongoing effect over the day.<\/p><p>08\/08\/23<\/p>","rating_score":5,"color_scheme":"scheme-1431df62-cddb-47f5-9395-3afb7ac693eb"}},"testimonial_Daqdkd":{"type":"testimonial","settings":{"author":"Rebecca B.","quote":"<h6><br\/>Best purchase!<\/h6><p>I love the ease and smoothness going down of the product. The easiest 17 grams of protein l've ever tried! I prefer the big bottle. However the portable packs are convenient when traveling. I initially used Vital Protein powder, but a Pro T Gold is some much easier to use and the flavor beats Vital Protein hands down! Regarding flavor, hoping you might develop more flavors.<\/p><p>04\/15\/24<\/p>","rating_score":5,"color_scheme":"scheme-1431df62-cddb-47f5-9395-3afb7ac693eb"}},"testimonial_RpfD63":{"type":"testimonial","settings":{"author":"Cindy W.","quote":"<h6><br\/>Love My Gold!<\/h6><p>Love my \"gold\"! It gives me so much energy, keeps the hunger pangs away, and seems to make my overall complexion better!<\/p><p>08\/16\/23<\/p>","rating_score":5,"color_scheme":"scheme-1431df62-cddb-47f5-9395-3afb7ac693eb"}},"testimonial_VNah9G":{"type":"testimonial","settings":{"author":"Jen L.","quote":"<p><\/p><h6>The best supplement I have ever had!<\/h6><p>I am 50 years old and have been using ProT for about 3 mths now and WOW! The amount of compliments I have received about my skin hav been astronomical. More importantly, I suffer from severe spinal stenosis that significantly reduces my mobility. I have found that my mobility has improved to the point that I am integrating yoga back into my daily regimen which I have painfully been missing for over 10 years. I love ProT and would recommend to anyone and everyone!<\/p><p>02\/03\/25<\/p>","rating_score":5,"color_scheme":"scheme-1431df62-cddb-47f5-9395-3afb7ac693eb"}},"testimonial_k7PBGi":{"type":"testimonial","settings":{"author":"Kiki D.","quote":"<p><\/p><h6>Love the taste.<\/h6><p>I love the taste of this collagen protein. Not only does my hair and nails grow long, but it's helping my knee injury and it gives me energy to get thru the day. I definitely highly recommend it.<\/p><p>11\/30\/23<\/p>","rating_score":5,"color_scheme":"scheme-1431df62-cddb-47f5-9395-3afb7ac693eb"}}},"block_order":["testimonial_hxmnXp","testimonial_Daqdkd","testimonial_RpfD63","testimonial_VNah9G","testimonial_k7PBGi"],"custom_css":["h2 {margin-top: -20px;}","@media screen and (max-width: 768px) {h2 {font-size: 36px; }}"],"name":"t:sections.testimonials.name","settings":{"heading":"Reviews","heading_size":"h3","subheading":"<strong>our customers love proT gold<\/strong>","rating_icon":"star","layout":"carousel-none-media","slider_autoplay":5,"image_position":"image-start","image_aspect_ratio":"1\/1","media_show_on":"desktop","spacing_inner":"2","section_width":"max-w-full","color_scheme":"scheme-c964cc82-bba3-486f-a537-7f3207978313","spacing_top":"4","spacing_bottom":"4"}},"carousel_wekpJp":{"type":"carousel","blocks":{"card_cQDBVC":{"type":"card","settings":{"heading":"Products","heading_size":"h6","text":"<h3>You May Also Like<\/h3>","button_label":"","button_link":"","button_style":"button--filled","aspect_ratio":"auto","color_scheme":"scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be","media_position":"background","content_position":"start","content_alignment":"start","video_external":"","show_controls_on_video":false,"content_position_mobile":"start","content_alignment_mobile":"start","video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"card_D97RWc":{"type":"card","settings":{"heading":"","heading_size":"h6","text":"<p>ProT Powder Liquid Collagen Protein<br\/>$48.00<\/p>","button_label":"Shop Now","button_link":"shopify:\/\/products\/prot-gold-medical-grade-collagen-protein","button_style":"button--outlined","aspect_ratio":"auto","color_scheme":"scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be","media_position":"top","content_position":"center","content_alignment":"start","image":"shopify:\/\/shop_images\/ProT_-_Homepage_-_Products_-_ProT_Gold_Liquid_Collagen_Protein_1.png","video_external":"","show_controls_on_video":false,"content_position_mobile":"start","content_alignment_mobile":"start","video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"0"}},"card_tRYT9g":{"type":"card","settings":{"heading":"","heading_size":"h6","text":"<p>ProT Powder Collagen Protein<br\/>$48.00<\/p>","button_label":"Shop Now","button_link":"shopify:\/\/products\/prot-powder-collagen-protein","button_style":"button--outlined","aspect_ratio":"auto","color_scheme":"scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be","media_position":"top","content_position":"center","content_alignment":"start","image":"shopify:\/\/shop_images\/ProT_-_Homepage_-_Products_-_ProT_Powder_Collagen_Protein.png","video_external":"","show_controls_on_video":false,"content_position_mobile":"start","content_alignment_mobile":"start","video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"0"}}},"block_order":["card_cQDBVC","card_D97RWc","card_tRYT9g"],"custom_css":["@media (max-width: 769px) {{display: none; }}","h2 {font-family: \"ArticulatCF_Demi_Bold\"; text-transform: uppercase; font-size: 16px; letter-spacing: 0.15em;}"],"name":"t:sections.carousel.name","settings":{"show_navigation_arrows":true,"slideshow_autoplay_interval":0,"slides_per_view":3,"layout":"layout-1","heading":"","heading_size":"h3","subheading":"","button_label":"","button_link":"","button_style":"button--text","section_width":"max-w-fluid","color_scheme":"scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be","spacing_top":"1","spacing_bottom":"4"}},"carousel_GnGeyF":{"type":"carousel","blocks":{"card_fKaE7L":{"type":"card","settings":{"heading":"","heading_size":"h6","text":"<p>ProT Powder Liquid Collagen Protein<br\/>$48.00<\/p>","button_label":"Shop Now","button_link":"shopify:\/\/products\/prot-gold-medical-grade-collagen-protein","button_style":"button--outlined","aspect_ratio":"auto","color_scheme":"scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be","media_position":"top","content_position":"center","content_alignment":"start","image":"shopify:\/\/shop_images\/ProT_-_Homepage_-_Products_-_ProT_Gold_Liquid_Collagen_Protein_1.png","video_external":"","show_controls_on_video":false,"content_position_mobile":"start","content_alignment_mobile":"start","video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"0"}},"card_gWFzbP":{"type":"card","settings":{"heading":"","heading_size":"h6","text":"<p>ProT Powder Collagen Protein<br\/>$48.00<\/p>","button_label":"Shop Now","button_link":"shopify:\/\/products\/prot-powder-collagen-protein","button_style":"button--outlined","aspect_ratio":"auto","color_scheme":"scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be","media_position":"top","content_position":"center","content_alignment":"start","image":"shopify:\/\/shop_images\/ProT_-_Homepage_-_Products_-_ProT_Powder_Collagen_Protein.png","video_external":"","show_controls_on_video":false,"content_position_mobile":"start","content_alignment_mobile":"start","video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"0"}}},"block_order":["card_fKaE7L","card_gWFzbP"],"custom_css":["@media (min-width: 769px) {{display: none; }}","@media (max-width: 768px) {h2 {max-width: 200px; }}"],"name":"t:sections.carousel.name","settings":{"show_navigation_arrows":true,"slideshow_autoplay_interval":0,"slides_per_view":3,"layout":"layout-1","heading":"You May Also Like","heading_size":"h2","subheading":"","button_label":"View All","button_link":"shopify:\/\/collections\/all-products","button_style":"button--text","section_width":"max-w-fluid","color_scheme":"scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be","spacing_top":"2","spacing_bottom":"4"}},"full_width_banner_BVCJYz":{"type":"full-width-banner","blocks":{"subheading_pGhxYy":{"type":"subheading","settings":{"subheading":"The Innovation","link":""}},"heading_MjahjB":{"type":"heading","settings":{"heading":"Why Medical-Grade Collagen Matters","heading_size":"h3"}},"content_DYTDWK":{"type":"content","settings":{"content":"<p>ProT Gold was originally developed to meet \u2028the high standards of medical nutrition. <\/p><p>Now it’s available to you.<\/p>"}},"buttons_kLLNDD":{"type":"buttons","settings":{"button_link_1":"shopify:\/\/pages\/formula","button_link_1_type":"button","button_label_1":"Discover Our Formula","button_style_1":"button--outlined","color_scheme_first_button":"scheme-8","button_link_2":"\/","button_label_2":"","button_style_2":"button--outlined","color_scheme_second_button":"scheme-1"}}},"block_order":["subheading_pGhxYy","heading_MjahjB","content_DYTDWK","buttons_kLLNDD"],"custom_css":["@media screen and (max-width: 769px) {h2 {font-size: 36px; max-width: 350px; margin-left: auto; margin-right: auto; } p {font-size: 15px; max-width: 350px; margin-left: auto; margin-right: auto; }}","p {max-width: 350px; margin-left: auto; margin-right: auto;}"],"name":"t:sections.full-width-banner.name","settings":{"enable_transparent_header":true,"media_position":"background","section_height":"half","content_position":"center","content_alignment":"center","image":"shopify:\/\/shop_images\/ProT_-_Liquid_Collagen_PP_-_Why_Medical-Grade_Collagen_Matters.jpg","video_external":"","show_controls_on_video":false,"aspect_ratio":"auto","section_height_mobile":"half","content_position_mobile":"center","content_alignment_mobile":"center","image_mobile":"shopify:\/\/shop_images\/ProT_-_Liquid_Collagen_PP_-_Why_Medical-Grade_Collagen_Matters_Mobile.jpg","video_external_mobile":"","show_controls_on_video_mobile":false,"aspect_ratio_mobile":"auto","section_width":"max-w-full","color_scheme":"scheme-8","color_scheme_for_content":"scheme-8","spacing_inner":"2","spacing_top":"0","spacing_bottom":"0"}},"multitile_VgjgWw":{"type":"multitile","blocks":{"tile_iUyyBa":{"type":"tile","settings":{"show_on":"both","column_factor":6,"row_factor":1,"color_scheme":"scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"background","heading":"","heading_size":"h6","text":"<p>1. Lee SK, Posthauer ME, Dorner B, Redovian V, Maloney MJ. Pressure ulcer healing with a concentrated, fortified, collagen protein hydrolysate supplement: a randomized controlled trial. Adv Skin Wound Care. 2006 Mar;19(2):92-6<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"0"}}},"block_order":["tile_iUyyBa"],"custom_css":["p {max-width: 1200px;}","@media screen and (max-width: 768px) {p {font-size: 11px; }}"],"name":"t:sections.multitile.name","settings":{"block_order_mobile":false,"heading":"","heading_size":"h3","heading_alignment":"start","spacing_tile":"default","color_scheme":"scheme-7","section_width":"max-w-page","spacing_top":"1","spacing_bottom":"1"}}},"order":["main","complete_the_set_LAN4cq","hero_banner_FNU8BP","testimonials_9tgz69","carousel_wekpJp","carousel_GnGeyF","full_width_banner_BVCJYz","multitile_VgjgWw"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "breadcrumbs_JRrp9d": {
+          "type": "breadcrumbs",
+          "settings": {}
+        },
+        "1e0c79e9-7de0-4eee-b9c5-f27132635fb8": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h6",
+            "spacing_bottom": "1"
+          }
+        },
+        "custom_liquid_GQU6MA": {
+          "type": "custom_liquid",
+          "settings": {
+            "spacing_bottom": "3",
+            "custom_liquid": "<img src=\"https://cdn.shopify.com/s/files/1/0009/1117/9820/files/Group_141.png?v=1753965024\" alt=\"Group 141\" style=\"max-width: 176px; height: auto; margin-bottom: 25px;\">"
+          }
+        },
+        "badge_dC66pN": {
+          "type": "badge",
+          "settings": {
+            "spacing_bottom": "1",
+            "show_badges": true,
+            "show_badges_discount": true,
+            "show_badges_sold": true
+          }
+        },
+        "divider_HGwyhB": {
+          "type": "divider",
+          "settings": {
+            "spacing_bottom": "3"
+          }
+        },
+        "1e939cd6-0958-4135-a9e5-c50faef01437": {
+          "type": "variant_picker",
+          "settings": {
+            "spacing_bottom": "3",
+            "title": "Variant picker",
+            "enable_back_in_stock": false,
+            "picker_type": "swatch",
+            "variant_options_with_thumbnails": "Color",
+            "size_guide_page": "size-guide",
+            "sizes_option": "Size"
+          }
+        },
+        "skio_plan_picker_Cbw4eG": {
+          "type": "skio-plan-picker",
+          "settings": {
+            "form_id": "product-form-{{section.id}}",
+            "external_price_selector": ".price-item--regular",
+            "show_details": false,
+            "show_without_subscription": false,
+            "show_compare_price": true,
+            "legend_content": "Select subscription plan",
+            "show_legend": false,
+            "layout": "vertical",
+            "dropdownPosition": "inside",
+            "additional_frequency_label": "",
+            "start_onetime": true,
+            "onetime_first": true,
+            "group_border_radius": 25,
+            "group_border_width": 1,
+            "group_border_color": "#4a134a",
+            "group_border_selected_color": "#4a134a",
+            "group_background_color": "#fefaf5",
+            "selected_group_background_color": "#f5ece0",
+            "group_text_color": "#4a134a",
+            "group_selected_text_color": "#4a134a",
+            "show_radio_selector": true,
+            "onetime_title": "One time purchase",
+            "subscription_title": "Subscribe",
+            "prepaid_title": "Prepaid",
+            "discount_format": "percent",
+            "discount_style": "bubble",
+            "discount_text": "Save [discount]",
+            "discount_color": "#0fa573",
+            "discount_text_color": "#ffffff",
+            "additional_subscription_content": "",
+            "selector_type": "dropdown",
+            "button_plan_selector_width": 100,
+            "default_subscription": "",
+            "future_price_adjustments_text": "<small>Then [discount] off after the [order_count_ordinal] order</small>",
+            "element_name": "skio-plan-picker",
+            "product_handle": "",
+            "combine_groups": false,
+            "combined_group_name": "Subscription"
+          }
+        },
+        "custom_liquid_iUafmW": {
+          "type": "custom_liquid",
+          "settings": {
+            "spacing_bottom": "1",
+            "custom_liquid": "<br>"
+          }
+        },
+        "8604a6ff-ad0b-44dd-8068-1de4e062f8e8": {
+          "type": "buy_buttons",
+          "settings": {
+            "spacing_bottom": "3",
+            "show_quantity": true,
+            "layout": "inline",
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "e6d841d6-2f71-40b3-956a-912df13f9f6e": {
+          "type": "inventory_notice",
+          "settings": {
+            "spacing_bottom": "1",
+            "inventory_threshold": 15,
+            "notice_just_text": false
+          }
+        },
+        "7be6b89c-da83-4ff2-9b85-44fb28cbfa27": {
+          "type": "pickup-availability",
+          "settings": {
+            "spacing_bottom": "2"
+          }
+        },
+        "divider_XYwkEk": {
+          "type": "divider",
+          "settings": {
+            "spacing_bottom": "1"
+          }
+        },
+        "complementary_products_h7nWQd": {
+          "type": "complementary_products",
+          "settings": {
+            "spacing_bottom": "2",
+            "heading": "You may also like",
+            "icon": "theme-box",
+            "limit": 2
+          }
+        }
+      },
+      "block_order": [
+        "breadcrumbs_JRrp9d",
+        "1e0c79e9-7de0-4eee-b9c5-f27132635fb8",
+        "custom_liquid_GQU6MA",
+        "badge_dC66pN",
+        "divider_HGwyhB",
+        "1e939cd6-0958-4135-a9e5-c50faef01437",
+        "skio_plan_picker_Cbw4eG",
+        "custom_liquid_iUafmW",
+        "8604a6ff-ad0b-44dd-8068-1de4e062f8e8",
+        "e6d841d6-2f71-40b3-956a-912df13f9f6e",
+        "7be6b89c-da83-4ff2-9b85-44fb28cbfa27",
+        "divider_XYwkEk",
+        "complementary_products_h7nWQd"
+      ],
+      "custom_css": [
+        "skio-plan-picker {margin-top: -20px; margin-bottom: -30px;}"
+      ],
+      "settings": {
+        "product_media_layout": "product__media-layout--full",
+        "product_media_layout_mobile": "product__media-layout--full--sm",
+        "product_media_aspect_ratio": "auto",
+        "product_media_object_fit": "cover",
+        "product_slider_auto_height": false,
+        "media_transparent_background": false,
+        "display_media_zoom": "trigger",
+        "product_media_with_thumbs": "desktop_and_mobile",
+        "product_media_thumbs_ratio": "auto",
+        "product_media_thumbs_object_fit": "cover",
+        "gallery_arrows_show_on": "desktop",
+        "display_media_gallery_pagination": "none",
+        "media_gallery_info": "",
+        "metafield_as_seen_on": "",
+        "color_scheme_gallery": "scheme-1",
+        "enable_sticky_info": true,
+        "enable_actions_bar": true,
+        "media_grid_size": "large",
+        "media_grid_position": "start",
+        "grid_gap": "4",
+        "spacing_grid": 1.6,
+        "grid_content_alignment": "start",
+        "section_width": "max-w-fluid",
+        "color_scheme": "scheme-0ab4cd39-7d50-4fc3-8cf3-e26b2009fc9e",
+        "spacing_top": "1",
+        "spacing_bottom": "2"
+      }
+    },
+    "complete_the_set_LAN4cq": {
+      "type": "complete-the-set",
+      "blocks": {
+        "collapsible_UeyH3r": {
+          "type": "collapsible",
+          "settings": {
+            "block_type": "collapsible",
+            "heading": "Description",
+            "link": "",
+            "content": "<p>Feel renewed vibrancy, energy, and vitality—every scoop is designed to support you thriving fully. </p><p>ProT Gold Daily Recovery Greens + Protein is the only recovery greens powder formulated with Nano Hydrolyzed Collagen® protein. This advanced formula combines clinically inspired innovation with complete protein, digestive support, and nutrient-dense superfoods to help you stay strong, resilient, and energized every day. </p><ul><li>Features Nano Hydrolyzed Collagen<span>®</span> for fast absorption; in vitro studies show full digestibility in under 15 minutes¹ </li><li>7 key amino acids to support daily protein needs and tissue maintenance </li><li>5B CFU probiotics + prebiotics to nourish gut health and support nutrient uptake </li><li>Antioxidants from fruits and greens to help fight oxidative stress </li><li>Adaptogens traditionally used to support balance and recovery</li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_BKp9Wy": {
+          "type": "collapsible",
+          "settings": {
+            "block_type": "collapsible",
+            "heading": "Directions for use",
+            "link": "",
+            "content": "<p>Combine 1 scoop with 10-12 oz of water or other liquid. Add more water for a lighter taste.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_cc9jtz": {
+          "type": "collapsible",
+          "settings": {
+            "block_type": "collapsible",
+            "heading": "Nutritional facts",
+            "link": "",
+            "content": "<p>{{ product.metafields.custom.nutritional_facts_new.value }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_A663MD": {
+          "type": "collapsible",
+          "settings": {
+            "block_type": "collapsible",
+            "heading": "Shipping & returns",
+            "link": "",
+            "content": "<p><strong>Shipping information</strong> </p><ul><li>Free shipping in the USA on all orders. </li><li>Free shipping on international orders to select countries on orders over $184. </li></ul><p><strong>Returns Information</strong> </p><ul><li>Our return policy is good for 30 days from date of delivery. </li><li>To be eligible for a return, your item must be unused and in the same condition that you received it. It must also be in the original packaging. Non-returnable items: Gift cards Downloadable software products</li></ul><p><a href=\"/policies/shipping-policy\" title=\"Shipping Policy\"><strong>VIEW FULL POLICY</strong></a></p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_UeyH3r",
+        "collapsible_BKp9Wy",
+        "collapsible_cc9jtz",
+        "collapsible_A663MD"
+      ],
+      "custom_css": [
+        ".accordion__button span {font-family: \"ArticulatCF_Medium\";}",
+        ".section__media.media img {object-fit: scale-down;}"
+      ],
+      "settings": {
+        "heading": "",
+        "content_heading": "",
+        "heading_size": "h3",
+        "content_type": "image",
+        "featured_image": "shopify://shop_images/ProT_-_ProT_Gold_Daily_Recovery_Greens_Protein_-_Tabs_Image.webp",
+        "featured_image_aspect_ratio": "1/1",
+        "open_first_collapsible": false,
+        "flip_desktop": true,
+        "flip_mobile": false,
+        "section_width": "max-w-fluid",
+        "color_scheme": "scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be",
+        "spacing_top": "2",
+        "spacing_bottom": "6"
+      }
+    },
+    "hero_banner_FNU8BP": {
+      "type": "hero-banner",
+      "blocks": {
+        "slide_83rwDT": {
+          "type": "slide",
+          "settings": {
+            "banner_layout": "hero-banner--full",
+            "color_scheme": "scheme-8",
+            "header_menu_text_color": "#ffffff",
+            "heading": "<h5>“This product is an amazing addition to my daily fueling routine. It’s an easy way to add high-quality ingredients, which my body needs especially with high training demands.”</h5>",
+            "subheading": "Customer Voices",
+            "subheading_link": "",
+            "text": "<p>Claudia</p>",
+            "button_link_1": "/",
+            "button_link_1_type": "button",
+            "button_label_1": "",
+            "button_style_1": "button--filled",
+            "button_link_2": "/",
+            "button_label_2": "",
+            "button_style_2": "button--outlined",
+            "content_position": "start",
+            "content_alignment": "start",
+            "image": "shopify://shop_images/ProT_-_ProT_Gold_Daily_Recovery_Greens_Protein_-_Reviews_1.jpg",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "enable_media_overlay_desktop": false,
+            "content_position_mobile": "start",
+            "content_alignment_mobile": "center",
+            "image_mobile": "shopify://shop_images/ProT_-_ProT_Gold_Daily_Recovery_Greens_Protein_-_Reviews_1_Mobile.jpg",
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "enable_media_overlay_mobile": true
+          }
+        },
+        "slide_An6GR9": {
+          "type": "slide",
+          "settings": {
+            "banner_layout": "hero-banner--full",
+            "color_scheme": "scheme-8",
+            "header_menu_text_color": "#ffffff",
+            "heading": "<h5>“Shocked. To this day, cannot count just one difference. All over improvement. Thank you for another wonderful productive product.”</h5>",
+            "subheading": "Customer Voices",
+            "subheading_link": "",
+            "text": "<p>Shana</p>",
+            "button_link_1": "/",
+            "button_link_1_type": "button",
+            "button_label_1": "",
+            "button_style_1": "button--filled",
+            "button_link_2": "/",
+            "button_label_2": "",
+            "button_style_2": "button--outlined",
+            "content_position": "start",
+            "content_alignment": "start",
+            "image": "shopify://shop_images/ProT_-_ProT_Gold_Daily_Recovery_Greens_Protein_-_Reviews_2.webp",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "enable_media_overlay_desktop": true,
+            "content_position_mobile": "start",
+            "content_alignment_mobile": "center",
+            "image_mobile": "shopify://shop_images/ProT_-_ProT_Gold_Daily_Recovery_Greens_Protein_-_Reviews_2_Mobile.jpg",
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "enable_media_overlay_mobile": true
+          }
+        },
+        "slide_Cbr7BB": {
+          "type": "slide",
+          "settings": {
+            "banner_layout": "hero-banner--full",
+            "color_scheme": "scheme-8",
+            "header_menu_text_color": "#ffffff",
+            "heading": "<h5>“Wow, taste is a perfect mellow lemon-lime. I can feel more energy after drinking it. Great in the morning to get the party started.”</h5>",
+            "subheading": "Customer Voices",
+            "subheading_link": "",
+            "text": "<p>Pam</p>",
+            "button_link_1": "/",
+            "button_link_1_type": "button",
+            "button_label_1": "",
+            "button_style_1": "button--filled",
+            "button_link_2": "/",
+            "button_label_2": "",
+            "button_style_2": "button--outlined",
+            "content_position": "start",
+            "content_alignment": "start",
+            "image": "shopify://shop_images/ProT_-_ProT_Gold_Daily_Recovery_Greens_Protein_-_Reviews_3.webp",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "enable_media_overlay_desktop": true,
+            "content_position_mobile": "start",
+            "content_alignment_mobile": "center",
+            "image_mobile": "shopify://shop_images/ProT_-_ProT_Gold_Daily_Recovery_Greens_Protein_-_Reviews_3_Mobile.webp",
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": true,
+            "enable_media_overlay_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "slide_83rwDT",
+        "slide_An6GR9",
+        "slide_Cbr7BB"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 1024px) {.hero__subheading {margin-block-end: 30rem; } h5 {max-width: 520px; } p {max-width: 470px; }}",
+        "@media screen and (max-width: 769px) {.swiper-slide[data-index=\"0\"] .hero__subheading {margin-block-end: 35rem; } .hero__subheading {margin-block-end: 40rem; } .img {min-width: 100%; min-height: 1231px; }}"
+      ],
+      "name": "t:sections.hero-banner.name",
+      "settings": {
+        "enable_transparent_header": false,
+        "slider_height": 100,
+        "slideshow_autoplay_interval": 15,
+        "show_slideshow_navigation": true,
+        "slideshow_navigation_position": "hero__swiper-buttons--start",
+        "color_scheme_arrows": "scheme-8",
+        "show_slideshow_pagination": true,
+        "slideshow_pagination_style": "style-1",
+        "floating_bar": false
+      }
+    },
+    "testimonials_9tgz69": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_hxmnXp": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Kathleen W.",
+            "quote": "<h6><br/>Great product</h6><p>All Frog Fuel products are fantastic. The powdered collagen is perfect mixed into a smoothie or other liquids. It is a high quality grade without byproducts. I have noticed a big difference in recovery time and with as hard as I train at times, improvement in tendon quality and strength. I combine this with the single packaged servings at different times of day for an ongoing effect over the day.</p><p>08/08/23</p>",
+            "rating_score": 5,
+            "color_scheme": "scheme-1431df62-cddb-47f5-9395-3afb7ac693eb"
+          }
+        },
+        "testimonial_Daqdkd": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Rebecca B.",
+            "quote": "<h6><br/>Best purchase!</h6><p>I love the ease and smoothness going down of the product. The easiest 17 grams of protein l've ever tried! I prefer the big bottle. However the portable packs are convenient when traveling. I initially used Vital Protein powder, but a Pro T Gold is some much easier to use and the flavor beats Vital Protein hands down! Regarding flavor, hoping you might develop more flavors.</p><p>04/15/24</p>",
+            "rating_score": 5,
+            "color_scheme": "scheme-1431df62-cddb-47f5-9395-3afb7ac693eb"
+          }
+        },
+        "testimonial_RpfD63": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Cindy W.",
+            "quote": "<h6><br/>Love My Gold!</h6><p>Love my \"gold\"! It gives me so much energy, keeps the hunger pangs away, and seems to make my overall complexion better!</p><p>08/16/23</p>",
+            "rating_score": 5,
+            "color_scheme": "scheme-1431df62-cddb-47f5-9395-3afb7ac693eb"
+          }
+        },
+        "testimonial_VNah9G": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Jen L.",
+            "quote": "<p></p><h6>The best supplement I have ever had!</h6><p>I am 50 years old and have been using ProT for about 3 mths now and WOW! The amount of compliments I have received about my skin hav been astronomical. More importantly, I suffer from severe spinal stenosis that significantly reduces my mobility. I have found that my mobility has improved to the point that I am integrating yoga back into my daily regimen which I have painfully been missing for over 10 years. I love ProT and would recommend to anyone and everyone!</p><p>02/03/25</p>",
+            "rating_score": 5,
+            "color_scheme": "scheme-1431df62-cddb-47f5-9395-3afb7ac693eb"
+          }
+        },
+        "testimonial_k7PBGi": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Kiki D.",
+            "quote": "<p></p><h6>Love the taste.</h6><p>I love the taste of this collagen protein. Not only does my hair and nails grow long, but it's helping my knee injury and it gives me energy to get thru the day. I definitely highly recommend it.</p><p>11/30/23</p>",
+            "rating_score": 5,
+            "color_scheme": "scheme-1431df62-cddb-47f5-9395-3afb7ac693eb"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_hxmnXp",
+        "testimonial_Daqdkd",
+        "testimonial_RpfD63",
+        "testimonial_VNah9G",
+        "testimonial_k7PBGi"
+      ],
+      "custom_css": [
+        "h2 {margin-top: -20px;}",
+        "@media screen and (max-width: 768px) {h2 {font-size: 36px; }}"
+      ],
+      "name": "t:sections.testimonials.name",
+      "settings": {
+        "heading": "Reviews",
+        "heading_size": "h3",
+        "subheading": "<strong>our customers love proT gold</strong>",
+        "rating_icon": "star",
+        "layout": "carousel-none-media",
+        "slider_autoplay": 5,
+        "image_position": "image-start",
+        "image_aspect_ratio": "1/1",
+        "media_show_on": "desktop",
+        "spacing_inner": "2",
+        "section_width": "max-w-full",
+        "color_scheme": "scheme-c964cc82-bba3-486f-a537-7f3207978313",
+        "spacing_top": "4",
+        "spacing_bottom": "4"
+      }
+    },
+    "carousel_wekpJp": {
+      "type": "carousel",
+      "blocks": {
+        "card_cQDBVC": {
+          "type": "card",
+          "settings": {
+            "heading": "Products",
+            "heading_size": "h6",
+            "text": "<h3>You May Also Like</h3>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "aspect_ratio": "auto",
+            "color_scheme": "scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be",
+            "media_position": "background",
+            "content_position": "start",
+            "content_alignment": "start",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "content_position_mobile": "start",
+            "content_alignment_mobile": "start",
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "card_D97RWc": {
+          "type": "card",
+          "settings": {
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<p>ProT Powder Liquid Collagen Protein<br/>$48.00</p>",
+            "button_label": "Shop Now",
+            "button_link": "shopify://products/prot-gold-medical-grade-collagen-protein",
+            "button_style": "button--outlined",
+            "aspect_ratio": "auto",
+            "color_scheme": "scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be",
+            "media_position": "top",
+            "content_position": "center",
+            "content_alignment": "start",
+            "image": "shopify://shop_images/ProT_-_Homepage_-_Products_-_ProT_Gold_Liquid_Collagen_Protein_1.png",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "content_position_mobile": "start",
+            "content_alignment_mobile": "start",
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        },
+        "card_tRYT9g": {
+          "type": "card",
+          "settings": {
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<p>ProT Powder Collagen Protein<br/>$48.00</p>",
+            "button_label": "Shop Now",
+            "button_link": "shopify://products/prot-powder-collagen-protein",
+            "button_style": "button--outlined",
+            "aspect_ratio": "auto",
+            "color_scheme": "scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be",
+            "media_position": "top",
+            "content_position": "center",
+            "content_alignment": "start",
+            "image": "shopify://shop_images/ProT_-_Homepage_-_Products_-_ProT_Powder_Collagen_Protein.png",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "content_position_mobile": "start",
+            "content_alignment_mobile": "start",
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        }
+      },
+      "block_order": [
+        "card_cQDBVC",
+        "card_D97RWc",
+        "card_tRYT9g"
+      ],
+      "custom_css": [
+        "@media (max-width: 769px) {{display: none; }}",
+        "h2 {font-family: \"ArticulatCF_Demi_Bold\"; text-transform: uppercase; font-size: 16px; letter-spacing: 0.15em;}"
+      ],
+      "name": "t:sections.carousel.name",
+      "settings": {
+        "show_navigation_arrows": true,
+        "slideshow_autoplay_interval": 0,
+        "slides_per_view": 3,
+        "layout": "layout-1",
+        "heading": "",
+        "heading_size": "h3",
+        "subheading": "",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "button--text",
+        "section_width": "max-w-fluid",
+        "color_scheme": "scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be",
+        "spacing_top": "1",
+        "spacing_bottom": "4"
+      }
+    },
+    "carousel_GnGeyF": {
+      "type": "carousel",
+      "blocks": {
+        "card_fKaE7L": {
+          "type": "card",
+          "settings": {
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<p>ProT Powder Liquid Collagen Protein<br/>$48.00</p>",
+            "button_label": "Shop Now",
+            "button_link": "shopify://products/prot-gold-medical-grade-collagen-protein",
+            "button_style": "button--outlined",
+            "aspect_ratio": "auto",
+            "color_scheme": "scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be",
+            "media_position": "top",
+            "content_position": "center",
+            "content_alignment": "start",
+            "image": "shopify://shop_images/ProT_-_Homepage_-_Products_-_ProT_Gold_Liquid_Collagen_Protein_1.png",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "content_position_mobile": "start",
+            "content_alignment_mobile": "start",
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        },
+        "card_gWFzbP": {
+          "type": "card",
+          "settings": {
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<p>ProT Powder Collagen Protein<br/>$48.00</p>",
+            "button_label": "Shop Now",
+            "button_link": "shopify://products/prot-powder-collagen-protein",
+            "button_style": "button--outlined",
+            "aspect_ratio": "auto",
+            "color_scheme": "scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be",
+            "media_position": "top",
+            "content_position": "center",
+            "content_alignment": "start",
+            "image": "shopify://shop_images/ProT_-_Homepage_-_Products_-_ProT_Powder_Collagen_Protein.png",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "content_position_mobile": "start",
+            "content_alignment_mobile": "start",
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        }
+      },
+      "block_order": [
+        "card_fKaE7L",
+        "card_gWFzbP"
+      ],
+      "custom_css": [
+        "@media (min-width: 769px) {{display: none; }}",
+        "@media (max-width: 768px) {h2 {max-width: 200px; }}"
+      ],
+      "name": "t:sections.carousel.name",
+      "settings": {
+        "show_navigation_arrows": true,
+        "slideshow_autoplay_interval": 0,
+        "slides_per_view": 3,
+        "layout": "layout-1",
+        "heading": "You May Also Like",
+        "heading_size": "h2",
+        "subheading": "",
+        "button_label": "View All",
+        "button_link": "shopify://collections/all-products",
+        "button_style": "button--text",
+        "section_width": "max-w-fluid",
+        "color_scheme": "scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be",
+        "spacing_top": "2",
+        "spacing_bottom": "4"
+      }
+    },
+    "full_width_banner_BVCJYz": {
+      "type": "full-width-banner",
+      "blocks": {
+        "subheading_pGhxYy": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "The Innovation",
+            "link": ""
+          }
+        },
+        "heading_MjahjB": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Medical-Grade Collagen Matters",
+            "heading_size": "h3"
+          }
+        },
+        "content_DYTDWK": {
+          "type": "content",
+          "settings": {
+            "content": "<p>ProT Gold was originally developed to meet the high standards of medical nutrition. </p><p>Now it’s available to you.</p>"
+          }
+        },
+        "buttons_kLLNDD": {
+          "type": "buttons",
+          "settings": {
+            "button_link_1": "shopify://pages/formula",
+            "button_link_1_type": "button",
+            "button_label_1": "Discover Our Formula",
+            "button_style_1": "button--outlined",
+            "color_scheme_first_button": "scheme-8",
+            "button_link_2": "/",
+            "button_label_2": "",
+            "button_style_2": "button--outlined",
+            "color_scheme_second_button": "scheme-1"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_pGhxYy",
+        "heading_MjahjB",
+        "content_DYTDWK",
+        "buttons_kLLNDD"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 769px) {h2 {font-size: 36px; max-width: 350px; margin-left: auto; margin-right: auto; } p {font-size: 15px; max-width: 350px; margin-left: auto; margin-right: auto; }}",
+        "p {max-width: 350px; margin-left: auto; margin-right: auto;}"
+      ],
+      "name": "t:sections.full-width-banner.name",
+      "settings": {
+        "enable_transparent_header": true,
+        "media_position": "background",
+        "section_height": "half",
+        "content_position": "center",
+        "content_alignment": "center",
+        "image": "shopify://shop_images/ProT_-_Liquid_Collagen_PP_-_Why_Medical-Grade_Collagen_Matters.jpg",
+        "video_external": "",
+        "show_controls_on_video": false,
+        "aspect_ratio": "auto",
+        "section_height_mobile": "half",
+        "content_position_mobile": "center",
+        "content_alignment_mobile": "center",
+        "image_mobile": "shopify://shop_images/ProT_-_Liquid_Collagen_PP_-_Why_Medical-Grade_Collagen_Matters_Mobile.jpg",
+        "video_external_mobile": "",
+        "show_controls_on_video_mobile": false,
+        "aspect_ratio_mobile": "auto",
+        "section_width": "max-w-full",
+        "color_scheme": "scheme-8",
+        "color_scheme_for_content": "scheme-8",
+        "spacing_inner": "2",
+        "spacing_top": "0",
+        "spacing_bottom": "0"
+      }
+    },
+    "multitile_VgjgWw": {
+      "type": "multitile",
+      "blocks": {
+        "tile_iUyyBa": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 6,
+            "row_factor": 1,
+            "color_scheme": "scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<p>1. Lee SK, Posthauer ME, Dorner B, Redovian V, Maloney MJ. Pressure ulcer healing with a concentrated, fortified, collagen protein hydrolysate supplement: a randomized controlled trial. Adv Skin Wound Care. 2006 Mar;19(2):92-6</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        }
+      },
+      "block_order": [
+        "tile_iUyyBa"
+      ],
+      "custom_css": [
+        "p {max-width: 1200px;}",
+        "@media screen and (max-width: 768px) {p {font-size: 11px; }}"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "spacing_tile": "default",
+        "color_scheme": "scheme-7",
+        "section_width": "max-w-page",
+        "spacing_top": "1",
+        "spacing_bottom": "1"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "complete_the_set_LAN4cq",
+    "hero_banner_FNU8BP",
+    "testimonials_9tgz69",
+    "carousel_wekpJp",
+    "carousel_GnGeyF",
+    "full_width_banner_BVCJYz",
+    "multitile_VgjgWw"
+  ]
+}

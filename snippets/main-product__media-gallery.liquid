@@ -348,6 +348,7 @@
       data-layout-desktop="{{- section.settings.product_media_layout -}}"
       data-layout-mobile="{{- section.settings.product_media_layout_mobile -}}"
     >
+      {% render 'frontrow-banner' %}
       {% comment %} METAFIELD FEATURES - SLIDER {% endcomment %}
       <div class="main-product__media--features">
         {{- metafield_media_info -}}

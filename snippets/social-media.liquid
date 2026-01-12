@@ -1,3 +1,18 @@
+{%- comment -%}
+  renders social media links based on the settings in the theme editor.
+
+  usage:
+  {% render 'social-media', item_tag: 'li', in_new_tab: true, item_icon: true %}
+
+  mandatory parameters:
+  - item_tag: the tag to wrap the social media link in. // 'li', 'div', 'span', etc. (default: 'li')
+  - in_new_tab: whether the links should open in a new tab. // true or false (default: false)
+  - item_icon: whether the links should have an icon. // true or false (default: true)
+
+  optional parameters:
+  - none
+{%- endcomment -%}
+
 {%- liquid
   assign item_tag = item_tag | default: 'li'
   assign in_new_tab = in_new_tab | default: false
@@ -11,6 +26,7 @@
     assign item_handle = item | handleize
     assign item_icon_name = 'brand-' | append: item_handle
     assign item_settings_handle = 'social_' | append: item_handle | append: '_link'
+    assign item_icon_name = 'brand-' | append: item_handle
 
     if settings[item_settings_handle] != blank
       assign item_url = settings[item_settings_handle]
@@ -19,6 +35,8 @@
     else
       continue
     endif
+
+    assign item_url = settings[item_settings_handle]
 
     if in_new_tab
       assign item_target = ' target="_blank" rel="noopener noreferrer"'

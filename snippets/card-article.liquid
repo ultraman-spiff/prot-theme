@@ -64,6 +64,8 @@
           </span>
 
           {%- if show_date -%}
+            {%- assign date_format = 'theme.date.format_short' | t -%}
+            {%- assign published_at = article.published_at | date: date_format -%}
             <span class="article-card__date">
               {{- 'blog.posted_on' | t: date: article.published_at | time_tag: format: 'date' -}}
             </span>

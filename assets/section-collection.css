@@ -244,7 +244,7 @@
   position: relative;
   display: none;
 }
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 750px) {
   .collection.filters--sidebar .collection__container {
     grid-template-columns: 1fr 3fr;
     gap: var(--grid-spacing);

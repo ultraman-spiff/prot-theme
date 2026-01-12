@@ -225,6 +225,20 @@ if (!customElements.get('product-selector')) {
       this.updateVariantOptionsLegend();
       this.updateMedia();
       this.scrollToImage();
+      let formEl1 = document.querySelector('product-form > form[action*="/cart/add"]')
+      let varEl1 = formEl1.querySelector('[name=id]')
+      let formEl2 = document.querySelector('form[action*="/cart/add"]')
+      let varEl2 = formEl2.querySelector('[name=id]')
+      varEl1.value = this.currentVariant.id
+      varEl2.value = this.currentVariant.id
+      document.querySelector('[name=id]').dispatchEvent(new Event('change'))
+
+      console.log('[ProductSelector] Variant change:', {
+      id: this.currentVariant?.id,
+      price: this.currentVariant?.price,
+      compare_at_price: this.currentVariant?.compare_at_price
+      });
+
     }
 
     updateOptions() {
@@ -382,6 +396,9 @@ if (!customElements.get('product-selector')) {
         'variant',
         this.currentVariant.id
       );
+
+      //params.append('section_id', this.dataset.sectionId);
+      
       if (!this.closest('.product').classList.contains('highlighted-product')) {
         params.append('section_id', this.dataset.sectionId);
       }

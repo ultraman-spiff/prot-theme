@@ -76,9 +76,8 @@
       color: rgb(var(--color-filled-button-text));
       background: rgb(var(--color-filled-button));
       position: absolute;
-      inset-block-start: 0.2rem;
-      inset-inline-end: -0.4rem;
-      margin: 0;
+      inset-block-end: 1.5rem;
+      inset-inline-start: 0.2rem;
     }
     @media screen and (min-width: 990px) {
       .header__utils-item .icon-with-text .icon {
@@ -225,19 +224,21 @@
                           </div>
                           {%- endif -%}
 
-                          <div class="content {{ block.settings.content_position_horizontal }} {{ block.settings.content_position_vertical }}">
-                            {%- if block.settings.subtitle != blank -%}
-                              <span class="card__subtitle">
-                                {{- block.settings.subtitle -}}
-                              </span>
-                            {%- endif -%}
+                          {%- if block.settings.title != blank or block.settings.subtitle != blank -%}
+                            <div class="card__content {{ block.settings.content_position_horizontal }} {{ block.settings.content_position_vertical }}">
+                              {%- if block.settings.subtitle != blank -%}
+                                <span class="card__subtitle">
+                                  {{- block.settings.subtitle -}}
+                                </span>
+                              {%- endif -%}
 
-                            {%- if block.settings.title != blank -%}
-                              <h6 class="card__title h4">
-                                {{- block.settings.title -}}
-                              </h6>
-                            {%- endif -%}
-                          </div>
+                              {%- if block.settings.title != blank -%}
+                                <h6 class="card__title h4">
+                                  {{- block.settings.title -}}
+                                </h6>
+                              {%- endif -%}
+                            </div>
+                          {%- endif -%}
                           {%- if block.settings.link -%}
                             <a href="{{- block.settings.link -}}" class="card__link">
                               <span class="visually-hidden">{{- block.settings.title -}}</span>
@@ -563,6 +564,23 @@
     </div>
   </div>
 </div>
+
+{% style %}
+  .header__logo {
+    width: {{ section.settings.logo_width_mobile | divided_by: 10.0 }}rem;
+  }
+  .header__logo.header__logo-text .h4 {
+    font-size: calc(var(--font-heading-scale) * 1.6rem * {{ section.settings.logo_font_size }});
+  }
+  @media screen and (min-width: 750px) {
+    .header__logo {
+      width: {{ section.settings.logo_width | divided_by: 10.0 }}rem;
+    }
+    .header__logo.header__logo-text .h4 {
+      font-size: calc(var(--font-heading-scale) * 1.8rem * {{ section.settings.logo_font_size }});
+    }
+  }
+{% endstyle %}
 
 <script type="application/ld+json">
   {

@@ -60,13 +60,162 @@
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
       {%- endunless -%}
     {% comment %}theme-check-enable AssetPreload{% endcomment %}
-
+      <link rel="stylesheet" href="{{ 'custom.css' | asset_url }}">
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
       if (Shopify.designMode) {
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+     <script>
+  (function () {
+    // ---------- helpers ----------
+    function $(sel, root = document) {
+      return root.querySelector(sel);
+    }
+
+    function show(el) {
+      if (!el) return;
+      el.style.display = "flex";
+      el.setAttribute("aria-hidden", "false");
+    }
+
+    function hide(el) {
+      if (!el) return;
+      el.style.display = "none";
+      el.setAttribute("aria-hidden", "true");
+    }
+
+    function bindCloseOnce(popup, closeSelector) {
+      if (!popup) return;
+
+      const closeBtn = popup.querySelector(closeSelector);
+      if (!closeBtn) return;
+
+      // prevent stacking listeners
+      if (closeBtn.dataset.bound === "1") return;
+      closeBtn.dataset.bound = "1";
+
+      const close = (e) => {
+        e.preventDefault?.();
+        hide(popup);
+      };
+
+      closeBtn.addEventListener("click", close);
+
+      // Helps some mobile cases (not required, but nice insurance)
+      closeBtn.addEventListener("touchend", close, { passive: false });
+    }
+
+    // ---------- GDPR popup logic ----------
+    function openGdprPopup(type) {
+      const privacy = $(".gdrp_popup-privacy");
+      const terms = $(".gdrp_popup-terms");
+
+      if (type === "privacy") {
+        show(privacy);
+        hide(terms);
+        bindCloseOnce(privacy, ".gdrp_popup-close");
+      }
+
+      if (type === "terms") {
+        show(terms);
+        hide(privacy);
+        bindCloseOnce(terms, ".gdrp_popup-close");
+      }
+    }
+
+    // ---------- Cart popup logic ----------
+    function openCartPopup(type) {
+      const privacy = $(".cart_popup-privacy");
+      const terms = $(".cart_popup-terms");
+
+      if (type === "privacy") {
+        show(privacy);
+        hide(terms);
+        bindCloseOnce(privacy, ".cart_popup-close");
+      }
+
+      if (type === "terms") {
+        show(terms);
+        hide(privacy);
+        bindCloseOnce(terms, ".cart_popup-close");
+      }
+    }
+
+    // ---------- click handlers (delegated for mobile + dynamic DOM) ----------
+    function handleGdprLinkClick(e) {
+      const gdprContainer = document.getElementById("cookieconsent:desc");
+      if (!gdprContainer) return;
+
+      // only handle clicks that happened inside the gdpr container
+      if (!gdprContainer.contains(e.target)) return;
+
+      const a = e.target.closest("a");
+      if (!a) return;
+
+      const txt = (a.textContent || "").toLowerCase();
+
+      if (txt.includes("privacy")) {
+        e.preventDefault();
+        e.stopPropagation();
+        openGdprPopup("privacy");
+      }
+
+      if (txt.includes("terms")) {
+        e.preventDefault();
+        e.stopPropagation();
+        openGdprPopup("terms");
+      }
+    }
+
+    function handleCartLinkClick(e) {
+      // Works even if the cart drawer / checkout buttons are injected later
+      const link = e.target.closest(".cart_popup_link");
+      if (!link) return;
+
+      // Optional: restrict to cart drawer area if you want
+      // (helps avoid accidental matches elsewhere)
+      // const cartContainer = link.closest(".cart-drawer__checkout-buttons");
+      // if (!cartContainer) return;
+
+      const txt = (link.textContent || "").toLowerCase();
+
+      if (txt.includes("privacy")) {
+        e.preventDefault();
+        e.stopPropagation();
+        openCartPopup("privacy");
+      }
+
+      if (txt.includes("terms")) {
+        e.preventDefault();
+        e.stopPropagation();
+        openCartPopup("terms");
+      }
+    }
+
+    // ---------- init ----------
+    function init() {
+      // Use capture phase to win against other scripts that stop propagation
+      document.addEventListener("click", handleGdprLinkClick, true);
+      document.addEventListener("click", handleCartLinkClick, true);
+
+      // Small debug logs (remove whenever)
+      const gdprContainer = document.getElementById("cookieconsent:desc");
+      console.log("[GDPR] container:", gdprContainer);
+
+      const cartContainer = document.querySelector(".cart-drawer__checkout-buttons");
+      console.log("[Cart] checkout buttons container:", cartContainer);
+    }
+
+    // DOM ready (better than window.onload for Shopify)
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init);
+    } else {
+      init();
+    }
+  })();
+</script>
   </head>
 
   <body class="template template--{{ template.name }}{% if template.suffix %} template--{{- template.suffix -}}{% endif %} is-at-top">
@@ -78,6 +227,20 @@
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
+      <aside class="gdrp_popup-privacy" style="display:none;">
+        <div class="gdrp_popup-content">
+        <span class="gdrp_popup-close">x</span>
+          {{ shop.privacy_policy.body }}
+        </div>
+              
+      </aside>
+              <aside class="gdrp_popup-terms" style="display:none;">
+                <div class="gdrp_popup-content">
+                  <span class="gdrp_popup-close">x</span>
+          {{ shop.terms_of_service.body }}
+                </div>
+     
+        </aside>
     </main>
 
     <footer class="js-animation-fade-in">
@@ -139,5 +302,9 @@
     {% endif %}
 
     {% render 'subify-snippet' %}
+
+    <script> (function(){ var s = document.createElement('script'); var h = document.querySelector('head') || document.body; s.src = 'https://acsbapp.com/apps/app/dist/js/app.js'; s.async = true; s.onload = function(){ acsbJS.init({ statementLink : '', footerHtml : '', hideMobile : false, hideTrigger : false, disableBgProcess : false, language : 'en', position : 'left', leadColor : '#4a134a', triggerColor : '#4a134a', triggerRadius : '50%', triggerPositionX : 'left', triggerPositionY : 'bottom', triggerIcon : 'people', triggerSize : 'medium', triggerOffsetX : 20, triggerOffsetY : 20, mobile : { triggerSize : 'small', triggerPositionX : 'left', triggerPositionY : 'bottom', triggerOffsetX : 20, triggerOffsetY : 140, triggerRadius : '50%' } }); }; h.appendChild(s); })(); </script>  
+
+
   </body>
 </html>

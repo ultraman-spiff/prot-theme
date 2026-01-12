@@ -1,1 +1,108 @@
-{"sections":{"page_banner_yKcnKA":{"type":"page-banner","disabled":true,"settings":{"enable_transparent_header":true,"heading":"","heading_size":"h2","text":"","show_default_description":true,"show_on_description":"desktop","content_position":"center","content_alignment":"center","media_position":"background","page_menu":"","enable_breadcrumbs":false,"section_height":"auto","content_width":"100%","video_external":"","show_controls_on_video":false,"section_height_mobile":"auto","video_external_mobile":"","show_controls_on_video_mobile":false,"section_width":"max-w-narrower","color_scheme":"scheme-3","color_scheme_for_media":"","spacing_top":"4","spacing_bottom":"4"}},"full_width_banner_adqBN9":{"type":"full-width-banner","blocks":{"heading_nr9t4U":{"type":"heading","disabled":true,"settings":{"heading":"Contact","heading_size":"h2"}},"content_RknrjM":{"type":"content","settings":{"content":"<h1>Blog<\/h1>"}}},"block_order":["heading_nr9t4U","content_RknrjM"],"custom_css":["@media screen and (min-width: 769px) {{max-height: 818px; }}","h1 {line-height: 100px;}"],"settings":{"enable_transparent_header":true,"media_position":"background","section_height":"full","content_position":"center","content_alignment":"start","image":"shopify:\/\/shop_images\/ProT_-_Blog_-_Hero.jpg","video_external":"","show_controls_on_video":false,"aspect_ratio":"auto","section_height_mobile":"half","content_position_mobile":"center","content_alignment_mobile":"center","image_mobile":"shopify:\/\/shop_images\/ProT_-_Blog_-_Hero_Mobile.jpg","video_external_mobile":"","show_controls_on_video_mobile":false,"aspect_ratio_mobile":"auto","section_width":"max-w-full","color_scheme":"scheme-1","color_scheme_for_content":"scheme-6","spacing_inner":"6","spacing_top":"0","spacing_bottom":"0"}},"main":{"type":"main-blog","settings":{"enable_filtering_by_tags":false,"articles_per_page":3,"pagination_style":"default","enable_infinity_scroll":false,"show_excerpt":false,"show_date":false,"show_author":false,"content_alignment":"text-center","card_media_aspect_ratio":"1\/1","section_width":"max-w-narrow","color_scheme":"","spacing_grid":"2","spacing_top":"2","spacing_bottom":"6"}}},"order":["page_banner_yKcnKA","full_width_banner_adqBN9","main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_banner_yKcnKA": {
+      "type": "page-banner",
+      "disabled": true,
+      "settings": {
+        "enable_transparent_header": true,
+        "heading": "",
+        "heading_size": "h2",
+        "text": "",
+        "show_default_description": true,
+        "show_on_description": "desktop",
+        "content_position": "center",
+        "content_alignment": "center",
+        "media_position": "background",
+        "page_menu": "",
+        "enable_breadcrumbs": false,
+        "section_height": "auto",
+        "content_width": "100%",
+        "video_external": "",
+        "show_controls_on_video": false,
+        "section_height_mobile": "auto",
+        "video_external_mobile": "",
+        "show_controls_on_video_mobile": false,
+        "section_width": "max-w-narrower",
+        "color_scheme": "scheme-3",
+        "color_scheme_for_media": "",
+        "spacing_top": "4",
+        "spacing_bottom": "4"
+      }
+    },
+    "full_width_banner_adqBN9": {
+      "type": "full-width-banner",
+      "blocks": {
+        "content_RknrjM": {
+          "type": "content",
+          "settings": {
+            "content": "<h1>Blog</h1>"
+          }
+        }
+      },
+      "block_order": [
+        "content_RknrjM"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 769px) {{max-height: 818px; }}",
+        "h1 {line-height: 100px;}"
+      ],
+      "settings": {
+        "enable_transparent_header": true,
+        "media_position": "background",
+        "section_height": "full",
+        "content_position": "center",
+        "content_alignment": "start",
+        "image": "shopify://shop_images/ProT_-_Blog_-_Hero.jpg",
+        "video_external": "",
+        "show_controls_on_video": false,
+        "aspect_ratio": "auto",
+        "section_height_mobile": "half",
+        "content_position_mobile": "center",
+        "content_alignment_mobile": "center",
+        "image_mobile": "shopify://shop_images/ProT_-_Blog_-_Hero_Mobile.jpg",
+        "video_external_mobile": "",
+        "show_controls_on_video_mobile": false,
+        "aspect_ratio_mobile": "auto",
+        "section_width": "max-w-full",
+        "color_scheme": "scheme-1",
+        "color_scheme_for_content": "scheme-6",
+        "spacing_inner": "6",
+        "spacing_top": "0",
+        "spacing_bottom": "0"
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "enable_filtering_by_tags": false,
+        "articles_per_page": 3,
+        "pagination_style": "default",
+        "enable_infinity_scroll": false,
+        "show_excerpt": false,
+        "show_date": false,
+        "show_author": false,
+        "content_alignment": "text-center",
+        "card_media_aspect_ratio": "1/1",
+        "section_width": "max-w-narrow",
+        "color_scheme": "",
+        "spacing_grid": "2",
+        "spacing_top": "2",
+        "spacing_bottom": "6"
+      }
+    }
+  },
+  "order": [
+    "page_banner_yKcnKA",
+    "full_width_banner_adqBN9",
+    "main"
+  ]
+}

@@ -1,1 +1,926 @@
-{"sections":{"full_width_banner_zyj9xF":{"type":"full-width-banner","blocks":{"content_Uj6mTx":{"type":"content","settings":{"content":"<h2>About<\/h2>"}}},"block_order":["content_Uj6mTx"],"custom_css":["@media screen and (min-width: 769px) {{max-height: 818px; }}"],"name":"t:sections.full-width-banner.name","settings":{"enable_transparent_header":true,"media_position":"background","section_height":"full","content_position":"center","content_alignment":"start","image":"shopify:\/\/shop_images\/ProT_-_About_Hero.jpg","video_external":"","show_controls_on_video":false,"aspect_ratio":"auto","section_height_mobile":"third","content_position_mobile":"center","content_alignment_mobile":"center","image_mobile":"shopify:\/\/shop_images\/ProT_-_About_Hero_Mobile.jpg","video_external_mobile":"","show_controls_on_video_mobile":false,"aspect_ratio_mobile":"auto","section_width":"max-w-full","color_scheme":"scheme-8","color_scheme_for_content":"scheme-8","spacing_inner":"2","spacing_top":"0","spacing_bottom":"0"}},"multitile_QYUWPD":{"type":"multitile","blocks":{"tile_69GqgD":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-7","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"top","heading":"","heading_size":"h3","text":"<h3>From Clinical Care to Daily Care<\/h3><h6><br\/>ProT Gold was born in the clinical world—used in hospitals, long- term care, and nutrition therapy programs where outcomes matter and every moment counts.<br\/><br\/><\/h6><p>That same medical-grade precision now powers a collection of collagen solutions designed to support your real life: fast-paced, full of purpose, and not slowing down.<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_h4LiNe":{"type":"tile","settings":{"show_on":"both","column_factor":4,"row_factor":1,"color_scheme":"scheme-7","gradient_background_color":"","tile_aspect_ratio":"media","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"top","heading":"","heading_size":"h3","text":"","button_label":"","button_link":"","button_style":"button--filled","image":"shopify:\/\/shop_images\/ProT_-_About_-_From_CLinical_Care_to_Daily_Care.jpg","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}}},"block_order":["tile_69GqgD","tile_h4LiNe"],"custom_css":[".section-multitile__text p {font-size: 15px; padding-bottom: 10px;}",".section-multitile__text strong {font-size: 16px;}","h6 {max-width: 427px; line-height: 30px; font-size: 28px; font-family: \"ArticulatCF_Regular\" !important; color: #423d42;}","@media screen and (max-width: 768px) {{display: none; }}","p {max-width: 430px;}"],"name":"t:sections.multitile.name","settings":{"block_order_mobile":false,"heading":"","heading_size":"h3","heading_alignment":"start","spacing_tile":"default","color_scheme":"scheme-7","section_width":"max-w-page","spacing_top":"4","spacing_bottom":"4"}},"multitile_yTF3Ci":{"type":"multitile","blocks":{"tile_jxPa4F":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-7","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"top","heading":"","heading_size":"h3","text":"<h3>From Clinical Care \u2028to Daily Care<\/h3><h3><\/h3><h6>ProT Gold was born in the clinical world—used in hospitals, long-term care, and nutrition therapy programs where outcomes matter and every moment counts.<\/h6>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"1"}},"tile_aeqp38":{"type":"tile","settings":{"show_on":"both","column_factor":4,"row_factor":1,"color_scheme":"scheme-7","gradient_background_color":"","tile_aspect_ratio":"media","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"top","heading":"","heading_size":"h3","text":"","button_label":"","button_link":"","button_style":"button--filled","image":"shopify:\/\/shop_images\/ProT_-_About_-_From_CLinical_Care_to_Daily_Care.jpg","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"1"}},"tile_JyWM4c":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-7","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"top","heading":"","heading_size":"h3","text":"<p>That same medical-grade precision now powers a collection of collagen solutions designed to support your real life: fast-paced, full of purpose, and not slowing down.<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"0"}}},"block_order":["tile_jxPa4F","tile_aeqp38","tile_JyWM4c"],"custom_css":["@media screen and (min-width: 769px) {{display: none; }}","h3 {font-size: 40px; max-width: 320px; margin-left: auto; margin-right: auto;}","h6 {margin-top: 20px; line-height: 25px; font-size: 16px; font-family: \"ArticulatCF_Regular\" !important; color: rgba(var(--color-foreground), 1);}","p {font-size: 13px; max-width: 400px;}"],"name":"t:sections.multitile.name","settings":{"block_order_mobile":false,"heading":"","heading_size":"h3","heading_alignment":"start","spacing_tile":"default","color_scheme":"scheme-7","section_width":"max-w-page","spacing_top":"2","spacing_bottom":"2"}},"full_width_banner_4dy6gj":{"type":"full-width-banner","blocks":{"content_M6TKzk":{"type":"content","settings":{"content":"<h3>The Innovation <br\/>Behind the Formula<\/h3><p>ProT Gold was created to solve the problem most collagen supplements overlook: <\/p><p><strong>ABSORPTION<\/strong><\/p>"}}},"block_order":["content_M6TKzk"],"custom_css":["@media screen and (min-width: 769px) {h2 {max-width: 700px; margin-left: auto; margin-right: auto; } p {max-width: 350px; margin-left: auto; margin-right: auto; margin-top: 30px; margin-bottom: 20px; }}","@media screen and (max-width: 768px) {h3 {font-size: 36px; max-width: 320px; margin-left: auto; margin-right: auto; } p {font-size: 15px !important; max-width: 600px; margin-left: auto; margin-right: auto; }}"],"name":"t:sections.full-width-banner.name","settings":{"enable_transparent_header":true,"media_position":"background","section_height":"half","content_position":"center","content_alignment":"center","image":"shopify:\/\/shop_images\/ProT_-_Liquid_Collagen_PP_-_Why_Medical-Grade_Collagen_Matters.jpg","video_external":"","show_controls_on_video":false,"aspect_ratio":"auto","section_height_mobile":"half","content_position_mobile":"center","content_alignment_mobile":"center","image_mobile":"shopify:\/\/shop_images\/ProT_-_Liquid_Collagen_PP_-_Why_Medical-Grade_Collagen_Matters_Mobile.jpg","video_external_mobile":"","show_controls_on_video_mobile":false,"aspect_ratio_mobile":"auto","section_width":"max-w-full","color_scheme":"scheme-8","color_scheme_for_content":"scheme-8","spacing_inner":"2","spacing_top":"0","spacing_bottom":"0"}},"multitile_TCzefr":{"type":"multitile","blocks":{"tile_PgfNW9":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-7","gradient_background_color":"","tile_aspect_ratio":"media","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"background","heading":"","heading_size":"h3","text":"","button_label":"","button_link":"","button_style":"button--filled","image":"shopify:\/\/shop_images\/Group_167.webp","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"1"}},"tile_JRVjUM":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-7","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-start","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"top","heading":"","heading_size":"h3","text":"<h6>Our founders—former high-<br\/>performance professionals and<br\/>endurance athletes— realized that<br\/>traditional products weren’t built<br\/>for the pace of modern life.<\/h6>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_bhQ43g":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-7","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-start","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"top","heading":"","heading_size":"h3","text":"<p>So they partnered with a Stanford biochemist<br\/>to create Nano Hydrolyzed Collagen®—ultra-small<br\/>peptides absorbed in under 15 minutes. <\/p><p><strong>Clinically trusted and fast-acting, it was made<br\/>for medicine. Now, it’s made for you.<\/strong><\/p>","button_label":"Explore Our Formula","button_link":"","button_style":"button--outlined","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}}},"block_order":["tile_PgfNW9","tile_JRVjUM","tile_bhQ43g"],"custom_css":["@media screen and (max-width: 749px) {{display: none; }}"],"name":"t:sections.multitile.name","settings":{"block_order_mobile":false,"heading":"","heading_size":"h3","heading_alignment":"start","spacing_tile":"default","color_scheme":"scheme-7","section_width":"max-w-page","spacing_top":"2","spacing_bottom":"2"}},"multitile_zWKeYg":{"type":"multitile","blocks":{"tile_JHq9KQ":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-7","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-start","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"top","heading":"","heading_size":"h3","text":"<p>Our founders—former high-performance professionals and endurance athletes—realized that traditional products weren’t built \u2028for the pace of modern life.<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"0"}},"tile_KMME78":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-7","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-start","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"top","heading":"","heading_size":"h3","text":"<p>So they partnered with a Stanford biochemist \u2028to create Nano Hydrolyzed Collagen®—ultra-small peptides absorbed in under 15 minutes. <\/p><p><strong>Clinically trusted and fast-acting, it was made \u2028for medicine. Now, it’s made for you.<\/strong><\/p>","button_label":"","button_link":"","button_style":"button--outlined","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"0"}},"tile_Bcqzpr":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-7","gradient_background_color":"","tile_aspect_ratio":"media","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"top","heading":"","heading_size":"h3","text":"","button_label":"Explore Our Formula","button_link":"","button_style":"button--outlined","image":"shopify:\/\/shop_images\/Group_167.webp","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"1"}}},"block_order":["tile_JHq9KQ","tile_KMME78","tile_Bcqzpr"],"custom_css":["@media screen and (min-width: 750px) {{display: none; }}"],"name":"t:sections.multitile.name","settings":{"block_order_mobile":false,"heading":"","heading_size":"h3","heading_alignment":"start","spacing_tile":"default","color_scheme":"scheme-7","section_width":"max-w-page","spacing_top":"2","spacing_bottom":"2"}},"full_width_banner_FPpzpt":{"type":"full-width-banner","blocks":{"subheading_9tHkQa":{"type":"subheading","settings":{"subheading":"Our Ethos","link":""}},"content_9BQjLJ":{"type":"content","settings":{"content":"<h3>High Standards. <br\/>Higher Intentions.<\/h3><h6><\/h6><h6><br\/>Every decision we make is grounded in one purpose: helping you thrive for life.<\/h6><p><br\/>When you live with intention, your wellness routine should rise to meet it. That’s why we designed ProT Gold to deliver real results without complicating your day. <\/p><p>We believe that longevity is earned through consistency, and that the best wellness routines are the ones that work as hard as you do.<\/p>"}}},"block_order":["subheading_9tHkQa","content_9BQjLJ"],"custom_css":["h2 {max-width: 700px; margin-left: auto; margin-right: auto;}","h6 {margin-top: 10px; font-size: 24px; font-family: \"ArticulatCF_Regular\" !important; max-width: 350px; line-height: 30px;}","p {max-width: 380px;}"," {max-height: 1305px;}","@media screen and (max-width: 768px) {{display: none; }}"],"name":"t:sections.full-width-banner.name","settings":{"enable_transparent_header":true,"media_position":"background","section_height":"full","content_position":"center","content_alignment":"start","image":"shopify:\/\/shop_images\/ProT_-_About_-_Other_ethos.jpg","video_external":"","show_controls_on_video":false,"aspect_ratio":"1\/1","section_height_mobile":"full","content_position_mobile":"center","content_alignment_mobile":"center","image_mobile":"shopify:\/\/shop_images\/ProT_-_About_-_Other_ethos_Mobily.jpg","video_external_mobile":"","show_controls_on_video_mobile":false,"aspect_ratio_mobile":"auto","section_width":"max-w-full","color_scheme":"scheme-8","color_scheme_for_content":"scheme-8","spacing_inner":"2","spacing_top":"0","spacing_bottom":"0"}},"full_width_banner_rUGFXp":{"type":"full-width-banner","blocks":{"content_r6KYdJ":{"type":"content","settings":{"content":"<h5>Our Ethos<\/h5><h3>High Standards. <br\/>Higher Intentions.<\/h3><h6><\/h6><h6><br\/>Every decision we make is grounded in one purpose: helping you thrive for life.<\/h6><p><br\/><br\/><br\/><br\/><br\/><br\/><br\/><br\/><br\/><br\/><br\/><br\/><br\/><br\/><br\/><br\/>When you live with intention, your wellness routine should rise to meet it. That’s why we designed ProT Gold to deliver real results without complicating your day. <\/p><p>We believe that longevity is earned through consistency, and that the best wellness routines are the ones that work as hard as you do.<\/p>"}}},"block_order":["content_r6KYdJ"],"custom_css":["@media screen and (min-width: 769px) {{display: none; }}","h3 {font-size: 40px; max-width: 320px; margin-left: auto; margin-right: auto;}","h6 {font-size: 18px; font-family: \"ArticulatCF_Regular\" !important; max-width: 340px; line-height: 25px; margin-left: auto; margin-right: auto;}","p {color: white; font-size: 15px !important; max-width: 600px; margin-left: 20px; margin-right: 20px;}","h5 {font-family: \"ArticulatCF_Demi_Bold\"; color: #4a134a !important; font-size: 16px; margin-bottom: 15px;}",".container {min-height: 225vw;}"],"name":"t:sections.full-width-banner.name","settings":{"enable_transparent_header":true,"media_position":"background","section_height":"full","content_position":"center","content_alignment":"start","image":"shopify:\/\/shop_images\/ProT_-_About_-_Other_ethos.jpg","video_external":"","show_controls_on_video":false,"aspect_ratio":"auto","section_height_mobile":"full","content_position_mobile":"center","content_alignment_mobile":"center","image_mobile":"shopify:\/\/shop_images\/ProT_-_About_-_Other_ethos_Mobily.jpg","video_external_mobile":"","show_controls_on_video_mobile":false,"aspect_ratio_mobile":"auto","section_width":"max-w-full","color_scheme":"scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be","color_scheme_for_content":"scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be","spacing_inner":"1","spacing_top":"0","spacing_bottom":"0"}},"multitile_6ALtge":{"type":"multitile","blocks":{"tile_BHBRqf":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":3,"color_scheme":"scheme-c964cc82-bba3-486f-a537-7f3207978313","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"top","heading":"Our Values","heading_size":"h2","text":"<p>We believe in science without ego, <br\/>and wellness without gimmicks.<\/p>","button_label":"","button_link":"","button_style":"button--filled","image":"shopify:\/\/shop_images\/ProT_-_About_Us_-_icon_Our_Values.webp","video_external":"","show_controls_on_video":false,"image_mobile":"shopify:\/\/shop_images\/ProT_-_About_Us_-_icon_Our_Values_Mobile.webp","video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_8UQ4CD":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-4","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"background","heading":"","heading_size":"h3","text":"<p><strong>Innovation <\/strong><\/p><p>Our advantage isn’t marketing—it’s molecular. We created technology that raises the standard and redefines what collagen can do.<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_wr9cR7":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-4","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"background","heading":"","heading_size":"h3","text":"<p><strong>Stewardship <\/strong><\/p><p>Caring for your body is a lifelong responsibility. We create products that help protect what carries you through life.<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_djVP8f":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-4","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-start","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"background","heading":"","heading_size":"h3","text":"<p><strong>Balance <\/strong><\/p><p>We believe wellness is driven by smart routines that simplify your life.<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_daFRwU":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-4","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"background","heading":"","heading_size":"h3","text":"<p><strong>Self-Investment <\/strong><\/p><p>Your daily habits shape your future. We help you invest wisely.<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_QtYBUC":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-4","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"background","heading":"","heading_size":"h3","text":"<p><strong>Trust<\/strong> <\/p><p>We earn credibility through clinical proof, not marketing promises.<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_im9pbn":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-4","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"background","heading":"","heading_size":"h3","text":"<p><strong>Transparency <\/strong><\/p><p>We share how it works, why it matters, and where the science stands. No filler, no fluff.<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}}},"block_order":["tile_BHBRqf","tile_8UQ4CD","tile_wr9cR7","tile_djVP8f","tile_daFRwU","tile_QtYBUC","tile_im9pbn"],"name":"t:sections.multitile.name","settings":{"block_order_mobile":false,"heading":"","heading_size":"h3","heading_alignment":"start","spacing_tile":"default","color_scheme":"scheme-c964cc82-bba3-486f-a537-7f3207978313","section_width":"max-w-page","spacing_top":"4","spacing_bottom":"4"}},"full_width_banner_rRcqzE":{"type":"full-width-banner","blocks":{"content_FFGnPP":{"type":"content","settings":{"content":"<h3>This is not about anti-aging. It's about pro-living.<\/h3><p>Experience the clinically trusted collagen protein that works as fast as your life moves.<\/p>"}},"buttons_36MVyf":{"type":"buttons","settings":{"button_link_1":"\/","button_link_1_type":"button","button_label_1":"Start Today","button_style_1":"button--outlined","color_scheme_first_button":"scheme-8","button_link_2":"\/","button_label_2":"","button_style_2":"button--outlined","color_scheme_second_button":"scheme-1"}}},"block_order":["content_FFGnPP","buttons_36MVyf"],"custom_css":["@media screen and (min-width: 769px) {h3 {max-width: 600px; margin-left: auto; margin-right: auto; } p {max-width: 400px; margin-left: auto; margin-right: auto; margin-top: 30px; margin-bottom: 20px; }}","@media screen and (max-width: 768px) {h3 {font-size: 36px; max-width: 320px; margin-left: auto; margin-right: auto; } p {max-width: 250px; margin-left: auto; margin-right: auto; }}"],"settings":{"enable_transparent_header":false,"media_position":"background","section_height":"full","content_position":"center","content_alignment":"center","image":"shopify:\/\/shop_images\/ProT_-_About_-_Pro-living.jpg","video_external":"","show_controls_on_video":false,"aspect_ratio":"auto","section_height_mobile":"full","content_position_mobile":"center","content_alignment_mobile":"center","image_mobile":"shopify:\/\/shop_images\/ProT_-_About_-_Pro-living_Mobile.jpg","video_external_mobile":"","show_controls_on_video_mobile":false,"aspect_ratio_mobile":"auto","section_width":"max-w-full","color_scheme":"scheme-1","color_scheme_for_content":"scheme-6","spacing_inner":"0","spacing_top":"0","spacing_bottom":"0"}},"multitile_MdVrNE":{"type":"multitile","blocks":{"tile_K7tabX":{"type":"tile","settings":{"show_on":"both","column_factor":6,"row_factor":1,"color_scheme":"scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"background","heading":"","heading_size":"h6","text":"<p>1. Lee SK, Posthauer ME, Dorner B, Redovian V, Maloney MJ. Pressure ulcer healing with a concentrated, fortified, collagen protein hydrolysate supplement: a randomized controlled trial. Adv Skin Wound Care. 2006 Mar;19(2):92-6<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"0"}}},"block_order":["tile_K7tabX"],"custom_css":["p {max-width: 1200px;}","@media screen and (max-width: 768px) {p {font-size: 11px; }}"],"name":"t:sections.multitile.name","settings":{"block_order_mobile":false,"heading":"","heading_size":"h3","heading_alignment":"start","spacing_tile":"default","color_scheme":"scheme-7","section_width":"max-w-page","spacing_top":"1","spacing_bottom":"1"}}},"order":["full_width_banner_zyj9xF","multitile_QYUWPD","multitile_yTF3Ci","full_width_banner_4dy6gj","multitile_TCzefr","multitile_zWKeYg","full_width_banner_FPpzpt","full_width_banner_rUGFXp","multitile_6ALtge","full_width_banner_rRcqzE","multitile_MdVrNE"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "full_width_banner_zyj9xF": {
+      "type": "full-width-banner",
+      "blocks": {
+        "content_Uj6mTx": {
+          "type": "content",
+          "settings": {
+            "content": "<h2>About</h2>"
+          }
+        }
+      },
+      "block_order": [
+        "content_Uj6mTx"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 769px) {{max-height: 818px; }}"
+      ],
+      "name": "t:sections.full-width-banner.name",
+      "settings": {
+        "enable_transparent_header": true,
+        "media_position": "background",
+        "section_height": "full",
+        "content_position": "center",
+        "content_alignment": "start",
+        "image": "shopify://shop_images/ProT_-_About_Hero.jpg",
+        "video_external": "",
+        "show_controls_on_video": false,
+        "aspect_ratio": "auto",
+        "section_height_mobile": "third",
+        "content_position_mobile": "center",
+        "content_alignment_mobile": "center",
+        "image_mobile": "shopify://shop_images/ProT_-_About_Hero_Mobile.jpg",
+        "video_external_mobile": "",
+        "show_controls_on_video_mobile": false,
+        "aspect_ratio_mobile": "auto",
+        "section_width": "max-w-full",
+        "color_scheme": "scheme-8",
+        "color_scheme_for_content": "scheme-8",
+        "spacing_inner": "2",
+        "spacing_top": "0",
+        "spacing_bottom": "0"
+      }
+    },
+    "multitile_QYUWPD": {
+      "type": "multitile",
+      "blocks": {
+        "tile_69GqgD": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h3>From Clinical Care to Daily Care</h3><h6><br/>ProT Gold was born in the clinical world—used in hospitals, long- term care, and nutrition therapy programs where outcomes matter and every moment counts.<br/><br/></h6><p>That same medical-grade precision now powers a collection of collagen solutions designed to support your real life: fast-paced, full of purpose, and not slowing down.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_h4LiNe": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 4,
+            "row_factor": 1,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "media",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_About_-_From_CLinical_Care_to_Daily_Care.jpg",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        }
+      },
+      "block_order": [
+        "tile_69GqgD",
+        "tile_h4LiNe"
+      ],
+      "custom_css": [
+        ".section-multitile__text p {font-size: 15px; padding-bottom: 10px;}",
+        ".section-multitile__text strong {font-size: 16px;}",
+        "h6 {max-width: 427px; line-height: 30px; font-size: 28px; font-family: \"ArticulatCF_Regular\" !important; color: #423d42;}",
+        "@media screen and (max-width: 768px) {{display: none; }}",
+        "p {max-width: 430px;}"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "spacing_tile": "default",
+        "color_scheme": "scheme-7",
+        "section_width": "max-w-page",
+        "spacing_top": "4",
+        "spacing_bottom": "4"
+      }
+    },
+    "multitile_yTF3Ci": {
+      "type": "multitile",
+      "blocks": {
+        "tile_jxPa4F": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h3>From Clinical Care to Daily Care</h3><h3></h3><h6>ProT Gold was born in the clinical world—used in hospitals, long-term care, and nutrition therapy programs where outcomes matter and every moment counts.</h6>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "1"
+          }
+        },
+        "tile_aeqp38": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 4,
+            "row_factor": 1,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "media",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_About_-_From_CLinical_Care_to_Daily_Care.jpg",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "1"
+          }
+        },
+        "tile_JyWM4c": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p>That same medical-grade precision now powers a collection of collagen solutions designed to support your real life: fast-paced, full of purpose, and not slowing down.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        }
+      },
+      "block_order": [
+        "tile_jxPa4F",
+        "tile_aeqp38",
+        "tile_JyWM4c"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 769px) {{display: none; }}",
+        "h3 {font-size: 40px; max-width: 320px; margin-left: auto; margin-right: auto;}",
+        "h6 {margin-top: 20px; line-height: 25px; font-size: 16px; font-family: \"ArticulatCF_Regular\" !important; color: rgba(var(--color-foreground), 1);}",
+        "p {font-size: 13px; max-width: 400px;}"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "spacing_tile": "default",
+        "color_scheme": "scheme-7",
+        "section_width": "max-w-page",
+        "spacing_top": "2",
+        "spacing_bottom": "2"
+      }
+    },
+    "full_width_banner_4dy6gj": {
+      "type": "full-width-banner",
+      "blocks": {
+        "content_M6TKzk": {
+          "type": "content",
+          "settings": {
+            "content": "<h3>The Innovation <br/>Behind the Formula</h3><p>ProT Gold was created to solve the problem most collagen supplements overlook: </p><p><strong>ABSORPTION</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "content_M6TKzk"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 769px) {h2 {max-width: 700px; margin-left: auto; margin-right: auto; } p {max-width: 350px; margin-left: auto; margin-right: auto; margin-top: 30px; margin-bottom: 20px; }}",
+        "@media screen and (max-width: 768px) {h3 {font-size: 36px; max-width: 320px; margin-left: auto; margin-right: auto; } p {font-size: 15px !important; max-width: 600px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "name": "t:sections.full-width-banner.name",
+      "settings": {
+        "enable_transparent_header": true,
+        "media_position": "background",
+        "section_height": "half",
+        "content_position": "center",
+        "content_alignment": "center",
+        "image": "shopify://shop_images/ProT_-_Liquid_Collagen_PP_-_Why_Medical-Grade_Collagen_Matters.jpg",
+        "video_external": "",
+        "show_controls_on_video": false,
+        "aspect_ratio": "auto",
+        "section_height_mobile": "half",
+        "content_position_mobile": "center",
+        "content_alignment_mobile": "center",
+        "image_mobile": "shopify://shop_images/ProT_-_Liquid_Collagen_PP_-_Why_Medical-Grade_Collagen_Matters_Mobile.jpg",
+        "video_external_mobile": "",
+        "show_controls_on_video_mobile": false,
+        "aspect_ratio_mobile": "auto",
+        "section_width": "max-w-full",
+        "color_scheme": "scheme-8",
+        "color_scheme_for_content": "scheme-8",
+        "spacing_inner": "2",
+        "spacing_top": "0",
+        "spacing_bottom": "0"
+      }
+    },
+    "multitile_TCzefr": {
+      "type": "multitile",
+      "blocks": {
+        "tile_PgfNW9": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "media",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/Group_167.webp",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "1"
+          }
+        },
+        "tile_JRVjUM": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h6>Our founders—former high-<br/>performance professionals and<br/>endurance athletes— realized that<br/>traditional products weren’t built<br/>for the pace of modern life.</h6>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_bhQ43g": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p>So they partnered with a Stanford biochemist<br/>to create Nano Hydrolyzed Collagen®—ultra-small<br/>peptides absorbed in under 15 minutes. </p><p><strong>Clinically trusted and fast-acting, it was made<br/>for medicine. Now, it’s made for you.</strong></p>",
+            "button_label": "Explore Our Formula",
+            "button_link": "",
+            "button_style": "button--outlined",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        }
+      },
+      "block_order": [
+        "tile_PgfNW9",
+        "tile_JRVjUM",
+        "tile_bhQ43g"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 749px) {{display: none; }}"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "spacing_tile": "default",
+        "color_scheme": "scheme-7",
+        "section_width": "max-w-page",
+        "spacing_top": "2",
+        "spacing_bottom": "2"
+      }
+    },
+    "multitile_zWKeYg": {
+      "type": "multitile",
+      "blocks": {
+        "tile_JHq9KQ": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p>Our founders—former high-performance professionals and endurance athletes—realized that traditional products weren’t built for the pace of modern life.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        },
+        "tile_KMME78": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p>So they partnered with a Stanford biochemist to create Nano Hydrolyzed Collagen®—ultra-small peptides absorbed in under 15 minutes. </p><p><strong>Clinically trusted and fast-acting, it was made for medicine. Now, it’s made for you.</strong></p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--outlined",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        },
+        "tile_Bcqzpr": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "media",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "",
+            "button_label": "Explore Our Formula",
+            "button_link": "",
+            "button_style": "button--outlined",
+            "image": "shopify://shop_images/Group_167.webp",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "1"
+          }
+        }
+      },
+      "block_order": [
+        "tile_JHq9KQ",
+        "tile_KMME78",
+        "tile_Bcqzpr"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 750px) {{display: none; }}"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "spacing_tile": "default",
+        "color_scheme": "scheme-7",
+        "section_width": "max-w-page",
+        "spacing_top": "2",
+        "spacing_bottom": "2"
+      }
+    },
+    "full_width_banner_FPpzpt": {
+      "type": "full-width-banner",
+      "blocks": {
+        "subheading_9tHkQa": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Our Ethos",
+            "link": ""
+          }
+        },
+        "content_9BQjLJ": {
+          "type": "content",
+          "settings": {
+            "content": "<h3>High Standards. <br/>Higher Intentions.</h3><h6></h6><h6><br/>Every decision we make is grounded in one purpose: helping you thrive for life.</h6><p><br/>When you live with intention, your wellness routine should rise to meet it. That’s why we designed ProT Gold to deliver real results without complicating your day. </p><p>We believe that longevity is earned through consistency, and that the best wellness routines are the ones that work as hard as you do.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_9tHkQa",
+        "content_9BQjLJ"
+      ],
+      "custom_css": [
+        "h2 {max-width: 700px; margin-left: auto; margin-right: auto;}",
+        "h6 {margin-top: 10px; font-size: 24px; font-family: \"ArticulatCF_Regular\" !important; max-width: 350px; line-height: 30px;}",
+        "p {max-width: 380px;}",
+        " {max-height: 1305px;}",
+        "@media screen and (max-width: 768px) {{display: none; }}"
+      ],
+      "name": "t:sections.full-width-banner.name",
+      "settings": {
+        "enable_transparent_header": true,
+        "media_position": "background",
+        "section_height": "full",
+        "content_position": "center",
+        "content_alignment": "start",
+        "image": "shopify://shop_images/ProT_-_About_-_Other_ethos.jpg",
+        "video_external": "",
+        "show_controls_on_video": false,
+        "aspect_ratio": "1/1",
+        "section_height_mobile": "full",
+        "content_position_mobile": "center",
+        "content_alignment_mobile": "center",
+        "image_mobile": "shopify://shop_images/ProT_-_About_-_Other_ethos_Mobily.jpg",
+        "video_external_mobile": "",
+        "show_controls_on_video_mobile": false,
+        "aspect_ratio_mobile": "auto",
+        "section_width": "max-w-full",
+        "color_scheme": "scheme-8",
+        "color_scheme_for_content": "scheme-8",
+        "spacing_inner": "2",
+        "spacing_top": "0",
+        "spacing_bottom": "0"
+      }
+    },
+    "full_width_banner_rUGFXp": {
+      "type": "full-width-banner",
+      "blocks": {
+        "content_r6KYdJ": {
+          "type": "content",
+          "settings": {
+            "content": "<h5>Our Ethos</h5><h3>High Standards. <br/>Higher Intentions.</h3><h6></h6><h6><br/>Every decision we make is grounded in one purpose: helping you thrive for life.</h6><p><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>When you live with intention, your wellness routine should rise to meet it. That’s why we designed ProT Gold to deliver real results without complicating your day. </p><p>We believe that longevity is earned through consistency, and that the best wellness routines are the ones that work as hard as you do.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "content_r6KYdJ"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 769px) {{display: none; }}",
+        "h3 {font-size: 40px; max-width: 320px; margin-left: auto; margin-right: auto;}",
+        "h6 {font-size: 18px; font-family: \"ArticulatCF_Regular\" !important; max-width: 340px; line-height: 25px; margin-left: auto; margin-right: auto;}",
+        "p {color: white; font-size: 15px !important; max-width: 600px; margin-left: 20px; margin-right: 20px;}",
+        "h5 {font-family: \"ArticulatCF_Demi_Bold\"; color: #4a134a !important; font-size: 16px; margin-bottom: 15px;}",
+        ".container {min-height: 225vw;}"
+      ],
+      "name": "t:sections.full-width-banner.name",
+      "settings": {
+        "enable_transparent_header": true,
+        "media_position": "background",
+        "section_height": "full",
+        "content_position": "center",
+        "content_alignment": "start",
+        "image": "shopify://shop_images/ProT_-_About_-_Other_ethos.jpg",
+        "video_external": "",
+        "show_controls_on_video": false,
+        "aspect_ratio": "auto",
+        "section_height_mobile": "full",
+        "content_position_mobile": "center",
+        "content_alignment_mobile": "center",
+        "image_mobile": "shopify://shop_images/ProT_-_About_-_Other_ethos_Mobily.jpg",
+        "video_external_mobile": "",
+        "show_controls_on_video_mobile": false,
+        "aspect_ratio_mobile": "auto",
+        "section_width": "max-w-full",
+        "color_scheme": "scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be",
+        "color_scheme_for_content": "scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be",
+        "spacing_inner": "1",
+        "spacing_top": "0",
+        "spacing_bottom": "0"
+      }
+    },
+    "multitile_6ALtge": {
+      "type": "multitile",
+      "blocks": {
+        "tile_BHBRqf": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 3,
+            "color_scheme": "scheme-c964cc82-bba3-486f-a537-7f3207978313",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "Our Values",
+            "heading_size": "h2",
+            "text": "<p>We believe in science without ego, <br/>and wellness without gimmicks.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_About_Us_-_icon_Our_Values.webp",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "image_mobile": "shopify://shop_images/ProT_-_About_Us_-_icon_Our_Values_Mobile.webp",
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_8UQ4CD": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-4",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p><strong>Innovation </strong></p><p>Our advantage isn’t marketing—it’s molecular. We created technology that raises the standard and redefines what collagen can do.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_wr9cR7": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-4",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p><strong>Stewardship </strong></p><p>Caring for your body is a lifelong responsibility. We create products that help protect what carries you through life.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_djVP8f": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-4",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p><strong>Balance </strong></p><p>We believe wellness is driven by smart routines that simplify your life.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_daFRwU": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-4",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p><strong>Self-Investment </strong></p><p>Your daily habits shape your future. We help you invest wisely.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_QtYBUC": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-4",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p><strong>Trust</strong> </p><p>We earn credibility through clinical proof, not marketing promises.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_im9pbn": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-4",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p><strong>Transparency </strong></p><p>We share how it works, why it matters, and where the science stands. No filler, no fluff.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        }
+      },
+      "block_order": [
+        "tile_BHBRqf",
+        "tile_8UQ4CD",
+        "tile_wr9cR7",
+        "tile_djVP8f",
+        "tile_daFRwU",
+        "tile_QtYBUC",
+        "tile_im9pbn"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "spacing_tile": "default",
+        "color_scheme": "scheme-c964cc82-bba3-486f-a537-7f3207978313",
+        "section_width": "max-w-page",
+        "spacing_top": "4",
+        "spacing_bottom": "4"
+      }
+    },
+    "full_width_banner_rRcqzE": {
+      "type": "full-width-banner",
+      "blocks": {
+        "content_FFGnPP": {
+          "type": "content",
+          "settings": {
+            "content": "<h3>This is not about anti-aging. It's about pro-living.</h3><p>Experience the clinically trusted collagen protein that works as fast as your life moves.</p>"
+          }
+        },
+        "buttons_36MVyf": {
+          "type": "buttons",
+          "settings": {
+            "button_link_1": "/",
+            "button_link_1_type": "button",
+            "button_label_1": "Start Today",
+            "button_style_1": "button--outlined",
+            "color_scheme_first_button": "scheme-8",
+            "button_link_2": "/",
+            "button_label_2": "",
+            "button_style_2": "button--outlined",
+            "color_scheme_second_button": "scheme-1"
+          }
+        }
+      },
+      "block_order": [
+        "content_FFGnPP",
+        "buttons_36MVyf"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 769px) {h3 {max-width: 600px; margin-left: auto; margin-right: auto; } p {max-width: 400px; margin-left: auto; margin-right: auto; margin-top: 30px; margin-bottom: 20px; }}",
+        "@media screen and (max-width: 768px) {h3 {font-size: 36px; max-width: 320px; margin-left: auto; margin-right: auto; } p {max-width: 250px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "enable_transparent_header": false,
+        "media_position": "background",
+        "section_height": "full",
+        "content_position": "center",
+        "content_alignment": "center",
+        "image": "shopify://shop_images/ProT_-_About_-_Pro-living.jpg",
+        "icon": "shopify://shop_images/ProT_-_HomePage_-_Full_Width_Banner_Icon_SVG.svg",
+        "video_external": "",
+        "show_controls_on_video": false,
+        "aspect_ratio": "auto",
+        "section_height_mobile": "full",
+        "content_position_mobile": "center",
+        "content_alignment_mobile": "center",
+        "image_mobile": "shopify://shop_images/ProT_-_About_-_Pro-living_Mobile.jpg",
+        "video_external_mobile": "",
+        "show_controls_on_video_mobile": false,
+        "aspect_ratio_mobile": "auto",
+        "section_width": "max-w-full",
+        "color_scheme": "scheme-1",
+        "color_scheme_for_content": "scheme-6",
+        "spacing_inner": "0",
+        "spacing_top": "0",
+        "spacing_bottom": "0"
+      }
+    },
+    "multitile_MdVrNE": {
+      "type": "multitile",
+      "blocks": {
+        "tile_K7tabX": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 6,
+            "row_factor": 1,
+            "color_scheme": "scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<p>1. Lee SK, Posthauer ME, Dorner B, Redovian V, Maloney MJ. Pressure ulcer healing with a concentrated, fortified, collagen protein hydrolysate supplement: a randomized controlled trial. Adv Skin Wound Care. 2006 Mar;19(2):92-6</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        }
+      },
+      "block_order": [
+        "tile_K7tabX"
+      ],
+      "custom_css": [
+        "p {max-width: 1200px;}",
+        "@media screen and (max-width: 768px) {p {font-size: 11px; }}"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "spacing_tile": "default",
+        "color_scheme": "scheme-7",
+        "section_width": "max-w-page",
+        "spacing_top": "1",
+        "spacing_bottom": "1"
+      }
+    }
+  },
+  "order": [
+    "full_width_banner_zyj9xF",
+    "multitile_QYUWPD",
+    "multitile_yTF3Ci",
+    "full_width_banner_4dy6gj",
+    "multitile_TCzefr",
+    "multitile_zWKeYg",
+    "full_width_banner_FPpzpt",
+    "full_width_banner_rUGFXp",
+    "multitile_6ALtge",
+    "full_width_banner_rRcqzE",
+    "multitile_MdVrNE"
+  ]
+}

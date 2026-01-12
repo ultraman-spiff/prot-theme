@@ -1,1 +1,2898 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"breadcrumbs":true,"show_page_title":true,"page_title_alignment":"text-center","info_title":"","info_content":"","section_width":"max-w-narrower","color_scheme":"","spacing_top":"2","spacing_bottom":"2"}},"full_width_banner_hiaDgQ":{"type":"full-width-banner","blocks":{"subheading_Nm8fKF":{"type":"subheading","settings":{"subheading":"Our Formula","link":""}},"content_XrpPWN":{"type":"content","settings":{"content":"<h2>Clinical Collagen,\u2028<br\/>Now Yours.<\/h2>"}}},"block_order":["subheading_Nm8fKF","content_XrpPWN"],"custom_css":["@media screen and (min-width: 769px) {{max-height: 887px; }}"],"name":"t:sections.full-width-banner.name","settings":{"enable_transparent_header":true,"media_position":"background","section_height":"full","content_position":"center","content_alignment":"start","image":"shopify:\/\/shop_images\/Hero_1.jpg","video_external":"","show_controls_on_video":false,"aspect_ratio":"auto","section_height_mobile":"half","content_position_mobile":"center","content_alignment_mobile":"center","image_mobile":"shopify:\/\/shop_images\/Formula-Hero.jpg","video_external_mobile":"","show_controls_on_video_mobile":false,"aspect_ratio_mobile":"auto","section_width":"max-w-full","color_scheme":"scheme-8","color_scheme_for_content":"scheme-8","spacing_inner":"2","spacing_top":"0","spacing_bottom":"0"}},"dual_tiles_D3NEMU":{"type":"dual-tiles","blocks":{"tile_rrWwrr":{"type":"tile","settings":{"show_on":"both","color_scheme":"scheme-f0717405-2c2f-4601-a476-0d2032d345b4","custom_background_color":"","heading":"","heading_size":"h6","text":"<h5><strong>THE INNOVATION BEHIND DAILY VITALITY<\/strong><\/h5><h3>Advanced Collagen<br\/>Designed for Daily <br\/>Renewal<\/h3>","button_label":"","button_link":"","button_style":"button--filled","product":"","product_width":16,"show_other_elements_with_product":true,"aspect_ratio":"auto","vertical_position":"stretch","content_position":"justify-start","content_alignment":"text-start align-start","product_position":"0","video_external":"","show_controls_on_video":false,"aspect_ratio_mobile":"auto","content_alignment_mobile":"text-center--mobile align-center--mobile","content_position_mobile":"justify-center--mobile","product_position_mobile":"0","video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"0"}},"tile_CjcxWV":{"type":"tile","settings":{"show_on":"both","color_scheme":"scheme-f0717405-2c2f-4601-a476-0d2032d345b4","custom_background_color":"","heading":"","heading_size":"h6","text":"<h6><br\/>ProT Gold’s Nano Hydrolyzed Collagen<span>®<\/span> peptides are up to 70% smaller than hydrolyzed collagen, providing unmatched absorption and impact.<\/h6><p>Our proprietary process creates ultra-small peptides that are fully digested in less than 15 minutes, so your body can use them when it matters most.<\/p>","button_label":"","button_link":"","button_style":"button--filled","product":"","product_width":24,"show_other_elements_with_product":true,"aspect_ratio":"auto","vertical_position":"stretch","content_position":"justify-center","content_alignment":"text-start align-start","product_position":"0","video_external":"","show_controls_on_video":false,"aspect_ratio_mobile":"auto","content_alignment_mobile":"text-center--mobile align-center--mobile","content_position_mobile":"justify-center--mobile","product_position_mobile":"0","video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"0"}}},"block_order":["tile_rrWwrr","tile_CjcxWV"],"custom_css":["h5,h6,p {margin-bottom: 30px;}","@media screen and (min-width: 769px) {p {max-width: 430px; } h6 {color: #423d42; font-size: 18px; font-family: \"ArticulatCF_Regular\" !important; max-width: 400px; line-height: 25px; } h5 {letter-spacing: 0.2rem; font-size: 15px; }}","@media screen and (max-width: 768px) {p {max-width: 300px; margin-left: auto; margin-right: auto; } h6 {color: #423d42; font-size: 18px; font-family: \"ArticulatCF_Regular\" !important; max-width: 400px; line-height: 25px; } h5 {letter-spacing: 0.2rem; margin-bottom: 20px; font-size: 10px; }}"],"name":"t:sections.dual-tiles.name","settings":{"section_layout":"seperated","block_size":"half","block_order_mobile":false,"heading":"","heading_size":"h3","heading_alignment":"start","color_scheme":"scheme-f0717405-2c2f-4601-a476-0d2032d345b4","section_width":"max-w-page","spacing_top":"2","spacing_bottom":"2"}},"dual_tiles_PWMVWB":{"type":"dual-tiles","blocks":{"tile_qVTxDp":{"type":"tile","settings":{"show_on":"both","color_scheme":"scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be","custom_background_color":"","heading":"","heading_size":"h3","text":"","button_label":"","button_link":"","button_style":"button--filled","product":"","product_width":24,"show_other_elements_with_product":true,"aspect_ratio":"auto","vertical_position":"end","content_position":"justify-center","content_alignment":"text-center align-center","product_position":"0","image":"shopify:\/\/shop_images\/Science_-_With_Logo_Labels.png","video_external":"","show_controls_on_video":false,"aspect_ratio_mobile":"auto","content_alignment_mobile":"text-center--mobile align-center--mobile","content_position_mobile":"justify-center--mobile","product_position_mobile":"0","image_mobile":"shopify:\/\/shop_images\/Frame_2147223721.png","video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"3"}}},"block_order":["tile_qVTxDp"],"name":"t:sections.dual-tiles.name","settings":{"section_layout":"seperated","block_size":"full","block_order_mobile":false,"heading":"","heading_size":"h3","heading_alignment":"start","color_scheme":"scheme-f0717405-2c2f-4601-a476-0d2032d345b4","section_width":"max-w-page","spacing_top":"2","spacing_bottom":"2"}},"trust_indicators_3C7a7k":{"type":"trust-indicators","blocks":{"indicator_b9Miem":{"type":"indicator","settings":{"title_desktop":"<p>Title of the trust indicator<\/p>","title_mobile":"<p>Title of the trust indicator<\/p>","icon":"theme-box","custom_icon":"shopify:\/\/shop_images\/Group_240.svg"}},"indicator_7z4qtn":{"type":"indicator","settings":{"title_desktop":"<p>Title of the trust indicator<\/p>","title_mobile":"<p>Title of the trust indicator<\/p>","icon":"theme-box","custom_icon":"shopify:\/\/shop_images\/Group.svg"}},"indicator_UNkHyM":{"type":"indicator","settings":{"title_desktop":"<p>Title of the trust indicator<\/p>","title_mobile":"<p>Title of the trust indicator<\/p>","icon":"theme-box","custom_icon":"shopify:\/\/shop_images\/Group_235.svg"}}},"block_order":["indicator_b9Miem","indicator_7z4qtn","indicator_UNkHyM"],"custom_css":["@media (max-width: 749px) {.section_trust-indicators {padding-top: 60px; }}"],"name":"t:sections.trust-indicators.name","settings":{"button_label":"","button_link":"\/","color_scheme_for_blocks":"scheme-f0717405-2c2f-4601-a476-0d2032d345b4","color_scheme":"scheme-f0717405-2c2f-4601-a476-0d2032d345b4","padding_top":20,"padding_bottom":20}},"collapse_with_image_hzBtP4":{"type":"collapse-with-image","blocks":{"collapse_item_Fk9Cdr":{"type":"collapse_item","settings":{"item_title":"The Difference","item_description":"<p>Nano hydrolyzed means peptides are reduced to less than 1% of their original size. That’s what enables faster, more efficient absorption.<\/p>"}},"collapse_item_hUtkLT":{"type":"collapse_item","settings":{"item_title":"Proprietary Process","item_description":"<p>Unlike standard hydrolyzed collagen, our proprietary process uses fruit enzymes in precision-controlled stages to create ultra-small peptides—without breaking them down completely. This keeps them intact and ready for action.<\/p>"}},"collapse_item_dUyHrU":{"type":"collapse_item","settings":{"item_title":"Rapid Digestion","item_description":"<p>Smaller peptides digest faster, so your body can use them where and when it matters. Ideal for skin, joints, muscle, and everyday recovery.<\/p>"}}},"block_order":["collapse_item_Fk9Cdr","collapse_item_hUtkLT","collapse_item_dUyHrU"],"custom_css":[".collapse_card_title span {vertical-align: super; font-size: 60%;}"],"name":"Collapse with Image","settings":{"color_scheme":"scheme-c964cc82-bba3-486f-a537-7f3207978313","image_right":false,"image_title":"Collagen molecule scale","section_image":"shopify:\/\/shop_images\/Group_232.png","image_scale":100,"padding_top":150,"padding_bottom":150,"section_gap":200,"collapse_width":600,"collapse_container_gap":78,"collapse_subtitle":"","collapse_title":"<p>Reengineered for<br\/>Speed and Precision<\/p>","collapse_description":"","card_show":true,"card_title":"Absorption Time","card_title_1":"<p>Hydrolyzed<br\/>Collagen<\/p>","card_content_1":"<p>~1-4h<\/p>","card_border_1":true,"card_1_bg_opacity":0,"card_title_2":"<p>Nano Hydrolyzed<br\/>Collagen®<\/p>","card_content_2":"<p>15m<\/p>","card_border_2":false,"card_2_bg_opacity":30,"button_show":true,"button_content":"Experience The Difference","button_link":"shopify:\/\/products\/prot-gold-medical-grade-collagen-protein"}},"full_width_banner_PhwUyj":{"type":"full-width-banner","blocks":{"subheading_E9mqTV":{"type":"subheading","disabled":true,"settings":{"subheading":"Science-backed technology","link":""}},"heading_zwVqqL":{"type":"heading","settings":{"heading":"Raising the Standard Beyond Hydrolyzed Collagen","heading_size":"h3"}},"content_z8V4mK":{"type":"content","settings":{"content":"<p>Our proprietary approach takes collagen further—producing ultra-small peptides that are fully digested in <strong>less than 15 minutes¹.<\/strong> <br\/><br\/>This means faster absorption, better uptake, and more complete support for your body when it matters most.<\/p>"}}},"block_order":["subheading_E9mqTV","heading_zwVqqL","content_z8V4mK"],"custom_css":["@media screen and (min-width: 1024px) {h2 {max-width: 650px; margin-left: auto; margin-right: auto; } p {font-size: 16px; max-width: 400px; margin-left: auto; margin-right: auto; }}","@media screen and (max-width: 769px) {h2 {font-size: 32px; max-width: 400px; } p {max-width: 300px; } {max-height: 955px !important; }}"],"settings":{"enable_transparent_header":false,"media_position":"background","section_height":"full","content_position":"center","content_alignment":"center","image":"shopify:\/\/shop_images\/ProT_-_Formula_-_Raising_the_Standard_Beyond_Hydrolyzed_Collagen.webp","video_external":"","show_controls_on_video":false,"aspect_ratio":"auto","section_height_mobile":"full","content_position_mobile":"center","content_alignment_mobile":"center","image_mobile":"shopify:\/\/shop_images\/Our_proprietary_approach_takes_collagen_further_producing_ultra-small_peptides_for_faster_absorption_better_uptake_and_more_complete_support_Mobile.webp","video_external_mobile":"","show_controls_on_video_mobile":false,"aspect_ratio_mobile":"auto","section_width":"max-w-full","color_scheme":"scheme-1","color_scheme_for_content":"scheme-6","spacing_inner":"0","spacing_top":"0","spacing_bottom":"0"}},"multitile_YPRX4G":{"type":"multitile","blocks":{"tile_xwXfiX":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-f0717405-2c2f-4601-a476-0d2032d345b4","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-start","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"background","heading":"","heading_size":"h3","text":"<h6>THE INNOVATION BEHIND DAILY VITALITY<\/h6><h3>Most Collagen Stops <br\/>at Good Enough<\/h3>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_RTY3yG":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-f0717405-2c2f-4601-a476-0d2032d345b4","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-start","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"background","heading":"","heading_size":"h3","text":"<h4><br\/><\/h4><p>Hydrolysis makes collagen more<br\/>accessible—but most formulas today still<br\/>fall short, sacrificing either absorption,<br\/>convenience, or effectiveness.<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_96dwBY":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-f0717405-2c2f-4601-a476-0d2032d345b4","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-start","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"background","heading":"","heading_size":"h3","text":"<h4><br\/><\/h4><p>Hydrolyzed collagen breaks protein down into smaller<br\/>peptides, making it easier to absorb than raw collagen. <br\/><br\/>However, many collagen products still take hours to digest,<br\/>and the particles aren’t as small or as effective as they<br\/>could be. It’s a step forward, but not the final destination.<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_bxwVJc":{"type":"tile","settings":{"show_on":"both","column_factor":6,"row_factor":1,"color_scheme":"scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5","gradient_background_color":"","tile_aspect_ratio":"media","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"top","heading":"","heading_size":"h3","text":"","button_label":"","button_link":"","button_style":"button--filled","image":"shopify:\/\/shop_images\/ProT_-_Formula_-_Science.jpg","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_teaKxq":{"type":"tile","disabled":true,"settings":{"show_on":"desktop","column_factor":1,"row_factor":1,"color_scheme":"scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"background","heading":"","heading_size":"h3","text":"","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_aXiMT8":{"type":"tile","disabled":true,"settings":{"show_on":"both","column_factor":3,"row_factor":1,"color_scheme":"scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5","gradient_background_color":"","tile_aspect_ratio":"media","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"top","heading":"","heading_size":"h3","text":"","button_label":"","button_link":"","button_style":"button--filled","image":"shopify:\/\/shop_images\/ProT_-_Formula_-_Science_2.webp","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}}},"block_order":["tile_xwXfiX","tile_RTY3yG","tile_96dwBY","tile_bxwVJc","tile_teaKxq","tile_aXiMT8"],"custom_css":["@media screen and (min-width: 751px) {h6 {font-family: \"ArticulatCF_Demi_Bold\"; font-size: 16px; letter-spacing: 0.2rem; font-size: 12px; margin-bottom: 10px; text-transform: uppercase; }}","@media screen and (max-width: 750px) {{display: none; }}",".section-multitile__content p {margin: 0px;}",".section-multitile__content h6 {margin-top: 10px;}"],"name":"t:sections.multitile.name","settings":{"block_order_mobile":false,"heading":"","heading_size":"h3","heading_alignment":"start","spacing_tile":"default","color_scheme":"scheme-f0717405-2c2f-4601-a476-0d2032d345b4","section_width":"max-w-page","spacing_top":"2","spacing_bottom":"2"}},"multitile_gzAXi9":{"type":"multitile","blocks":{"tile_KkUAw3":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"bottom","heading":"Most Collagen Stops \u2028at Good Enough","heading_size":"h2","text":"","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"1"}},"tile_Qzxiqi":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-f0717405-2c2f-4601-a476-0d2032d345b4","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"top","heading":"","heading_size":"h3","text":"<p>Hydrolyzed collagen is more accessible<br\/>for your body than raw collagen—<br\/>but most formulas today still fall short,<br\/>sacrificing either absorption, convenience,<br\/>or effectiveness.<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"1"}},"tile_7xBmcx":{"type":"tile","settings":{"show_on":"both","column_factor":3,"row_factor":1,"color_scheme":"scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5","gradient_background_color":"","tile_aspect_ratio":"media","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"top","heading":"","heading_size":"h3","text":"","button_label":"","button_link":"","button_style":"button--filled","image":"shopify:\/\/shop_images\/ProT_-_Formula_-_Science_1.webp","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_WpzJm7":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-f0717405-2c2f-4601-a476-0d2032d345b4","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"top","heading":"","heading_size":"h3","text":"<p>Hydrolyzed collagen breaks protein down into smaller<br\/>peptides, making it easier to absorb than raw collagen. <\/p><p>However, many collagen products still take hours to digest,<br\/>and the particles aren’t as small or as effective as they<br\/>could be. It’s a step forward, but not the final destination.<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_rmWb6K":{"type":"tile","disabled":true,"settings":{"show_on":"desktop","column_factor":1,"row_factor":1,"color_scheme":"scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"background","heading":"","heading_size":"h3","text":"","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_WpRBxq":{"type":"tile","settings":{"show_on":"both","column_factor":3,"row_factor":1,"color_scheme":"scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5","gradient_background_color":"","tile_aspect_ratio":"media","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"top","heading":"","heading_size":"h3","text":"","button_label":"","button_link":"","button_style":"button--filled","image":"shopify:\/\/shop_images\/ProT_-_Formula_-_Science_2.webp","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"1"}}},"block_order":["tile_KkUAw3","tile_Qzxiqi","tile_7xBmcx","tile_WpzJm7","tile_rmWb6K","tile_WpRBxq"],"custom_css":["@media screen and (min-width: 769px) {{display: none; }}","@media screen and (max-width: 768px) {p {margin-top: -10px; max-width: 300px; margin-left: auto; margin-right: auto; } h2 {font-size: 36px; margin-left: auto; margin-right: auto; }}"],"name":"t:sections.multitile.name","settings":{"block_order_mobile":false,"heading":"","heading_size":"h3","heading_alignment":"start","spacing_tile":"default","color_scheme":"scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5","section_width":"max-w-page","spacing_top":"4","spacing_bottom":"4"}},"collapse_with_image_wR6g7U":{"type":"collapse-with-image","blocks":{"collapse_item_t4xHUF":{"type":"collapse_item","settings":{"item_title":"Arginine","item_description":"<p><strong>Supports blood flow<\/strong><\/p><p>Helps produce nitric oxide, which relaxes blood vessels, aiding circulation and heart health.<br\/><br\/><\/p><p><strong>Aids in healing<\/strong><\/p><p>Plays a role in wound healing and immune function.<br\/><br\/><\/p><p><strong>Enhances exercise performance<\/strong><\/p><p>May improve endurance by increasing blood flow to muscles. <\/p>"}},"collapse_item_qPqjJr":{"type":"collapse_item","settings":{"item_title":"Histidine","item_description":"<p><strong>Supports immunity<\/strong><\/p><p>Involved in immune function and tissue repair. <br\/><br\/><\/p><p><strong>Protects cells\u2028<\/strong><\/p><p>Acts as an antioxidant to help reduce inflammation.<\/p>"}},"collapse_item_R3fMFK":{"type":"collapse_item","settings":{"item_title":"Methionine","item_description":"<p><strong>Boosts detoxification<\/strong><\/p><p>Helps the body break down toxins and heavy metals.<br\/><br\/><\/p><p><strong>Promotes healthy skin, hair, and nails\u2028<\/strong><\/p><p>Supports your body’s natural collagen production.<\/p>"}},"collapse_item_wqyaQQ":{"type":"collapse_item","settings":{"item_title":"Cysteine","item_description":"<p><strong>Fuels recovery<\/strong><\/p><p>Assists in protein synthesis and tissue rebuilding.<br\/><br\/><\/p><p><strong>Strengthens antioxidant defenses<\/strong><\/p><p>Supports production of glutathione: your body’s master antioxidant.<\/p>"}},"collapse_item_f9rjXM":{"type":"collapse_item","settings":{"item_title":"Taurine","item_description":"<p><strong>Supports heart health\u2028<\/strong><\/p><p>Regulates blood pressure and cardiovascular function. <br\/><br\/><\/p><p><strong>Aids muscle function\u2028<\/strong><\/p><p>Plays a role in hydration and muscle contraction.<\/p>"}},"collapse_item_hHXP7B":{"type":"collapse_item","settings":{"item_title":"Tryptophan","item_description":"<p><strong>Supports mood and sleep<\/strong><\/p><p>Helps produce serotonin and melatonin.<br\/><br\/><\/p><p><strong>Assists recovery<\/strong><\/p><p>May help reduce fatigue and support nervous system health.<\/p>"}},"collapse_item_Xnf6xQ":{"type":"collapse_item","settings":{"item_title":"Glutamine","item_description":"<p><strong>Supports gut health<\/strong><\/p><p>Helps maintain the integrity of the gut lining.<br\/><br\/><\/p><p><strong>Strengthens immunity<\/strong><\/p><p>Fuel source for immune cells during stress or illness.<\/p>"}}},"block_order":["collapse_item_t4xHUF","collapse_item_qPqjJr","collapse_item_R3fMFK","collapse_item_wqyaQQ","collapse_item_f9rjXM","collapse_item_hHXP7B","collapse_item_Xnf6xQ"],"name":"Collapse with Image","settings":{"color_scheme":"scheme-031be706-d0fa-457a-a6b0-623052c47c23","image_right":true,"image_title":"","section_image":"shopify:\/\/shop_images\/Group_126_Copy.webp","image_scale":80,"padding_top":150,"padding_bottom":150,"section_gap":150,"collapse_width":600,"collapse_container_gap":50,"collapse_subtitle":"Fortified complete protein","collapse_title":"<p>More Than Collagen<\/p>","collapse_description":"<p><strong>Most collagen isn’t a complete protein—ProT Gold is. <br\/><br\/><\/strong><\/p><p>ProT Gold is fortified with key amino acids that support connective tissue, gut lining, and immune health. Stay strong from the inside out.<\/p>","card_show":false,"card_title":"Card Title","card_title_1":"<p>Card Title 1<\/p>","card_content_1":"","card_border_1":true,"card_1_bg_opacity":1,"card_title_2":"<p>Card Title 2<\/p>","card_content_2":"","card_border_2":true,"card_2_bg_opacity":1,"button_show":false,"button_content":"Button Content","button_link":"\/"}},"multitile_MxjUhU":{"type":"multitile","blocks":{"tile_MccrRC":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":6,"color_scheme":"scheme-4","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"top","heading":"","heading_size":"h3","text":"<h3><br\/>Food Grade Nutrition<br\/><\/h3><h4><br\/><br\/><br\/>Unlike other collagen products, ProT Gold meets the stringent standards for purity, safety and quality to be classified as a medical-grade nutritional food.<\/h4><p><br\/><br\/><br\/><br\/>You’ll feel the difference. Because better standards lead to better outcomes—every day.<\/p>","button_label":"Try it Now","button_link":"shopify:\/\/products\/prot-gold-medical-grade-collagen-protein","button_style":"button--outlined","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_H3WcGi":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":3,"color_scheme":"scheme-7","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"background","heading":"","heading_size":"h6","text":"<h6>Backed by Food-Grade Integrity<\/h6><p>ProT Gold is regulated as a nutritional food, not a dietary supplement—formulated with a Nutrition Facts panel, not a Supplement Facts panel. <\/p><p>That means it's designed for daily use, held to stricter labeling standards, and trusted in both clinical and consumer settings.<\/p>","button_label":"","button_link":"","button_style":"button--filled","image":"shopify:\/\/shop_images\/ProT_-_Formula_-_Food_Grade_Nutrition_1.jpg","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"4"}},"tile_LAhYcD":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":3,"color_scheme":"scheme-7","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"background","heading":"","heading_size":"h6","text":"<h6>Nano Hydrolyzed Collagen<span>®<\/span> <br\/>Meets Medical-Grade Standards<\/h6><p>Our formula is engineered at the cellular level to deliver optimal functionality with maximum efficiency.<\/p>","button_label":"","button_link":"","button_style":"button--filled","image":"shopify:\/\/shop_images\/ProT_-_Formula_-_Food_Grade_Nutrition_2.jpg","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"4"}},"tile_CjiPga":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":3,"color_scheme":"scheme-7","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"background","heading":"","heading_size":"h6","text":"<h6>Cellular-Level Technology<\/h6><p>Our proprietary process creates peptides that work at \u2028the cellular level, providing the building blocks needed \u2028for deep tissue repair and regeneration.<\/p>","button_label":"","button_link":"","button_style":"button--filled","image":"shopify:\/\/shop_images\/ProT_-_Formula_-_Food_Grade_Nutrition_3.jpg","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"4"}},"tile_b6MgRm":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":3,"color_scheme":"scheme-7","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"background","heading":"","heading_size":"h6","text":"<h6>Comprehensive Support System<\/h6><p>This cellular-level approach enables ProT Gold to provide comprehensive support for immune defense and gut integrity—benefits that go beyond standard collagen products.<\/p>","button_label":"","button_link":"","button_style":"button--filled","image":"shopify:\/\/shop_images\/ProT_-_Formula_-_Food_Grade_Nutrition_4.jpg","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"4"}}},"block_order":["tile_MccrRC","tile_H3WcGi","tile_LAhYcD","tile_CjiPga","tile_b6MgRm"],"custom_css":[".section-multitile__block:nth-last-of-type(-n + 4) .section-multitile__content {background-color: #f5ebe0; padding-left: 1.5rem; padding-right: 1.5rem; border-radius: 8px; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);}",".section-multitile__block:nth-last-of-type(-n + 4) .section-multitile__text p {line-height: 1.4; max-width: 400px;}","@media screen and (max-width: 750px) {p {font-size: 12px; line-height: 1.4; max-width: 400px; }}",".section-multitile__block {border-radius: 0px;}"],"name":"t:sections.multitile.name","settings":{"block_order_mobile":false,"heading":"","heading_size":"h3","heading_alignment":"start","spacing_tile":"compact","color_scheme":"scheme-4","section_width":"max-w-full","spacing_top":"0","spacing_bottom":"0"}},"multitile_rxim7r":{"type":"multitile","blocks":{"tile_PLnifA":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-start","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"background","heading":"","heading_size":"h3","text":"<h3>Why Clinically-Proven Collagen Matters<\/h3>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_NfRLfL":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-50b5cd4f-d9c0-4e3d-b050-0a5ffa3bf74f","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-start","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"background","heading":"","heading_size":"h3","text":"<p>ProT Gold was originally developed to meet the high standards of medical nutrition.<\/p><h6><br\/>It is used by over 4,000 healthcare facilities worldwide to support increased protein needs in patients.<\/h6>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_wf4wND":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-50b5cd4f-d9c0-4e3d-b050-0a5ffa3bf74f","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-start","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"background","heading":"","heading_size":"h3","text":"<p>Today, that same medical-grade formula is available to support your daily energy, recovery, and vitality.<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_DzRUJF":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"top","heading":"","heading_size":"h3","text":"","button_label":"","button_link":"","button_style":"button--filled","image":"shopify:\/\/shop_images\/ProT_-_Formula_-_why_clinically-proven_collagen_matters.webp","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"6"}},"tile_4Kq6bL":{"type":"tile","settings":{"show_on":"both","column_factor":4,"row_factor":1,"color_scheme":"scheme-5f26f91a-599b-401c-b249-5a805a7e91a2","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-start","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"background","heading":"","heading_size":"h3","text":"<h4>“I have been recommending ProT Gold to my bariatric patients for over 5 years. <br\/><br\/>ProT Gold gives my patients a convenient and effective way to get high quality protein in a small volume. It also promotes fast healing of their surgical wounds.\"<\/h4><p><strong><br\/><br\/><\/strong><\/p><p><strong>PATRICE BRUISSON, RD, LD<br\/>MERIT HEALTH MEDICAL GROUP<\/strong><\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"6"}}},"block_order":["tile_PLnifA","tile_NfRLfL","tile_wf4wND","tile_DzRUJF","tile_4Kq6bL"],"custom_css":["@media screen and (max-width: 768px) {{display: none; }}",".section-multitile__content * {margin: 0px;}","h6 {max-width: 350px; font-size: 14px; line-height: 150%; letter-spacing: 0.02em; font-weight: 400; font-family: \"ArticulatCF_Regular\" !important; padding-top: -50px;}","p {max-width: 350px;}",".block-tile_wf4wND .section-multitile__text p {max-width: 410px; margin-inline: auto;}",".block-tile_NfRLfL .section-multitile__text p {margin-bottom: -10px;}","h4 {margin-top: -20px;}"],"name":"t:sections.multitile.name","settings":{"block_order_mobile":false,"heading":"","heading_size":"h3","heading_alignment":"start","spacing_tile":"default","color_scheme":"scheme-f0717405-2c2f-4601-a476-0d2032d345b4","section_width":"max-w-page","spacing_top":"6","spacing_bottom":"6"}},"multitile_C4KQME":{"type":"multitile","blocks":{"tile_KArbJR":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"top","heading":"","heading_size":"h3","text":"<h3>Why Clinically-Proven Collagen Matters<\/h3>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"1"}},"tile_DrzmiP":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-start","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"top","heading":"","heading_size":"h3","text":"<p>ProT Gold was originally developed to meet<br\/>the high standards of medical nutrition.<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"1"}},"tile_8Wjkk7":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"background","heading":"","heading_size":"h3","text":"","button_label":"","button_link":"","button_style":"button--filled","image":"shopify:\/\/shop_images\/ProT_-_Formula_-_why_clinically-proven_collagen_matters.webp","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"0"}},"tile_UdH3Cx":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"top","heading":"","heading_size":"h3","text":"<p>It is used by over 4,000 healthcare facilities worldwide to support increased protein needs in patients.<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"0"}},"tile_iDk9XT":{"type":"tile","settings":{"show_on":"both","column_factor":4,"row_factor":1,"color_scheme":"scheme-5f26f91a-599b-401c-b249-5a805a7e91a2","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-start","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"top","heading":"","heading_size":"h3","text":"<h5><br\/>“I have been recommending ProT Gold to my bariatric patients for over 5 years. <br\/><br\/>ProT Gold gives my patients a convenient and effective way to get high quality protein in a small volume. It also promotes fast healing of their surgical wounds.\"<\/h5><p><strong><br\/><br\/>PATRICE BRUISSON, RD, LD<br\/>MERIT HEALTH MEDICAL GROUP<\/strong><\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}},"tile_bpXfBT":{"type":"tile","settings":{"show_on":"both","column_factor":2,"row_factor":1,"color_scheme":"scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-center text-center","content_alignment_for_mobile":"align-center--mobile text-center--mobile","media_position":"top","heading":"","heading_size":"h3","text":"<p>Today, that same medical-grade formula is available to support your daily energy, recovery, and vitality.<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"2"}}},"block_order":["tile_KArbJR","tile_DrzmiP","tile_8Wjkk7","tile_UdH3Cx","tile_iDk9XT","tile_bpXfBT"],"custom_css":["@media screen and (min-width: 769px) {{display: none; }}","h3 {max-width: 1000px; font-size: 33px; margin-bottom: -10px;}","p {font-size: 14px;}",".block-tile_UdH3Cx .section-multitile__text p {font-size: 12px; margin-top: 40px; margin-bottom: 50px;}",".block-tile_8Wjkk7 {max-width: 250px; margin-left: auto; margin-right: auto;}","h5 {margin-bottom: -30px; font-size: 20px;}"],"name":"t:sections.multitile.name","settings":{"block_order_mobile":false,"heading":"","heading_size":"h3","heading_alignment":"center","spacing_tile":"compact","color_scheme":"scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5","section_width":"max-w-page","spacing_top":"6","spacing_bottom":"4"}},"full_width_banner_z7hPzB":{"type":"full-width-banner","blocks":{"heading_LcDX7j":{"type":"heading","settings":{"heading":"Collagen. Elevated.","heading_size":"h3"}},"content_Xrw6bV":{"type":"content","settings":{"content":"<p>Nano Hydrolyzed Collagen<span>®<\/span>: engineered for your recovery, your rhythm, your results.<\/p>"}},"buttons_WMK8mq":{"type":"buttons","settings":{"button_link_1":"shopify:\/\/collections\/all","button_link_1_type":"button","button_label_1":"Shop Now","button_style_1":"button--outlined","color_scheme_first_button":"scheme-8","button_link_2":"\/","button_label_2":"","button_style_2":"button--outlined","color_scheme_second_button":"scheme-1"}}},"block_order":["heading_LcDX7j","content_Xrw6bV","buttons_WMK8mq"],"custom_css":["p {max-width: 390px; margin-left: auto; margin-right: auto;}","@media screen and (max-width: 769px) {p {max-width: 250px; margin-left: auto; margin-right: auto; }}"],"settings":{"enable_transparent_header":false,"media_position":"background","section_height":"half","content_position":"center","content_alignment":"center","image":"shopify:\/\/shop_images\/ProT_-_Formula_-_Collagen_Elevated.jpg","video_external":"","show_controls_on_video":false,"aspect_ratio":"auto","section_height_mobile":"half","content_position_mobile":"center","content_alignment_mobile":"center","image_mobile":"shopify:\/\/shop_images\/ProT_-_Formula_-_Collagen_Elevated_Mobile.jpg","video_external_mobile":"","show_controls_on_video_mobile":false,"aspect_ratio_mobile":"auto","section_width":"max-w-full","color_scheme":"scheme-1","color_scheme_for_content":"scheme-6","spacing_inner":"0","spacing_top":"0","spacing_bottom":"0"}},"multitile_rVFCzb":{"type":"multitile","blocks":{"tile_xDawXY":{"type":"tile","settings":{"show_on":"both","column_factor":6,"row_factor":1,"color_scheme":"scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be","gradient_background_color":"","tile_aspect_ratio":"auto","content_position_vertical":"justify-center","content_alignment":"align-start text-start","content_alignment_for_mobile":"align-start--mobile text-start--mobile","media_position":"background","heading":"","heading_size":"h6","text":"<p>1. Lee SK, Posthauer ME, Dorner B, Redovian V, Maloney MJ. Pressure ulcer healing with a concentrated, fortified, collagen protein hydrolysate supplement: a randomized controlled trial. Adv Skin Wound Care. 2006 Mar;19(2):92-6<\/p>","button_label":"","button_link":"","button_style":"button--filled","video_external":"","show_controls_on_video":false,"video_external_mobile":"","show_controls_on_video_mobile":false,"spacing_inner":"0"}}},"block_order":["tile_xDawXY"],"custom_css":["p {max-width: 1200px;}","@media screen and (max-width: 768px) {p {font-size: 11px; }}"],"name":"t:sections.multitile.name","settings":{"block_order_mobile":false,"heading":"","heading_size":"h3","heading_alignment":"start","spacing_tile":"default","color_scheme":"scheme-7","section_width":"max-w-page","spacing_top":"1","spacing_bottom":"1"}}},"order":["main","full_width_banner_hiaDgQ","dual_tiles_D3NEMU","dual_tiles_PWMVWB","trust_indicators_3C7a7k","collapse_with_image_hzBtP4","full_width_banner_PhwUyj","multitile_YPRX4G","multitile_gzAXi9","collapse_with_image_wR6g7U","multitile_MxjUhU","multitile_rxim7r","multitile_C4KQME","full_width_banner_z7hPzB","multitile_rVFCzb"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "breadcrumbs": true,
+        "show_page_title": true,
+        "page_title_alignment": "text-center",
+        "info_title": "",
+        "info_content": "",
+        "section_width": "max-w-narrower",
+        "color_scheme": "",
+        "spacing_top": "2",
+        "spacing_bottom": "2"
+      }
+    },
+    "full_width_banner_hiaDgQ": {
+      "type": "full-width-banner",
+      "blocks": {
+        "subheading_Nm8fKF": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Our Formula",
+            "link": ""
+          }
+        },
+        "content_XrpPWN": {
+          "type": "content",
+          "settings": {
+            "content": "<h2>Clinical Collagen,<br/>Now Yours.</h2>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_Nm8fKF",
+        "content_XrpPWN"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 769px) {{max-height: 887px; }}"
+      ],
+      "name": "t:sections.full-width-banner.name",
+      "settings": {
+        "enable_transparent_header": true,
+        "media_position": "background",
+        "section_height": "full",
+        "content_position": "center",
+        "content_alignment": "start",
+        "image": "shopify://shop_images/Hero_1.jpg",
+        "video_external": "",
+        "show_controls_on_video": false,
+        "aspect_ratio": "auto",
+        "section_height_mobile": "half",
+        "content_position_mobile": "center",
+        "content_alignment_mobile": "center",
+        "image_mobile": "shopify://shop_images/Formula-Hero.jpg",
+        "video_external_mobile": "",
+        "show_controls_on_video_mobile": false,
+        "aspect_ratio_mobile": "auto",
+        "section_width": "max-w-full",
+        "color_scheme": "scheme-8",
+        "color_scheme_for_content": "scheme-8",
+        "spacing_inner": "2",
+        "spacing_top": "0",
+        "spacing_bottom": "0"
+      }
+    },
+    "dual_tiles_D3NEMU": {
+      "type": "dual-tiles",
+      "blocks": {
+        "tile_rrWwrr": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+            "custom_background_color": "",
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<h5><strong>THE INNOVATION BEHIND DAILY VITALITY</strong></h5><h3>Advanced Collagen<br/>Designed for Daily <br/>Renewal</h3>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "product": "",
+            "product_width": 16,
+            "show_other_elements_with_product": true,
+            "aspect_ratio": "auto",
+            "vertical_position": "stretch",
+            "content_position": "justify-start",
+            "content_alignment": "text-start align-start",
+            "product_position": "0",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "aspect_ratio_mobile": "auto",
+            "content_alignment_mobile": "text-center--mobile align-center--mobile",
+            "content_position_mobile": "justify-center--mobile",
+            "product_position_mobile": "0",
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        },
+        "tile_CjcxWV": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+            "custom_background_color": "",
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<h6><br/>ProT Gold’s Nano Hydrolyzed Collagen<span>®</span> peptides are up to 70% smaller than hydrolyzed collagen, providing unmatched absorption and impact.</h6><p>Our proprietary process creates ultra-small peptides that are fully digested in less than 15 minutes, so your body can use them when it matters most.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "product": "",
+            "product_width": 24,
+            "show_other_elements_with_product": true,
+            "aspect_ratio": "auto",
+            "vertical_position": "stretch",
+            "content_position": "justify-center",
+            "content_alignment": "text-start align-start",
+            "product_position": "0",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "aspect_ratio_mobile": "auto",
+            "content_alignment_mobile": "text-center--mobile align-center--mobile",
+            "content_position_mobile": "justify-center--mobile",
+            "product_position_mobile": "0",
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        }
+      },
+      "block_order": [
+        "tile_rrWwrr",
+        "tile_CjcxWV"
+      ],
+      "custom_css": [
+        "h5,h6,p {margin-bottom: 30px;}",
+        "@media screen and (min-width: 769px) {p {max-width: 430px; } h6 {color: #423d42; font-size: 18px; font-family: \"ArticulatCF_Regular\" !important; max-width: 400px; line-height: 25px; } h5 {letter-spacing: 0.2rem; font-size: 15px; }}",
+        "@media screen and (max-width: 768px) {p {max-width: 300px; margin-left: auto; margin-right: auto; } h6 {color: #423d42; font-size: 18px; font-family: \"ArticulatCF_Regular\" !important; max-width: 400px; line-height: 25px; } h5 {letter-spacing: 0.2rem; margin-bottom: 20px; font-size: 10px; }}"
+      ],
+      "name": "t:sections.dual-tiles.name",
+      "settings": {
+        "section_layout": "seperated",
+        "block_size": "half",
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+        "section_width": "max-w-page",
+        "spacing_top": "2",
+        "spacing_bottom": "2"
+      }
+    },
+    "dual_tiles_PWMVWB": {
+      "type": "dual-tiles",
+      "blocks": {
+        "tile_qVTxDp": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "color_scheme": "scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be",
+            "custom_background_color": "",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "product": "",
+            "product_width": 24,
+            "show_other_elements_with_product": true,
+            "aspect_ratio": "auto",
+            "vertical_position": "end",
+            "content_position": "justify-center",
+            "content_alignment": "text-center align-center",
+            "product_position": "0",
+            "image": "shopify://shop_images/Science_-_With_Logo_Labels.png",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "aspect_ratio_mobile": "auto",
+            "content_alignment_mobile": "text-center--mobile align-center--mobile",
+            "content_position_mobile": "justify-center--mobile",
+            "product_position_mobile": "0",
+            "image_mobile": "shopify://shop_images/Frame_2147223721.png",
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "3"
+          }
+        }
+      },
+      "block_order": [
+        "tile_qVTxDp"
+      ],
+      "name": "t:sections.dual-tiles.name",
+      "settings": {
+        "section_layout": "seperated",
+        "block_size": "full",
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+        "section_width": "max-w-page",
+        "spacing_top": "2",
+        "spacing_bottom": "2"
+      }
+    },
+    "trust_indicators_3C7a7k": {
+      "type": "trust-indicators",
+      "blocks": {
+        "indicator_b9Miem": {
+          "type": "indicator",
+          "settings": {
+            "title_desktop": "<p>Proven 100% digestibility<br/>in 15 minutes or less<span>1</span></p>",
+            "title_mobile": "<p>Proven 100%<br/>digestibility<br/>in 15 minutes or less<span>1</span></p>",
+            "icon": "theme-box",
+            "custom_icon": "shopify://shop_images/Group_240.svg"
+          }
+        },
+        "indicator_7z4qtn": {
+          "type": "indicator",
+          "settings": {
+            "title_desktop": "<p>Trusted by thousands<br/>of medical facilities</p>",
+            "title_mobile": "<p>Trusted by thousands<br/>of medical facilities<br/>internationally</p>",
+            "icon": "theme-box",
+            "custom_icon": "shopify://shop_images/Group.svg"
+          }
+        },
+        "indicator_UNkHyM": {
+          "type": "indicator",
+          "settings": {
+            "title_desktop": "<p>Essential protein for muscle, skin,<br/>joint, & connective tissue health</p>",
+            "title_mobile": "<p>Fortified with amino<br/>acids for a complete<br/>protein profile</p>",
+            "icon": "theme-box",
+            "custom_icon": "shopify://shop_images/Group_235.svg"
+          }
+        },
+        "indicator_xhYEXx": {
+          "type": "indicator",
+          "settings": {
+            "title_desktop": "<p>Promotes natural<br/>collagen production</p>",
+            "title_mobile": "<p>Essential protein for muscle,<br/>skin, joint, & connective<br/>tissue health</p>",
+            "icon": "theme-box",
+            "custom_icon": "shopify://shop_images/Group_234.svg"
+          }
+        },
+        "indicator_HiiWJ7": {
+          "type": "indicator",
+          "settings": {
+            "title_desktop": "<p>Fortified with amino acids for<br/>a complete protein profile</p>",
+            "title_mobile": "<p>Promotes natural<br/>collagen production</p>",
+            "icon": "theme-box",
+            "custom_icon": "shopify://shop_images/Group_233.svg"
+          }
+        },
+        "indicator_L3t7wR": {
+          "type": "indicator",
+          "settings": {
+            "title_desktop": "<p>Pre-digested,<br/>gut-friendly formula</p>",
+            "title_mobile": "<p>Pre-digested,<br/>gut-friendly formula</p>",
+            "icon": "theme-box",
+            "custom_icon": "shopify://shop_images/Group_237.svg"
+          }
+        }
+      },
+      "block_order": [
+        "indicator_b9Miem",
+        "indicator_7z4qtn",
+        "indicator_UNkHyM",
+        "indicator_xhYEXx",
+        "indicator_HiiWJ7",
+        "indicator_L3t7wR"
+      ],
+      "custom_css": [
+        "@media (max-width: 749px) {.section_trust-indicators {padding-top: 60px; }}"
+      ],
+      "name": "t:sections.trust-indicators.name",
+      "settings": {
+        "button_label": "",
+        "button_link": "/",
+        "color_scheme_for_blocks": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+        "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "collapse_with_image_hzBtP4": {
+      "type": "collapse-with-image",
+      "blocks": {
+        "collapse_item_Fk9Cdr": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "The Difference",
+            "item_description": "<p>Nano hydrolyzed means peptides are reduced to less than 1% of their original size. That’s what enables faster, more efficient absorption.</p>"
+          }
+        },
+        "collapse_item_hUtkLT": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "Proprietary Process",
+            "item_description": "<p>Unlike standard hydrolyzed collagen, our proprietary process uses fruit enzymes in precision-controlled stages to create ultra-small peptides—without breaking them down completely. This keeps them intact and ready for action.</p>"
+          }
+        },
+        "collapse_item_dUyHrU": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "Rapid Digestion",
+            "item_description": "<p>Smaller peptides digest faster, so your body can use them where and when it matters. Ideal for skin, joints, muscle, and everyday recovery.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "collapse_item_Fk9Cdr",
+        "collapse_item_hUtkLT",
+        "collapse_item_dUyHrU"
+      ],
+      "custom_css": [
+        ".collapse_card_title span {vertical-align: super; font-size: 60%;}"
+      ],
+      "name": "Collapse with Image",
+      "settings": {
+        "color_scheme": "scheme-c964cc82-bba3-486f-a537-7f3207978313",
+        "image_right": false,
+        "image_title": "Collagen molecule scale",
+        "section_image": "shopify://shop_images/Group_232.png",
+        "image_scale": 100,
+        "padding_top": 150,
+        "padding_bottom": 150,
+        "section_gap": 200,
+        "collapse_width": 600,
+        "collapse_container_gap": 78,
+        "collapse_subtitle": "",
+        "collapse_title": "<p>Reengineered for<br/>Speed and Precision</p>",
+        "collapse_description": "",
+        "card_show": true,
+        "card_title": "Absorption Time",
+        "card_title_1": "<p>Hydrolyzed<br/>Collagen</p>",
+        "card_content_1": "<p>~1-4h</p>",
+        "card_border_1": true,
+        "card_1_bg_opacity": 0,
+        "card_title_2": "<p>Nano Hydrolyzed<br/>Collagen®</p>",
+        "card_content_2": "<p>15m</p>",
+        "card_border_2": false,
+        "card_2_bg_opacity": 30,
+        "button_show": true,
+        "button_content": "Experience The Difference",
+        "button_link": "shopify://products/prot-gold-medical-grade-collagen-protein"
+      }
+    },
+    "full_width_banner_PhwUyj": {
+      "type": "full-width-banner",
+      "blocks": {
+        "heading_zwVqqL": {
+          "type": "heading",
+          "settings": {
+            "heading": "Raising the Standard Beyond Hydrolyzed Collagen",
+            "heading_size": "h3"
+          }
+        },
+        "content_z8V4mK": {
+          "type": "content",
+          "settings": {
+            "content": "<p>Our proprietary approach takes collagen further—producing ultra-small peptides that are fully digested in <strong>less than 15 minutes¹.</strong> <br/><br/>This means faster absorption, better uptake, and more complete support for your body when it matters most.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_zwVqqL",
+        "content_z8V4mK"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 1024px) {h2 {max-width: 650px; margin-left: auto; margin-right: auto; } p {font-size: 16px; max-width: 400px; margin-left: auto; margin-right: auto; }}",
+        "@media screen and (max-width: 769px) {h2 {font-size: 32px; max-width: 400px; } p {max-width: 300px; } {max-height: 955px !important; }}"
+      ],
+      "settings": {
+        "enable_transparent_header": false,
+        "media_position": "background",
+        "section_height": "full",
+        "content_position": "center",
+        "content_alignment": "center",
+        "image": "shopify://shop_images/ProT_-_Formula_-_Raising_the_Standard_Beyond_Hydrolyzed_Collagen.webp",
+        "video_external": "",
+        "show_controls_on_video": false,
+        "aspect_ratio": "auto",
+        "section_height_mobile": "full",
+        "content_position_mobile": "center",
+        "content_alignment_mobile": "center",
+        "image_mobile": "shopify://shop_images/Our_proprietary_approach_takes_collagen_further_producing_ultra-small_peptides_for_faster_absorption_better_uptake_and_more_complete_support_Mobile.webp",
+        "video_external_mobile": "",
+        "show_controls_on_video_mobile": false,
+        "aspect_ratio_mobile": "auto",
+        "section_width": "max-w-full",
+        "color_scheme": "scheme-1",
+        "color_scheme_for_content": "scheme-6",
+        "spacing_inner": "0",
+        "spacing_top": "0",
+        "spacing_bottom": "0"
+      }
+    },
+    "multitile_YPRX4G": {
+      "type": "multitile",
+      "blocks": {
+        "tile_xwXfiX": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h6>THE INNOVATION BEHIND DAILY VITALITY</h6><h3>Most Collagen Stops <br/>at Good Enough</h3>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_RTY3yG": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h4><br/></h4><p>Hydrolysis makes collagen more<br/>accessible—but most formulas today still<br/>fall short, sacrificing either absorption,<br/>convenience, or effectiveness.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_96dwBY": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h4><br/></h4><p>Hydrolyzed collagen breaks protein down into smaller<br/>peptides, making it easier to absorb than raw collagen. <br/><br/>However, many collagen products still take hours to digest,<br/>and the particles aren’t as small or as effective as they<br/>could be. It’s a step forward, but not the final destination.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_bxwVJc": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 6,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "media",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_Formula_-_Science.jpg",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        }
+      },
+      "block_order": [
+        "tile_xwXfiX",
+        "tile_RTY3yG",
+        "tile_96dwBY",
+        "tile_bxwVJc"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 751px) {h6 {font-family: \"ArticulatCF_Demi_Bold\"; font-size: 16px; letter-spacing: 0.2rem; font-size: 12px; margin-bottom: 10px; text-transform: uppercase; }}",
+        "@media screen and (max-width: 750px) {{display: none; }}",
+        ".section-multitile__content p {margin: 0px;}",
+        ".section-multitile__content h6 {margin-top: 10px;}"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "spacing_tile": "default",
+        "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+        "section_width": "max-w-page",
+        "spacing_top": "2",
+        "spacing_bottom": "2"
+      }
+    },
+    "multitile_gzAXi9": {
+      "type": "multitile",
+      "blocks": {
+        "tile_KkUAw3": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "bottom",
+            "heading": "Most Collagen Stops at Good Enough",
+            "heading_size": "h2",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "1"
+          }
+        },
+        "tile_Qzxiqi": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p>Hydrolyzed collagen is more accessible<br/>for your body than raw collagen—<br/>but most formulas today still fall short,<br/>sacrificing either absorption, convenience,<br/>or effectiveness.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "1"
+          }
+        },
+        "tile_7xBmcx": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 3,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "media",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_Formula_-_Science_1.webp",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_WpzJm7": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p>Hydrolyzed collagen breaks protein down into smaller<br/>peptides, making it easier to absorb than raw collagen. </p><p>However, many collagen products still take hours to digest,<br/>and the particles aren’t as small or as effective as they<br/>could be. It’s a step forward, but not the final destination.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_WpRBxq": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 3,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "media",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_Formula_-_Science_2.webp",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "1"
+          }
+        }
+      },
+      "block_order": [
+        "tile_KkUAw3",
+        "tile_Qzxiqi",
+        "tile_7xBmcx",
+        "tile_WpzJm7",
+        "tile_WpRBxq"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 769px) {{display: none; }}",
+        "@media screen and (max-width: 768px) {p {margin-top: -10px; max-width: 300px; margin-left: auto; margin-right: auto; } h2 {font-size: 36px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "spacing_tile": "default",
+        "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+        "section_width": "max-w-page",
+        "spacing_top": "4",
+        "spacing_bottom": "4"
+      }
+    },
+    "collapse_with_image_wR6g7U": {
+      "type": "collapse-with-image",
+      "blocks": {
+        "collapse_item_t4xHUF": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "Arginine",
+            "item_description": "<p><strong>Supports blood flow</strong></p><p>Helps produce nitric oxide, which relaxes blood vessels, aiding circulation and heart health.<br/><br/></p><p><strong>Aids in healing</strong></p><p>Plays a role in wound healing and immune function.<br/><br/></p><p><strong>Enhances exercise performance</strong></p><p>May improve endurance by increasing blood flow to muscles. </p>"
+          }
+        },
+        "collapse_item_qPqjJr": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "Histidine",
+            "item_description": "<p><strong>Supports immunity</strong></p><p>Involved in immune function and tissue repair. <br/><br/></p><p><strong>Protects cells</strong></p><p>Acts as an antioxidant to help reduce inflammation.</p>"
+          }
+        },
+        "collapse_item_R3fMFK": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "Methionine",
+            "item_description": "<p><strong>Boosts detoxification</strong></p><p>Helps the body break down toxins and heavy metals.<br/><br/></p><p><strong>Promotes healthy skin, hair, and nails</strong></p><p>Supports your body’s natural collagen production.</p>"
+          }
+        },
+        "collapse_item_wqyaQQ": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "Cysteine",
+            "item_description": "<p><strong>Fuels recovery</strong></p><p>Assists in protein synthesis and tissue rebuilding.<br/><br/></p><p><strong>Strengthens antioxidant defenses</strong></p><p>Supports production of glutathione: your body’s master antioxidant.</p>"
+          }
+        },
+        "collapse_item_f9rjXM": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "Taurine",
+            "item_description": "<p><strong>Supports heart health</strong></p><p>Regulates blood pressure and cardiovascular function. <br/><br/></p><p><strong>Aids muscle function</strong></p><p>Plays a role in hydration and muscle contraction.</p>"
+          }
+        },
+        "collapse_item_hHXP7B": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "Tryptophan",
+            "item_description": "<p><strong>Supports mood and sleep</strong></p><p>Helps produce serotonin and melatonin.<br/><br/></p><p><strong>Assists recovery</strong></p><p>May help reduce fatigue and support nervous system health.</p>"
+          }
+        },
+        "collapse_item_Xnf6xQ": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "Glutamine",
+            "item_description": "<p><strong>Supports gut health</strong></p><p>Helps maintain the integrity of the gut lining.<br/><br/></p><p><strong>Strengthens immunity</strong></p><p>Fuel source for immune cells during stress or illness.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "collapse_item_t4xHUF",
+        "collapse_item_qPqjJr",
+        "collapse_item_R3fMFK",
+        "collapse_item_wqyaQQ",
+        "collapse_item_f9rjXM",
+        "collapse_item_hHXP7B",
+        "collapse_item_Xnf6xQ"
+      ],
+      "name": "Collapse with Image",
+      "settings": {
+        "color_scheme": "scheme-031be706-d0fa-457a-a6b0-623052c47c23",
+        "image_right": true,
+        "image_title": "",
+        "section_image": "shopify://shop_images/Group_126_Copy.webp",
+        "image_scale": 80,
+        "padding_top": 150,
+        "padding_bottom": 150,
+        "section_gap": 150,
+        "collapse_width": 600,
+        "collapse_container_gap": 50,
+        "collapse_subtitle": "Fortified complete protein",
+        "collapse_title": "<p>More Than Collagen</p>",
+        "collapse_description": "<p><strong>Most collagen isn’t a complete protein—ProT Gold is. <br/><br/></strong></p><p>ProT Gold is fortified with key amino acids that support connective tissue, gut lining, and immune health. Stay strong from the inside out.</p>",
+        "card_show": false,
+        "card_title": "Card Title",
+        "card_title_1": "<p>Card Title 1</p>",
+        "card_content_1": "",
+        "card_border_1": true,
+        "card_1_bg_opacity": 1,
+        "card_title_2": "<p>Card Title 2</p>",
+        "card_content_2": "",
+        "card_border_2": true,
+        "card_2_bg_opacity": 1,
+        "button_show": false,
+        "button_content": "Button Content",
+        "button_link": "/"
+      }
+    },
+    "multitile_MxjUhU": {
+      "type": "multitile",
+      "blocks": {
+        "tile_MccrRC": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 6,
+            "color_scheme": "scheme-4",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h3><br/>Food Grade Nutrition<br/></h3><h4><br/><br/><br/>Unlike other collagen products, ProT Gold meets the stringent standards for purity, safety and quality to be classified as a medical-grade nutritional food.</h4><p><br/><br/><br/><br/>You’ll feel the difference. Because better standards lead to better outcomes—every day.</p>",
+            "button_label": "Try it Now",
+            "button_link": "shopify://products/prot-gold-medical-grade-collagen-protein",
+            "button_style": "button--outlined",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_H3WcGi": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 3,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<h6>Backed by Food-Grade Integrity</h6><p>ProT Gold is regulated as a nutritional food, not a dietary supplement—formulated with a Nutrition Facts panel, not a Supplement Facts panel. </p><p>That means it's designed for daily use, held to stricter labeling standards, and trusted in both clinical and consumer settings.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_Formula_-_Food_Grade_Nutrition_1.jpg",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "4"
+          }
+        },
+        "tile_LAhYcD": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 3,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<h6>Nano Hydrolyzed Collagen<span>®</span> <br/>Meets Medical-Grade Standards</h6><p>Our formula is engineered at the cellular level to deliver optimal functionality with maximum efficiency.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_Formula_-_Food_Grade_Nutrition_2.jpg",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "4"
+          }
+        },
+        "tile_CjiPga": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 3,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<h6>Cellular-Level Technology</h6><p>Our proprietary process creates peptides that work at the cellular level, providing the building blocks needed for deep tissue repair and regeneration.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_Formula_-_Food_Grade_Nutrition_3.jpg",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "4"
+          }
+        },
+        "tile_b6MgRm": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 3,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<h6>Comprehensive Support System</h6><p>This cellular-level approach enables ProT Gold to provide comprehensive support for immune defense and gut integrity—benefits that go beyond standard collagen products.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_Formula_-_Food_Grade_Nutrition_4.jpg",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "4"
+          }
+        }
+      },
+      "block_order": [
+        "tile_MccrRC",
+        "tile_H3WcGi",
+        "tile_LAhYcD",
+        "tile_CjiPga",
+        "tile_b6MgRm"
+      ],
+      "custom_css": [
+        ".section-multitile__block:nth-last-of-type(-n + 4) .section-multitile__content {background-color: #f5ebe0; padding-left: 1.5rem; padding-right: 1.5rem; border-radius: 8px; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);}",
+        ".section-multitile__block:nth-last-of-type(-n + 4) .section-multitile__text p {line-height: 1.4; max-width: 400px;}",
+        "@media screen and (max-width: 750px) {p {font-size: 12px; line-height: 1.4; max-width: 400px; }}",
+        ".section-multitile__block {border-radius: 0px;}"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "spacing_tile": "compact",
+        "color_scheme": "scheme-4",
+        "section_width": "max-w-full",
+        "spacing_top": "0",
+        "spacing_bottom": "0"
+      }
+    },
+    "multitile_rxim7r": {
+      "type": "multitile",
+      "blocks": {
+        "tile_PLnifA": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h3>Why Clinically-Proven Collagen Matters</h3>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_NfRLfL": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-50b5cd4f-d9c0-4e3d-b050-0a5ffa3bf74f",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p>ProT Gold was originally developed to meet the high standards of medical nutrition.</p><h6><br/>It is used by over 4,000 healthcare facilities worldwide to support increased protein needs in patients.</h6>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_wf4wND": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-50b5cd4f-d9c0-4e3d-b050-0a5ffa3bf74f",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p>Today, that same medical-grade formula is available to support your daily energy, recovery, and vitality.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_DzRUJF": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_Formula_-_why_clinically-proven_collagen_matters.webp",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "6"
+          }
+        },
+        "tile_4Kq6bL": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 4,
+            "row_factor": 1,
+            "color_scheme": "scheme-5f26f91a-599b-401c-b249-5a805a7e91a2",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h4>“I have been recommending ProT Gold to my bariatric patients for over 5 years. <br/><br/>ProT Gold gives my patients a convenient and effective way to get high quality protein in a small volume. It also promotes fast healing of their surgical wounds.\"</h4><p><strong><br/><br/></strong></p><p><strong>PATRICE BRUISSON, RD, LD<br/>MERIT HEALTH MEDICAL GROUP</strong></p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "6"
+          }
+        }
+      },
+      "block_order": [
+        "tile_PLnifA",
+        "tile_NfRLfL",
+        "tile_wf4wND",
+        "tile_DzRUJF",
+        "tile_4Kq6bL"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 768px) {{display: none; }}",
+        ".section-multitile__content * {margin: 0px;}",
+        "h6 {max-width: 350px; font-size: 14px; line-height: 150%; letter-spacing: 0.02em; font-weight: 400; font-family: \"ArticulatCF_Regular\" !important; padding-top: -50px;}",
+        "p {max-width: 350px;}",
+        ".block-tile_wf4wND .section-multitile__text p {max-width: 410px; margin-inline: auto;}",
+        ".block-tile_NfRLfL .section-multitile__text p {margin-bottom: -10px;}",
+        "h4 {margin-top: -20px;}"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "spacing_tile": "default",
+        "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+        "section_width": "max-w-page",
+        "spacing_top": "6",
+        "spacing_bottom": "6"
+      }
+    },
+    "multitile_C4KQME": {
+      "type": "multitile",
+      "blocks": {
+        "tile_KArbJR": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h3>Why Clinically-Proven Collagen Matters</h3>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "1"
+          }
+        },
+        "tile_DrzmiP": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p>ProT Gold was originally developed to meet<br/>the high standards of medical nutrition.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "1"
+          }
+        },
+        "tile_8Wjkk7": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_Formula_-_why_clinically-proven_collagen_matters.webp",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        },
+        "tile_UdH3Cx": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p>It is used by over 4,000 healthcare facilities worldwide to support increased protein needs in patients.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        },
+        "tile_iDk9XT": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 4,
+            "row_factor": 1,
+            "color_scheme": "scheme-5f26f91a-599b-401c-b249-5a805a7e91a2",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h5><br/>“I have been recommending ProT Gold to my bariatric patients for over 5 years. <br/><br/>ProT Gold gives my patients a convenient and effective way to get high quality protein in a small volume. It also promotes fast healing of their surgical wounds.\"</h5><p><strong><br/><br/>PATRICE BRUISSON, RD, LD<br/>MERIT HEALTH MEDICAL GROUP</strong></p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_bpXfBT": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p>Today, that same medical-grade formula is available to support your daily energy, recovery, and vitality.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        }
+      },
+      "block_order": [
+        "tile_KArbJR",
+        "tile_DrzmiP",
+        "tile_8Wjkk7",
+        "tile_UdH3Cx",
+        "tile_iDk9XT",
+        "tile_bpXfBT"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 769px) {{display: none; }}",
+        "h3 {max-width: 1000px; font-size: 33px; margin-bottom: -10px;}",
+        "p {font-size: 14px;}",
+        ".block-tile_UdH3Cx .section-multitile__text p {font-size: 12px; margin-top: 40px; margin-bottom: 50px;}",
+        ".block-tile_8Wjkk7 {max-width: 250px; margin-left: auto; margin-right: auto;}",
+        "h5 {margin-bottom: -30px; font-size: 20px;}"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "center",
+        "spacing_tile": "compact",
+        "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+        "section_width": "max-w-page",
+        "spacing_top": "6",
+        "spacing_bottom": "4"
+      }
+    },
+    "full_width_banner_z7hPzB": {
+      "type": "full-width-banner",
+      "blocks": {
+        "heading_LcDX7j": {
+          "type": "heading",
+          "settings": {
+            "heading": "Collagen. Elevated.",
+            "heading_size": "h3"
+          }
+        },
+        "content_Xrw6bV": {
+          "type": "content",
+          "settings": {
+            "content": "<p>Nano Hydrolyzed Collagen<span>®</span>: engineered for your recovery, your rhythm, your results.</p>"
+          }
+        },
+        "buttons_WMK8mq": {
+          "type": "buttons",
+          "settings": {
+            "button_link_1": "shopify://collections/all",
+            "button_link_1_type": "button",
+            "button_label_1": "Shop Now",
+            "button_style_1": "button--outlined",
+            "color_scheme_first_button": "scheme-8",
+            "button_link_2": "/",
+            "button_label_2": "",
+            "button_style_2": "button--outlined",
+            "color_scheme_second_button": "scheme-1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_LcDX7j",
+        "content_Xrw6bV",
+        "buttons_WMK8mq"
+      ],
+      "custom_css": [
+        "p {max-width: 390px; margin-left: auto; margin-right: auto;}",
+        "@media screen and (max-width: 769px) {p {max-width: 250px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "enable_transparent_header": false,
+        "media_position": "background",
+        "section_height": "half",
+        "content_position": "center",
+        "content_alignment": "center",
+        "image": "shopify://shop_images/ProT_-_Formula_-_Collagen_Elevated.jpg",
+        "video_external": "",
+        "show_controls_on_video": false,
+        "aspect_ratio": "auto",
+        "section_height_mobile": "half",
+        "content_position_mobile": "center",
+        "content_alignment_mobile": "center",
+        "image_mobile": "shopify://shop_images/ProT_-_Formula_-_Collagen_Elevated_Mobile.jpg",
+        "video_external_mobile": "",
+        "show_controls_on_video_mobile": false,
+        "aspect_ratio_mobile": "auto",
+        "section_width": "max-w-full",
+        "color_scheme": "scheme-1",
+        "color_scheme_for_content": "scheme-6",
+        "spacing_inner": "0",
+        "spacing_top": "0",
+        "spacing_bottom": "0"
+      }
+    },
+    "multitile_rVFCzb": {
+      "type": "multitile",
+      "blocks": {
+        "tile_xDawXY": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 6,
+            "row_factor": 1,
+            "color_scheme": "scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<p>1. Lee SK, Posthauer ME, Dorner B, Redovian V, Maloney MJ. Pressure ulcer healing with a concentrated, fortified, collagen protein hydrolysate supplement: a randomized controlled trial. Adv Skin Wound Care. 2006 Mar;19(2):92-6</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        }
+      },
+      "block_order": [
+        "tile_xDawXY"
+      ],
+      "custom_css": [
+        "p {max-width: 1200px;}",
+        "@media screen and (max-width: 768px) {p {font-size: 11px; }}"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "spacing_tile": "default",
+        "color_scheme": "scheme-7",
+        "section_width": "max-w-page",
+        "spacing_top": "1",
+        "spacing_bottom": "1"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "full_width_banner_hiaDgQ",
+    "dual_tiles_D3NEMU",
+    "dual_tiles_PWMVWB",
+    "trust_indicators_3C7a7k",
+    "collapse_with_image_hzBtP4",
+    "full_width_banner_PhwUyj",
+    "multitile_YPRX4G",
+    "multitile_gzAXi9",
+    "collapse_with_image_wR6g7U",
+    "multitile_MxjUhU",
+    "multitile_rxim7r",
+    "multitile_C4KQME",
+    "full_width_banner_z7hPzB",
+    "multitile_rVFCzb"
+  ]
+}
+
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "breadcrumbs": true,
+        "show_page_title": true,
+        "page_title_alignment": "text-center",
+        "info_title": "",
+        "info_content": "",
+        "section_width": "max-w-narrower",
+        "color_scheme": "",
+        "spacing_top": "2",
+        "spacing_bottom": "2"
+      }
+    },
+    "full_width_banner_hiaDgQ": {
+      "type": "full-width-banner",
+      "blocks": {
+        "subheading_Nm8fKF": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Our Formula",
+            "link": ""
+          }
+        },
+        "content_XrpPWN": {
+          "type": "content",
+          "settings": {
+            "content": "<h2>Clinical Collagen,<br/>Now Yours.</h2>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_Nm8fKF",
+        "content_XrpPWN"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 769px) {{max-height: 887px; }}"
+      ],
+      "name": "t:sections.full-width-banner.name",
+      "settings": {
+        "enable_transparent_header": true,
+        "media_position": "background",
+        "section_height": "full",
+        "content_position": "center",
+        "content_alignment": "start",
+        "image": "shopify://shop_images/Hero_1.jpg",
+        "video_external": "",
+        "show_controls_on_video": false,
+        "aspect_ratio": "auto",
+        "section_height_mobile": "half",
+        "content_position_mobile": "center",
+        "content_alignment_mobile": "center",
+        "image_mobile": "shopify://shop_images/Formula-Hero.jpg",
+        "video_external_mobile": "",
+        "show_controls_on_video_mobile": false,
+        "aspect_ratio_mobile": "auto",
+        "section_width": "max-w-full",
+        "color_scheme": "scheme-8",
+        "color_scheme_for_content": "scheme-8",
+        "spacing_inner": "2",
+        "spacing_top": "0",
+        "spacing_bottom": "0"
+      }
+    },
+    "dual_tiles_D3NEMU": {
+      "type": "dual-tiles",
+      "blocks": {
+        "tile_rrWwrr": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+            "custom_background_color": "",
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<h5><strong>THE INNOVATION BEHIND DAILY VITALITY</strong></h5><h3>Advanced Collagen<br/>Designed for Daily <br/>Renewal</h3>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "product": "",
+            "product_width": 16,
+            "show_other_elements_with_product": true,
+            "aspect_ratio": "auto",
+            "vertical_position": "stretch",
+            "content_position": "justify-start",
+            "content_alignment": "text-start align-start",
+            "product_position": "0",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "aspect_ratio_mobile": "auto",
+            "content_alignment_mobile": "text-center--mobile align-center--mobile",
+            "content_position_mobile": "justify-center--mobile",
+            "product_position_mobile": "0",
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        },
+        "tile_CjcxWV": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+            "custom_background_color": "",
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<h6><br/>ProT Gold’s Nano Hydrolyzed Collagen<span>®</span> peptides are up to 70% smaller than hydrolyzed collagen, providing unmatched absorption and impact.</h6><p>Our proprietary process creates ultra-small peptides that are fully digested in less than 15 minutes, so your body can use them when it matters most.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "product": "",
+            "product_width": 24,
+            "show_other_elements_with_product": true,
+            "aspect_ratio": "auto",
+            "vertical_position": "stretch",
+            "content_position": "justify-center",
+            "content_alignment": "text-start align-start",
+            "product_position": "0",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "aspect_ratio_mobile": "auto",
+            "content_alignment_mobile": "text-center--mobile align-center--mobile",
+            "content_position_mobile": "justify-center--mobile",
+            "product_position_mobile": "0",
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        }
+      },
+      "block_order": [
+        "tile_rrWwrr",
+        "tile_CjcxWV"
+      ],
+      "custom_css": [
+        "h5,h6,p {margin-bottom: 30px;}",
+        "@media screen and (min-width: 769px) {p {max-width: 430px; } h6 {color: #423d42; font-size: 18px; font-family: \"ArticulatCF_Regular\" !important; max-width: 400px; line-height: 25px; } h5 {letter-spacing: 0.2rem; font-size: 15px; }}",
+        "@media screen and (max-width: 768px) {p {max-width: 300px; margin-left: auto; margin-right: auto; } h6 {color: #423d42; font-size: 18px; font-family: \"ArticulatCF_Regular\" !important; max-width: 400px; line-height: 25px; } h5 {letter-spacing: 0.2rem; margin-bottom: 20px; font-size: 10px; }}"
+      ],
+      "name": "t:sections.dual-tiles.name",
+      "settings": {
+        "section_layout": "seperated",
+        "block_size": "half",
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+        "section_width": "max-w-page",
+        "spacing_top": "2",
+        "spacing_bottom": "2"
+      }
+    },
+    "dual_tiles_PWMVWB": {
+      "type": "dual-tiles",
+      "blocks": {
+        "tile_qVTxDp": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "color_scheme": "scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be",
+            "custom_background_color": "",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "product": "",
+            "product_width": 24,
+            "show_other_elements_with_product": true,
+            "aspect_ratio": "auto",
+            "vertical_position": "end",
+            "content_position": "justify-center",
+            "content_alignment": "text-center align-center",
+            "product_position": "0",
+            "image": "shopify://shop_images/Science_-_With_Logo_Labels.png",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "aspect_ratio_mobile": "auto",
+            "content_alignment_mobile": "text-center--mobile align-center--mobile",
+            "content_position_mobile": "justify-center--mobile",
+            "product_position_mobile": "0",
+            "image_mobile": "shopify://shop_images/Frame_2147223721.png",
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "3"
+          }
+        }
+      },
+      "block_order": [
+        "tile_qVTxDp"
+      ],
+      "name": "t:sections.dual-tiles.name",
+      "settings": {
+        "section_layout": "seperated",
+        "block_size": "full",
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+        "section_width": "max-w-page",
+        "spacing_top": "2",
+        "spacing_bottom": "2"
+      }
+    },
+    "trust_indicators_3C7a7k": {
+      "type": "trust-indicators",
+      "blocks": {
+        "indicator_b9Miem": {
+          "type": "indicator",
+          "settings": {
+            "title_desktop": "<p>Proven 100% digestibility<br/>in 15 minutes or less<span>1</span></p>",
+            "title_mobile": "<p>Proven 100%<br/>digestibility<br/>in 15 minutes or less<span>1</span></p>",
+            "icon": "theme-box",
+            "custom_icon": "shopify://shop_images/Group_240.svg"
+          }
+        },
+        "indicator_7z4qtn": {
+          "type": "indicator",
+          "settings": {
+            "title_desktop": "<p>Trusted by thousands<br/>of medical facilities</p>",
+            "title_mobile": "<p>Trusted by thousands<br/>of medical facilities<br/>internationally</p>",
+            "icon": "theme-box",
+            "custom_icon": "shopify://shop_images/Group.svg"
+          }
+        },
+        "indicator_UNkHyM": {
+          "type": "indicator",
+          "settings": {
+            "title_desktop": "<p>Essential protein for muscle, skin,<br/>joint, & connective tissue health</p>",
+            "title_mobile": "<p>Fortified with amino<br/>acids for a complete<br/>protein profile</p>",
+            "icon": "theme-box",
+            "custom_icon": "shopify://shop_images/Group_235.svg"
+          }
+        },
+        "indicator_xhYEXx": {
+          "type": "indicator",
+          "settings": {
+            "title_desktop": "<p>Promotes natural<br/>collagen production</p>",
+            "title_mobile": "<p>Essential protein for muscle,<br/>skin, joint, & connective<br/>tissue health</p>",
+            "icon": "theme-box",
+            "custom_icon": "shopify://shop_images/Group_234.svg"
+          }
+        },
+        "indicator_HiiWJ7": {
+          "type": "indicator",
+          "settings": {
+            "title_desktop": "<p>Fortified with amino acids for<br/>a complete protein profile</p>",
+            "title_mobile": "<p>Promotes natural<br/>collagen production</p>",
+            "icon": "theme-box",
+            "custom_icon": "shopify://shop_images/Group_233.svg"
+          }
+        },
+        "indicator_L3t7wR": {
+          "type": "indicator",
+          "settings": {
+            "title_desktop": "<p>Pre-digested,<br/>gut-friendly formula</p>",
+            "title_mobile": "<p>Pre-digested,<br/>gut-friendly formula</p>",
+            "icon": "theme-box",
+            "custom_icon": "shopify://shop_images/Group_237.svg"
+          }
+        }
+      },
+      "block_order": [
+        "indicator_b9Miem",
+        "indicator_7z4qtn",
+        "indicator_UNkHyM",
+        "indicator_xhYEXx",
+        "indicator_HiiWJ7",
+        "indicator_L3t7wR"
+      ],
+      "custom_css": [
+        "@media (max-width: 749px) {.section_trust-indicators {padding-top: 60px; }}"
+      ],
+      "name": "t:sections.trust-indicators.name",
+      "settings": {
+        "button_label": "",
+        "button_link": "/",
+        "color_scheme_for_blocks": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+        "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "collapse_with_image_hzBtP4": {
+      "type": "collapse-with-image",
+      "blocks": {
+        "collapse_item_Fk9Cdr": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "The Difference",
+            "item_description": "<p>Nano hydrolyzed means peptides are reduced to less than 1% of their original size. That’s what enables faster, more efficient absorption.</p>"
+          }
+        },
+        "collapse_item_hUtkLT": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "Proprietary Process",
+            "item_description": "<p>Unlike standard hydrolyzed collagen, our proprietary process uses fruit enzymes in precision-controlled stages to create ultra-small peptides—without breaking them down completely. This keeps them intact and ready for action.</p>"
+          }
+        },
+        "collapse_item_dUyHrU": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "Rapid Digestion",
+            "item_description": "<p>Smaller peptides digest faster, so your body can use them where and when it matters. Ideal for skin, joints, muscle, and everyday recovery.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "collapse_item_Fk9Cdr",
+        "collapse_item_hUtkLT",
+        "collapse_item_dUyHrU"
+      ],
+      "custom_css": [
+        ".collapse_card_title span {vertical-align: super; font-size: 60%;}"
+      ],
+      "name": "Collapse with Image",
+      "settings": {
+        "color_scheme": "scheme-c964cc82-bba3-486f-a537-7f3207978313",
+        "image_right": false,
+        "image_title": "Collagen molecule scale",
+        "section_image": "shopify://shop_images/Group_232.png",
+        "image_scale": 100,
+        "padding_top": 150,
+        "padding_bottom": 150,
+        "section_gap": 200,
+        "collapse_width": 600,
+        "collapse_container_gap": 78,
+        "collapse_subtitle": "",
+        "collapse_title": "<p>Reengineered for<br/>Speed and Precision</p>",
+        "collapse_description": "",
+        "card_show": true,
+        "card_title": "Absorption Time",
+        "card_title_1": "<p>Hydrolyzed<br/>Collagen</p>",
+        "card_content_1": "<p>~1-4h</p>",
+        "card_border_1": true,
+        "card_1_bg_opacity": 0,
+        "card_title_2": "<p>Nano Hydrolyzed<br/>Collagen®</p>",
+        "card_content_2": "<p>15m</p>",
+        "card_border_2": false,
+        "card_2_bg_opacity": 30,
+        "button_show": true,
+        "button_content": "Experience The Difference",
+        "button_link": "shopify://products/prot-gold-medical-grade-collagen-protein"
+      }
+    },
+    "full_width_banner_PhwUyj": {
+      "type": "full-width-banner",
+      "blocks": {
+        "heading_zwVqqL": {
+          "type": "heading",
+          "settings": {
+            "heading": "Raising the Standard Beyond Hydrolyzed Collagen",
+            "heading_size": "h3"
+          }
+        },
+        "content_z8V4mK": {
+          "type": "content",
+          "settings": {
+            "content": "<p>Our proprietary approach takes collagen further—producing ultra-small peptides that are fully digested in <strong>less than 15 minutes¹.</strong> <br/><br/>This means faster absorption, better uptake, and more complete support for your body when it matters most.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_zwVqqL",
+        "content_z8V4mK"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 1024px) {h2 {max-width: 650px; margin-left: auto; margin-right: auto; } p {font-size: 16px; max-width: 400px; margin-left: auto; margin-right: auto; }}",
+        "@media screen and (max-width: 769px) {h2 {font-size: 32px; max-width: 400px; } p {max-width: 300px; } {max-height: 955px !important; }}"
+      ],
+      "settings": {
+        "enable_transparent_header": false,
+        "media_position": "background",
+        "section_height": "full",
+        "content_position": "center",
+        "content_alignment": "center",
+        "image": "shopify://shop_images/ProT_-_Formula_-_Raising_the_Standard_Beyond_Hydrolyzed_Collagen.webp",
+        "video_external": "",
+        "show_controls_on_video": false,
+        "aspect_ratio": "auto",
+        "section_height_mobile": "full",
+        "content_position_mobile": "center",
+        "content_alignment_mobile": "center",
+        "image_mobile": "shopify://shop_images/Our_proprietary_approach_takes_collagen_further_producing_ultra-small_peptides_for_faster_absorption_better_uptake_and_more_complete_support_Mobile.webp",
+        "video_external_mobile": "",
+        "show_controls_on_video_mobile": false,
+        "aspect_ratio_mobile": "auto",
+        "section_width": "max-w-full",
+        "color_scheme": "scheme-1",
+        "color_scheme_for_content": "scheme-6",
+        "spacing_inner": "0",
+        "spacing_top": "0",
+        "spacing_bottom": "0"
+      }
+    },
+    "multitile_YPRX4G": {
+      "type": "multitile",
+      "blocks": {
+        "tile_xwXfiX": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h6>THE INNOVATION BEHIND DAILY VITALITY</h6><h3>Most Collagen Stops <br/>at Good Enough</h3>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_RTY3yG": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h4><br/></h4><p>Hydrolysis makes collagen more<br/>accessible—but most formulas today still<br/>fall short, sacrificing either absorption,<br/>convenience, or effectiveness.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_96dwBY": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h4><br/></h4><p>Hydrolyzed collagen breaks protein down into smaller<br/>peptides, making it easier to absorb than raw collagen. <br/><br/>However, many collagen products still take hours to digest,<br/>and the particles aren’t as small or as effective as they<br/>could be. It’s a step forward, but not the final destination.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_bxwVJc": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 6,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "media",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_Formula_-_Science.jpg",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        }
+      },
+      "block_order": [
+        "tile_xwXfiX",
+        "tile_RTY3yG",
+        "tile_96dwBY",
+        "tile_bxwVJc"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 751px) {h6 {font-family: \"ArticulatCF_Demi_Bold\"; font-size: 16px; letter-spacing: 0.2rem; font-size: 12px; margin-bottom: 10px; text-transform: uppercase; }}",
+        "@media screen and (max-width: 750px) {{display: none; }}",
+        ".section-multitile__content p {margin: 0px;}",
+        ".section-multitile__content h6 {margin-top: 10px;}"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "spacing_tile": "default",
+        "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+        "section_width": "max-w-page",
+        "spacing_top": "2",
+        "spacing_bottom": "2"
+      }
+    },
+    "multitile_gzAXi9": {
+      "type": "multitile",
+      "blocks": {
+        "tile_KkUAw3": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "bottom",
+            "heading": "Most Collagen Stops at Good Enough",
+            "heading_size": "h2",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "1"
+          }
+        },
+        "tile_Qzxiqi": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p>Hydrolyzed collagen is more accessible<br/>for your body than raw collagen—<br/>but most formulas today still fall short,<br/>sacrificing either absorption, convenience,<br/>or effectiveness.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "1"
+          }
+        },
+        "tile_7xBmcx": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 3,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "media",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_Formula_-_Science_1.webp",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_WpzJm7": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p>Hydrolyzed collagen breaks protein down into smaller<br/>peptides, making it easier to absorb than raw collagen. </p><p>However, many collagen products still take hours to digest,<br/>and the particles aren’t as small or as effective as they<br/>could be. It’s a step forward, but not the final destination.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_WpRBxq": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 3,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "media",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_Formula_-_Science_2.webp",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "1"
+          }
+        }
+      },
+      "block_order": [
+        "tile_KkUAw3",
+        "tile_Qzxiqi",
+        "tile_7xBmcx",
+        "tile_WpzJm7",
+        "tile_WpRBxq"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 769px) {{display: none; }}",
+        "@media screen and (max-width: 768px) {p {margin-top: -10px; max-width: 300px; margin-left: auto; margin-right: auto; } h2 {font-size: 36px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "spacing_tile": "default",
+        "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+        "section_width": "max-w-page",
+        "spacing_top": "4",
+        "spacing_bottom": "4"
+      }
+    },
+    "collapse_with_image_wR6g7U": {
+      "type": "collapse-with-image",
+      "blocks": {
+        "collapse_item_t4xHUF": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "Arginine",
+            "item_description": "<p><strong>Supports blood flow</strong></p><p>Helps produce nitric oxide, which relaxes blood vessels, aiding circulation and heart health.<br/><br/></p><p><strong>Aids in healing</strong></p><p>Plays a role in wound healing and immune function.<br/><br/></p><p><strong>Enhances exercise performance</strong></p><p>May improve endurance by increasing blood flow to muscles. </p>"
+          }
+        },
+        "collapse_item_qPqjJr": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "Histidine",
+            "item_description": "<p><strong>Supports immunity</strong></p><p>Involved in immune function and tissue repair. <br/><br/></p><p><strong>Protects cells</strong></p><p>Acts as an antioxidant to help reduce inflammation.</p>"
+          }
+        },
+        "collapse_item_R3fMFK": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "Methionine",
+            "item_description": "<p><strong>Boosts detoxification</strong></p><p>Helps the body break down toxins and heavy metals.<br/><br/></p><p><strong>Promotes healthy skin, hair, and nails</strong></p><p>Supports your body’s natural collagen production.</p>"
+          }
+        },
+        "collapse_item_wqyaQQ": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "Cysteine",
+            "item_description": "<p><strong>Fuels recovery</strong></p><p>Assists in protein synthesis and tissue rebuilding.<br/><br/></p><p><strong>Strengthens antioxidant defenses</strong></p><p>Supports production of glutathione: your body’s master antioxidant.</p>"
+          }
+        },
+        "collapse_item_f9rjXM": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "Taurine",
+            "item_description": "<p><strong>Supports heart health</strong></p><p>Regulates blood pressure and cardiovascular function. <br/><br/></p><p><strong>Aids muscle function</strong></p><p>Plays a role in hydration and muscle contraction.</p>"
+          }
+        },
+        "collapse_item_hHXP7B": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "Tryptophan",
+            "item_description": "<p><strong>Supports mood and sleep</strong></p><p>Helps produce serotonin and melatonin.<br/><br/></p><p><strong>Assists recovery</strong></p><p>May help reduce fatigue and support nervous system health.</p>"
+          }
+        },
+        "collapse_item_Xnf6xQ": {
+          "type": "collapse_item",
+          "settings": {
+            "item_title": "Glutamine",
+            "item_description": "<p><strong>Supports gut health</strong></p><p>Helps maintain the integrity of the gut lining.<br/><br/></p><p><strong>Strengthens immunity</strong></p><p>Fuel source for immune cells during stress or illness.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "collapse_item_t4xHUF",
+        "collapse_item_qPqjJr",
+        "collapse_item_R3fMFK",
+        "collapse_item_wqyaQQ",
+        "collapse_item_f9rjXM",
+        "collapse_item_hHXP7B",
+        "collapse_item_Xnf6xQ"
+      ],
+      "name": "Collapse with Image",
+      "settings": {
+        "color_scheme": "scheme-031be706-d0fa-457a-a6b0-623052c47c23",
+        "image_right": true,
+        "image_title": "",
+        "section_image": "shopify://shop_images/Group_126_Copy.webp",
+        "image_scale": 80,
+        "padding_top": 150,
+        "padding_bottom": 150,
+        "section_gap": 150,
+        "collapse_width": 600,
+        "collapse_container_gap": 50,
+        "collapse_subtitle": "Fortified complete protein",
+        "collapse_title": "<p>More Than Collagen</p>",
+        "collapse_description": "<p><strong>Most collagen isn’t a complete protein—ProT Gold is. <br/><br/></strong></p><p>ProT Gold is fortified with key amino acids that support connective tissue, gut lining, and immune health. Stay strong from the inside out.</p>",
+        "card_show": false,
+        "card_title": "Card Title",
+        "card_title_1": "<p>Card Title 1</p>",
+        "card_content_1": "",
+        "card_border_1": true,
+        "card_1_bg_opacity": 1,
+        "card_title_2": "<p>Card Title 2</p>",
+        "card_content_2": "",
+        "card_border_2": true,
+        "card_2_bg_opacity": 1,
+        "button_show": false,
+        "button_content": "Button Content",
+        "button_link": "/"
+      }
+    },
+    "multitile_MxjUhU": {
+      "type": "multitile",
+      "blocks": {
+        "tile_MccrRC": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 6,
+            "color_scheme": "scheme-4",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h3><br/>Food Grade Nutrition<br/></h3><h4><br/><br/><br/>Unlike other collagen products, ProT Gold meets the stringent standards for purity, safety and quality to be classified as a medical-grade nutritional food.</h4><p><br/><br/><br/><br/>You’ll feel the difference. Because better standards lead to better outcomes—every day.</p>",
+            "button_label": "Try it Now",
+            "button_link": "shopify://products/prot-gold-medical-grade-collagen-protein",
+            "button_style": "button--outlined",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_H3WcGi": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 3,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<h6>Backed by Food-Grade Integrity</h6><p>ProT Gold is regulated as a nutritional food, not a dietary supplement—formulated with a Nutrition Facts panel, not a Supplement Facts panel. </p><p>That means it's designed for daily use, held to stricter labeling standards, and trusted in both clinical and consumer settings.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_Formula_-_Food_Grade_Nutrition_1.jpg",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "4"
+          }
+        },
+        "tile_LAhYcD": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 3,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<h6>Nano Hydrolyzed Collagen<span>®</span> <br/>Meets Medical-Grade Standards</h6><p>Our formula is engineered at the cellular level to deliver optimal functionality with maximum efficiency.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_Formula_-_Food_Grade_Nutrition_2.jpg",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "4"
+          }
+        },
+        "tile_CjiPga": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 3,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<h6>Cellular-Level Technology</h6><p>Our proprietary process creates peptides that work at the cellular level, providing the building blocks needed for deep tissue repair and regeneration.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_Formula_-_Food_Grade_Nutrition_3.jpg",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "4"
+          }
+        },
+        "tile_b6MgRm": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 3,
+            "color_scheme": "scheme-7",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<h6>Comprehensive Support System</h6><p>This cellular-level approach enables ProT Gold to provide comprehensive support for immune defense and gut integrity—benefits that go beyond standard collagen products.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_Formula_-_Food_Grade_Nutrition_4.jpg",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "4"
+          }
+        }
+      },
+      "block_order": [
+        "tile_MccrRC",
+        "tile_H3WcGi",
+        "tile_LAhYcD",
+        "tile_CjiPga",
+        "tile_b6MgRm"
+      ],
+      "custom_css": [
+        ".section-multitile__block:nth-last-of-type(-n + 4) .section-multitile__content {background-color: #f5ebe0; padding-left: 1.5rem; padding-right: 1.5rem; border-radius: 8px; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);}",
+        ".section-multitile__block:nth-last-of-type(-n + 4) .section-multitile__text p {line-height: 1.4; max-width: 400px;}",
+        "@media screen and (max-width: 750px) {p {font-size: 12px; line-height: 1.4; max-width: 400px; }}",
+        ".section-multitile__block {border-radius: 0px;}"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "spacing_tile": "compact",
+        "color_scheme": "scheme-4",
+        "section_width": "max-w-full",
+        "spacing_top": "0",
+        "spacing_bottom": "0"
+      }
+    },
+    "multitile_rxim7r": {
+      "type": "multitile",
+      "blocks": {
+        "tile_PLnifA": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h3>Why Clinically-Proven Collagen Matters</h3>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_NfRLfL": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-50b5cd4f-d9c0-4e3d-b050-0a5ffa3bf74f",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p>ProT Gold was originally developed to meet the high standards of medical nutrition.</p><h6><br/>It is used by over 4,000 healthcare facilities worldwide to support increased protein needs in patients.</h6>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_wf4wND": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-50b5cd4f-d9c0-4e3d-b050-0a5ffa3bf74f",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p>Today, that same medical-grade formula is available to support your daily energy, recovery, and vitality.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_DzRUJF": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_Formula_-_why_clinically-proven_collagen_matters.webp",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "6"
+          }
+        },
+        "tile_4Kq6bL": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 4,
+            "row_factor": 1,
+            "color_scheme": "scheme-5f26f91a-599b-401c-b249-5a805a7e91a2",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h4>“I have been recommending ProT Gold to my bariatric patients for over 5 years. <br/><br/>ProT Gold gives my patients a convenient and effective way to get high quality protein in a small volume. It also promotes fast healing of their surgical wounds.\"</h4><p><strong><br/><br/></strong></p><p><strong>PATRICE BRUISSON, RD, LD<br/>MERIT HEALTH MEDICAL GROUP</strong></p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "6"
+          }
+        }
+      },
+      "block_order": [
+        "tile_PLnifA",
+        "tile_NfRLfL",
+        "tile_wf4wND",
+        "tile_DzRUJF",
+        "tile_4Kq6bL"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 768px) {{display: none; }}",
+        ".section-multitile__content * {margin: 0px;}",
+        "h6 {max-width: 350px; font-size: 14px; line-height: 150%; letter-spacing: 0.02em; font-weight: 400; font-family: \"ArticulatCF_Regular\" !important; padding-top: -50px;}",
+        "p {max-width: 350px;}",
+        ".block-tile_wf4wND .section-multitile__text p {max-width: 410px; margin-inline: auto;}",
+        ".block-tile_NfRLfL .section-multitile__text p {margin-bottom: -10px;}",
+        "h4 {margin-top: -20px;}"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "spacing_tile": "default",
+        "color_scheme": "scheme-f0717405-2c2f-4601-a476-0d2032d345b4",
+        "section_width": "max-w-page",
+        "spacing_top": "6",
+        "spacing_bottom": "6"
+      }
+    },
+    "multitile_C4KQME": {
+      "type": "multitile",
+      "blocks": {
+        "tile_KArbJR": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h3>Why Clinically-Proven Collagen Matters</h3>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "1"
+          }
+        },
+        "tile_DrzmiP": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p>ProT Gold was originally developed to meet<br/>the high standards of medical nutrition.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "1"
+          }
+        },
+        "tile_8Wjkk7": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "image": "shopify://shop_images/ProT_-_Formula_-_why_clinically-proven_collagen_matters.webp",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        },
+        "tile_UdH3Cx": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p>It is used by over 4,000 healthcare facilities worldwide to support increased protein needs in patients.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        },
+        "tile_iDk9XT": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 4,
+            "row_factor": 1,
+            "color_scheme": "scheme-5f26f91a-599b-401c-b249-5a805a7e91a2",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-start",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<h5><br/>“I have been recommending ProT Gold to my bariatric patients for over 5 years. <br/><br/>ProT Gold gives my patients a convenient and effective way to get high quality protein in a small volume. It also promotes fast healing of their surgical wounds.\"</h5><p><strong><br/><br/>PATRICE BRUISSON, RD, LD<br/>MERIT HEALTH MEDICAL GROUP</strong></p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        },
+        "tile_bpXfBT": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 2,
+            "row_factor": 1,
+            "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-center text-center",
+            "content_alignment_for_mobile": "align-center--mobile text-center--mobile",
+            "media_position": "top",
+            "heading": "",
+            "heading_size": "h3",
+            "text": "<p>Today, that same medical-grade formula is available to support your daily energy, recovery, and vitality.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "2"
+          }
+        }
+      },
+      "block_order": [
+        "tile_KArbJR",
+        "tile_DrzmiP",
+        "tile_8Wjkk7",
+        "tile_UdH3Cx",
+        "tile_iDk9XT",
+        "tile_bpXfBT"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 769px) {{display: none; }}",
+        "h3 {max-width: 1000px; font-size: 33px; margin-bottom: -10px;}",
+        "p {font-size: 14px;}",
+        ".block-tile_UdH3Cx .section-multitile__text p {font-size: 12px; margin-top: 40px; margin-bottom: 50px;}",
+        ".block-tile_8Wjkk7 {max-width: 250px; margin-left: auto; margin-right: auto;}",
+        "h5 {margin-bottom: -30px; font-size: 20px;}"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "center",
+        "spacing_tile": "compact",
+        "color_scheme": "scheme-12bd3624-4ae7-4670-a8fa-f13f7c572fb5",
+        "section_width": "max-w-page",
+        "spacing_top": "6",
+        "spacing_bottom": "4"
+      }
+    },
+    "full_width_banner_z7hPzB": {
+      "type": "full-width-banner",
+      "blocks": {
+        "heading_LcDX7j": {
+          "type": "heading",
+          "settings": {
+            "heading": "Collagen. Elevated.",
+            "heading_size": "h3"
+          }
+        },
+        "content_Xrw6bV": {
+          "type": "content",
+          "settings": {
+            "content": "<p>Nano Hydrolyzed Collagen<span>®</span>: engineered for your recovery, your rhythm, your results.</p>"
+          }
+        },
+        "buttons_WMK8mq": {
+          "type": "buttons",
+          "settings": {
+            "button_link_1": "shopify://collections/all",
+            "button_link_1_type": "button",
+            "button_label_1": "Shop Now",
+            "button_style_1": "button--outlined",
+            "color_scheme_first_button": "scheme-8",
+            "button_link_2": "/",
+            "button_label_2": "",
+            "button_style_2": "button--outlined",
+            "color_scheme_second_button": "scheme-1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_LcDX7j",
+        "content_Xrw6bV",
+        "buttons_WMK8mq"
+      ],
+      "custom_css": [
+        "p {max-width: 390px; margin-left: auto; margin-right: auto;}",
+        "@media screen and (max-width: 769px) {p {max-width: 250px; margin-left: auto; margin-right: auto; }}"
+      ],
+      "settings": {
+        "enable_transparent_header": false,
+        "media_position": "background",
+        "section_height": "half",
+        "content_position": "center",
+        "content_alignment": "center",
+        "image": "shopify://shop_images/ProT_-_Formula_-_Collagen_Elevated.jpg",
+        "video_external": "",
+        "show_controls_on_video": false,
+        "aspect_ratio": "auto",
+        "section_height_mobile": "half",
+        "content_position_mobile": "center",
+        "content_alignment_mobile": "center",
+        "image_mobile": "shopify://shop_images/ProT_-_Formula_-_Collagen_Elevated_Mobile.jpg",
+        "video_external_mobile": "",
+        "show_controls_on_video_mobile": false,
+        "aspect_ratio_mobile": "auto",
+        "section_width": "max-w-full",
+        "color_scheme": "scheme-1",
+        "color_scheme_for_content": "scheme-6",
+        "spacing_inner": "0",
+        "spacing_top": "0",
+        "spacing_bottom": "0"
+      }
+    },
+    "multitile_rVFCzb": {
+      "type": "multitile",
+      "blocks": {
+        "tile_xDawXY": {
+          "type": "tile",
+          "settings": {
+            "show_on": "both",
+            "column_factor": 6,
+            "row_factor": 1,
+            "color_scheme": "scheme-7af986f6-1aae-4b98-85e1-5a3c9c81b1be",
+            "gradient_background_color": "",
+            "tile_aspect_ratio": "auto",
+            "content_position_vertical": "justify-center",
+            "content_alignment": "align-start text-start",
+            "content_alignment_for_mobile": "align-start--mobile text-start--mobile",
+            "media_position": "background",
+            "heading": "",
+            "heading_size": "h6",
+            "text": "<p>1. Lee SK, Posthauer ME, Dorner B, Redovian V, Maloney MJ. Pressure ulcer healing with a concentrated, fortified, collagen protein hydrolysate supplement: a randomized controlled trial. Adv Skin Wound Care. 2006 Mar;19(2):92-6</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "button--filled",
+            "video_external": "",
+            "show_controls_on_video": false,
+            "video_external_mobile": "",
+            "show_controls_on_video_mobile": false,
+            "spacing_inner": "0"
+          }
+        }
+      },
+      "block_order": [
+        "tile_xDawXY"
+      ],
+      "custom_css": [
+        "p {max-width: 1200px;}",
+        "@media screen and (max-width: 768px) {p {font-size: 11px; }}"
+      ],
+      "name": "t:sections.multitile.name",
+      "settings": {
+        "block_order_mobile": false,
+        "heading": "",
+        "heading_size": "h3",
+        "heading_alignment": "start",
+        "spacing_tile": "default",
+        "color_scheme": "scheme-7",
+        "section_width": "max-w-page",
+        "spacing_top": "1",
+        "spacing_bottom": "1"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "full_width_banner_hiaDgQ",
+    "dual_tiles_D3NEMU",
+    "dual_tiles_PWMVWB",
+    "trust_indicators_3C7a7k",
+    "collapse_with_image_hzBtP4",
+    "full_width_banner_PhwUyj",
+    "multitile_YPRX4G",
+    "multitile_gzAXi9",
+    "collapse_with_image_wR6g7U",
+    "multitile_MxjUhU",
+    "multitile_rxim7r",
+    "multitile_C4KQME",
+    "full_width_banner_z7hPzB",
+    "multitile_rVFCzb"
+  ]
+}

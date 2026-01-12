@@ -92,6 +92,7 @@
           {% endif %}
           <div id="product-grid"
             class="collection__grid{% if section.settings.products_per_row_mobile != '2' %} collection__grid-single{% endif %}{% if section.settings.filters == 'drawer' %} collection-grid-container__products{% endif %}"
+            id="product-grid"
             data-id="{{- section.id -}}"
             data-cols="{{- section.settings.products_per_row -}}"
           >

@@ -239,6 +239,7 @@ html.no-js .hero__swiper-slide {
   font-weight: var(--font-weight-normal);
   text-transform: uppercase;
   margin-block-end: 2rem;
+  font-family: var(--font-button-family);
 }
 
 .hero-banner .hero__heading {
@@ -254,6 +255,7 @@ html.no-js .hero__swiper-slide {
 .hero__button {
   display: inline-flex;
   flex-flow: row wrap;
+  justify-content: center;
   gap: var(--spacing-2);
 }
 
@@ -262,6 +264,7 @@ html.no-js .hero__swiper-slide {
 }
 .hero__entry p {
   margin-block-start: 0;
+  font-weight: var(--font-weight-semibold);
 }
 
 .hero__swiper:has(.swiper-pagination-horizontal) .hero__content {

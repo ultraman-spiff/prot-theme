@@ -52,6 +52,16 @@
       }
     }
   {% endif %}
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} a.section-multitile__content--button.button {
+      width: 100%;
+      padding: calc(20 * 100vw / 720) calc(40 * 100vw / 720);
+      font-size: calc(24px - 10 / 370 * (750px - 100vw));
+      margin-top: calc(42 * 100vw / 720);
+      font-weight: 600;
+    }
+  }
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient">

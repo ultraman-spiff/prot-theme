@@ -69,6 +69,14 @@
   aspect-ratio: 3 / 4;
   border-radius: var(--card-corner-radius);
   overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.product__media .media img {
+  border-radius: 10px;
+  overflow: hidden;
+  height: fit-content;
 }
 
 .product__media[data-auto-height="true"] .media {

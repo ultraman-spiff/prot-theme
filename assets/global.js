@@ -37,6 +37,8 @@ const isHeaderSticky = header?.classList.contains('is-sticky');
 /* SECTION: Announcement Bars */
 const sectionsOfAnnouncementBar = document.querySelectorAll('.section-announcement-bar');
 if (sectionsOfAnnouncementBar) {
+  const headerIndex = Array.prototype.indexOf.call(document.body.children, document.querySelector('header'));
+  const mainIndex = Array.prototype.indexOf.call(main.parentNode.children, main);
 
   const setCustomProperty = (property, value) => {
     document.documentElement.style.setProperty(property, value);
@@ -55,14 +57,22 @@ if (sectionsOfAnnouncementBar) {
     let totalHeights = 0;
 
     sectionsOfAnnouncementBar.forEach((section) => {
-      // calculate total heights and visible heights of all announcement bars before the header
-      Array.from(sectionsOfAnnouncementBar)
-        .forEach((section) => {
-          // console.log(sectionIndex, section);
-          const { height, visibleHeight } = calcSectionHeights(section);
-          totalHeights += height;
-          totalVisibleHeights += visibleHeight;
-      });
+      const sectionIndex = Array.prototype.indexOf.call(section.parentNode.children, section);
+
+      if (sectionIndex < headerIndex) {
+        // calculate total heights and visible heights of all announcement bars before the header
+        Array.from(sectionsOfAnnouncementBar)
+          .filter((section) => {
+            const index = Array.prototype.indexOf.call(section.parentNode.children, section);
+            return index < headerIndex;
+          })
+          .forEach((section) => {
+            // console.log(sectionIndex, section);
+            const { height, visibleHeight } = calcSectionHeights(section);
+            totalHeights += height;
+            totalVisibleHeights += visibleHeight;
+        });
+      }
     });
     setCustomProperty(`--announcement-bars-before-header-heights`, `${parseFloat(totalHeights)}px`);
     setCustomProperty(`--announcement-bars-before-header-visible-heights`, `${parseFloat(totalVisibleHeights)}px`);
@@ -811,6 +821,7 @@ class MenuDrawer extends HTMLElement {
     this.summary.setAttribute("aria-expanded", isDetailsOpen);
   }
 }
+
 customElements.define("menu-drawer", MenuDrawer);
 
 class HeaderDrawer extends MenuDrawer {

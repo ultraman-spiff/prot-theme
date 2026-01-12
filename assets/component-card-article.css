@@ -121,6 +121,11 @@
   }
 }
 
+.card-article--entry-2 {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
 .card-article--entry-2 .card-article__entry {
   overflow: hidden;
   text-overflow: ellipsis;

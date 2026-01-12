@@ -99,6 +99,51 @@ if (!customElements.get('shop-the-look-slider')) {
         "shop-the-look-drawer"
       );
       if (!drawer || !drawerContainer) return;
+      const handle = drawerContainer.querySelector(
+        ".shop-the-look-drawer__handle"
+      );
+      let startY,
+        currentY,
+        isDragging = false;
+
+      const closeDrawer = () => {
+        drawerContainer.style.display = "none";
+        drawerContainer.classList.remove("is--open");
+        drawer.style.transform = "translateY(0)";
+        drawer.scrollTop = 0;
+      };
+
+      handle.addEventListener("touchstart", e => {
+        startY = e.touches[0].clientY;
+        isDragging = true;
+      });
+
+      handle.addEventListener("touchmove", e => {
+        if (!isDragging) return;
+        currentY = e.touches[0].clientY;
+        const diff = currentY - startY;
+
+        if (diff > 0) {
+          drawer.style.transform = `translateY(${diff}px)`;
+        }
+      });
+
+      handle.addEventListener("touchend", () => {
+        isDragging = false;
+
+        if (currentY - startY > 50) {
+          closeDrawer();
+        } else {
+          drawer.style.transform = "translateY(0)";
+        }
+      });
+
+      const openDrawer = () => {
+        drawerContainer.style.display = "block";
+        drawerContainer.classList.add("is--open");
+        drawer.style.transform = "translateY(0)";
+        drawer.scrollTop = 0;
+      };
     }
   }
 

@@ -11,8 +11,9 @@
 }
 
 .shop-the-look__content {
-  max-width: 100%;
+  font-size: 12px;
   margin-inline: auto;
+  text-wrap: nowrap;
 }
 
 .shop-the-look__item--slider {
@@ -291,7 +292,11 @@ shop-the-look-drawer .shop-the-look__item--products {
   }
 
   .shop-the-look__content {
-    max-width: 80%;
+    max-width: 44%;
+  }
+
+  .shop-the-look__content .section__heading {
+    font-size: calc(49px - 34 / 1170 * (1920px - 100vw));
   }
 
   .shop-the-look__item {
@@ -436,6 +441,9 @@ shop-the-look-drawer .shop-the-look-drawer__blocks .product-card__variants--info
 }
 shop-the-look-drawer .shop-the-look-drawer__blocks .product-card--small .product-card__info {
   gap: var(--spacing-2);
+}
+shop-the-look-drawer .shop-the-look-drawer__blocks .button--close {
+  pointer-events: none;
 }
 shop-the-look-drawer .shop-the-look-drawer__blocks .product-card--small .product-card__content {
   gap: 0;
