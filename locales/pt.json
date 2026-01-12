@@ -39,6 +39,8 @@
       "search": "Buscar",
       "share_on": "Compartilhar no {{name}}",
       "show_all": "Mostrar todos",
+      "show_less": "Mostrar menos",
+      "show_more": "Mostrar mais",
       "start_shopping": "Começar a comprar",
       "view": "Ver"
     },
@@ -445,7 +447,9 @@
       "search_label": "Encontre nossas lojas",
       "search_by_location": "Buscar uma loja por código postal, cidade ou país",
       "search_placeholder": "Digite código postal, cidade ou país",
-      "call": "Ligar"
+      "call": "Ligar",
+      "clear": "Limpo",
+      "opening_hours": "Horário de funcionamento"
     },
     "compare_slider": {
       "image_before": "Imagem antes",

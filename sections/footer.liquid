@@ -34,13 +34,22 @@
           endif
 
           assign block_content_alignment_class = ''
-          if block.type == 'payment_icons' or block.type == 'newsletter' or block.type == 'brand' or block.type == 'richtext' or block.type == 'social_media'
+          if block.type == 'payment_icons' or block.type == 'newsletter' or block.type == 'brand' or block.type == 'richtext' or block.type == 'social_media' or block.type == 'custom_liquid'
             assign block_content_alignment_class = block_content_alignment_class | append: ' align-' | append: block.settings.content_alignment | append: ' text-' | append: block.settings.content_alignment | append: ' align-' | append: block.settings.content_alignment_for_mobile | append: '--mobile text-' | append: block.settings.content_alignment_for_mobile | append: '--mobile'
           endif
         %}
         <div class="section-footer__block col-span-{{ block.settings.column_factor }} block-{{ block.id }} {{ block_class }}" {{ block.shopify_attributes }}>
 
           {%- case block.type -%}
+            {%- when 'custom_liquid' -%}
+              <div class="section-footer__content {{ block_content_alignment_class }}">
+                <div class="footer__custom-liquid">
+                  {%- if block.settings.heading -%}
+                    <h3 class="footer__block-heading">{{- block.settings.heading -}}</h3>
+                  {%- endif -%}
+                  {{ block.settings.custom_liquid }}
+                </div>
+              </div>
             {%- when 'spacer' -%}
               <div class="footer__spacer"></div>
             {%- when 'link_list' -%}
@@ -76,8 +85,8 @@
                 </ul>
               {%- endcapture -%}
               <div class="section-footer__content footer__nav--{{ block.settings.menu_layout }}">
-                <div class="footer__nav-desktop small-hide">
-                  <p class="footer__block-heading">
+                <div class="footer__nav-desktop medium-hide small-hide">
+                  <h4 class="footer__block-heading">
                     {%- if block.settings.title_url != blank -%}
                       <a href="{{- block.settings.title_url -}}" title="{{- menu_title | escape -}}">
                         {{- menu_title | escape -}}
@@ -85,10 +94,10 @@
                     {%- else -%}
                       {{- menu_title | escape -}}
                     {%- endif -%}
-                  </p>
+                  </h4>
                   {{ footer_menu_links }}
                 </div>
-                <accordion-default class="accordion footer__accordion small-up-hide">
+                <accordion-default class="accordion footer__accordion large-up-hide">
                   <nav class="footer__nav-mobile">
                     {%- liquid
                       assign details_class = 'accordion__section footer__links-details footer__links-mobile-item'
@@ -128,7 +137,7 @@
             {%- when 'social_media' -%}
               <div class="section-footer__content {{ block_content_alignment_class }}">
                 {%- if block.settings.heading -%}
-                  <p class="footer__social_text">{{- block.settings.heading -}}</p>
+                  <h3 class="footer__block-heading">{{- block.settings.heading -}}</h3>
                 {%- endif -%}
                 <ul class="footer__social list-unstyled">
                   {% render 'social-media', item_tag: 'li', in_new_tab: block.settings.social_links_in_new_tab, item_icon: block.settings.icons %}
@@ -141,8 +150,7 @@
                   <menu-drawer>
                     {%- liquid
                       assign button_prepend_text = 'theme.localization.change_country' | t
-                      assign append_id = 'footer-' | append: block.id
-                      render 'country-drawer', button_class: ' link', button_prepend_text: button_prepend_text, append_id: append_id
+                      render 'country-drawer', button_class: ' link', button_prepend_text: button_prepend_text, append_id: block.id
                     -%}
                   </menu-drawer>
                 {%- endif -%}
@@ -151,7 +159,7 @@
               <div class="section-footer__content {{ block_content_alignment_class }}">
                 <div class="footer__newsletter">
                   {%- if block.settings.heading -%}
-                    <p class="font-subheading">{{- block.settings.heading -}}</p>
+                    <h3 class="footer__block-heading">{{- block.settings.heading -}}</h3>
                   {%- endif -%}
                   {%- if block.settings.text -%}
                     <div class="footer__newsletter-text rte">{{- block.settings.text -}}</div>
@@ -201,7 +209,7 @@
               %}
               <div class="section-footer__content footer__richtext {{ class_copyright }} text-{{ block.settings.content_alignment }} text-{{ block.settings.content_alignment_for_mobile }}--mobile">
                 {%- if block.settings.heading -%}
-                  <p>{{- block.settings.heading -}}</p>
+                  <h3 class="footer__block-heading">{{- block.settings.heading -}}</h3>
                 {%- endif -%}
                 {{ block.settings.text | replace: '[year]', current_year }}
               </div>
@@ -1180,6 +1188,100 @@
           "max": 6,
           "step": 1,
           "default": 1
+        }
+      ]
+    },
+    {
+      "type": "custom_liquid",
+      "name": "t:sections.footer.blocks.custom_liquid.name",
+      "settings": [
+        {
+          "type": "select",
+          "id": "show_on",
+          "label": "t:sections.global.blocks.show_on.label",
+          "options": [
+            {
+              "value": "desktop",
+              "label": "t:sections.global.blocks.show_on.options.desktop.label"
+            },
+            {
+              "value": "mobile",
+              "label": "t:sections.global.blocks.show_on.options.mobile.label"
+            },
+            {
+              "value": "both",
+              "label": "t:sections.global.blocks.show_on.options.both.label"
+            }
+          ],
+          "default": "desktop"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "t:sections.global.element.heading.label"
+        },
+        {
+          "type": "liquid",
+          "id": "custom_liquid",
+          "label": "t:sections.footer.blocks.custom_liquid.settings.custom_liquid.label"
+        },
+        {
+          "type": "range",
+          "id": "column_factor",
+          "label": "t:sections.global.settings.grid.blocks.settings.column_factor.label",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "row_factor",
+          "label": "t:sections.global.settings.grid.blocks.settings.row_factor.label",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "default": 1
+        },
+        {
+          "type": "select",
+          "id": "content_alignment",
+          "label": "t:sections.global.content.alignment.label",
+          "options": [
+            {
+              "value": "start",
+              "label": "t:sections.global.content.alignment.options.start.label"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.global.content.alignment.options.center.label"
+            },
+            {
+              "value": "end",
+              "label": "t:sections.global.content.alignment.options.end.label"
+            }
+          ],
+          "default": "start"
+        },
+        {
+          "type": "select",
+          "id": "content_alignment_for_mobile",
+          "label": "t:sections.global.content.alignment.for__mobile.label",
+          "options": [
+            {
+              "value": "start",
+              "label": "t:sections.global.content.alignment.options.start.label"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.global.content.alignment.options.center.label"
+            },
+            {
+              "value": "end",
+              "label": "t:sections.global.content.alignment.options.end.label"
+            }
+          ],
+          "default": "start"
         }
       ]
     }

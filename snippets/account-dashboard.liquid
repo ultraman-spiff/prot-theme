@@ -458,7 +458,7 @@
       const menuText = document.querySelector('.account-dashboard__dropdown-menu-text');
       menuText.textContent = activeLink.textContent;
       const activeLinkParent = activeLink.parentElement;
-      if (activeLinkParent && window.innerWidth < 750) {
+      if (activeLinkParent && DeviceDetector.isMobile()) {
         activeLinkParent.style.display = 'none';
       }
     }

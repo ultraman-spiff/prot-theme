@@ -61,8 +61,6 @@ html.js .section__featured-collections .max-w-full .card-slider {
   padding-block-end: 1rem;
 }
 
-.section
-
 .section__featured-collections .section__head-title .text--label {
   font-weight: var(--font-heading-weight);
   font-size: var(--font-size-static-sm);
@@ -195,34 +193,35 @@ html.js .section__featured-collections .card-slider {
   font-size: var(--font-size-static-md);
 }
 
-.section__featured-collections .card-collection--layout-text a {
+.section__featured-collections .card-collection--layout-text .card-collection__content-wrapper {
   padding: var(--spacing-3) var(--spacing-5);
+  border-radius: inherit;
 }
-.section__featured-collections .card-collection--layout-text a .card-collection__heading {
+.section__featured-collections .card-collection--layout-text .card-collection__content-wrapper .card-collection__heading {
   font-size: var(--font-size-static-md);
 }
 
-.section__featured-collections .card-collection--style-compact a {
+.section__featured-collections .card-collection--style-compact .card-collection__content-wrapper {
   border-color: rgba(var(--color-outlined-button-text), 0);
   padding: var(--spacing-3) var(--spacing-5);
 }
-.section__featured-collections .card-collection--style-compact.card-collection--layout-text a {
+.section__featured-collections .card-collection--style-compact.card-collection--layout-text .card-collection__content-wrapper{
   background-color: rgba(var(--color-outlined-button-text), 0.1);
   border-color: transparent;
 }
 .section__featured-collections .card-collection--style-compact.card-collection--layout-text {
   background: transparent;
 }
-.section__featured-collections .card-collection--layout-collection.card-collection--style-compact a {
+.section__featured-collections .card-collection--layout-collection.card-collection--style-compact .card-collection__content-wrapper:not(.button) {
   padding: 0;
 }
-.section__featured-collections .card-collection--style-compact a:hover {
+.section__featured-collections .card-collection--style-compact .card-collection__content-wrapper:hover {
   background-color: var(--color-button-hover-background);
 }
-.section__featured-collections .card-collection--style-compact a.active {
+.section__featured-collections .card-collection--style-compact .card-collection__content-wrapper.active {
   background-color: var(--color-button-hover-background);
 }
-.section__featured-collections .card-collection--style-compact a.active .card-collection__heading {
+.section__featured-collections .card-collection--style-compact .card-collection__content-wrapper.active .card-collection__heading {
   color: var(--color-button-hover-text);
 }
 

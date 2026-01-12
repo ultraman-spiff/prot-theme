@@ -8,7 +8,7 @@ if (!customElements.get('highlighted-collections')) {
           this.init();
         });
       }
-      if (window.innerWidth >= 990) {
+      if (DeviceDetector.isDesktop()) {
         this.init();
       }
     }

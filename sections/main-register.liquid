@@ -7,7 +7,7 @@
     {%- if section.settings.image_aside != blank -%}
       <div class="account__col small-hide medium-hide">
         <div class="account__image media">
-          {%- render 'image', image: section.settings.image_aside, alt: section.settings.image_aside.alt | escape, section_index: section.index -%}
+          {%- render 'image', image: section.settings.image_aside, section_index: section.index -%}
         </div>
       </div>
     {%- endif -%}

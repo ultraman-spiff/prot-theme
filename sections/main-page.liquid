@@ -1,5 +1,10 @@
 {{- 'main-page.css' | asset_url | stylesheet_tag -}}
-
+{%- style -%}
+  #shopify-section-{{ section.id }} > div {
+    padding-block-start: calc(var(--section-spacing-unit-size) * {{ section.settings.spacing_top }});
+    padding-block-end: calc(var(--section-spacing-unit-size) * {{ section.settings.spacing_bottom }});
+  }
+{%- endstyle -%}
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="main-page">
     <div class="container {{ section.settings.section_width }}">

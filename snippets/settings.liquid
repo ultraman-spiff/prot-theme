@@ -76,7 +76,7 @@
     {% liquid
       assign color_background = scheme.settings.background
       assign color_background_gradient = color_background
-      if scheme.settings.background_gradient != empty
+      if scheme.settings.background_gradient != blank
         assign color_background_gradient = scheme.settings.background_gradient
       endif
 

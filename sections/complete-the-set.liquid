@@ -94,7 +94,8 @@
               {%- else -%}
                 <div class="section__media media">
                   {% if section.settings.featured_image != blank %}
-                    {%- render 'image', image: section.settings.featured_image, image_per_view: 2, alt: section.settings.featured_image.alt | default: section.settings.heading | escape -%}
+                    {%- assign image_alt = section.settings.featured_image.alt | default: section.settings.heading -%}
+                    {%- render 'image', image: section.settings.featured_image, image_per_view: 2, alt: image_alt -%}
                   {% else %}
                     {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
                   {% endif %}

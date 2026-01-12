@@ -1,33 +1,29 @@
-if (!customElements.get("custom-select")) {
+if (!customElements.get('custom-select')) {
   class CustomSelect extends HTMLElement {
     constructor() {
       super();
 
-      this.selectEl = this.querySelector("select");
+      this.selectEl = this.querySelector('select');
 
       this.createCustomSelect();
 
-      this.dropdown = this.querySelector(".js-dropdown");
-      this.btnToggleDropdown = this.querySelector(".js-btn-dropdown");
-      this.listOptions = this.querySelector(".js-list-options");
+      this.dropdown = this.querySelector('.js-dropdown');
+      this.btnToggleDropdown = this.querySelector('.js-btn-dropdown');
+      this.listOptions = this.querySelector('.js-list-options');
       this.isExpanded = false;
 
-      this.selectLabel = this.getAttribute("data-label");
+      this.selectLabel = this.getAttribute('data-label');
 
-      window.addEventListener("shopify:section:load", () => {
+      window.addEventListener('shopify:section:load', () => {
         clearTimeout(this.loadTimeout);
       });
 
-      window.addEventListener("resize", () => {
-        const isMobileMedium = window.innerWidth < tabletWidth;
-
-        if (isMobileMedium) {
+      window.addEventListener('resize', () => {
+        if (DeviceDetector.isMobile()) {
           return;
         }
 
-        const isWidthUnchanged =
-          +this.btnToggleDropdown.style.width.replace("px", "") ===
-          this.dropdown.clientWidth;
+        const isWidthUnchanged = +this.btnToggleDropdown.style.width.replace('px', '') === this.dropdown.clientWidth;
 
         if (isWidthUnchanged) {
           return;
@@ -36,10 +32,10 @@ if (!customElements.get("custom-select")) {
         this.btnToggleDropdown.style.width = `${this.dropdown.clientWidth}px`;
       });
 
-      this.btnToggleDropdown.addEventListener("click", e => {
+      this.btnToggleDropdown.addEventListener('click', e => {
         e.preventDefault();
 
-        const isExpanded = this.classList.contains("is-expanded");
+        const isExpanded = this.classList.contains('is-expanded');
 
         if (isExpanded) {
           this.hideDropdown();
@@ -50,30 +46,24 @@ if (!customElements.get("custom-select")) {
         this.showDropdown();
       });
 
-      this.btnToggleDropdown.addEventListener("keydown", e => {
-        if (e.key.includes("Arrow")) {
+      this.btnToggleDropdown.addEventListener('keydown', e => {
+        if (e.key.includes('Arrow')) {
           e.preventDefault();
 
-          const isArrowRight = e.key.includes("Right");
-          const isHorizontalArrow =
-            e.key.includes("Left") || isArrowRight;
+          const isArrowRight = e.key.includes('Right');
+          const isHorizontalArrow = e.key.includes('Left') || isArrowRight;
 
           if (this.isExpanded && isHorizontalArrow) {
             return;
           }
 
-          const isNextKey = isArrowRight || e.key.includes("Down");
+          const isNextKey = isArrowRight || e.key.includes('Down');
 
-          const btnOptionSelected = this.listOptions.querySelector(
-            ".js-btn-option.is-selected"
-          );
-          const selectedOptionParent =
-            btnOptionSelected.parentElement;
+          const btnOptionSelected = this.listOptions.querySelector('.js-btn-option.is-selected');
+          const selectedOptionParent = btnOptionSelected.parentElement;
           let prevNextBtnOption = isNextKey
-            ? selectedOptionParent.nextElementSibling
-                ?.firstElementChild
-            : selectedOptionParent.previousElementSibling
-                ?.firstElementChild;
+            ? selectedOptionParent.nextElementSibling?.firstElementChild
+            : selectedOptionParent.previousElementSibling?.firstElementChild;
 
           if (!prevNextBtnOption) {
             prevNextBtnOption = isNextKey
@@ -81,10 +71,7 @@ if (!customElements.get("custom-select")) {
               : this.listOptions.lastElementChild.firstElementChild;
           }
 
-          this.changeSelectedOption(
-            btnOptionSelected,
-            prevNextBtnOption
-          );
+          this.changeSelectedOption(btnOptionSelected, prevNextBtnOption);
 
           return;
         }
@@ -93,8 +80,8 @@ if (!customElements.get("custom-select")) {
           return;
         }
 
-        const isEscape = e.key === "Escape";
-        const isTab = e.key === "Tab";
+        const isEscape = e.key === 'Escape';
+        const isTab = e.key === 'Tab';
 
         if (!isEscape && !isTab) {
           return;
@@ -105,9 +92,8 @@ if (!customElements.get("custom-select")) {
         this.hideDropdown();
       });
 
-      this.listOptions.addEventListener("click", e => {
-        const isBtnOption =
-          e.target.classList.contains("js-btn-option");
+      this.listOptions.addEventListener('click', e => {
+        const isBtnOption = e.target.classList.contains('js-btn-option');
 
         if (!isBtnOption) {
           return;
@@ -116,8 +102,7 @@ if (!customElements.get("custom-select")) {
         e.preventDefault();
 
         const btnOption = e.target;
-        const isSelected =
-          btnOption.classList.contains("is-selected");
+        const isSelected = btnOption.classList.contains('is-selected');
 
         this.hideDropdown();
 
@@ -128,13 +113,12 @@ if (!customElements.get("custom-select")) {
         this.changeSelectedOption(undefined, btnOption);
       });
 
-      document.addEventListener("click", e => {
+      document.addEventListener('click', e => {
         if (!this.isExpanded) {
           return;
         }
 
-        const isThisSelect =
-          e.target.closest("custom-select") === this;
+        const isThisSelect = e.target.closest('custom-select') === this;
 
         if (isThisSelect) {
           return;
@@ -145,21 +129,17 @@ if (!customElements.get("custom-select")) {
     }
 
     createCustomSelect() {
-      const selectLabel = this.getAttribute("data-label");
-      const options = this.querySelectorAll("option");
-      const selectedOption = this.selectEl.querySelector(
-        'option[selected="selected"]'
-      );
-      let optionsMarkup = "";
+      const selectLabel = this.getAttribute('data-label');
+      const options = this.querySelectorAll('option');
+      const selectedOption = this.selectEl.querySelector('option[selected="selected"]');
+      let optionsMarkup = '';
 
       options.forEach(option => {
         const optionMarkup = `
           <li class="custom-select__item">
             <button
               type="button"
-              class="custom-select__option button-reset js-btn-option ${
-                option.selected ? "is-selected" : ""
-              }"
+              class="custom-select__option button-reset js-btn-option ${option.selected ? 'is-selected' : ''}"
               data-value="${option.value}"
               tabindex="-1"
               aria-selected="${option.selected}"
@@ -188,54 +168,45 @@ if (!customElements.get("custom-select")) {
         </div>
       `;
 
-      this.insertAdjacentHTML("afterbegin", markup);
+      this.insertAdjacentHTML('afterbegin', markup);
       this.dataset.value = selectedOption.value;
     }
 
-    changeSelectedOption(
-      selectedOption = this.listOptions.querySelector(
-        ".js-btn-option.is-selected"
-      ),
-      newSelectedOption
-    ) {
+    changeSelectedOption(selectedOption = this.listOptions.querySelector('.js-btn-option.is-selected'), newSelectedOption) {
       this.btnToggleDropdown.innerHTML = newSelectedOption.textContent + this.dataset.iconChevronDown;
       this.dataset.value = newSelectedOption.dataset.value;
 
-      newSelectedOption.classList.add("is-selected");
-      newSelectedOption.setAttribute("aria-selected", true);
+      newSelectedOption.classList.add('is-selected');
+      newSelectedOption.setAttribute('aria-selected', true);
 
-      selectedOption.classList.remove("is-selected");
-      selectedOption.setAttribute("aria-selected", false);
+      selectedOption.classList.remove('is-selected');
+      selectedOption.setAttribute('aria-selected', false);
 
-      const nativeSelectedOption = this.selectEl.querySelector(
-        'option[selected="selected"]'
-      );
-      const newNativeSelectedOption = this.selectEl.querySelector(
-        `option[value="${this.dataset.value}"]`
-      );
+      const nativeSelectedOption = this.selectEl.querySelector('option[selected="selected"]');
+      const newNativeSelectedOption = this.selectEl.querySelector(`option[value="${this.dataset.value}"]`);
 
-      nativeSelectedOption.removeAttribute("selected");
-      newNativeSelectedOption.setAttribute("selected", "selected");
+      nativeSelectedOption.removeAttribute('selected');
+      newNativeSelectedOption.setAttribute('selected', 'selected');
 
       // Trigger input event
 
-      const inputEvent = new Event("input", { bubbles: true });
+      const inputEvent = new Event('input', { bubbles: true });
 
       this.selectEl.dispatchEvent(inputEvent);
     }
 
     showDropdown() {
       this.isExpanded = true;
-      this.classList.add("is-expanded");
-      this.btnToggleDropdown.setAttribute("aria-expanded", true);
+      this.classList.add('is-expanded');
+      this.btnToggleDropdown.setAttribute('aria-expanded', true);
     }
 
     hideDropdown() {
       this.isExpanded = false;
-      this.classList.remove("is-expanded");
-      this.btnToggleDropdown.setAttribute("aria-expanded", false);
+      this.classList.remove('is-expanded');
+      this.btnToggleDropdown.setAttribute('aria-expanded', false);
     }
   }
 
-  customElements.define("custom-select", CustomSelect);
+  customElements.define('custom-select', CustomSelect);
 }

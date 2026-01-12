@@ -43,7 +43,8 @@
                 {%- elsif block.settings.video_desktop != blank -%}
                   {{- block.settings.video_desktop | video_tag: image_size: '2160x', loop: true, autoplay: true, muted: true -}}
                 {%- elsif block.settings.image_desktop != blank -%}
-                  {%- render 'image', image: block.settings.image_desktop, alt: block.settings.image_desktop.alt | default: block.settings.heading | append: '-desktop' | escape, sizes: 'auto' -%}
+                  {%- assign image_desktop_alt = block.settings.image_desktop.alt | default: block.settings.heading | append: '-desktop' -%}
+                  {%- render 'image', image: block.settings.image_desktop, alt: image_desktop_alt, sizes: 'auto' -%}
                 {%- else -%}
                   {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' -}}
                 {%- endif -%}
@@ -57,7 +58,8 @@
                   {%- elsif block.settings.video_mobile != blank -%}
                     {{- block.settings.video_mobile | video_tag: image_size: '720x', loop: true, autoplay: true, muted: true -}}
                   {%- elsif block.settings.image_mobile != blank -%}
-                    {%- render 'image', image: block.settings.image_mobile, image_for_mobile: true, alt: block.settings.image_mobile.alt | default: block.settings.heading | escape, sizes: 'auto' -%}
+                    {%- assign image_mobile_alt = block.settings.image_mobile.alt | default: block.settings.heading | append: '-mobile' -%}
+                    {%- render 'image', image: block.settings.image_mobile, image_for_mobile: true, alt: image_mobile_alt, sizes: 'auto' -%}
                   {%- else -%}
                     {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' -}}
                   {%- endif -%}
@@ -167,7 +169,7 @@
 
       if (element.tagName.toLowerCase() === 'a') {
         element.addEventListener('click', (event) => {
-          if (window.innerWidth <= 768) {
+          if (DeviceDetector.isMobile()) {
             event.preventDefault();
             setTimeout(() => {
               window.location.href = element.getAttribute('href');

@@ -1,7 +1,11 @@
+/**
+ * Base Swiper Class
+ * Optimization: Used DOMContentLoaded instead of 'load' event.
+ */
 class InstanceSwiper extends HTMLElement {
   constructor() {
     super();
-    this.handle = this.getAttribute("handle");
+    this.handle = this.getAttribute('handle');
     this.swiperInitialized = false; // Prevent multiple initializations
   }
 
@@ -10,8 +14,12 @@ class InstanceSwiper extends HTMLElement {
   }
 
   init() {
-    // Prevent multiple initializations
+    // Stop if already initialized or element is not visible
     if (this.swiperInitialized) return;
+
+    // Skip initialization if element is not visible (has no dimensions)
+    if (this.offsetWidth === 0 && this.offsetHeight === 0 && !this.checkVisibility()) return;
+
     this.swiperInitialized = true;
 
     this.options = this.setOptions();
@@ -19,17 +27,29 @@ class InstanceSwiper extends HTMLElement {
     this.setInteractions();
   }
 
+  /**
+   * Checks if the element is visible
+   */
+  checkVisibility() {
+    return !!(this.offsetWidth || this.offsetHeight || this.getClientRects().length);
+  }
+
   connectedCallback() {
     if (Shopify.designMode) {
-      window.addEventListener("shopify:section:load", () => this.init());
-      window.addEventListener("shopify:section:select", () => this.init());
+      window.addEventListener('shopify:section:load', () => this.init());
+      window.addEventListener('shopify:section:select', () => this.init());
 
-      // fallback initialization after delay in design mode
+      // Fallback for Design mode
       setTimeout(() => {
         if (!this.swiperInitialized) this.init();
       }, 100);
     } else {
-      window.addEventListener("load", () => this.init());
+      // OPTIMIZATION: Not waiting for window 'load'. Starts immediately if DOM is ready.
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => this.init());
+      } else {
+        this.init();
+      }
     }
   }
 
@@ -38,7 +58,7 @@ class InstanceSwiper extends HTMLElement {
   }
 
   /**
-   * Options before initialization
+   * Settings before initialization
    */
   setOptions() {
     if (this.debug) console.log('setOptions');
@@ -51,37 +71,43 @@ class InstanceSwiper extends HTMLElement {
     const jsonScriptAutomated = this.querySelector(`script#swiper--${this.handle}--automated-options`);
     const jsonScriptOverwrite = this.querySelector(`script#swiper--${this.handle}--overwrite-options`);
     let options = {};
-    if (jsonScriptAutomated && jsonScriptAutomated.textContent) {
-      try {
-        options = { ...options, ...JSON.parse(jsonScriptAutomated.textContent) };
-      } catch (error) {
-        console.error('Error parsing JSON', error, jsonScriptAutomated?.textContent);
+
+    const parseJSON = scriptElement => {
+      if (scriptElement && scriptElement.textContent) {
+        try {
+          return JSON.parse(scriptElement.textContent);
+        } catch (error) {
+          console.error('JSON Parse Error', error, scriptElement?.textContent);
+          return {};
+        }
       }
-    }
-    if (jsonScriptOverwrite && jsonScriptOverwrite.textContent) {
-      try {
-        options = { ...options, ...JSON.parse(jsonScriptOverwrite.textContent) };
-      } catch (error) {
-        console.error('Error parsing JSON', error, jsonScriptOverwrite?.textContent);
-      }
-    }
+      return {};
+    };
+
+    options = { ...options, ...parseJSON(jsonScriptAutomated) };
+    options = { ...options, ...parseJSON(jsonScriptOverwrite) };
+
     return options;
   }
 
-  /** thumbs instance should be mounted before this instance */
+  /** Thumbs instance should be mounted before this instance */
   getThumbsInstance() {
     if (!this.isThumbsActive) return;
     return document.querySelector(`[handle="${this.getAttribute('thumbs')}"]`)?.instance;
   }
 
   /**
-   * Interaction after initialization
+   * Interactions after initialization
    */
   setInteractions() {
-    if (this.debug) console.log('setInteractions');
+    // console.log('setInteractions');
   }
 }
-// customElements.define('instance-swiper', InstanceSwiper);
+
+/**
+ * Product Thumbnails Class
+ * Optimization: Used ResizeObserver instead of setTimeout(2500).
+ */
 class InstanceSwiperProductThumbs extends InstanceSwiper {
   constructor() {
     super();
@@ -95,14 +121,14 @@ class InstanceSwiperProductThumbs extends InstanceSwiper {
 
   setCenteredSlides() {
     if (this.handle !== 'product-thumbs') return;
-    if (this.debug) console.log('setCenteredSlides');
 
-    const afterInit = (swiper) => {
-      if (swiper.activeIndex !== 0) swiper.slideTo(0);
-      if (this.debug) console.log('afterInit');
+    const afterInit = swiper => {
+      swiper.slideTo(swiper.activeIndex);
       const swiperWrapper = swiper.wrapperEl;
+
       const observer = new MutationObserver(resetSwiperWrapperTransform);
       observer.observe(swiperWrapper, { attributes: true });
+
       function resetSwiperWrapperTransform() {
         if (
           swiperWrapper.hasAttribute('style') &&
@@ -110,7 +136,6 @@ class InstanceSwiperProductThumbs extends InstanceSwiper {
           swiperWrapper.style?.transform !== 'translate3d(0px, 0px, 0px)'
         ) {
           swiperWrapper.style.transform = 'translate3d(0px, 0px, 0px)';
-          if (this.debug) console.log('swiperWrapper observer removed styles!');
         } else if (
           swiperWrapper.hasAttribute('style') &&
           swiperWrapper.style?.transform &&
@@ -123,57 +148,80 @@ class InstanceSwiperProductThumbs extends InstanceSwiper {
               swiperWrapper.style?.transform === 'translate3d(0px, 0px, 0px)'
             ) {
               observer.disconnect();
-              if (this.debug) console.log('swiperWrapper observer disconnect!');
             }
           }, 500);
         }
       }
 
       /**
-       * Quick fix for thumbnails dislocationing issue
-       * when thumbnails are less than the height of the wrapper
+       * OPTIMIZATION: Quick fix for thumbnail dislocation issue.
+       * Used ResizeObserver instead of fixed 2500ms wait.
        */
-      const calculateAllThumbHeight = (this.querySelector(".swiper-slide").clientHeight + 16) * this.querySelectorAll(".swiper-slide").length;
-      const thumbsWrapper = this.parentElement;
-      function setThumbsWrapperHeightToAuto() {
+      const slideElement = this.querySelector('.swiper-slide');
+
+      const calculateAndSetHeight = () => {
+        if (!slideElement) return;
+        const slideHeight = slideElement.clientHeight;
+        // Do not calculate if not rendered (is 0)
+        if (!slideHeight) return;
+
+        const calculateAllThumbHeight = (slideHeight + 16) * this.querySelectorAll('.swiper-slide').length;
+        const thumbsWrapper = this.parentElement;
+
+        if (thumbsWrapper.offsetHeight === calculateAllThumbHeight || calculateAllThumbHeight <= thumbsWrapper.offsetHeight) return;
+
+        const calculatedHeight = calculateAllThumbHeight - 16 + 'px';
+
         if (thumbsWrapper.offsetHeight > calculateAllThumbHeight) {
-          thumbsWrapper.style.height = (calculateAllThumbHeight - 16) + "px";
+          thumbsWrapper.style.height = calculatedHeight;
         } else {
-          thumbsWrapper.removeAttribute("style");
+          thumbsWrapper.removeAttribute('style');
         }
+      };
+
+      // Initial run
+      calculateAndSetHeight();
+
+      // Listen for changes (CSS loading, screen size change, etc.)
+      const resizeObserver = new ResizeObserver(() => {
+        calculateAndSetHeight();
+      });
+
+      // Observe parent element size changes
+      if (this.parentElement) {
+        resizeObserver.observe(this.parentElement);
       }
-      window.addEventListener("resize", setThumbsWrapperHeightToAuto);
-      // have to wait global.js media area height css variables to be generated
-      setTimeout(() => {
-        setThumbsWrapperHeightToAuto();
-      }, 2500);
     };
 
     this._options = {
       ...this._options,
       on: {
         ...(this._options.on || {}),
-        afterInit: afterInit,
-      },
+        afterInit: afterInit
+      }
     };
   }
-
 }
+
 if (!customElements.get('swiper-product-thumbs')) {
   customElements.define('swiper-product-thumbs', InstanceSwiperProductThumbs);
 }
+
+/**
+ * Main Product Gallery Class
+ */
 class InstanceSwiperProductGallery extends InstanceSwiper {
   constructor() {
     super();
-    this.isThumbsActive = this.hasAttribute("thumbs");
-    this.isZoomActive = this.hasAttribute("zoom");
+    this.isThumbsActive = this.hasAttribute('thumbs');
+    this.isZoomActive = this.hasAttribute('zoom');
     this.modelViewerBtn = this.querySelector('.model-viewer-btn');
     this.modelViewer = this.querySelector('model-viewer');
     this.isModelActive = false;
   }
 
   static get observedAttributes() {
-    return ["thumbs", "zoom"];
+    return ['thumbs', 'zoom'];
   }
 
   setOptions() {
@@ -196,7 +244,7 @@ class InstanceSwiperProductGallery extends InstanceSwiper {
   }
 
   /**
-   * Interaction after initialization
+   * Interactions after initialization
    */
   setInteractions() {
     if (this.isThumbsActive) this.setThumbsInteraction();
@@ -210,19 +258,17 @@ class InstanceSwiperProductGallery extends InstanceSwiper {
     });
 
     // Force pagination update on mobile after each slide change
-    this.instance.on("slideChange", swiper => {
-      if (window.innerWidth < 750) {
+    this.instance.on('slideChange', swiper => {
+      if (DeviceDetector.isMobile()) {
         swiper.pagination.update();
-        if (this.debug) console.log("Pagination updated manually on mobile.");
       }
     });
 
     // Detect scroll event and force update pagination when scrolling ends
-    this.instance.on("scroll", swiper => {
+    this.instance.on('scroll', swiper => {
       clearTimeout(this.scrollTimeout);
       this.scrollTimeout = setTimeout(() => {
         swiper.pagination.update();
-        if (this.debug) console.log("Pagination updated after scroll.");
       }, 200);
     });
   }
@@ -231,6 +277,7 @@ class InstanceSwiperProductGallery extends InstanceSwiper {
     // Find all swiper slides with model viewers
     const modelSlides = this.querySelectorAll('.swiper-slide[data-media-type="model"]');
 
+    this.resetAllModelViewers();
     modelSlides.forEach(slide => {
       const btn = slide.querySelector('.model-viewer-btn');
       const container = slide.querySelector('.model-viewer-container');
@@ -242,7 +289,7 @@ class InstanceSwiperProductGallery extends InstanceSwiper {
         modelViewer.controlButton = btn;
 
         // Model viewer container click handler
-        container.addEventListener('click', (e) => {
+        container.addEventListener('click', e => {
           if (!btn.classList.contains('is-active')) {
             e.preventDefault();
             e.stopPropagation();
@@ -251,13 +298,13 @@ class InstanceSwiperProductGallery extends InstanceSwiper {
         });
 
         // Model viewer button click handler
-        btn.addEventListener('click', (e) => {
+        btn.addEventListener('click', e => {
           e.preventDefault();
           this.toggleModelViewer(btn, modelViewer);
         });
 
         // Prevent model-viewer direct interaction
-        modelViewer.addEventListener('mousedown', (e) => {
+        modelViewer.addEventListener('mousedown', e => {
           if (!btn.classList.contains('is-active')) {
             e.preventDefault();
             e.stopPropagation();
@@ -267,7 +314,7 @@ class InstanceSwiperProductGallery extends InstanceSwiper {
     });
 
     // Add navigation click handlers
-    if (this.instance.navigation) {
+    if (this.instance?.navigation) {
       const { nextEl, prevEl } = this.instance.navigation;
       if (nextEl) {
         nextEl.addEventListener('click', () => {
@@ -300,7 +347,7 @@ class InstanceSwiperProductGallery extends InstanceSwiper {
     });
 
     this.isModelActive = false;
-    this.instance.allowTouchMove = true;
+    this.instance && (this.instance.allowTouchMove = true);
   }
 
   toggleModelViewer(btn, modelViewer) {
@@ -337,7 +384,7 @@ class InstanceSwiperProductGallery extends InstanceSwiper {
       clearTimeout(this.swiperTimeout);
     }
 
-    // Always enable touch/mouse dragging if force is true (navigation/thumb clicks)
+    // Always enable touch/mouse dragging if force is true or model is not active
     if (force || !this.isModelActive) {
       this.instance.allowTouchMove = true;
 
@@ -361,10 +408,12 @@ class InstanceSwiperProductGallery extends InstanceSwiper {
     // Enable swiper on thumb click
     thumbsSwiper.el.addEventListener('click', () => {
       this.enableSwiper(true);
-      this.modelViewerBtn.classList.remove('btn--active');
+      if (this.modelViewerBtn) {
+        this.modelViewerBtn.classList.remove('is-active');
+      }
     });
 
-    this.instance.on("slideChangeTransitionStart", function (swiper) {
+    this.instance.on('slideChangeTransitionStart', function (swiper) {
       const activeIndex = swiper.activeIndex;
       const thumbsActiveIndex = thumbsSwiper.activeIndex;
       if (this.debug) console.log("slideChangeTransitionStart", activeIndex, thumbsActiveIndex);
@@ -375,18 +424,10 @@ class InstanceSwiperProductGallery extends InstanceSwiper {
   }
 
   photoSwipeLightboxInit() {
-    const [
-      zoomContainerWidth,
-      zoomContainerHeight,
-      closeIcon,
-      prevIcon,
-      nextIcon
-    ] = [
-      this.offsetWidth,
-      this.offsetHeight,
-      document.querySelector("[data-close-icon]"),
-      document.querySelector("[data-prev-icon]"),
-      document.querySelector("[data-next-icon]")
+    const [closeIcon, prevIcon, nextIcon] = [
+      document.querySelector('[data-close-icon]'),
+      document.querySelector('[data-prev-icon]'),
+      document.querySelector('[data-next-icon]')
     ];
 
     function isPhone() {
@@ -395,21 +436,21 @@ class InstanceSwiperProductGallery extends InstanceSwiper {
 
     const photoSwipeLightboxInstance = new PhotoSwipeLightbox({
       gallery: `.photoswipe-wrapper`,
-      children: "a.product__gallery-toggle",
-      mainClass: "pswp--product-media-gallery",
+      children: 'a.product__gallery-toggle',
+      mainClass: 'pswp--product-media-gallery',
 
       loop: false,
-      showHideAnimationType: "zoom",
+      showHideAnimationType: 'zoom',
 
       initialZoomLevel: zoomLevelObject => {
-        if (isPhone()) {
+        if (DeviceDetector.isMobile()) {
           return zoomLevelObject.vFill;
         } else {
           return zoomLevelObject.fit;
         }
       },
       secondaryZoomLevel: zoomLevelObject => {
-        if (isPhone()) {
+        if (DeviceDetector.isMobile()) {
           return zoomLevelObject.fit;
         } else {
           return 1;
@@ -417,47 +458,40 @@ class InstanceSwiperProductGallery extends InstanceSwiper {
       },
       pswpModule: PhotoSwipe
     });
-    photoSwipeLightboxInstance.addFilter(
-      "uiElement",
-      (element, data) => {
-        if (data.name === "close") {
-          element.innerHTML = closeIcon.innerHTML;
-        } else if (data.name === "arrowPrev") {
-          element.innerHTML = prevIcon.innerHTML;
-        } else if (data.name === "arrowNext") {
-          element.innerHTML = nextIcon.innerHTML;
-        }
-        return element;
+    photoSwipeLightboxInstance.addFilter('uiElement', (element, data) => {
+      if (data.name === 'close') {
+        element.innerHTML = closeIcon.innerHTML;
+      } else if (data.name === 'arrowPrev') {
+        element.innerHTML = prevIcon.innerHTML;
+      } else if (data.name === 'arrowNext') {
+        element.innerHTML = nextIcon.innerHTML;
       }
-    );
+      return element;
+    });
 
     // html for video
-    photoSwipeLightboxInstance.addFilter(
-      "itemData",
-      (itemData, index) => {
-        if (itemData.type === "html" && itemData.element) {
-          return {
-            html: itemData.element.dataset.pswpHtml
-          };
-        }
-        return itemData;
+    photoSwipeLightboxInstance.addFilter('itemData', (itemData, index) => {
+      if (itemData.type === 'html' && itemData.element) {
+        return {
+          html: itemData.element.dataset.pswpHtml
+        };
       }
-    );
+      return itemData;
+    });
 
     photoSwipeLightboxInstance.init();
 
-    photoSwipeLightboxInstance.on("beforeOpen", () => {
-      document.body.classList.add("oveflow-hidden");
-      const videos = this.querySelectorAll("video");
+    photoSwipeLightboxInstance.on('beforeOpen', () => {
+      document.body.classList.add('overflow-hidden');
+      const videos = this.querySelectorAll('video');
       Array.from(videos).forEach(video => {
-        // if video is not playing, call playPromise
-        // force to play
+        // If video is not playing, call playPromise
+        // Force to play
         video
           .play()
           .then(() => {
             // Automatic playback started!
             // Show playing UI.
-            // video.play();
           })
           .catch(error => {
             // Auto-play was prevented
@@ -467,15 +501,13 @@ class InstanceSwiperProductGallery extends InstanceSwiper {
       });
     });
 
-    photoSwipeLightboxInstance.on("closingAnimationStart", () => {
-      document.body.classList.remove("oveflow-hidden");
+    photoSwipeLightboxInstance.on('closingAnimationStart', () => {
+      document.body.classList.remove('overflow-hidden');
     });
   }
 
   setActiveMedia(id) {
-    const mediaFound = Array.from(
-      this.querySelectorAll("[data-media-id]")
-    ).find(media => Number(media.dataset.mediaId) === id);
+    const mediaFound = Array.from(this.querySelectorAll('[data-media-id]')).find(media => Number(media.dataset.mediaId) === id);
 
     if (!mediaFound) return;
 
@@ -490,35 +522,43 @@ if (!customElements.get('swiper-product-gallery')) {
   customElements.define('swiper-product-gallery', InstanceSwiperProductGallery);
 }
 
-
+/**
+ * Product Media Info Class
+ */
 class ProductMediaInfo extends HTMLElement {
   constructor() {
     super();
+
     this.init();
-    window.addEventListener("resize", this.init.bind(this));
+    window.addEventListener('resize', this.init.bind(this));
+
     if (Shopify.designMode) {
-      window.addEventListener("shopify:section:load", this.init.bind(this));
+      window.addEventListener('shopify:section:load', this.init.bind(this));
     }
   }
 
   init() {
-    let containerOffsetWidth = document.querySelector('.main-product__media--slider').offsetWidth || 330;
-    if (document.querySelector('.main-product__media--grid-item') && window.innerWidth > 750) {
-      containerOffsetWidth = document.querySelector('.main-product__media--grid-item').offsetWidth;
+    let containerOffsetWidth = document.querySelector('.main-product__media--slider')?.offsetWidth || 330;
+    if (document.querySelector('.main-product__media--grid-item') && !DeviceDetector.isMobile()) {
+      const gridItem = document.querySelector('.main-product__media--grid-item');
+      if (gridItem) containerOffsetWidth = gridItem.offsetWidth;
     }
     const maxWidthForInfo = (containerOffsetWidth - 48) / 2;
 
-    const mediaInfoTextWidth = this.querySelector('p:last-child').offsetWidth;
+    const lastP = this.querySelector('p:last-child');
+    if (!lastP) return;
+
+    const mediaInfoTextWidth = lastP.offsetWidth;
     const mediaInfoHidden = this.querySelector('p[aria-hidden]');
 
     if (mediaInfoTextWidth > maxWidthForInfo) {
       this.classList.remove('animation-stopped');
-      this.style.cssText = `--marquee-speed: ${mediaInfoTextWidth / maxWidthForInfo * 8}s`;
-      mediaInfoHidden.style.display = '';
+      this.style.cssText = `--marquee-speed: ${(mediaInfoTextWidth / maxWidthForInfo) * 8}s`;
+      if (mediaInfoHidden) mediaInfoHidden.style.display = '';
     } else {
       this.classList.add('animation-stopped');
       this.style.cssText = '';
-      mediaInfoHidden.style.display = 'none';
+      if (mediaInfoHidden) mediaInfoHidden.style.display = 'none';
     }
   }
 }
@@ -526,5 +566,3 @@ class ProductMediaInfo extends HTMLElement {
 if (!customElements.get('product-media-info')) {
   customElements.define('product-media-info', ProductMediaInfo);
 }
-
-

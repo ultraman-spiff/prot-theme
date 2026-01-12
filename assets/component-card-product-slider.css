@@ -49,6 +49,10 @@ html.no-js .card-product-slider__slide + .card-product-slider__slide {
 }
 
 .product-feed:not(.section-featured-products).layout-2 .section__foot {
+  display: flex;
+  justify-content: center;
+}
+.product-feed:not(.section-featured-products).layout-2 .section__foot .swiper-buttons {
   display: none;
 }
 
@@ -244,15 +248,17 @@ html.no-js .card-product-slider__slide + .card-product-slider__slide {
   padding: unset;
   background-color: unset;
 }
-
 .section-featured-products .text--label {
   display: flex;
+  justify-content: center;
   font-size: var(--font-size-static-sm);
   font-weight: var(--font-weight-normal);
   line-height: var(--line-height-static-sm);
   letter-spacing: 0.15rem;
 }
-
+.section-featured-products.layout-1 .text--label {
+  justify-content: flex-start;
+}
 .section-featured-products.layout-2 .text--label {
   font-weight: var(--font-weight-semibold);
   letter-spacing: 0.24rem;

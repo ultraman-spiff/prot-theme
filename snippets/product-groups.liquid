@@ -29,7 +29,7 @@
 <div class="product__product-groups">
   <div data-debug-container-rendered></div>
   {%- for group_has_this_product in groups_has_this_product_arr -%}
-    {%- assign group_metaobject = metaobjects['product_groups'][group_has_this_product] -%}
+    {%- assign group_metaobject = product_groups_metaobject[group_has_this_product] -%}
     <fieldset class="product__product-group product__variant-options">
       {% if on != 'card' %}
         {%- liquid

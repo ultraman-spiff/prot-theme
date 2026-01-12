@@ -31,7 +31,7 @@
           {%- if article.image -%}
             <div class="article__hero container js-article-hero-media max-w-narrow" {{ block.shopify_attributes }}>
               <div class="article__media media" itemprop="image">
-                {%- render 'image', image: article.image, alt: article.image.alt | escape -%}
+                {%- render 'image', image: article.image %}
               </div>
             </div>
           {%- endif -%}
@@ -40,11 +40,11 @@
             <ul class="article__tags list-unstyled text-navigation-button" {{ block.shopify_attributes }}>
               {%- for tag in article.tags -%}
                 <li class="article__tags-item">
-                  {%- assign tag_output = tag -%}
                   {%- if block.settings.blog_tags_type == 'links' -%}
-                    {%- assign tag_output = tag | link_to_tag: tag -%}
+                    <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+                  {%- else -%}
+                    {{ tag }}
                   {%- endif -%}
-                  {{- tag_output -}}
                 </li>
               {%- endfor -%}
             </ul>
@@ -52,7 +52,7 @@
 
         {%- when 'title'-%}
           <div class="article__head container {{ section.settings.section_width }}" {{ block.shopify_attributes }}>
-            <h1 class="article__title h2" itemprop="headline">
+            <h1 class="article__title" itemprop="headline">
               {{- article.title | escape -}}
             </h1>
 
@@ -66,8 +66,6 @@
                 </span>
 
                 {%- if block.settings.blog_show_date -%}
-                  {%- assign date_format = 'theme.date.format_short' | t -%}
-                  {%- assign published_at = article.published_at | date: date_format -%}
                   <span class="article__date">
                     {{- 'blog.posted_on' | t: date: article.published_at | time_tag: format: 'date' | prepend: ' ' -}}
                   </span>
@@ -140,7 +138,6 @@
                         </span>
 
                         <span class="article__comment-date">
-                          {%- assign date_format = 'theme.date.format_short' | t -%}
                           {{- comment.created_at | time_tag: format: 'date' -}}
                         </span>
                       </footer>

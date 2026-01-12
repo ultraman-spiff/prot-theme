@@ -30,10 +30,9 @@
         "1e939cd6-0958-4135-a9e5-c50faef01437": {
           "type": "variant_picker",
           "settings": {
-            "spacing_bottom": "1",
-            "title": "Variant picker",
             "size_guide_page": "size-guide",
-            "sizes_option": "Size"
+            "sizes_option": "Size",
+            "spacing_bottom": "1"
           }
         },
         "1e939cd6-0955-4135-a9e5-c50faef01437": {

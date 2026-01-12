@@ -39,6 +39,8 @@
       "search": "Szukaj",
       "share_on": "Udostępnij na {{name}}",
       "show_all": "Pokaż wszystko",
+      "show_less": "Pokaż mniej",
+      "show_more": "Pokaż więcej",
       "start_shopping": "Rozpocznij zakupy",
       "view": "Zobacz"
     },
@@ -445,7 +447,9 @@
       "search_label": "Znajdź nasze sklepy",
       "search_by_location": "Szukaj sklepu według kodu pocztowego, miasta lub kraju",
       "search_placeholder": "Wpisz kod pocztowy, miasto lub kraj",
-      "call": "Zadzwoń"
+      "call": "Zadzwoń",
+      "clear": "Wyczyść",
+      "opening_hours": "Godziny otwarcia"
     },
     "compare_slider": {
       "image_before": "Obraz przed",

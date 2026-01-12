@@ -39,6 +39,8 @@
       "search": "Ara",
       "share_on": "{{name}}'de paylaş",
       "show_all": "Hepsini göster",
+      "show_less": "Daha az göster",
+      "show_more": "Daha fazla göster",
       "start_shopping": "Alışverişe başla",
       "view": "Görüntüle"
     },
@@ -445,7 +447,9 @@
       "search_label": "Mağazalarımızı bulun",
       "search_by_location": "Bir mağazayı posta koduna, şehre veya ülkeye göre arayın",
       "search_placeholder": "Posta kodunu, şehri veya ülkeyi yazın",
-      "call": "Ara"
+      "call": "Ara",
+      "clear": "Temizle",
+      "opening_hours": "Çalışma saatleri"
     },
     "compare_slider": {
       "image_before": "Öncesi",

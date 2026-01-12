@@ -13,7 +13,7 @@
   >
     {%- if section.settings.image != blank -%}
       <div class="media media--small newsletter-popup__media">
-        {%- render 'image', image: section.settings.image, image_url_width: 550, alt: section.settings.image.alt | escape, section_index: section.index -%}
+        {%- render 'image', image: section.settings.image, image_url_width: 550, section_index: section.index -%}
       </div>
     {%- endif -%}
 

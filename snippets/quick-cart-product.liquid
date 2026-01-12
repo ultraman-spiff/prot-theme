@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <product-card class="product-card product-card__quick-cart">
+      <product-card class="product-card product-card__quick-cart" {% if product.metafields.theme.preorder.value %}data-has-pre-order{% endif %}>
         {% comment %} Product Variants || Options || Swatches {% endcomment %}
         {%- assign variants = product.variants -%}
 
@@ -115,12 +115,12 @@
                                 assign input_is_disabled = true
                               endif
 
-                              assign input_name = product.id | append: '-option[' | append: opts | append: ']'
+                              assign input_name = product.id | append: '-option[' | append: opts | append: ']' | append: '-quick-cart-product'
                               assign input_id = product.id | append: '-variant-option-' | append: opts | append: '-' | append: forloop.index
                             -%}
 
                             <div class="button--variant{% if opt_swatch %} button--swatch{% if settings.swatches_shape == 'circle' %} button--swatch-rounded{% endif %}{% endif %}" tabindex="0">
-                              {%- render 'product-option', id: input_id, name: input_name, value: opt, swatch_value: opt.swatch, class: 'hidden variant-option-radio-input', visually_hidden: true, product: product, option: options, where: 'quick-cart-product' -%}
+                              {%- render 'product-option', id: input_id, disabled: input_is_disabled, name: input_name, value: opt, swatch_value: opt.swatch, class: 'hidden variant-option-radio-input', visually_hidden: true, product: product, option: options, where: 'quick-cart-product' -%}
                             </div>
                           {%- endfor -%}
                         </fieldset>

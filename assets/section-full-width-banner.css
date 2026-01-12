@@ -36,6 +36,10 @@
   position: relative;
 }
 
+animation-observer {
+  width: 100%;
+}
+
 .section-full-width-banner .full-width-banner__animation--body .full-width-banner__animation > * {
   opacity: 0;
   transform: translateY(200%);

@@ -38,56 +38,12 @@
         "1e939cd6-0958-4135-a9e5-c50faef01437": {
           "type": "variant_picker",
           "settings": {
-            "spacing_bottom": "3",
-            "title": "Variant picker",
             "enable_back_in_stock": false,
             "picker_type": "swatch",
             "variant_options_with_thumbnails": "Color",
             "size_guide_page": "size-guide",
-            "sizes_option": "Size"
-          }
-        },
-        "skio_plan_picker_qHBWEL": {
-          "type": "skio-plan-picker",
-          "settings": {
-            "form_id": "product-form-{{section.id}}",
-            "external_price_selector": ".price-item--regular",
-            "show_details": false,
-            "show_without_subscription": false,
-            "show_compare_price": true,
-            "legend_content": "Select subscription plan",
-            "show_legend": false,
-            "layout": "vertical",
-            "dropdownPosition": "inside",
-            "additional_frequency_label": "",
-            "start_onetime": true,
-            "onetime_first": true,
-            "group_border_radius": 5,
-            "group_border_width": 1,
-            "group_border_color": "#000000",
-            "group_border_selected_color": "#000000",
-            "group_background_color": "rgba(0,0,0,0)",
-            "selected_group_background_color": "rgba(0,0,0,0)",
-            "group_text_color": "#000000",
-            "group_selected_text_color": "#000000",
-            "show_radio_selector": true,
-            "onetime_title": "One Time",
-            "subscription_title": "Subscribe",
-            "prepaid_title": "Prepaid",
-            "discount_format": "percent",
-            "discount_style": "bubble",
-            "discount_text": "Save [discount]",
-            "discount_color": "#0fa573",
-            "discount_text_color": "#ffffff",
-            "additional_subscription_content": "",
-            "selector_type": "dropdown",
-            "button_plan_selector_width": 100,
-            "default_subscription": "",
-            "future_price_adjustments_text": "<small>Then [discount] off after the [order_count_ordinal] order</small>",
-            "element_name": "skio-plan-picker",
-            "product_handle": "",
-            "combine_groups": false,
-            "combined_group_name": "Subscription"
+            "sizes_option": "Size",
+            "spacing_bottom": "3"
           }
         },
         "8604a6ff-ad0b-44dd-8068-1de4e062f8e8": {
@@ -156,7 +112,6 @@
         "yotpo_product_reviews_star_rating_NzQtiE",
         "divider_HGwyhB",
         "1e939cd6-0958-4135-a9e5-c50faef01437",
-        "skio_plan_picker_qHBWEL",
         "8604a6ff-ad0b-44dd-8068-1de4e062f8e8",
         "e6d841d6-2f71-40b3-956a-912df13f9f6e",
         "7be6b89c-da83-4ff2-9b85-44fb28cbfa27",
@@ -644,7 +599,7 @@
         "content_DYTDWK": {
           "type": "content",
           "settings": {
-            "content": "<p>ProT Gold was originally developed to meet the high standards of medical nutrition. </p><p>Now it’s available to you.</p>"
+            "content": "<p>ProT Gold was originally developed to meet  the high standards of medical nutrition. </p><p>Now it’s available to you.</p>"
           }
         },
         "buttons_kLLNDD": {

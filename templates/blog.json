@@ -87,6 +87,7 @@
         "articles_per_page": 3,
         "pagination_style": "default",
         "enable_infinity_scroll": false,
+        "spacing_grid": "2",
         "show_excerpt": false,
         "show_date": false,
         "show_author": false,
@@ -94,7 +95,6 @@
         "card_media_aspect_ratio": "1/1",
         "section_width": "max-w-narrow",
         "color_scheme": "",
-        "spacing_grid": "2",
         "spacing_top": "2",
         "spacing_bottom": "6"
       }

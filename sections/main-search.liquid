@@ -39,15 +39,15 @@
     render 'css', css: 'component-facets.css'
 
     capture facets_html
-      render 'facets', results: search, filters: section.settings.filters, enable_sorting: section.settings.enable_sorting, section_id: section.id,  container_width: section.settings.section_width
+      render 'facets', results: search, filters: section.settings.filters, enable_sorting: section.settings.enable_sorting, section_id: section.id,  container_width: section.settings.section_width, enable_range_slider_for_price_filter: section.settings.enable_range_slider_for_price_filter, opened_accordions: section.settings.enable_opened_accordions
     endcapture
   endif
 -%}
 
 <div class="collection js-animation-fade-in color-{{ section.settings.color_scheme }} filters--{{ section.settings.filters }} {{ settings.card_product_layout }}">
-
-  {{ facets_html }}
-
+  {%- if search.results_count != 0 -%}
+    {{ facets_html }}
+  {%- endif -%}
   <div class="container {{ section.settings.section_width }}{% if section.settings.pagination_style == 'load_more' and section.settings.enable_infinity_scroll %} infinity-scroll-active{% endif %}" id="ProductGridContainer">
     {%- paginate search.results by section.settings.products_per_page -%}
       {%- if search.results_count == 0 -%}
@@ -76,7 +76,6 @@
           {% endif %}
           <div id="product-grid"
             class="collection__grid{% if section.settings.products_per_row_mobile != '2' %} collection__grid-single{% endif %}{% if section.settings.filters == 'drawer' %} collection-grid-container__products{% endif %}"
-            id="product-grid"
             data-id="{{- section.id -}}"
             data-cols="{{- section.settings.products_per_row -}}"
           >
@@ -159,6 +158,18 @@
         }
       ],
       "default": "drawer"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_range_slider_for_price_filter",
+      "label": "t:sections.main-collection.settings.enable_range_slider_for_price_filter.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_opened_accordions",
+      "label": "t:sections.main-collection.settings.enable_opened_filter_accordions.label",
+      "default": true
     },
     {
       "type": "header",

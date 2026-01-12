@@ -2,6 +2,7 @@
     Renders a list of product's price (regular, sale)
     Accepts:
     - product: {Object} Product Liquid object
+    - variant: {Object} Specific variant object to display price for - overrides use_variant (optional)
     - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing (optional)
     - price_class: {String} Adds a price class to the price element (optional)
     Usage:
@@ -9,7 +10,9 @@
 {% endcomment %}
 
 {%- liquid
-  if use_variant
+  if variant
+    assign target = variant
+  elsif use_variant
     assign target = product.selected_or_first_available_variant
   else
     assign target = product
@@ -55,6 +58,12 @@
     data-label-price-sale="{{ 'product.price_sale' | t }}"
     data-label-price-from="{{ 'product.price_from' | t }}"
     data-label-price-min="{{ 'product.price_min' | t }}"
+    data-price="{{ price }}"
+    data-price-min="{{ price_min }}"
+    data-price-max="{{ price_max }}"
+    data-compare-at-price="{{ compare_at_price }}"
+    data-compare-at-price-min="{{ compare_at_price_min }}"
+    data-compare-at-price-max="{{ compare_at_price_max }}"
     {% if settings.show_currency_codes %}
       data-money-format = "{{ shop.money_with_currency_format }}"
     {% else %}

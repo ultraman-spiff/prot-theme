@@ -30,16 +30,6 @@
         height: 100%;
       }
     }
-
-    @media screen and (max-width: 749px) {
-      #shopify-section-{{ section.id }} .shop-the-look-drawer__trigger {
-        width: 70%;
-        padding: calc(20 * 100vw / 720) calc(40 * 100vw / 720);
-        font-size: calc(24px - 12 / 370 * (750px - 100vw));
-        margin-top: calc(42 * 100vw / 720);
-        font-weight: 600;
-      }
-    }
   {%- endstyle -%}
 
   <div class="color-{{ section.settings.color_scheme }} gradient">
@@ -52,7 +42,7 @@
 
           {%- capture item_slider_html -%}
             {%- if section.settings.heading != blank or section.settings.text != blank -%}
-              <div class="shop-the-look__content small-hide">
+              <div class="shop-the-look__content show-on--{{ section.settings.show_on_content }}">
                 {%- if section.settings.heading != blank -%}
                   <h2 class="section__heading {{ section.settings.heading_size }}">
                     {{- section.settings.heading -}}
@@ -72,7 +62,7 @@
                     {%- for block in section.blocks -%}
 
                       <div class="swiper-slide" data-index="{{- forloop.index0 -}}">
-                        {%- render 'card-product', product_ref: block.settings.product, section_id: section.id, card_index: forloop.index -%}
+                        {%- render 'card-product', product_ref: block.settings.product, section_id: section.id, card_index: forloop.index, always_show_actions: section.settings.always_show_quick_add -%}
                       </div>
 
                       {%- capture slider_dot_item_html -%}
@@ -165,9 +155,6 @@
             {% if section.blocks[0].settings.product != blank %}
               <shop-the-look-drawer id="shop-the-look-drawer-{{- section.id -}}" style="display: none">
                 <div class="shop-the-look-drawer__blocks slim-scrollbar color-{{ section.settings.color_scheme }}">
-                  <div class="shop-the-look-drawer__handle">
-                    <div class="shop-the-look-drawer__handle-line">&nbsp</div>
-                  </div>
                   <div class="shop-the-look-drawer__header">
                     {%- if section.settings.heading != blank -%}
                       <h3 class="shop-the-look__title">
@@ -200,7 +187,7 @@
             <div class="media shop-the-look__full-banner-media">
               {%- liquid
                 if section.settings.image != blank
-                  render 'image', image: section.settings.image, alt: section.settings.image.alt | escape
+                  render 'image', image: section.settings.image
                 else
                   echo 'image' | placeholder_svg_tag: 'placeholder-svg'
                 endif
@@ -287,6 +274,26 @@
     },
     {
       "type": "select",
+      "id": "show_on_content",
+      "label": "t:sections.global.settings.show_on.for__content.label",
+      "options": [
+        {
+          "value": "desktop",
+          "label": "t:sections.global.settings.show_on.options.desktop.label"
+        },
+        {
+          "value": "mobile",
+          "label": "t:sections.global.settings.show_on.options.mobile.label"
+        },
+        {
+          "value": "both",
+          "label": "t:sections.global.settings.show_on.options.both.label"
+        }
+      ],
+      "default": "desktop"
+    },
+    {
+      "type": "select",
       "id": "section_layout",
       "label": "t:sections.global.section.layout.label",
       "options": [
@@ -322,6 +329,13 @@
       "id": "show_dots",
       "label": "t:sections.shop-the-look.settings.show_dots.label",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "always_show_quick_add",
+      "label": "t:sections.shop-the-look.settings.always_show_quick_add.label",
+      "info": "t:sections.shop-the-look.settings.always_show_quick_add.info",
+      "default": false
     },
     {
       "type": "header",

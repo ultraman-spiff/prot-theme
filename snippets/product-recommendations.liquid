@@ -31,7 +31,7 @@
 
             {%- if recommendation.featured_image -%}
               <div class="media product-recommendations__item-media">
-                {%- render 'image', image: recommendation.featured_image, alt: recommendation.featured_image.alt | escape -%}
+                {%- render 'image', image: recommendation.featured_image -%}
               </div>
             {%- endif -%}
 

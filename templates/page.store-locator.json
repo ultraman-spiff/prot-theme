@@ -15,7 +15,6 @@
         "pin_8wMgw8": {
           "type": "pin",
           "settings": {
-            "store_title": "<h3><em>Antwerp</em><br/>Belgium</h3>",
             "store_address": "Ellermanstraat 14",
             "store_tel": "+01 234 567 8900",
             "store_opening_hours": "<p>Mon-Sat: 10am-8pm<br/>Sunday</p>",
@@ -31,7 +30,6 @@
         "pin_g3VPYj": {
           "type": "pin",
           "settings": {
-            "store_title": "<h3><em>Paris</em><br/>France</h3>",
             "store_address": "Champ de Mars, 5 Av. Anatole",
             "store_tel": "+01 234 567 8900",
             "store_opening_hours": "<p>Mon-Sat: 10am-8pm<br/>Sunday</p>",

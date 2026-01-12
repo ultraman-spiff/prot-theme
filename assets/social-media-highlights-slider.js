@@ -77,13 +77,13 @@ if (!customElements.get("social-media-highlights-slider")) {
     /** Hide / Show Content Card */
     toggleSlideContentCard() {
       let swiperInitialized = false;
-      if (window.innerWidth < 750) {
+      if (DeviceDetector.isMobile()) {
         this.swiper.removeSlide(2);
       }
 
       const updateSlideContent = () => {
         if (swiperInitialized) {
-          if (window.innerWidth < 750) {
+          if (DeviceDetector.isMobile()) {
             this.swiper.removeSlide(2);
           } else {
             this.swiper.addSlide(2, this.slideContent)

@@ -43,9 +43,8 @@
   max-width: 340px;
 }
 
-.product-recommendations__item img {
-  mix-blend-mode: darken;
-  border-radius: 10px;
+.product-recommendations__item.swiper-slide {
+  width: 30rem;
 }
 
 .product-recommendations__item-media {

@@ -24,12 +24,18 @@
               endif
             -%}
             {%- if content_text -%}
-              {% assign words = content_text | split: ' ' %}
-              {% for word in words %}
-                <span class="h2 {% if forloop.last %} section-mixed-text__content--last-word{% endif %}">
-                  {{ word }}{% unless forloop.last %}&nbsp;{% endunless %}
-                </span>
-              {% endfor %}
+              {%- if content_text contains '<a' -%}
+                <div class="h2">
+                  {{ content_text }}
+                </div>
+              {%- else -%}
+                {% assign words = content_text | split: ' ' %}
+                {% for word in words %}
+                  <span class="h2 {% if forloop.last %} section-mixed-text__content--last-word{% endif %}">
+                    {{ word }}{% unless forloop.last %}&nbsp;{% endunless %}
+                  </span>
+                {% endfor %}
+              {%- endif -%}
             {%- endif -%}
           {%- endfor -%}
         </div>

@@ -509,7 +509,7 @@ quick-cart-drawer .product__title-wrapper {
 }
 quick-cart-drawer .product__title.button.button--text {
   padding-block-end: 0;
-  margin-block-end: 0.425rem;
+  margin-block-end: var(--spacing-1);
 }
 quick-cart-drawer:has(.shopify-payment-button) .button.button--text {
   margin-block-start: calc(var(--spacing-4) + (var(--spacing-1) / 2));

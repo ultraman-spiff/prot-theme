@@ -38,45 +38,46 @@
   endif
 -%}
 <div class="card-collection {{ class }}">
-  <a href="{{- collection_ref.url -}}" class="card-collection__content-wrapper{% if section.settings.card_layout == 'text' %} button button--outlined{% if request.path == collection_ref.url %} active{% endif %}{% endif %}">
+  <div class="card-collection__content-wrapper{% if section.settings.card_layout == 'text' %} button button--outlined{% if request.path == collection_ref.url %} active{% endif %}{% endif %}">
+    <a href="{{- collection_ref.url -}}" class="card-collection__link">&nbsp;</a>
 
-    {%- if section.settings.card_layout != 'text' -%}
-      <div class="media{{ media_class }} card-collection__media">
-        {% if image != blank %}
-          {{ card_image }}
-        {% else %}
-          {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
-        {% endif %}
-      </div>
-    {%- endif -%}
-    <div class="card-collection__content text-{{ card_content_alignment }} {% if card_arrow_btn and card_style == 'normal' and card_layout != 'text' %} card-collection__content-arrow{% endif %}">
-      {%- if heading != blank -%}
-        <h4 class="card-collection__heading {% if heading_size %}{{ heading_size }}{% endif %}">
-          <span>{{- heading -}}</span>
-          {%- if section.settings.collection_product_count != 'hide' and collection_ref != blank -%}
-            <sup class="card-collection__counter{% if section.settings.collection_product_count == 'with_border' %} counter-border{% endif %}">
-              {{- collection_ref.products_count -}}
-            </sup>
-          {%- endif -%}
-        </h4>
-      {%- else -%}
-        <h4 class="card-collection__heading {% if heading_size %}{{ heading_size }}{% endif %}">
-          <span>{{- collection_ref.title -}}</span>
-          {%- if section.settings.collection_product_count != 'hide' and collection_ref != blank -%}
-            <sup class="card-collection__counter{% if section.settings.collection_product_count == 'with_border' %} counter-border{% endif %}">
-              {{- collection_ref.products_count -}}
-            </sup>
-          {%- endif -%}
-        </h4>
-      {%- endif -%}
-      {%- if card_arrow_btn and card_style == 'normal' and card_layout != 'text' -%}
-        <span class="card-collection__button card-collection__button--{{ settings.arrow_type }} button button--filled">
-          {%- render 'icon', icon_name: 'theme-arrow' -%}
-        </span>
-      {%- endif -%}
+  {%- if section.settings.card_layout != 'text' -%}
+    <div class="media{{ media_class }} card-collection__media">
+      {% if image != blank %}
+        {{ card_image }}
+      {% else %}
+        {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}
     </div>
-    {%- if subheading != blank -%}
-      <div class="card-collection__subheading text-{{ card_content_alignment }} rte">{{ subheading }}</div>
+  {%- endif -%}
+  <div class="card-collection__content text-{{ card_content_alignment }} {% if card_arrow_btn and card_style == 'normal' and card_layout != 'text' %} card-collection__content-arrow{% endif %}">
+    {%- if heading != blank -%}
+      <h4 class="card-collection__heading {% if heading_size %}{{ heading_size }}{% endif %}">
+        <span>{{- heading -}}</span>
+        {%- if section.settings.collection_product_count != 'hide' and collection_ref != blank -%}
+          <sup class="card-collection__counter{% if section.settings.collection_product_count == 'with_border' %} counter-border{% endif %}">
+            {{- collection_ref.products_count -}}
+          </sup>
+        {%- endif -%}
+      </h4>
+    {%- else -%}
+      <h4 class="card-collection__heading {% if heading_size %}{{ heading_size }}{% endif %}">
+        <span>{{- collection_ref.title -}}</span>
+        {%- if section.settings.collection_product_count != 'hide' and collection_ref != blank -%}
+          <sup class="card-collection__counter{% if section.settings.collection_product_count == 'with_border' %} counter-border{% endif %}">
+            {{- collection_ref.products_count -}}
+          </sup>
+        {%- endif -%}
+      </h4>
     {%- endif -%}
-  </a>
+    {%- if card_arrow_btn and card_style == 'normal' and card_layout != 'text' -%}
+      <span class="card-collection__button card-collection__button--{{ settings.arrow_type }} button button--filled">
+        {%- render 'icon', icon_name: 'theme-arrow' -%}
+      </span>
+    {%- endif -%}
+  </div>
+  {%- if subheading != blank -%}
+    <div class="card-collection__subheading text-{{ card_content_alignment }} rte">{{ subheading }}</div>
+  {%- endif -%}
+  </div>
 </div>

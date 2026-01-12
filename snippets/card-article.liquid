@@ -27,7 +27,7 @@
     <div class="media card-article__media">
       {%- liquid
         if article.image != blank
-          render 'image', image: article.image, alt: article.image.alt | escape, image_per_view: image_per_view
+          render 'image', image: article.image, image_per_view: image_per_view
         else
           echo 'image' | placeholder_svg_tag: 'placeholder-svg'
         endif
@@ -35,7 +35,12 @@
     </div>
 
     {%- assign content_alignment = content_alignment | default: '' -%}
-
+    {%- assign align_items = content_alignment | remove: 'text-' -%}
+    {%- style -%}
+      .card-article__content {
+        align-items: {{ align_items }};
+      }
+    {%- endstyle -%}
     <div class="card-article__content {{ content_alignment }}">
       <h3 class="card-article__title h6">
         {{- article_title -}}
@@ -64,8 +69,6 @@
           </span>
 
           {%- if show_date -%}
-            {%- assign date_format = 'theme.date.format_short' | t -%}
-            {%- assign published_at = article.published_at | date: date_format -%}
             <span class="article-card__date">
               {{- 'blog.posted_on' | t: date: article.published_at | time_tag: format: 'date' -}}
             </span>

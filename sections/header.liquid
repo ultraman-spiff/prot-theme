@@ -76,8 +76,9 @@
       color: rgb(var(--color-filled-button-text));
       background: rgb(var(--color-filled-button));
       position: absolute;
-      inset-block-end: 1.5rem;
-      inset-inline-start: 0.2rem;
+      inset-block-start: 0.2rem;
+      inset-inline-end: -0.4rem;
+      margin: 0;
     }
     @media screen and (min-width: 990px) {
       .header__utils-item .icon-with-text .icon {
@@ -132,100 +133,99 @@
   <div class="container {{ section.settings.section_width }}">
 
     <div class="header__inner">
-      {%- if linklists[section.settings.menu].links.size > 0 -%}
-        {% assign menu_mobile = linklists[section.settings.menu_mobile] | default: linklists[section.settings.menu] %}
-        {%- render 'navigation-drawer',
-          menu: menu_mobile,
-          submenu: linklists[section.settings.submenu],
-          section: section,
-          append_id: 'header'
-        -%}
+        {%- if linklists[section.settings.menu].links.size > 0 -%}
+          {% assign menu_mobile = linklists[section.settings.menu_mobile] | default: linklists[section.settings.menu] %}
+          {%- render 'navigation-drawer',
+            menu: menu_mobile,
+            submenu: linklists[section.settings.submenu],
+            section: section,
+            append_id: 'header'
+          -%}
 
-        {%- capture header_nav -%}
-          <nav class="header__nav small-hide medium-hide js-nav">
-            <ul class="header__nav-items list-unstyled js-mega-menu">
-              {%- for link in linklists[section.settings.menu].links -%}
-                {%- assign menu_dropdown_items_size = 0 -%}
+          {%- capture header_nav -%}
+            <nav class="header__nav small-hide medium-hide js-nav">
+              <ul class="header__nav-items list-unstyled js-mega-menu">
+                {%- for link in linklists[section.settings.menu].links -%}
+                  {%- assign menu_dropdown_items_size = 0 -%}
 
-                {% liquid
-                  assign link_item_index = forloop.index
+                  {% liquid
+                    assign link_item_index = forloop.index
 
-                  assign menu_item_style = false
-                  assign menu_item_style_color = ''
-                  assign menu_item_badge = ''
+                    assign menu_item_style = false
+                    assign menu_item_style_color = ''
+                    assign menu_item_badge = ''
 
-                  assign count_of_images = 0
-                  for block in section.blocks
-                    if link_item_index != block.settings.menu_item_position
-                      continue
+                    assign count_of_images = 0
+                    for block in section.blocks
+                      if link_item_index != block.settings.menu_item_position
+                        continue
+                      endif
+
+                      if block.type == 'menu-item-style'
+                        assign menu_item_style = true
+                        assign menu_item_style_color = block.settings.color_scheme
+                        assign menu_item_badge = block.settings.menu_item_badge
+                      endif
+
+                      if block.settings.title != blank or block.settings.subtitle != blank or block.settings.image != blank
+                        assign count_of_images = count_of_images | plus: 1
+                      endif
+                    endfor
+
+                    if count_of_images > 4
+                      assign count_of_images = 4
                     endif
+                  %}
 
-                    if block.type == 'menu-item-style'
-                      assign menu_item_style = true
-                      assign menu_item_style_color = block.settings.color_scheme
-                      assign menu_item_badge = block.settings.menu_item_badge
-                    endif
+                  {%- capture menu_dropdown_items -%}
 
-                    if block.settings.title != blank or block.settings.subtitle != blank or block.settings.image != blank
-                      assign count_of_images = count_of_images | plus: 1
-                    endif
-                  endfor
-
-                  if count_of_images > 4
-                    assign count_of_images = 4
-                  endif
-                %}
-
-                {%- capture menu_dropdown_items -%}
-
-                  {%- style -%}
-                    {%- for block in section.blocks -%}
-                      {%- assign card_aspect_ratio = section.settings.card_aspect_ratio -%}
-                      {% if block.settings.card_aspect_ratio != 'same_as_section' %}
-                        {%- assign card_aspect_ratio = block.settings.card_aspect_ratio -%}
-                      {% endif %}
-                      .block-{{ block.id }} {
-                        --header-nav-group-card-aspect-ratio: {{ section.settings.card_aspect_ratio_mobile }};
-                      }
-                      @media screen and (min-width: 750px) {
+                    {%- style -%}
+                      {%- for block in section.blocks -%}
+                        {%- assign card_aspect_ratio = section.settings.card_aspect_ratio -%}
+                        {% if block.settings.card_aspect_ratio != 'same_as_section' %}
+                          {%- assign card_aspect_ratio = block.settings.card_aspect_ratio -%}
+                        {% endif %}
                         .block-{{ block.id }} {
-                          --header-nav-group-card-aspect-ratio: {{ card_aspect_ratio }};
+                          --header-nav-group-card-aspect-ratio: {{ section.settings.card_aspect_ratio_mobile }};
                         }
-                      }
-                    {%- endfor -%}
-                  {%- endstyle -%}
+                        @media screen and (min-width: 750px) {
+                          .block-{{ block.id }} {
+                            --header-nav-group-card-aspect-ratio: {{ card_aspect_ratio }};
+                          }
+                        }
+                      {%- endfor -%}
+                    {%- endstyle -%}
 
-                  {%- for block in section.blocks -%}
-                    {%- if link_item_index != block.settings.menu_item_position %}
-                      {%- continue -%}
-                    {%- endif -%}
+                    {%- for block in section.blocks -%}
+                      {%- if link_item_index != block.settings.menu_item_position %}
+                        {%- continue -%}
+                      {%- endif -%}
 
-                    {%- if block.type == 'image-link-text' -%}
-                      {%- assign menu_dropdown_items_size = menu_dropdown_items_size | plus: 1 -%}
-                    {%- endif -%}
+                      {%- if block.type == 'image-link-text' -%}
+                        {%- assign menu_dropdown_items_size = menu_dropdown_items_size | plus: 1 -%}
+                      {%- endif -%}
 
-                    {%- if block.type == 'image-link-text' -%}
-                      {%- liquid
-                        assign show_on_class = block.settings.show_on
-                        if show_on_class == 'mobile'
-                          assign show_on_class = 'large-up-hide'
-                        elsif show_on_class == 'desktop'
-                          assign show_on_class = 'small-hide medium-hide'
-                        else
-                          assign show_on_class = ''
-                        endif
-                      -%}
+                      {%- if block.type == 'image-link-text' -%}
+                        {%- liquid
+                          assign show_on_class = block.settings.show_on
+                          if show_on_class == 'mobile'
+                            assign show_on_class = 'large-up-hide'
+                          elsif show_on_class == 'desktop'
+                            assign show_on_class = 'small-hide medium-hide'
+                          else
+                            assign show_on_class = ''
+                          endif
+                        -%}
 
-                      <li class="header__nav-links-item header__nav-links-item--card block-{{ block.id }} {{ show_on_class }}" {{ block.shopify_attributes }}>
+                        <li class="header__nav-links-item header__nav-links-item--card block-{{ block.id }} {{ show_on_class }}" {{ block.shopify_attributes }}>
                         <div class="card header__card header__card-text color-{{ block.settings.color_scheme }} media-position--background">
-                          {%- if block.settings.image != blank -%}
-                          <div class="media media--overlay card__media">
-                            {%- render 'image', image: block.settings.image, loading: 'eager' -%}
-                          </div>
-                          {%- endif -%}
+                            {%- if block.settings.image != blank -%}
+                            <div class="media media--overlay card__media">
+                              {%- render 'image', image: block.settings.image, loading: 'eager' -%}
+                            </div>
+                            {%- endif -%}
 
-                          {%- if block.settings.title != blank or block.settings.subtitle != blank -%}
-                            <div class="card__content {{ block.settings.content_position_horizontal }} {{ block.settings.content_position_vertical }}">
+                            <div class="content {{ block.settings.content_position_horizontal }} {{ block.settings.content_position_vertical }}">
                               {%- if block.settings.subtitle != blank -%}
                                 <span class="card__subtitle">
                                   {{- block.settings.subtitle -}}
@@ -238,165 +238,169 @@
                                 </h6>
                               {%- endif -%}
                             </div>
-                          {%- endif -%}
-                          {%- if block.settings.link -%}
-                            <a href="{{- block.settings.link -}}" class="card__link">
-                              <span class="visually-hidden">{{- block.settings.title -}}</span>
-                            </a>
-                          {%- endif -%}
-                        </div>
-                      </li>
-                    {%- endif -%}
-
-                  {%- endfor -%}
-                {%- endcapture -%}
-
-                {%- liquid
-                  assign link_item_additional_classes = blank
-                  assign has_dropdown = false
-                  assign is_dropdown = false
-                  assign is_megamenu = false
-
-                  assign has_child_links = false
-                  for child_link in link.links
-                    if child_link.links.size > 0
-                      assign has_child_links = true
-                      break
-                    endif
-                  endfor
-
-                  if link.links.size > 0 or menu_dropdown_items_size > 0
-                    assign link_item_additional_classes = ' has-dropdown'
-                    assign has_dropdown = true
-                  endif
-
-                  if link.links.size > 0
-                    assign is_dropdown = true
-                    assign link_item_additional_classes = link_item_additional_classes | append: ' dropdown'
-
-                    if menu_dropdown_items_size == 1 and has_child_links == false
-                      assign link_item_additional_classes = link_item_additional_classes | append: ' dropdown-with-card'
-                    endif
-
-                    if menu_dropdown_items_size == 1 and has_child_links
-                      assign is_megamenu = true
-                      assign link_item_additional_classes = link_item_additional_classes | replace: ' dropdown', ' megamenu'
-                    endif
-
-                    if menu_dropdown_items_size > 1
-                      assign is_megamenu = true
-                      assign link_item_additional_classes = link_item_additional_classes | replace: ' dropdown', ' megamenu'
-                    endif
-
-                  else
-
-                    if menu_dropdown_items_size > 0
-                      assign is_megamenu = true
-                      assign link_item_additional_classes = link_item_additional_classes | append: ' megamenu'
-                    endif
-
-                  endif
-                -%}
-
-                <li class="header__nav-item header__nav-item-{{ forloop.index }} js-nav-item{{ link_item_additional_classes }}" data-menu-item="{{ link.title | escape }}">
-                  <a
-                    href="{{- link.url -}}"
-                    class="header__nav-link js-nav-link text--link{% if link.child_active %} is-current{% endif %}{% if link.url == blank or link.url == '#' %} inactive-link{% endif %}"
-                    title="{{- link.title | escape -}}"
-                    {% if link.current %}aria-current="page"{% endif %}
-                  >
-                    {%- if menu_item_style -%}
-                      <span{% if menu_item_badge == blank %} class="header__tag--without color-{{ menu_item_style_color }}"{% endif %}>
-                        {{- link.title | escape -}}
-                      </span>
-                      {%- if menu_item_badge != blank -%}
-                        <span class="header__tag color-{{ menu_item_style_color }}">{{ menu_item_badge }}</span>
+                            {%- if block.settings.link -%}
+                              <a href="{{- block.settings.link -}}" class="card__link">
+                                <span class="visually-hidden">{{- block.settings.title -}}</span>
+                              </a>
+                            {%- endif -%}
+                          </div>
+                        </li>
                       {%- endif -%}
-                    {%- else -%}
-                      {{- link.title | escape -}}
-                    {%- endif -%}
 
-                    {% if has_dropdown %}
-                      {% render 'icon', icon_name: 'theme-chevron', class: 'icon icon--rotate-90' %}
-                    {% endif %}
-                  </a>
+                    {%- endfor -%}
+                  {%- endcapture -%}
 
-                  {%- if has_dropdown -%}
-                    <div class="header__nav-dropdown js-dropdown" data-menu-content="{{ link.title | escape }}">
-                      <div class="header__nav-dropdown-inner color-{{ section.settings.color_scheme_for_dropdown }}">
-                        <ul class="header__nav-links list-unstyled">
-                          {% if link.links.size > 0 %}
-                            {%- liquid
-                              if link.links.size > 6
-                                assign count_of_links = 6
-                              else
-                                assign count_of_links = link.links.size
-                              endif
-                            -%}
-                            {%- style -%}
-                              .header__nav-item-{{ forloop.index }}.megamenu {
-                                --header-nav-group-link-size: {{ count_of_links }};
-                              }
-                            {%- endstyle -%}
-                            <div class="header__nav--group header__nav--group-link">
-                              {%- assign all_have_no_links = true -%}
-                              {%- for child_link in link.links -%}
-                                {%- if child_link.links.size > 0 -%}
-                                  {%- assign all_have_no_links = false -%}
-                                {%- endif -%}
-                              {%- endfor -%}
-                              {%- for child_link in link.links -%}
-                                <li class="header__nav-links-item header__nav-links-item--link{% if is_dropdown %} js-nav-item{% endif %}{% if child_link.links.size > 0 %} has-dropdown {% else %} h5{% endif %} {% if all_have_no_links %} header__nav-links-item--without-child-link{% endif %}" data-child-menu-item="{{- child_link.title | escape -}}">
-                                <a
-                                  href="{{- child_link.url -}}"
-                                  class="header__nav-dropdown-link{% if is_dropdown %} js-nav-link{% endif %}{% if child_link.current %} is-current{% endif %}{% if child_link.url == blank or child_link.url == '#' %} inactive-link{% endif %}"
-                                  aria-label="{{- child_link.title | escape -}}"
-                                  {% if child_link.current %}aria-current="page"{% endif %}
-                                  role="button"
-                                >
-                                  {{- child_link.title | escape -}}
-                                  {% if child_link.links.size > 0 and is_megamenu == false %}
-                                    {% render 'icon', icon_name: 'theme-chevron', class: 'icon' %}
-                                  {% endif %}
-                                </a>
+                  {%- liquid
+                    assign link_item_additional_classes = blank
+                    assign has_dropdown = false
+                    assign is_dropdown = false
+                    assign is_megamenu = false
+
+                    assign has_child_links = false
+                    for child_link in link.links
+                      if child_link.links.size > 0
+                        assign has_child_links = true
+                        break
+                      endif
+                    endfor
+
+                    if link.links.size > 0 or menu_dropdown_items_size > 0
+                      assign link_item_additional_classes = ' has-dropdown'
+                      assign has_dropdown = true
+                    endif
+
+                    if link.links.size > 0
+                      assign is_dropdown = true
+                      assign link_item_additional_classes = link_item_additional_classes | append: ' dropdown'
+
+                      if menu_dropdown_items_size == 1 and has_child_links == false
+                        assign link_item_additional_classes = link_item_additional_classes | append: ' dropdown-with-card'
+                      endif
+
+                      if menu_dropdown_items_size == 1 and has_child_links
+                        assign is_megamenu = true
+                        assign link_item_additional_classes = link_item_additional_classes | replace: ' dropdown', ' megamenu'
+                      endif
+
+                      if menu_dropdown_items_size > 1
+                        assign is_megamenu = true
+                        assign link_item_additional_classes = link_item_additional_classes | replace: ' dropdown', ' megamenu'
+                      endif
+
+                    else
+
+                      if menu_dropdown_items_size > 0
+                        assign is_megamenu = true
+                        assign link_item_additional_classes = link_item_additional_classes | append: ' megamenu'
+                      endif
+
+                    endif
+                  -%}
+
+                  <li class="header__nav-item header__nav-item-{{ forloop.index }} js-nav-item{{ link_item_additional_classes }}" data-menu-item="{{ link.title | escape }}">
+                    <a
+                      href="{{- link.url -}}"
+                      class="header__nav-link js-nav-link text--link{% if link.child_active %} is-current{% endif %}{% if link.url == blank or link.url == '#' %} inactive-link{% endif %}"
+                      title="{{- link.title | escape -}}"
+                      {% if link.current %}aria-current="page"{% endif %}
+                    >
+                      {%- if menu_item_style -%}
+                        <span{% if menu_item_badge == blank %} class="header__tag--without color-{{ menu_item_style_color }}"{% endif %}>
+                          {{- link.title | escape -}}
+                        </span>
+                        {%- if menu_item_badge != blank -%}
+                          <span class="header__tag color-{{ menu_item_style_color }}">{{ menu_item_badge }}</span>
+                        {%- endif -%}
+                      {%- else -%}
+                        {{- link.title | escape -}}
+                      {%- endif -%}
+
+                      {% if has_dropdown %}
+                        {% style %}
+                          .icon.icon--rotate-90 path {
+                            stroke-width : calc({{settings.icons_stroke_width}} * 1.5);
+                          }
+                        {% endstyle %}
+                        {% render 'icon', icon_name: 'theme-chevron', class: 'icon icon--rotate-90' %}
+                      {% endif %}
+                    </a>
+
+                    {%- if has_dropdown -%}
+                      <div class="header__nav-dropdown js-dropdown" data-menu-content="{{ link.title | escape }}">
+                        <div class="header__nav-dropdown-inner color-{{ section.settings.color_scheme_for_dropdown }}">
+                          <ul class="header__nav-links list-unstyled">
+                            {% if link.links.size > 0 %}
+                              {%- liquid
+                                if link.links.size > 6
+                                  assign count_of_links = 6
+                                else
+                                  assign count_of_links = link.links.size
+                                endif
+                              -%}
+                              {%- style -%}
+                                .header__nav-item-{{ forloop.index }}.megamenu {
+                                  --header-nav-group-link-size: {{ count_of_links }};
+                                }
+                              {%- endstyle -%}
+                              <div class="header__nav--group header__nav--group-link">
+                                {%- assign all_have_no_links = true -%}
+                                {%- for child_link in link.links -%}
                                   {%- if child_link.links.size > 0 -%}
-                                    <ul class="header__nav-sublinks list-unstyled" data-child-menu-content="{{- child_link.title | escape -}}">
-                                      {%- for grand_child_link in child_link.links -%}
-                                        <li class="header__nav-sublinks-item">
-                                          <a href="{{- grand_child_link.url -}}" class="header__nav-dropdown-link header__nav-childlink text-link{% if grand_child_link.current %} is-current{% endif %}" {% if grand_child_link.current %} aria-current="page"{% endif %}>
-                                            <span class="text-link--on-hover">{{- grand_child_link.title | escape -}}</span>
-                                          </a>
-                                        </li>
-                                      {%- endfor -%}
-                                    </ul>
+                                    {%- assign all_have_no_links = false -%}
                                   {%- endif -%}
-                                </li>
-                              {%- endfor -%}
-                            </div>
-                          {% endif %}
-                          {%- if count_of_images > 0 -%}
-                            {%- style -%}
-                              .header__nav-item-{{ forloop.index }}.megamenu {
-                                --header-nav-group-card-size: {{ count_of_images }};
-                                --header-nav-group-card-gap: calc(var(--spacing-unit-size) * {{ section.settings.spacing_between_cards }});
-                              }
-                            {%- endstyle -%}
-                            <div class="header__nav--group header__nav--group-card">
-                              {{ menu_dropdown_items }}
-                            </div>
-                          {%- endif -%}
-                        </ul>
+                                {%- endfor -%}
+                                {%- for child_link in link.links -%}
+                                  <li class="header__nav-links-item header__nav-links-item--link{% if is_dropdown %} js-nav-item{% endif %}{% if child_link.links.size > 0 %} has-dropdown {% else %} h5{% endif %} {% if all_have_no_links %} header__nav-links-item--without-child-link{% endif %}" data-child-menu-item="{{- child_link.title | escape -}}">
+                                  <a
+                                    href="{{- child_link.url -}}"
+                                    class="header__nav-dropdown-link{% if is_dropdown %} js-nav-link{% endif %}{% if child_link.current %} is-current{% endif %}{% if child_link.url == blank or child_link.url == '#' %} inactive-link{% endif %}"
+                                    aria-label="{{- child_link.title | escape -}}"
+                                    {% if child_link.current %}aria-current="page"{% endif %}
+                                    role="button"
+                                  >
+                                    {{- child_link.title | escape -}}
+                                    {% if child_link.links.size > 0 and is_megamenu == false %}
+                                      {% render 'icon', icon_name: 'theme-chevron', class: 'icon' %}
+                                    {% endif %}
+                                  </a>
+                                    {%- if child_link.links.size > 0 -%}
+                                      <ul class="header__nav-sublinks list-unstyled" data-child-menu-content="{{- child_link.title | escape -}}">
+                                        {%- for grand_child_link in child_link.links -%}
+                                          <li class="header__nav-sublinks-item">
+                                            <a href="{{- grand_child_link.url -}}" class="header__nav-dropdown-link header__nav-childlink text-link{% if grand_child_link.current %} is-current{% endif %}" {% if grand_child_link.current %} aria-current="page"{% endif %}>
+                                              <span class="text-link--on-hover {{ section.settings.submenu_text_transform }}">{{- grand_child_link.title | escape -}}</span>
+                                            </a>
+                                          </li>
+                                        {%- endfor -%}
+                                      </ul>
+                                    {%- endif -%}
+                                  </li>
+                                {%- endfor -%}
+                              </div>
+                            {% endif %}
+                            {%- if count_of_images > 0 -%}
+                              {%- style -%}
+                                .header__nav-item-{{ forloop.index }}.megamenu {
+                                  --header-nav-group-card-size: {{ count_of_images }};
+                                  --header-nav-group-card-gap: calc(var(--spacing-unit-size) * {{ section.settings.spacing_between_cards }});
+                                }
+                              {%- endstyle -%}
+                              <div class="header__nav--group header__nav--group-card">
+                                {{ menu_dropdown_items }}
+                              </div>
+                            {%- endif -%}
+                          </ul>
+                        </div>
                       </div>
-                    </div>
-                  {%- endif -%}
-                </li>
-              {%- endfor -%}
+                    {%- endif -%}
+                  </li>
+                {%- endfor -%}
 
             @@additional_links_placeholder@@
-            </ul>
-          </nav>
-        {%- endcapture -%}
-      {%- endif -%}
+              </ul>
+            </nav>
+          {%- endcapture -%}
+        {%- endif -%}
 
       {%- capture header_logo -%}
 
@@ -475,12 +479,7 @@
 
             {%- if section.settings.country_drawer_header -%}
               <li class="header__utils-item">
-                <desktop-drawer class="drawer">
-                  {%- liquid
-                    assign append_id = 'header-' | append: section.id
-                    render 'country-drawer', button_class: 'header__utils-link text-link', section: section, append_id: append_id
-                  -%}
-                </desktop-drawer>
+                {%- render 'country-drawer', button_class: 'header__utils-link text-link', append_id: 'header', type: 'trigger' -%}
               </li>
             {%- endif -%}
 
@@ -517,7 +516,7 @@
       {%- capture header_additional_links -%}
         {%- if section.settings.first_additional_link_title != blank and section.settings.first_additional_link_url != blank -%}
           <li class="header__@@type@@-item">
-            <a href="{{- section.settings.first_additional_link_url -}}" class="header__@@type@@-link text-link">
+            <a href="{{- section.settings.first_additional_link_url -}}" class="header__@@type@@-link text--link">
               <span class="text-link--on-hover">
                 {{- section.settings.first_additional_link_title -}}
               </span>
@@ -527,7 +526,7 @@
 
         {%- if section.settings.second_additional_link_title != blank and section.settings.second_additional_link_url != blank -%}
           <li class="header__@@type@@-item">
-            <a href="{{- section.settings.second_additional_link_url -}}" class="header__@@type@@-link text-link">
+            <a href="{{- section.settings.second_additional_link_url -}}" class="header__@@type@@-link text--link">
               <span class="text-link--on-hover">
                 {{- section.settings.second_additional_link_title -}}
               </span>
@@ -564,23 +563,6 @@
     </div>
   </div>
 </div>
-
-{% style %}
-  .header__logo {
-    width: {{ section.settings.logo_width_mobile | divided_by: 10.0 }}rem;
-  }
-  .header__logo.header__logo-text .h4 {
-    font-size: calc(var(--font-heading-scale) * 1.6rem * {{ section.settings.logo_font_size }});
-  }
-  @media screen and (min-width: 750px) {
-    .header__logo {
-      width: {{ section.settings.logo_width | divided_by: 10.0 }}rem;
-    }
-    .header__logo.header__logo-text .h4 {
-      font-size: calc(var(--font-heading-scale) * 1.8rem * {{ section.settings.logo_font_size }});
-    }
-  }
-{% endstyle %}
 
 <script type="application/ld+json">
   {
@@ -910,6 +892,26 @@
         }
       ],
       "default": "lg"
+    },
+    {
+      "type": "select",
+      "id": "submenu_text_transform",
+      "label": "t:settings_schema.typography.settings.text_transform.label",
+      "options": [
+        {
+          "value": "nonecase",
+          "label": "t:settings_schema.typography.settings.text_transform.options__0.label"
+        },
+        {
+          "value": "capitalize",
+          "label": "t:settings_schema.typography.settings.text_transform.options__1.label"
+        },
+        {
+          "value": "uppercase",
+          "label": "t:settings_schema.typography.settings.text_transform.options__2.label"
+        }
+      ],
+      "default": "uppercase"
     },
     {
       "type": "select",

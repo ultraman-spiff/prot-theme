@@ -53,7 +53,7 @@
                             </noscript>
                           </summary>
 
-                          <div class="drawer__content drawer__content-facets js-drawer color-scheme-1"
+                          <div class="drawer__content drawer__content-facets js-drawer color-{{ settings.color_scheme_for_drawers }}"
                             id="Filters-menu-drawer-{{- section.id -}}"
                             tabindex="-1"
                           >
@@ -76,7 +76,7 @@
                                   <accordion-default class="accordion facets__accordion">
                                     {% assign total_active_values = 0 %}
                                     {%- for filter in results.filters -%}
-                                      {%- render 'facet', index: forloop.index, section_id: section.id, filter: filter, opened_accordions: opened_accordions, total_active_values: total_active_values -%}
+                                      {%- render 'facet', index: forloop.index, section_id: section.id, filter: filter, opened_accordions: opened_accordions, total_active_values: total_active_values, enable_range_slider_for_price_filter: enable_range_slider_for_price_filter -%}
                                     {%- endfor -%}
                                   </accordion-default>
                                 </div>
@@ -155,7 +155,7 @@
       {%- if section.settings.enable_products_count -%}
         <div class="collection-facets__item facets__product-count">
           {%- if results.filters != empty -%}
-            <div class="facets__divider small-hide {% if filters == 'sidebar' %} small-up-hide{% endif %}">&nbsp;</div>
+            <div class="facets__divider small-hide medium-hide {% if filters == 'sidebar' %} small-up-hide{% endif %}">&nbsp;</div>
           {%- endif -%}
           <div class="collection-facets__status" role="status">
             {%- unless results.results_count < 1 -%}

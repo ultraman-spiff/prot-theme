@@ -52,7 +52,12 @@
     margin-block-end: calc(0rem - var(--grid-spacing));
   }
 }
-
+.collection__card-text .card-text__button {
+  margin-block-start: 0;
+}
+.collection__card-text .card-text__title p {
+  margin: 0;
+}
 .collection__actions {
   margin-block-start: var(--spacing-7);
 }
@@ -244,7 +249,7 @@
   position: relative;
   display: none;
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 990px) {
   .collection.filters--sidebar .collection__container {
     grid-template-columns: 1fr 3fr;
     gap: var(--grid-spacing);

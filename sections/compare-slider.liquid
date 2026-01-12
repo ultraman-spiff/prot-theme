@@ -60,7 +60,8 @@
                 <div class="compare-slider__image {{ image_class }}" style>
                   {% liquid
                     if block.settings.image
-                      render 'image', image: block.settings.image, alt: block.settings.image.alt | default: block_title | escape
+                      assign image_alt = block.settings.image.alt | default: block_title
+                      render 'image', image: block.settings.image, alt: image_alt
                     else
                       echo 'lifestyle-1' | placeholder_svg_tag: 'ims-placeholder-svg'
                     endif

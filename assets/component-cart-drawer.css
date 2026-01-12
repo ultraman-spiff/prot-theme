@@ -19,7 +19,9 @@
 [dir='rtl'] .cart-drawer__inner {
   transform: translateX(-100%);
 }
-
+.cart-drawer__contents .cart-item__bottom-content {
+  margin-block-start: var(--spacing-4);
+}
 .cart-drawer__head {
   display: flex;
   align-items: center;
@@ -348,11 +350,9 @@ cart-drawer.is-visible .cart-drawer__inner {
 cart-drawer .cart-item__title {
   padding-block: 0;
 }
-
-cart-drawer .cart-item__price {
-  margin: 0 0 1.2rem;
+.cart-item__error {
+  display: none;
 }
-
 .cart-drawer .cart-item__actions--price > * {
   flex-direction: column;
 }

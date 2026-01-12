@@ -18,7 +18,7 @@ facets-clear-filters {
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 989px) {
   .container.collection-facets__container:has(.active-facets__slider) {
     padding-inline-end: 0;
   }
@@ -34,7 +34,7 @@ facets-clear-filters {
   display: flex;
   flex-direction: column;
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 990px) {
   .collection-facets__status .collection-facets__product-count {
     color: rgba(var(--color-foreground), 1);
     font-size: var(--font-size-static-md);
@@ -105,7 +105,7 @@ html.no-js .facets__actions-item {
   justify-content: center;
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 989px) {
   .button--filter .facets__custom-select .custom-select__btn,
   .button--filter .facets__custom-select .custom-select__option,
   .button--filter .facets__actions-button {
@@ -152,7 +152,7 @@ html.no-js .facets__actions-item {
   height: 100%;
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 989px) {
   html.js .facets__drawer .drawer__content {
     width: 88%;
   }
@@ -162,6 +162,9 @@ html.js .facets__drawer .drawer__content {
   padding-inline-start: var(--page-gutter);
   padding-inline-end: 0;
   --drawer-transform: translateX(-100%);
+}
+html[dir='rtl'].js .facets__drawer .drawer__content {
+  --drawer-transform: translateX(100%);
 }
 
 html.js .facets__drawer .drawer__content, html.no-js .facets__drawer .drawer__container[open] {
@@ -185,14 +188,20 @@ html.js .facets__drawer .drawer__content, html.no-js .facets__drawer .drawer__co
 }
 
 .facets__drawer .drawer__row--buttons {
-  position: absolute;
+  position: relative;
   width: 100%;
-  left: 0;
+  /* left: 0;
   right: 0;
-  bottom: 0;
-  padding: 2.4rem var(--page-gutter);
+  bottom: 0; */
+  /* padding: 2.4rem var(--page-gutter); */
   background-color: rgb(var(--color-background));
   z-index: 2;
+}
+.facets .drawer__row:not(.drawer__row--bottom):last-child {
+  margin-block-end: 0;
+  padding-block-end: 0;
+  padding-inline-end: var(--page-gutter);
+  border-block-end: none;
 }
 
 .facets__sort-input {
@@ -214,7 +223,15 @@ html.js .facets__drawer .drawer__content, html.no-js .facets__drawer .drawer__co
 }
 
 .facets__item + .facets__item {
-  margin-block-start: 1.6rem;
+  margin-block-start: var(--spacing-2);
+}
+
+.facets__item.is-collapsed {
+  display: none;
+}
+.facets__accordion-body .button.show-more {
+  margin-block-start: var(--spacing-3);
+  font-size: var(--font-size-static-xs);
 }
 
 .facets__list {
@@ -222,11 +239,121 @@ html.js .facets__drawer .drawer__content, html.no-js .facets__drawer .drawer__co
   max-width: 100%;
 }
 
-.facets__price {
+.facets__price.facets__price--range-slider {
+  padding-inline: 0.4rem;
+}
+
+.facets__accordion .facets__price:not(.facets__price--range-slider) {
+  padding-block-start: 0;
+}
+
+.range-group {
+  --range-thumb-size: 1.2rem;
+  --range-track-height: 0.6rem;
+  --range-group-text-color: var(--color-foreground);
+  height: var(--range-track-height);
+    background: linear-gradient(to right, rgba(var(--range-group-text-color) , .12) var(--range-min), rgba(var(--range-group-text-color)) var(--range-min), rgba(var(--range-group-text-color)) var(--range-max), rgba(var(--range-group-text-color) , .12) var(--range-max));
+  position: relative;
+  margin-block-start: var(--spacing-3);
+  display: flex;
+  border-radius: .4rem;
+  cursor: pointer;
+}
+
+html[dir='rtl'] .range-group {
+  background: linear-gradient(to left, rgba(var(--range-group-text-color) , .12) var(--range-min), rgba(var(--range-group-text-color)) var(--range-min), rgba(var(--range-group-text-color)) var(--range-max), rgba(var(--range-group-text-color) , .12) var(--range-max));
+}
+
+.range-group .range {
+  height: var(--range-track-height);
+  vertical-align: top;
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  pointer-events: none;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  box-sizing: content-box;
+  height: var(--range-thumb-size);
+  width: var(--range-thumb-size);
+  background:#fff;
+  border: 2px solid rgba(var(--range-group-text-color));
+  cursor: pointer;
+  z-index: 1;
+  box-shadow: none;
+  border-radius: 100%;
+  margin-block-start: -0.5rem;
+  position: relative;
+  pointer-events: auto;
+  transition: .15s cubic-bezier(.4, 0, .2, 1);
+}
+
+.range::-webkit-slider-thumb:hover {
+  box-shadow: 0 0px #0000, 0 0 0px #0000, 0 0 0px #0000, 0 0 0 4px rgba(var(--color-foreground), .3), 0 1px 3px 0px rgba(var(--color-foreground), .10),
+    0 1px 2px -1px rgba(var(--color-foreground), .10);
+}
+
+.range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: var(--range-track-height);
+  cursor: pointer;
+  background:transparent;
+  border: none;
+}
+
+.range::-moz-range-thumb {
+  transition: .15s cubic-bezier(.4, 0, .2, 1);
+  box-sizing: content-box;
+  height: var(--range-thumb-size);
+  width: var(--range-thumb-size);
+  border: 2px solid rgba(var(--text-color));
+  background: #fff;
+  cursor: pointer;
+  border-radius: 100%;
+  pointer-events: auto;
+}
+
+.range::-moz-range-progress {
+  width: 100%;
+  height: var(--range-track-height);
+  cursor: pointer;
+  border: none;
+}
+
+.range::-moz-range-track {
+  width: 100%;
+  height: var(--range-track-height);
+  cursor: pointer;
+  border: none;
+}
+
+.range::-moz-range-progress {
+  background-color: rgba(var(--range-group-text-color));
+}
+
+.range::-moz-range-track {
+  background-color: rgb(var(--border-color));
+}
+
+@media screen and not (pointer: fine) {
+  .range {
+    --range-thumb-size: 1.2rem;
+  }
+}
+
+.facets__price-rows {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 1.6rem;
+  column-gap: var(--spacing-4);
   color: rgb(var(--color-heading-text));
+  padding-block-start: var(--spacing-5)
 }
 
 .facets__price-row {
@@ -324,7 +451,7 @@ html.js .facets__drawer .drawer__content, html.no-js .facets__drawer .drawer__co
   border-radius: var(--input-border-radius);
   padding: var(--spacing-4) var(--spacing-5);
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 990px) {
   .collection-facets__inner {
     flex-direction: row;
     justify-content: space-between;
@@ -343,7 +470,7 @@ html.js .facets__drawer .drawer__content, html.no-js .facets__drawer .drawer__co
   }
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 989px) {
   .collection-facets__status {
     flex-direction: row;
     color: rgba(var(--color-foreground), 0.75);
@@ -406,7 +533,7 @@ html.js .facets__drawer .drawer__content, html.no-js .facets__drawer .drawer__co
     grid-column: 4;
   }
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 990px) {
   .collection-facets {
     --button-action-side-padding: 3.2rem;
   }
@@ -467,8 +594,11 @@ html.js .facets__drawer .drawer__content, html.no-js .facets__drawer .drawer__co
 
 .facets__accordion-section {
   position: relative;
-  padding: 2.6rem 0;
+  padding: var(--spacing-4) 0;
   border-block-end: 0.1rem solid rgba(var(--color-border), var(--alpha-border));
+}
+.facets__accordion-section:has(.button.button.show-more) {
+  padding-block-end: var(--spacing-6);
 }
 
 .facets__accordion-section:last-child {
@@ -581,7 +711,7 @@ details[open].menu-opening>summary[aria-expanded="true"]~.drawer__content.drawer
   border: 0.1rem solid rgba(var(--color-border), var(--alpha-border));
   border-radius: var(--button-action-border-radius);
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 990px) {
   .active-facets .swiper-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -701,4 +831,12 @@ ul.facets__list:has(img) .facets__item+.facets__item {
 
 .accordion__body.facets__accordion-body .product-option__label--rounded {
   --variant-option-label--border-radius: 0;
+}
+
+custom-select.custom-select button svg {
+  transition: transform 0.3s ease;
+}
+
+custom-select.custom-select.is-expanded button svg {
+  transform: rotate(180deg);
 }

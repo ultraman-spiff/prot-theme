@@ -1,7 +1,5 @@
 if (!customElements.get('recently-viewed-products')) {
-  class RecentlyViewed extends customElements.get(
-    'card-product-slider'
-  ) {
+  class RecentlyViewed extends customElements.get('card-product-slider') {
     constructor() {
       super();
 
@@ -11,18 +9,23 @@ if (!customElements.get('recently-viewed-products')) {
 
       this.fetchRecentProducts();
 
-      if (document.querySelector("quick-cart-drawer") && this.querySelector('.swiper-slide')) {
-        document.querySelector("quick-cart-drawer").init();
+      if (document.querySelector('quick-cart-drawer') && this.querySelector('.swiper-slide')) {
+        document.querySelector('quick-cart-drawer').init();
       }
 
       if (Shopify.designMode) {
-        if (document.querySelector("quick-cart-drawer") && this.querySelector('.swiper-slide')) {
-          document.querySelector("quick-cart-drawer").init();
+        if (document.querySelector('quick-cart-drawer') && this.querySelector('.swiper-slide')) {
+          document.querySelector('quick-cart-drawer').init();
         }
       }
     }
 
     fetchRecentProducts() {
+      if (!window.Shopify || !window.Shopify.routes || !window.Shopify.routes.root) {
+        setTimeout(() => this.fetchRecentProducts(), 100);
+        return;
+      }
+
       const productHandles = localStorage.getItem('recently-viewed');
 
       if (!productHandles) {
@@ -31,12 +34,7 @@ if (!customElements.get('recently-viewed-products')) {
 
       const productHandlesArray = productHandles
         .split(',')
-        .filter(
-          productHandle =>
-            productHandle &&
-            productHandle !== this.productHandle &&
-            productHandle !== 'undefined'
-        );
+        .filter(productHandle => productHandle && productHandle !== this.productHandle && productHandle !== 'undefined');
 
       if (productHandlesArray.length === 0) {
         return;
@@ -45,21 +43,13 @@ if (!customElements.get('recently-viewed-products')) {
       productHandlesArray.forEach((productHandle, i) => {
         const addRecentProducts = async () => {
           try {
-            const productCardResponse = await fetch(
-              `${window.Shopify.routes.root}products/${productHandle}?view=card`
-            );
+            const productCardResponse = await fetch(`${window.Shopify.routes.root}products/${productHandle}?view=card`);
 
             if (!productCardResponse.ok) {
-              const productHandles =
-                localStorage.getItem('recently-viewed');
-              const updatedProductHandles = productHandles
-                .replace(`${productHandle},`, '')
-                .replace(productHandle, '');
+              const productHandles = localStorage.getItem('recently-viewed');
+              const updatedProductHandles = productHandles.replace(`${productHandle},`, '').replace(productHandle, '');
 
-              localStorage.setItem(
-                'recently-viewed',
-                updatedProductHandles
-              );
+              localStorage.setItem('recently-viewed', updatedProductHandles);
 
               return;
             }
@@ -68,26 +58,15 @@ if (!customElements.get('recently-viewed-products')) {
 
             const productSlide = document.createElement('DIV');
 
-            productSlide.classList.add(
-              'swiper-slide',
-              'card-product-slider__slide'
-            );
-            productSlide.insertAdjacentHTML(
-              'beforeend',
-              productCardHTML
-            );
-            if (
-              !productSlide.querySelector('product-card') ||
-              !productSlide.querySelector('.product-card')
-            )
-              return;
+            productSlide.classList.add('swiper-slide', 'card-product-slider__slide');
+            productSlide.insertAdjacentHTML('beforeend', productCardHTML);
+            if (!productSlide.querySelector('product-card') || !productSlide.querySelector('.product-card')) return;
 
             this.sliderWrapper.append(productSlide);
           } catch (error) {
             // console.log(error);
           } finally {
-            const isLastIteration =
-              i === productHandlesArray.length - 1;
+            const isLastIteration = i === productHandlesArray.length - 1;
 
             if (!isLastIteration) {
               return;

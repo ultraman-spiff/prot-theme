@@ -11,8 +11,7 @@
   "sections": {
     "banner": {
       "type": "main-search-banner",
-      "settings": {
-      }
+      "settings": {}
     },
     "main": {
       "type": "main-search",

@@ -170,9 +170,92 @@
         }
       }
     },
-    "product_cards": {
-      "name": "Product cards",
+    "drawers": {
+      "name": "Drawers",
       "settings": {
+        "show_country_drawer_title": {
+          "label": "Show heading"
+        },
+        "show_country_drawer_content": {
+          "label": "Show content"
+        },
+        "country_drawer_display_option": {
+          "label": "Display option",
+          "options": {
+            "option_1": {
+              "label": "Country name, currency code and symbol"
+            },
+            "option_2": {
+              "label": "Country name and currency code"
+            },
+            "option_3": {
+              "label": "Country name"
+            },
+            "option_4": {
+              "label": "Currency code and symbol"
+            },
+            "option_5": {
+              "label": "Flag"
+            },
+            "option_6": {
+              "label": "Flag and country name"
+            }
+          }
+        }
+      }
+    },
+    "products": {
+      "name": "Products & product cards",
+      "settings": {
+        "product_swatches_on_card": {
+          "label": "Enable product swatches",
+          "info": "When enabled, product swatches will be displayed on product cards."
+        },
+        "product_swatches_show_always": {
+          "label": "Show product swatches always",
+          "options": {
+            "option__0": {
+              "label": "No"
+            },
+            "option__1": {
+              "label": "Only Mobile"
+            },
+            "option__2": {
+              "label": "Desktop and Mobile"
+            }
+          }
+        },
+        "quick_add_to_cart": {
+          "label": "Enable quick add to cart",
+          "options": {
+            "with_variant": {
+              "label": "With variant selector"
+            },
+            "basic_button": {
+              "label": "Simple button"
+            },
+            "no_button": {
+              "label": "Disable quick add to cart"
+            }
+          }
+        },
+        "product_badge_style": {
+          "label": "Badge style",
+          "options": {
+            "none": {
+              "label": "Transparent"
+            },
+            "square": {
+              "label": "Square"
+            },
+            "round": {
+              "label": "Round"
+            }
+          }
+        },
+        "product_card_use_featured_media": {
+          "label": "Use featured image instead of variant image"
+        },
         "product_card_media_hover": {
           "label": "Show secondary media on hover",
           "info": "When enabled, secondary product media will be displayed on product card hover."
@@ -338,91 +421,26 @@
         },
         "show_product_card_vendor": {
           "label": "Show product vendor"
-        }
-      }
-    },
-    "drawers": {
-      "name": "Drawers",
-      "settings": {
-        "show_country_drawer_title": {
-          "label": "Show heading"
         },
-        "show_country_drawer_content": {
-          "label": "Show content"
+        "metaobject_for_product_groups": {
+          "label": "Metaobject for product groups",
+          "info": "This custom metaobject will be used to display the product groups."
         },
-        "country_drawer_display_option": {
-          "label": "Display option",
-          "options": {
-            "option_1": {
-              "label": "Country name, currency code and symbol"
-            },
-            "option_2": {
-              "label": "Country name and currency code"
-            },
-            "option_3": {
-              "label": "Country name"
-            },
-            "option_4": {
-              "label": "Currency code and symbol"
-            },
-            "option_5": {
-              "label": "Flag"
-            },
-            "option_6": {
-              "label": "Flag and country name"
-            }
-          }
-        }
-      }
-    },
-    "products": {
-      "name": "Products",
-      "settings": {
-        "product_swatches_on_card": {
-          "label": "Enable product swatches",
-          "info": "When enabled, product swatches will be displayed on product cards."
+        "metaobject_for_product_options_type_values": {
+          "label": "Metaobject for product options type values",
+          "info": "This custom metaobject will be used to display the product options thumbnails."
         },
-        "product_swatches_show_always": {
-          "label": "Show product swatches always",
-          "options": {
-            "option__0": {
-              "label": "No"
-            },
-            "option__1": {
-              "label": "Only Mobile"
-            },
-            "option__2": {
-              "label": "Desktop and Mobile"
-            }
-          }
+        "variant_options_with_thumbnails": {
+          "label": "Variant options with thumbnails",
+          "info": "Show variant thumbnail for those variants."
         },
-        "quick_add_to_cart": {
-          "label": "Enable quick add to cart",
-          "options": {
-            "with_variant": {
-              "label": "With variant selector"
-            },
-            "basic_button": {
-              "label": "Simple button"
-            },
-            "no_button": {
-              "label": "Disable quick add to cart"
-            }
-          }
+        "variant_options_use_custom_thumbnails": {
+          "label": "Variant options use custom thumbnails",
+          "info": "Those variants will get custom thumbnails from defined product options thumbnails metaobject. eg. Color,Material,Size"
         },
-        "product_badge_style": {
-          "label": "Badge style",
-          "options": {
-            "none": {
-              "label": "Transparent"
-            },
-            "square": {
-              "label": "Square"
-            },
-            "round": {
-              "label": "Round"
-            }
-          }
+        "variant_options_use_last_image_as_thumbnail": {
+          "label": "Use last image as thumbnail",
+          "info": "If the variant option doesn't have a custom thumbnail, the last image will be used."
         }
       }
     },
@@ -502,9 +520,6 @@
         "share_linkedin": {
           "label": "Share on LinkedIn"
         },
-        "share_instagram": {
-          "label": "Share on Instagram"
-        },
         "share_facebook": {
           "label": "Share on Facebook"
         }
@@ -566,18 +581,6 @@
         }
       }
     },
-    "search": {
-      "name": "Search",
-      "settings": {
-        "enable_predictive_search": {
-          "label": "Enable predictive search"
-        },
-        "search_suggestions": {
-          "label": "Search suggestions",
-          "info": "Present search suggestions with the created navigation element."
-        }
-      }
-    },
     "icons_stroke_width": {
       "label": "Icon stroke width",
       "options": {
@@ -604,9 +607,16 @@
         }
       }
     },
-    "extras": {
-      "name": "Extras",
+    "features": {
+      "name": "Features",
       "settings": {
+        "enable_predictive_search": {
+          "label": "Enable predictive search"
+        },
+        "search_suggestions": {
+          "label": "Search suggestions",
+          "info": "Present search suggestions with the created navigation element."
+        },
         "enable_breadcrumbs_on_other_pages": {
           "label": "Show on all other pages"
         },
@@ -660,31 +670,6 @@
           "label": "Spacing / Mobile"
         }
       }
-    },
-    "product_options": {
-      "name": "Product options",
-      "settings": {
-        "metaobject_for_product_groups": {
-          "label": "Metaobject for product groups",
-          "info": "This custom metaobject will be used to display the product groups."
-        },
-        "metaobject_for_product_options_type_values": {
-          "label": "Metaobject for product options type values",
-          "info": "This custom metaobject will be used to display the product options thumbnails."
-        },
-        "variant_options_with_thumbnails": {
-          "label": "Variant options with thumbnails",
-          "info": "Show variant thumbnail for those variants."
-        },
-        "variant_options_use_custom_thumbnails": {
-          "label": "Variant options use custom thumbnails",
-          "info": "Those variants will get custom thumbnails from defined product options thumbnails metaobject. eg. Color,Material,Size"
-        },
-        "variant_options_use_last_image_as_thumbnail": {
-          "label": "Use last image as thumbnail",
-          "info": "If the variant option doesn't have a custom thumbnail, the last image will be used."
-        }
-      }
     }
   },
   "sections": {
@@ -719,6 +704,9 @@
           "for__header_item_2": {
             "content": "Second additional link"
           }
+        },
+        "back_to_top_button": {
+          "content": "Back to top button"
         },
         "background": {
           "content": "Background"
@@ -788,7 +776,7 @@
           "content": "Email signup"
         },
         "end_of_page_content": {
-          "content": "End of page content"
+          "content": "Additional content"
         },
         "general": {
           "content": "General"
@@ -847,6 +835,9 @@
         "product_media": {
           "content": "Product media"
         },
+        "product_options": {
+          "content": "Product options"
+        },
         "product_video": {
           "content": "Product video"
         },
@@ -859,6 +850,9 @@
         },
         "products_grid": {
           "content": "Product grid"
+        },
+        "search": {
+          "content": "Search"
         },
         "sharing_options": {
           "content": "Sharing options"
@@ -1306,9 +1300,6 @@
           },
           "icon": {
             "label": "Button icon"
-          },
-          "for__back_to_top": {
-            "label": "Back to top button"
           }
         },
         "button_label": {
@@ -1329,6 +1320,9 @@
           "position": {
             "label": "Media position",
             "options": {
+              "default": {
+                "label": "Default"
+              },
               "top": {
                 "label": "Top"
               },
@@ -1403,7 +1397,7 @@
           "label": "Icon",
           "info": "Leave blank to hide the icon. You can find the list of available icons [here](https://www.digifist.com/en/help-center/documentation/theme/release/icons).",
           "icon_size": {
-            "label": "Icon size",
+            "label": "Custom icon size",
             "options__1": {
               "label": "Small"
             },
@@ -1427,6 +1421,9 @@
         },
         "collection": {
           "label": "Collection"
+        },
+        "collections": {
+          "label": "Collections"
         },
         "page": {
           "label": "Page"
@@ -1696,7 +1693,7 @@
         "bottom": {
           "label": "Bottom spacing",
           "for__blocks": {
-            "label": "Block bottom spacing",
+            "label": "Bottom spacing",
             "info": "Set the bottom spacing for the blocks."
           }
         },
@@ -2449,6 +2446,9 @@
               "label": "Both"
             }
           },
+          "for__content": {
+            "label": "Show content on"
+          },
           "for__description": {
             "label": "Show description on"
           }
@@ -2502,7 +2502,8 @@
           }
         },
         "timer_size": {
-          "label": "Timer size"
+          "label": "Timer size",
+          "info": "Only desktop. Timer size is automatically optimized for mobile."
         },
         "action_preference": {
           "label": "Action preference"
@@ -2812,7 +2813,7 @@
           "label": "Enable sorting to sort products"
         },
         "enable_opened_filter_accordions": {
-          "label": "Enable open state for filter accordions"
+          "label": "Open filter accordions by default"
         },
         "show_top_border_for_utilities_bar": {
           "label": "Show top border for utilities bar"
@@ -2844,6 +2845,9 @@
               "label": "Sidebar"
             }
           }
+        },
+        "enable_range_slider_for_price_filter": {
+          "label": "Enable range slider for price filter"
         },
         "enable_products_count": {
           "label": "Enable products count"
@@ -3067,7 +3071,7 @@
       }
     },
     "form-contact": {
-      "name": "Form contact"
+      "name": "Contact form"
     },
     "main-login": {
       "name": "Signin",
@@ -3128,7 +3132,7 @@
       }
     },
     "main-product": {
-      "name": "Product information",
+      "name": "Product",
       "settings": {
         "media": {
           "content": "Product media"
@@ -3408,6 +3412,10 @@
               "label": "Variant options with thumbnails",
               "info": "Show variant thumbnail for those variants."
             },
+            "show_gift_card_options_prices_as_label": {
+              "label": "Show gift card prices in options",
+              "info": "Displays variant prices automatically for gift card products. This setting only applies when the product is a gift card."
+            },
             "picker_type": {
               "label": "Display as",
               "options": {
@@ -3546,6 +3554,9 @@
               "label": "Last label"
             }
           }
+        },
+        "promo_banner": {
+          "name": "Promotional banner"
         }
       }
     },
@@ -4011,6 +4022,9 @@
         },
         "show_controls": {
           "info": "Only for top and bottom media position."
+        },
+        "aspect_ratio": {
+          "info": "The aspect ratio setting only applies when the banner height is set to auto."
         }
       },
       "blocks": {
@@ -4414,6 +4428,12 @@
         "fullwidth": {
           "label": "Enable full-width"
         },
+        "see_more": {
+          "label": "See more card settings"
+        },
+        "show_pin": {
+          "label": "Show pin label"
+        },
         "map_layout": {
           "label": "Section layout",
           "options": {
@@ -4465,6 +4485,13 @@
             "blurred": "Blurred",
             "transparent": "Transparent"
           }
+        },
+        "card_layout": {
+          "label": "Card layout",
+          "options": {
+            "layout_1": "Layout 1",
+            "layout_2": "Layout 2"
+          }
         }
       },
       "blocks": {
@@ -4477,11 +4504,23 @@
             "store_address": {
               "label": "Address"
             },
+            "store_mail_address": {
+              "label": "Mail address"
+            },
             "store_opening_hours": {
               "label": "Opening hours"
             },
             "store_image": {
               "label": "Store image"
+            },
+            "store_country": {
+              "label": "Store country"
+            },
+            "store_city": {
+              "label": "Store city"
+            },
+            "pin_title": {
+              "label": "Pin title"
             },
             "store_tel_button": {
               "label": "Phone button name",
@@ -4539,6 +4578,10 @@
         },
         "show_dots": {
           "label": "Show pulse dots"
+        },
+        "always_show_quick_add": {
+          "label": "Always show Quick Add button",
+          "info": "Shows the Quick Add button on product cards without requiring hover."
         },
         "button": {
           "content": "Button settings",
@@ -4894,7 +4937,7 @@
       "name": "Overlay"
     },
     "vendor-list": {
-      "name": "Vendor list",
+      "name": "Vendors",
       "settings": {
         "show_vendor_logo": {
           "label": "Show vendor logo",
@@ -4904,7 +4947,7 @@
           "label": "Show navigation"
         },
         "metaobject_for_section": {
-          "label": "Metaobject for vendor list"
+          "label": "Metaobject for vendors"
         },
         "logo_height": {
           "label": "Logo height",

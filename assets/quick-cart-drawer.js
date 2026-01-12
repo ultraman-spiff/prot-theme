@@ -1,11 +1,11 @@
-if (!customElements.get("quick-cart-drawer")) {
+if (!customElements.get('quick-cart-drawer')) {
   class QuickCartDrawer extends HTMLElement {
     constructor() {
       super();
       if (Shopify.designMode) {
-        window.addEventListener("shopify:section:load", this.init.bind(this));
-        this.parentElement.addEventListener("shopify:section:select", () => this.open());
-        this.parentElement.addEventListener("shopify:section:deselect", () => this.close());
+        window.addEventListener('shopify:section:load', this.init.bind(this));
+        this.parentElement.addEventListener('shopify:section:select', () => this.open());
+        this.parentElement.addEventListener('shopify:section:deselect', () => this.close());
       }
     }
 
@@ -16,22 +16,15 @@ if (!customElements.get("quick-cart-drawer")) {
     init() {
       this.toggleState = false;
 
-      if (!this.classList.contains("is--open")) {
-        document
-          .querySelector("body")
-          .classList.remove("overflow-hidden");
+      if (!this.classList.contains('is--open')) {
+        document.querySelector('body').classList.remove('overflow-hidden');
       }
 
-      this.querySelector(".button--close").addEventListener(
-        "click",
-        this.close.bind(this)
-      );
-      this.querySelector(
-        ".quick-cart-drawer__backdrop"
-      ).addEventListener("click", this.close.bind(this));
+      this.querySelector('.button--close').addEventListener('click', this.close.bind(this));
+      this.querySelector('.quick-cart-drawer__backdrop').addEventListener('click', this.close.bind(this));
 
-      this.querySelector(".quick-cart-drawer__blocks").addEventListener("keydown", e => {
-        if (e.key === "Escape" && this.toggleState) {
+      this.querySelector('.quick-cart-drawer__blocks').addEventListener('keydown', e => {
+        if (e.key === 'Escape' && this.toggleState) {
           this.close();
         }
 
@@ -40,10 +33,9 @@ if (!customElements.get("quick-cart-drawer")) {
             'button, [href], input, select, label, textarea, [tabindex]:not([tabindex="-1"])'
           );
           const firstFocusableElement = focusableElements[0];
-          const lastFocusableElement =
-            focusableElements[focusableElements.length - 1];
+          const lastFocusableElement = focusableElements[focusableElements.length - 1];
 
-          let isTabPressed = e.key === "Tab";
+          let isTabPressed = e.key === 'Tab';
 
           if (!isTabPressed) {
             return;
@@ -68,16 +60,15 @@ if (!customElements.get("quick-cart-drawer")) {
 
     initTriggers() {
       const observer = new MutationObserver(() => {
-        document
-          .querySelectorAll(".quick-cart-drawer__trigger")
-          .forEach(element => {
-            if (!element._init) { // Daha önce eklenmiş mi kontrol edin
-              element.addEventListener("click", event => {
-                this.fetchProductForQuickCartDrawer(event);
-              });
-              element._init = true; // Eklenmiş olarak işaretleyin
-            }
-          });
+        document.querySelectorAll('.quick-cart-drawer__trigger').forEach(element => {
+          if (!element._init) {
+            // Daha önce eklenmiş mi kontrol edin
+            element.addEventListener('click', event => {
+              this.fetchProductForQuickCartDrawer(event);
+            });
+            element._init = true; // Eklenmiş olarak işaretleyin
+          }
+        });
       });
 
       observer.observe(document.body, {
@@ -88,32 +79,24 @@ if (!customElements.get("quick-cart-drawer")) {
 
     async fetchProductForQuickCartDrawer(event) {
       /** stop autoplay on quick cart trigger */
-      if (event.target.closest("card-product-slider")) {
-        event.target
-          .closest("card-product-slider")
-          .slider.autoplay.stop();
-        event.target
-          .closest("card-product-slider")
-          .classList.add("product--open-on-quick-cart");
+      if (event.target.closest('card-product-slider')) {
+        event.target.closest('card-product-slider').slider.autoplay.stop();
+        event.target.closest('card-product-slider').classList.add('product--open-on-quick-cart');
       }
 
-      const isRecommendations = event.target.classList.contains(
-        "quick-cart-drawer__trigger--recommendations"
-      );
+      const isRecommendations = event.target.classList.contains('quick-cart-drawer__trigger--recommendations');
 
-      const productCard = event.target.closest("product-card");
+      const productCard = event.target.closest('product-card');
       let productOptions = null;
 
       if (!isRecommendations) {
         if (!productCard) return;
         // get all checked options
-        productOptions = productCard.querySelectorAll(
-          'input[type="radio"]:checked, select'
-        );
+        productOptions = productCard.querySelectorAll('input[type="radio"]:checked, select');
       }
 
-      const trigger = event.target.closest("[data-product-url]");
-      trigger.classList.toggle("is--loading");
+      const trigger = event.target.closest('[data-product-url]');
+      trigger.classList.toggle('is--loading');
       try {
         // if root contains locale, add locale to productUrl as prefix
         let fetchPrefix = '';
@@ -121,21 +104,17 @@ if (!customElements.get("quick-cart-drawer")) {
           fetchPrefix = `/${window.Shopify.locale}`;
         }
 
-        const productCardResponse = await fetch(
-          `${fetchPrefix}${trigger.dataset.productUrl}/?view=quick-cart`
-        );
+        const productCardResponse = await fetch(`${fetchPrefix}${trigger.dataset.productUrl}/?view=quick-cart`);
         if (!productCardResponse) return;
 
         const productCardHTML = await productCardResponse.text();
-        const productCard = document.createElement("DIV");
-        productCard.insertAdjacentHTML("beforeend", productCardHTML);
-        if (!productCard.querySelector(".quick-cart-product")) return;
-        this.querySelector(".quick-cart-drawer__main").innerHTML = "";
-        this.querySelector(".quick-cart-drawer__main").append(
-          productCard.querySelector(".quick-cart-product")
-        );
+        const productCard = document.createElement('DIV');
+        productCard.insertAdjacentHTML('beforeend', productCardHTML);
+        if (!productCard.querySelector('.quick-cart-product')) return;
+        this.querySelector('.quick-cart-drawer__main').innerHTML = '';
+        this.querySelector('.quick-cart-drawer__main').append(productCard.querySelector('.quick-cart-product'));
 
-        this.sliderInstance = new Swiper(".quick-cart-drawer__media-swiper", {
+        this.sliderInstance = new Swiper('.quick-cart-drawer__media-swiper', {
           slidesPerView: 1.25,
           spaceBetween: 8,
           freeMode: {
@@ -150,29 +129,31 @@ if (!customElements.get("quick-cart-drawer")) {
       } catch (error) {
         // console.log(error);
       } finally {
-        trigger.classList.toggle("is--loading");
+        trigger.classList.toggle('is--loading');
 
         if (!isRecommendations) {
           // update quick cart drawer options with product options
           productOptions.forEach(productOption => {
-            // console.log(productOption);
+            let productOptionName = productOption.name;
+            const optionSectionIdAttribute = productOption.dataset?.sectionId;
+
+            if (optionSectionIdAttribute) {
+              productOptionName = productOptionName.replace(optionSectionIdAttribute, '');
+            }
+
             const quickCartDrawerOption = this.querySelector(
-              `[name="${productOption.name}"][value="${productOption.value}"]`
+              `[name="${CSS.escape(productOptionName)}-quick-cart-product"][value="${CSS.escape(productOption.value)}"]`
             );
             const quickCartDrawerOptionLabel = quickCartDrawerOption.parentElement.parentElement.querySelector('legend');
-            const quickCartDrawerOptionLabelInnerHTML =
-              quickCartDrawerOptionLabel.innerHTML;
 
             // before updating radio button state, remove checked attribute for specific name
-            this.querySelectorAll(
-              `[name="${productOption.name}"]`
-            ).forEach(radioInput => {
-              radioInput.removeAttribute("checked");
-              radioInput.closest("li").classList.remove("checked");
+            this.querySelectorAll(`[name="${productOptionName}"]`).forEach(radioInput => {
+              radioInput.removeAttribute('checked');
+              radioInput.closest('li').classList.remove('checked');
             });
 
             if (quickCartDrawerOption) {
-              quickCartDrawerOption.setAttribute("checked", "");
+              quickCartDrawerOption.setAttribute('checked', '');
               const quickCartDrawerOptionLabelSpan = quickCartDrawerOptionLabel.querySelector('[data-selected-variant]');
               if (quickCartDrawerOptionLabelSpan) {
                 quickCartDrawerOptionLabelSpan.innerHTML = productOption.value;
@@ -180,21 +161,16 @@ if (!customElements.get("quick-cart-drawer")) {
             }
 
             // update variant id in product card with selected variant id
-            this.querySelector("product-card").querySelector(
-              'input[name="id"]'
-            ).value = productCard.querySelector(
-              'input[name="id"]'
-            ).value;
+            this.querySelector('product-card').querySelector('input[name="id"]').value =
+              productCard.querySelector('input[name="id"]').value;
 
             // update radio button state
             if (quickCartDrawerOption) {
-              quickCartDrawerOption
-                .closest("li")
-                .classList.add("checked");
+              quickCartDrawerOption.closest('li').classList.add('checked');
             }
 
             // initilise for disabled states to be checked and updated
-            this.querySelector("product-card").init();
+            this.querySelector('product-card').init();
           });
         }
 
@@ -207,10 +183,10 @@ if (!customElements.get("quick-cart-drawer")) {
         // this.open();
 
         // update label when variant is selected
-        this.querySelector(".quick-cart-drawer__main")
-          .querySelectorAll(".variant-option-radio-input")
+        this.querySelector('.quick-cart-drawer__main')
+          .querySelectorAll('.variant-option-radio-input')
           .forEach(radioInput => {
-            radioInput.addEventListener("change", event => {
+            radioInput.addEventListener('change', event => {
               const quickCartDrawerOptionLabel = event.target.parentElement.parentElement.querySelector('legend');
               const quickCartDrawerOptionLabelSpan = quickCartDrawerOptionLabel.querySelector('[data-selected-variant]');
               if (quickCartDrawerOptionLabelSpan) {
@@ -218,15 +194,11 @@ if (!customElements.get("quick-cart-drawer")) {
               }
 
               // update variant id in product card with selected variant id
-              const selectedVariantId = this.querySelector(
-                ".product-card__add-to-cart--form input[name='id']"
-              ).value;
+              const selectedVariantId = this.querySelector(".product-card__add-to-cart--form input[name='id']").value;
 
               // get product variants data
-              const productVariantsData = this.querySelector("product-card").variantsObj;
-              const featuredMedia = productVariantsData.find(
-                variant => variant.id == selectedVariantId
-              )?.featured_media;
+              const productVariantsData = this.querySelector('product-card').variantsObj;
+              const featuredMedia = productVariantsData.find(variant => variant.id == selectedVariantId)?.featured_media;
 
               if (featuredMedia) {
                 this.setActiveMedia(featuredMedia.id);
@@ -237,9 +209,7 @@ if (!customElements.get("quick-cart-drawer")) {
     }
 
     setActiveMedia(id) {
-      const mediaFound = Array.from(
-        this.querySelectorAll("[data-media-id]")
-      ).find(media => Number(media.dataset.mediaId) === id);
+      const mediaFound = Array.from(this.querySelectorAll('[data-media-id]')).find(media => Number(media.dataset.mediaId) === id);
       if (mediaFound) {
         this.sliderInstance.slideTo(Number(mediaFound.dataset.index));
       }
@@ -256,17 +226,15 @@ if (!customElements.get("quick-cart-drawer")) {
 
     open() {
       this.toggleState = true;
-      document.querySelector("body").classList.add("overflow-hidden");
-      const quickCartDrawer = document.querySelector(".quick-cart-drawer__blocks");
-      const closeButton = quickCartDrawer.querySelector(".button--close");
-      quickCartDrawer.setAttribute("tabindex", "0");
-      closeButton.setAttribute("tabindex", "0");
-      this.classList.add("is--open");
+      document.querySelector('body').classList.add('overflow-hidden');
+      const quickCartDrawer = document.querySelector('.quick-cart-drawer__blocks');
+      const closeButton = quickCartDrawer.querySelector('.button--close');
+      quickCartDrawer.setAttribute('tabindex', '0');
+      closeButton.setAttribute('tabindex', '0');
+      this.classList.add('is--open');
       this.opened();
 
-      const firstFocusableElement = this.querySelector(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      );
+      const firstFocusableElement = this.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
       if (firstFocusableElement) {
         firstFocusableElement.focus();
       }
@@ -275,58 +243,46 @@ if (!customElements.get("quick-cart-drawer")) {
     close() {
       this.toggleState = false;
 
-      const shopTheLookDrawer = document.querySelector("shop-the-look-drawer");
+      const shopTheLookDrawer = document.querySelector('shop-the-look-drawer');
 
-      if(shopTheLookDrawer && !shopTheLookDrawer.classList.contains("is--open")) {
-        document
-          .querySelector("body")
-          .classList.remove("overflow-hidden");
+      if (shopTheLookDrawer && !shopTheLookDrawer.classList.contains('is--open')) {
+        document.querySelector('body').classList.remove('overflow-hidden');
       }
-      if(!shopTheLookDrawer) {
-        document
-          .querySelector("body")
-          .classList.remove("overflow-hidden");
+      if (!shopTheLookDrawer) {
+        document.querySelector('body').classList.remove('overflow-hidden');
       }
-      this.classList.remove("is--open");
+      this.classList.remove('is--open');
       this.closed();
       this.toggleAriaExpanded();
 
       /** start autoplay on quick cart drawe close */
-      if (document.querySelector("card-product-slider.product--open-on-quick-cart")) {
-        document.querySelector("card-product-slider.product--open-on-quick-cart").slider.autoplay.start();
-        document.querySelector("card-product-slider.product--open-on-quick-cart").classList.remove("product--open-on-quick-cart");
+      if (document.querySelector('card-product-slider.product--open-on-quick-cart')) {
+        document.querySelector('card-product-slider.product--open-on-quick-cart').slider.autoplay.start();
+        document.querySelector('card-product-slider.product--open-on-quick-cart').classList.remove('product--open-on-quick-cart');
       }
     }
 
     toggleAriaExpanded(event) {
       if (event) {
-        if (event.target.closest("button"))
-          event.target
-            .closest("button")
-            .setAttribute("aria-expanded", true);
-        this.querySelector(".button--close").setAttribute(
-          "aria-expanded",
-          true
-        );
+        if (event.target.closest('button')) event.target.closest('button').setAttribute('aria-expanded', true);
+        this.querySelector('.button--close').setAttribute('aria-expanded', true);
       } else {
-        document
-          .querySelectorAll('[aria-controls="quick-cart-drawer"]')
-          .forEach(button => {
-            button.setAttribute("aria-expanded", false);
-          });
+        document.querySelectorAll('[aria-controls="quick-cart-drawer"]').forEach(button => {
+          button.setAttribute('aria-expanded', false);
+        });
       }
     }
 
     opened() {
-      const openedEvent = new Event("opened", { bubbles: true });
+      const openedEvent = new Event('opened', { bubbles: true });
       this.dispatchEvent(openedEvent);
     }
 
     closed() {
-      const closedEvent = new Event("closed", { bubbles: true });
+      const closedEvent = new Event('closed', { bubbles: true });
       this.dispatchEvent(closedEvent);
     }
   }
 
-  customElements.define("quick-cart-drawer", QuickCartDrawer);
+  customElements.define('quick-cart-drawer', QuickCartDrawer);
 }

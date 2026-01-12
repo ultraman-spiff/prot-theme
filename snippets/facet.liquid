@@ -31,13 +31,12 @@
     </div>
   </summary>
 
-  <div class="accordion__body facets__accordion-body slim-scrollbar" id="Filters-accordion-dropdown-{{- index -}}" {% if opened_accordions %} style="height: auto;"{% endif %}>
-    <div id="Filter-{{ filter.param_name | escape }}-{{ section.id }}" class="js-filter" data-index="{{- index -}}">
+  <div class="accordion__body facets__accordion-body" id="Filters-accordion-dropdown-{{- index -}}" {% if opened_accordions %} style="height: auto;"{% endif %}>
+    <div id="Filter-{{ filter.param_name | escape }}-{{ section.id }}" class="js-filter" data-index="{{- index -}}" data-show-more-count="5">
 
       {%- case filter.type -%}
         {%- when 'list' or 'boolean' -%}
           <ul class="facets__list list-unstyled" role="list">
-
             {%- for value in filter.values -%}
               <li class="facets__item{% if value.active %} facets__item--checked{% endif %}">
                 {%- liquid
@@ -92,51 +91,96 @@
             {%- endfor -%}
           </ul>
         {%- when 'price_range' -%}
-          <price-range class="facets__price">
-            <div class="facets__price-row">
-              <span>{{- cart.currency.symbol -}}</span>
+          <price-range class="facets__price {% if enable_range_slider_for_price_filter %} facets__price--range-slider{% endif %}">
+            {%- liquid
+              assign max_price = filter.range_max | divided_by: 100
+              assign min_price = filter.min_value.value | divided_by: 100
+              assign current_max_price = filter.max_value.value | divided_by: 100
 
-              {%-
-                liquid
-                assign label = 'collection.filters_from' | t
-                assign filter_label = filter.label | escape
-                assign id = 'Filter-' | append: filter_label | append: '-GTE'
-                assign input_placeholder = '0' | money_without_currency
-                if filter.min_value.value
-                  assign value = filter.min_value.value | money_without_currency
+              if current_max_price == 0
+                assign current_max_price = max_price
+              endif
+            -%}
+
+            {% if enable_range_slider_for_price_filter %}
+              {% liquid
+                assign min_percent = 0
+                assign max_percent = 100
+                if max_price > 0
+                  assign min_percent = min_price | times: 100.0 | divided_by: max_price
+                  assign max_percent = current_max_price | times: 100.0 | divided_by: max_price
                 endif
-                assign max = filter.range_max | money_without_currency
+              %}
+              <div class="range-group" style="--range-min: {{ min_percent }}%; --range-max: {{ max_percent }}%;">
+                <input
+                  type="range"
+                  step="1"
+                  min="0"
+                  max="{{ max_price }}"
+                  value="{{ min_price }}"
+                  aria-label="{{ 'collection.filters_from' | t }}"
+                  class="range range--min"
+                >
+                <input
+                  type="range"
+                  step="1"
+                  min="0"
+                  max="{{ max_price }}"
+                  value="{{ current_max_price }}"
+                  aria-label="{{ 'collection.filters_to' | t }}"
+                  class="range range--max"
+                >
+              </div>
+            {% endif %}
+            <div class="facets__price-rows">
+              <div class="facets__price-row">
+                <span>{{- cart.currency.symbol -}}</span>
+                {%-
+                  liquid
+                  assign label = 'collection.filters_from' | t
+                  assign filter_label = filter.label | escape
+                  assign id = 'Filter-' | append: filter_label | append: '-GTE'
+                  assign input_placeholder = '0' | money_without_currency
+                  if filter.min_value.value
+                    assign value = filter.min_value.value | money_without_currency
+                  endif
+                  assign max = filter.range_max | money_without_currency
 
-                render 'text-input', type: 'number', class: 'facets__price-field' name: filter.min_value.param_name, id: id, label: label, placeholder: input_placeholder, min: 0, max: max, hide_label: false
+                  render 'text-input', type: 'number', class: 'facets__price-field' name: filter.min_value.param_name, id: id,  value: min_price, label: label, placeholder: input_placeholder, min: 0, max: max_price, hide_label: false
 
-                assign label = nil
-                assign id = nil
-                assign value = nil
-                assign max = nil
-              -%}
-            </div>
-            <div class="facets__price-row">
-              <span>{{- cart.currency.symbol -}}</span>
-              {%- liquid
-                assign label = 'collection.filters_to' | t
-                assign filter_label = filter.label | escape
-                assign id = 'Filter-' | append: filter_label | append: '-LTE'
-                assign input_placeholder = filter.range_max | money_without_currency
-                if filter.max_value.value
-                  assign value = filter.max_value.value | money_without_currency
-                endif
-                assign max = filter.range_max | money_without_currency
+                  assign label = nil
+                  assign id = nil
+                  assign value = nil
+                  assign max = nil
+                -%}
+              </div>
+              <div class="facets__price-row">
+                <span>{{- cart.currency.symbol -}}</span>
+                {%- liquid
+                  assign label = 'collection.filters_to' | t
+                  assign filter_label = filter.label | escape
+                  assign id = 'Filter-' | append: filter_label | append: '-LTE'
+                  assign input_placeholder = filter.range_max | money_without_currency
+                  if filter.max_value.value
+                    assign value = filter.max_value.value | money_without_currency
+                  endif
+                  assign max = filter.range_max | money_without_currency
 
-                render 'text-input', type: 'number', class: 'facets__price-field' name: filter.max_value.param_name, id: id, value: value, label: label, placeholder: input_placeholder, min: 0, max: max, hide_label: false
+                  render 'text-input', type: 'number', class: 'facets__price-field' name: filter.max_value.param_name, id: id, value: current_max_price, label: label, placeholder: input_placeholder, min: 0, max: max_price, hide_label: false
 
-                assign label = nil
-                assign id = nil
-                assign value = nil
-                assign max = nil
-              -%}
+                  assign label = nil
+                  assign id = nil
+                  assign value = nil
+                  assign max = nil
+                -%}
+              </div>
             </div>
           </price-range>
       {%- endcase -%}
+
+      {%- if filter.type == 'list' and filter.values.size > 5 -%}
+        <button class="button button--text show-more">{{ 'theme.actions.show_more' | t }}</button>
+      {%- endif -%}
     </div>
   </div>
 </details>

@@ -39,6 +39,8 @@
       "search": "Rechercher",
       "share_on": "Partager sur {{name}}",
       "show_all": "Afficher tout",
+      "show_less": "Afficher moins",
+      "show_more": "Afficher plus",
       "start_shopping": "Commencer vos achats",
       "view": "Voir"
     },
@@ -445,7 +447,9 @@
       "search_label": "Trouver nos magasins",
       "search_by_location": "Rechercher un magasin par code postal, ville ou pays",
       "search_placeholder": "Tapez le code postal, la ville ou le pays",
-      "call": "Appeler"
+      "call": "Appeler",
+      "clear": "Clair",
+      "opening_hours": "Heures d'ouverture"
     },
     "compare_slider": {
       "image_before": "Image avant",

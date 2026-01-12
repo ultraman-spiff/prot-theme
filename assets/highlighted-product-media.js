@@ -331,7 +331,7 @@ if (!customElements.get('product-media')) {
       ];
 
       function isPhone() {
-        return window.innerWidth < 750;
+        return DeviceDetector.isMobile();
       }
 
       const photoSwipeLightboxInstance = new PhotoSwipeLightbox({
@@ -388,7 +388,7 @@ if (!customElements.get('product-media')) {
       photoSwipeLightboxInstance.init();
 
       photoSwipeLightboxInstance.on('beforeOpen', () => {
-        document.body.classList.add("oveflow-hidden")
+        document.body.classList.add("overflow-hidden")
         const videos = this.querySelectorAll('video');
         Array.from(videos).forEach(video => {
           // if video is not playing, call playPromise
@@ -407,7 +407,7 @@ if (!customElements.get('product-media')) {
       });
 
       photoSwipeLightboxInstance.on("closingAnimationStart", () => {
-        document.body.classList.remove("oveflow-hidden");
+        document.body.classList.remove("overflow-hidden");
       });
 
       this.addEventListener('dragstart', event => {

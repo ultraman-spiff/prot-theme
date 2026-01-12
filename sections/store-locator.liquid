@@ -1,6 +1,6 @@
 {{ 'section-store-locator.css' | asset_url | stylesheet_tag }}
 
-{%- if section.blocks.size > 1 -%}
+{%- if section.blocks.size > 0 -%}
   <script src="{{- 'store-locator-slider.js' | asset_url -}}" defer="defer"></script>
 {%- endif -%}
 
@@ -17,10 +17,18 @@
     }
   }
 {%- endstyle -%}
+
+{%- unless section.settings.show_pin -%}
+  {%- style -%}
+    .store-locator__map--custom-marker--label {
+      display: none;
+    }
+  {%- endstyle -%}
+{%- endunless -%}
 {%- if section.blocks.size == 3 and section.settings.layout != 'map' -%}
   {%- style -%}
   @media screen and (min-width: 750px) {
-    .store-locator store-locator-slider{
+    .store-locator store-locator-slider:not(.store-locator__map-cards) {
       grid-column: span 3 / span 3;
     }
   }
@@ -28,9 +36,47 @@
 {%- endif -%}
 {%- assign blocks_size = section.blocks.size | append: '' -%}
 {%- assign icon_arrow = 'theme-chevron' -%}
+{%- capture see_more_card -%}
+  {%- assign search = section.settings.see_more_search | default: false -%}
+  <div class="store-locator-card  store-locator-card__see-more{% if search %} store-locator-card__search{% endif %}{% if section.settings.layout == 'map' %} swiper-slide{% endif %}">
+    <div class="store-locator-card__content color-{{ section.settings.see_more_color_scheme }} gradient">
+      {%- if section.settings.see_more_card_title -%}
+        <h3 class="store-locator-card__title">
+          {{- section.settings.see_more_card_title -}}
+        </h3>
+      {%- endif -%}
+      {%- if search and section.settings.layout == 'map' -%}
+        <div class="store-locator__search-controls">
+          {%- capture attr -%}autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false"{%- endcapture -%}
+          {%- assign search_label = 'sections.store_locator.search' | t -%}
+          {%- assign search_placeholder = 'sections.store_locator.search_placeholder' | t -%}
 
+          {%- render 'text-input',
+            id: 'search-store-locator',
+            label: search_label,
+            type: 'search',
+            name: 'search',
+            placeholder: search_placeholder,
+            hide_label: true,
+            class: 'store-locator__search',
+            attr: attr
+          -%}
+
+          <button id="store-locator__clear-search" style="display: none;">{{ 'sections.store_locator.clear' | t }}</button>
+          <div id="store-locator__search-results" class="store-locator__search-dropdown" style="display: none;"></div>
+        </div>
+      {%- else -%}
+        {%- if section.settings.see_more_button_label and section.settings.see_more_button_link -%}
+          <a href="{{- section.settings.see_more_button_link -}}" class="button {{ section.settings.see_more_button_style -}}">
+            {{- section.settings.see_more_button_label -}}
+          </a>
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+  </div>
+{%- endcapture -%}
 <div class="color-{{ section.settings.color_scheme }} gradient js-animation-fade-in">
-  <div class="store-locator">
+  <div class="store-locator" data-show-pin="{{ section.settings.show_pin }}">
     <div class="container {{ section.settings.section_width -}}">
       {% comment %} HEADER {% endcomment %}
       <div class="store-locator__header">
@@ -55,16 +101,34 @@
         {%- if section.blocks.size > 0 -%}
           {%- if section.settings.layout == 'image' -%}
             {% comment %} IMAGE LAYOUT {% endcomment %}
-            {%- if section.blocks.size == 1 and section.blocks[0].type == 'pin' -%}
+            {%- if section.blocks.size == 1 and section.blocks[0].type == 'pin' and section.settings.see_more_card_title == blank -%}
 
               {%- assign block = section.blocks[0] -%}
               {%- render 'store-locator-pin', block: block -%}
-
-            {%- elsif section.blocks.size > 1 -%}
+              {% style %}
+                .store-locator-card--layout-1 .store-locator-card__content,
+                .store-locator-card--layout-2 .store-locator-card__content {
+                  border-top: 1px solid rgba(var(--color-foreground), 0.2);
+                  --content-card-padding: var(--spacing-8);
+                }
+                .store-locator-card--layout-1 .store-locator-card__content {
+                  border-left: none;
+                }
+                .store-locator-card--layout-1 .store-locator-card__image {
+                  border-bottom: 1px solid rgba(var(--color-foreground), 0.2);
+                  border-right: none;
+                }
+                .store-locator-card__content .store-locator-card__content--city {
+                  padding-block-end: var(--spacing-5);
+                }
+                .store-locator-card__actions {
+                  padding-block-start: var(--spacing-5);
+                }
+              {% endstyle %}
+            {%- elsif section.blocks.size > 1 or section.blocks.size == 1 and section.settings.see_more_card_title != blank-%}
 
               {%- assign image_grid_columns = section.settings.image_grid_columns | plus: 0 -%}
-
-              {%- if section.blocks.size > image_grid_columns or section.blocks.size == 3 -%}
+              {%- if section.blocks.size > image_grid_columns or section.blocks.size <= image_grid_columns and section.blocks.size > 1 -%}
 
                 {%- liquid
                   assign swiper_space_between = settings.spacing_desktop | times: 10 | round
@@ -76,10 +140,22 @@
                   else
                     assign slides_per_view = section.settings.image_grid_columns
                   endif
-                -%}
 
+                  assign has_image = false
+                  for block in section.blocks
+                    if block.settings.store_image != blank
+                      assign has_image = true
+                      break
+                    endif
+                  endfor
+                -%}
+                {% style %}
+                  .store-locator-card.store-locator-card__see-more {
+                    padding-inline-end: {{ swiper_space_between }}px;
+                  }
+                {% endstyle %}
                 <store-locator-slider
-                  class="swiper"
+                  class="swiper {% unless has_image and section.settings.card_layout != 'layout-1' %} no-image{% endunless %}"
                   data-space-between="{{- swiper_space_between -}}"
                   data-slides-per-view="{{- slides_per_view -}}"
                   data-section-id="{{- section.id -}}"
@@ -90,6 +166,11 @@
                         {%- render 'store-locator-pin', block: block, card_layout: 'image-overlay' -%}
                       </div>
                     {%- endfor -%}
+                    {%- if section.settings.see_more_card_title != blank -%}
+                      <div class="swiper-slide">
+                        {{ see_more_card }}
+                      </div>
+                    {%- endif -%}
                   </div>
                 </store-locator-slider>
 
@@ -100,6 +181,11 @@
                     {%- render 'store-locator-pin', block: block, card_layout: 'image-overlay' -%}
                   </div>
                 {%- endfor -%}
+                {%- if section.settings.see_more_card_title != blank -%}
+                  <div class="small-hide">
+                    {{ see_more_card }}
+                  </div>
+                {%- endif -%}
 
                 <store-locator-slider
                   class="swiper small-up-hide"
@@ -111,24 +197,27 @@
                       <div class="swiper-slide">
                         {%- if block.type == 'pin' -%}
                           {%- render 'store-locator-pin', block: block, card_layout: 'image-overlay' -%}
-                        {%- elsif block.type == 'see-more' -%}
-                          <div class="store-locator-card store-locator-card__see-more">
-                            <div class="store-locator-card__content color-{{ block.settings.color_scheme }} gradient">
-                              {%- if block.settings.card_title -%}
-                                <div class="store-locator-card__title">
-                                  {{- block.settings.card_title -}}
-                                </div>
-                              {%- endif -%}
-                              {%- if block.settings.button_label and block.settings.button_link -%}
-                                <a href="{{- block.settings.button_link -}}" class="button {{ block.settings.button_style -}}">
-                                  {{- block.settings.button_label -}}
-                                </a>
-                              {%- endif -%}
-                            </div>
-                          </div>
                         {%- endif -%}
                       </div>
                     {%- endfor -%}
+                    {%- if section.settings.see_more_card_title != blank -%}
+                      <div class="swiper-slide">
+                        <div class="store-locator-card store-locator-card__see-more">
+                          <div class="store-locator-card__content store-locator-card__content--see-more color-{{ section.settings.see_more_color_scheme }} gradient">
+                            {%- if section.settings.see_more_card_title -%}
+                              <h3 class="store-locator-card__title">
+                                {{- section.settings.see_more_card_title -}}
+                              </h3>
+                            {%- endif -%}
+                            {%- if section.settings.see_more_button_label and section.settings.see_more_button_link -%}
+                              <a href="{{- section.settings.see_more_button_link -}}" class="button {{ section.settings.see_more_button_style -}}">
+                                {{- section.settings.see_more_button_label -}}
+                              </a>
+                            {%- endif -%}
+                          </div>
+                        </div>
+                      </div>
+                    {%- endif -%}
                   </div>
                 </store-locator-slider>
               {%- endif -%}
@@ -136,9 +225,7 @@
             {%- endif -%}
           {%- elsif section.settings.layout == 'map' -%}
             {% comment %} MAP LAYOUT {% endcomment %}
-            {%- assign see_more_block = section.blocks | where: "type", "see-more" -%}
-            {% assign see_more_settings = see_more_block[0].settings %}
-            <div class="store-locator__map-layout {% if see_more_settings.search == true %}store-locator__map-layout--with-search{% endif %}">
+            <div class="store-locator__map-layout {% if section.settings.see_more_search == true %}store-locator__map-layout--with-search{% endif %}">
               <div class="store-locator__map-container">
                 <div
                   id="google_map"
@@ -147,16 +234,18 @@
                 ></div>
               </div>
 
-              <store-locator-slider class="store-locator__map-cards{% if see_more_block.size == 0 %} store-locator__map-cards--no-see-more{% endif %}{% if section.blocks.size > 1 %} swiper{% endif %}">
+              <store-locator-slider class="store-locator__map-cards{% unless section.settings.see_more_card_title != blank %} store-locator__map-cards--no-see-more{% endunless %}{% if section.blocks.size > 1 %} swiper{% endif %}">
                 {%- assign marker_index = 0 -%}
                 <div class="swiper-wrapper">
                   {%- for block in section.blocks -%}
-                    {%- assign search_opt = block.settings.search | default: false -%}
-                    {%- render 'store-locator-pin', block: block, hide_images: true, marker_index: marker_index, search: search_opt -%}
-                    {%- unless block.type == 'see-more' -%}
+                    {%- render 'store-locator-pin', block: block, hide_images: true, marker_index: marker_index, hide_pins: true -%}
+                    {%- unless section.settings.see_more_card_title != blank -%}
                       {%- assign marker_index = marker_index | plus: 1 -%}
                     {%- endunless -%}
                   {%- endfor -%}
+                  {%- if section.settings.see_more_card_title != blank -%}
+                      {{ see_more_card }}
+                  {%- endif -%}
                 </div><!-- /.swiper-wrapper -->
               </store-locator-slider>
             </div>
@@ -166,7 +255,7 @@
               (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
               ({key: "{{ section.settings.api_key | default: '' }}", v: "weekly"});
             </script>
-            {%- if section.settings.search == true -%}
+            {%- if section.settings.see_more_search == true -%}
               <script src="{{ 'store-locator-filter.js' | asset_url }}" defer="defer"></script>
             {%- endif -%}
           {%- endif -%}
@@ -257,11 +346,11 @@
       "type": "range",
       "id": "cards_height",
       "label": "t:sections.store-locator.settings.section_height.label",
-      "min": 40,
+      "min": 60,
       "max": 80,
       "step": 2,
       "unit": "vh",
-      "default": 80
+      "default": 70
     },
     {
       "type": "checkbox",
@@ -274,7 +363,7 @@
       "type": "range",
       "id": "cards_height_mobile",
       "label": "t:sections.store-locator.settings.section_height_mobile.label",
-      "min": 40,
+      "min": 60,
       "max": 80,
       "step": 2,
       "unit": "vh",
@@ -300,29 +389,84 @@
       "default": 4
     },
     {
+      "type": "checkbox",
+      "id": "show_pin",
+      "label": "t:sections.store-locator.settings.show_pin.label",
+      "default": true
+    },
+    {
       "type": "header",
       "content": "t:sections.store-locator.settings.card_settings_header.content",
       "info": "t:sections.store-locator.settings.card_settings_header.info"
     },
     {
       "type": "select",
-      "id": "card_background_style",
-      "label": "t:sections.store-locator.settings.card_background_style.label",
+      "id": "card_layout",
+      "label": "t:sections.store-locator.settings.card_layout.label",
       "options": [
         {
-          "value": "solid",
-          "label": "t:sections.store-locator.settings.card_background_style.options.solid"
+          "value": "layout-1",
+          "label": "t:sections.store-locator.settings.card_layout.options.layout_1"
         },
         {
-          "value": "blurred",
-          "label": "t:sections.store-locator.settings.card_background_style.options.blurred"
-        },
-        {
-          "value": "transparent",
-          "label": "t:sections.store-locator.settings.card_background_style.options.transparent"
+          "value": "layout-2",
+          "label": "t:sections.store-locator.settings.card_layout.options.layout_2"
         }
       ],
-      "default": "solid"
+      "default": "layout-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.store-locator.settings.see_more.label"
+    },
+    {
+      "type": "richtext",
+      "id": "see_more_card_title",
+      "label": "Title",
+      "default": "<h3>Discover our <em>other stores</em></h3>"
+    },
+    {
+      "type": "select",
+      "id": "see_more_button_style",
+      "label": "t:sections.global.element.button.style.label",
+      "options": [
+        {
+          "value": "button--filled",
+          "label": "t:sections.global.element.button.style.options.filled.label"
+        },
+        {
+          "value": "button--outlined",
+          "label": "t:sections.global.element.button.style.options.outlined.label"
+        },
+        {
+          "value": "default",
+          "label": "t:sections.global.element.button.style.options.default.label"
+        }
+      ],
+      "default": "button--outlined"
+    },
+    {
+      "type": "text",
+      "id": "see_more_button_label",
+      "label": "Button label",
+      "default": "See all stores"
+    },
+    {
+      "type": "url",
+      "id": "see_more_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "checkbox",
+      "id": "see_more_search",
+      "label": "Display searchbox on maps layout",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "see_more_color_scheme",
+      "label": "t:sections.global.color_scheme.label",
+      "default": "scheme-2"
     },
     {
       "type": "header",
@@ -422,15 +566,29 @@
           "content": "t:sections.global.header.store_info.content"
         },
         {
-          "type": "richtext",
-          "id": "store_title",
-          "label": "t:sections.store-locator.blocks.pin.settings.title.label",
-          "default": "<h3>Your store name</h3>"
+          "type": "text",
+          "id": "pin_title",
+          "label": "t:sections.store-locator.blocks.pin.settings.pin_title.label"
+        },
+        {
+          "type": "text",
+          "id": "store_country",
+          "label": "t:sections.store-locator.blocks.pin.settings.store_country.label"
+        },
+        {
+          "type": "text",
+          "id": "store_city",
+          "label": "t:sections.store-locator.blocks.pin.settings.store_city.label"
         },
         {
           "type": "textarea",
           "id": "store_address",
           "label": "t:sections.store-locator.blocks.pin.settings.store_address.label"
+        },
+        {
+          "type": "text",
+          "id": "store_mail_address",
+          "label": "t:sections.store-locator.blocks.pin.settings.store_mail_address.label"
         },
         {
           "type": "richtext",
@@ -522,62 +680,6 @@
           "label": "t:sections.global.color_scheme.label"
         }
       ]
-    },
-    {
-      "type": "see-more",
-      "name": "See more card",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "richtext",
-          "id": "card_title",
-          "label": "Title",
-          "default": "<h3>Discover our <em>other stores</em></h3>"
-        },
-        {
-          "type": "select",
-          "id": "button_style",
-          "label": "t:sections.global.element.button.style.label",
-          "options": [
-            {
-              "value": "button--filled",
-              "label": "t:sections.global.element.button.style.options.filled.label"
-            },
-            {
-              "value": "button--outlined",
-              "label": "t:sections.global.element.button.style.options.outlined.label"
-            },
-            {
-              "value": "default",
-              "label": "t:sections.global.element.button.style.options.default.label"
-            }
-          ],
-          "default": "button--outlined"
-        },
-        {
-          "type": "text",
-          "id": "button_label",
-          "label": "Button label",
-          "default": "See all stores"
-        },
-        {
-          "type": "url",
-          "id": "button_link",
-          "label": "Button link"
-        },
-        {
-          "type": "checkbox",
-          "id": "search",
-          "label": "Display searchbox on maps layout",
-          "default": false
-        },
-        {
-          "type": "color_scheme",
-          "id": "color_scheme",
-          "label": "t:sections.global.color_scheme.label",
-          "default": "scheme-2"
-        }
-      ]
     }
   ],
   "presets": [
@@ -587,15 +689,16 @@
         "heading": "Our <em>flagship stores</em>",
         "image_grid_columns": "3",
         "cards_height": 60,
-        "cards_height_mobile": 60,
-        "card_background_style": "solid"
+        "cards_height_mobile": 60
       },
       "blocks": [
         {
           "type": "pin",
           "settings": {
-            "store_title": "<h3>Paris, <em>Fr</em></h3>",
+            "store_country": "Belgium",
+            "store_city": "Antwerp",
             "store_address": "Your store address",
+            "store_mail_address": "email@digifist.com",
             "store_opening_hours": "<p>Mon-Sat: 10am-8pm<br/>Sunday</p>",
             "store_pin": "Directions",
             "store_pin_link": "",
@@ -609,8 +712,10 @@
         {
           "type": "pin",
           "settings": {
-            "store_title": "<h3>Antwerp, <em>Bel</em></h3>",
+            "store_country": "France",
+            "store_city": "Paris",
             "store_address": "Your store address",
+            "store_mail_address": "email@digifist.com",
             "store_opening_hours": "<p>Mon-Sat: 10am-8pm<br/>Sunday</p>",
             "store_pin": "Directions",
             "store_pin_link": "",
@@ -619,12 +724,6 @@
             "store_longitude": "12.45445667605574",
             "coordinate_title": "",
             "color_scheme": "scheme-4"
-          }
-        },
-        {
-          "type": "see-more",
-          "settings": {
-            "button_link": "shopify://pages/store-locator"
           }
         }
       ]

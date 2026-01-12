@@ -108,7 +108,7 @@
     endunless
   endfor
   assign product_slider_auto_height = section.settings.product_slider_auto_height | default: false
-  if product_media_has_same_aspect_ratio == true
+  if product_media_has_same_aspect_ratio == true and product_media.size > 1
     assign product_slider_auto_height = false
   endif
 -%}
@@ -334,6 +334,7 @@
   id="MediaGallery-{{ section.id }}"
   class="main-product__media "
   {% if section.settings.product_media_aspect_ratio == 'fit' %}data-height-limited{% endif %}
+  {% if section.settings.product_media_aspect_ratio == 'auto' %}data-media-aspect-auto{% endif %}
   {% if product_slider_auto_height %}data-slider-auto-height{% endif %}
   data-with-thumbs="{{ section.settings.product_media_with_thumbs }}"
   {% if section.settings.product_media_layout == 'product__media-layout--grid' %}data-desktop-grid{% endif %}
@@ -348,7 +349,6 @@
       data-layout-desktop="{{- section.settings.product_media_layout -}}"
       data-layout-mobile="{{- section.settings.product_media_layout_mobile -}}"
     >
-      {% render 'frontrow-banner' %}
       {% comment %} METAFIELD FEATURES - SLIDER {% endcomment %}
       <div class="main-product__media--features">
         {{- metafield_media_info -}}
@@ -506,7 +506,7 @@
       <div class="main-product__media--grid small-hide photoswipe-wrapper">
         {%- if product_media.size > 0 -%}
           {%- for media in product_media -%}
-            <div class="main-product__media--grid-item color-{{- section.settings.color_scheme_gallery -}}">
+            <swiper-product-gallery class="main-product__media--grid-item color-{{- section.settings.color_scheme_gallery -}}">
               {% comment %} METAFIELD FEATURES - GRID {% endcomment %}
               {% if forloop.first or forloop.index0 == 1 %}
                 <div class="main-product__media--features">
@@ -515,7 +515,7 @@
                 </div>
               {% endif %}
               {%- render 'product-media-card', media: media, card_type: 'grid', zoom_modal: zoom_modal, media_index: forloop.index0, section_index: section.index, data_group_array: data_group_array -%}
-            </div>
+            </swiper-product-gallery>
           {%- endfor -%}
         {%- endif -%}
       </div>

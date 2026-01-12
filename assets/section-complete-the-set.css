@@ -164,8 +164,11 @@
     direction: rtl;
   }
 
-  .section-complete-the-set--flipped-desktop .section__grid>* {
+  .section-complete-the-set--flipped-desktop .section__grid > * {
     direction: initial;
+  }
+  [dir='rtl'] .section-complete-the-set--flipped-desktop .section__grid > * { {
+    direction: rtl;
   }
 
   .section-complete-the-set .card-product__media {
@@ -206,3 +209,5 @@
     padding-inline-end: 4.8rem;
   }
 }
+/* .section-complete-the-set:has(.section__drawer details[open])
+.section-complete-the-set:has(.menu-opening) */

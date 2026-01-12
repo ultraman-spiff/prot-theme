@@ -7,7 +7,7 @@
   overflow: auto hidden;
   margin-block-end: calc(4rem - (var(--h3-multiplier) / 5.0));
   justify-content: center;
-  padding: 0 var(--page-gutter);
+  mask-image: linear-gradient(to left, transparent 0%, black calc(var(--page-gutter) * 2));
 }
 
 .blog__filters {
@@ -32,6 +32,14 @@
 .blog__filters-items {
   display: flex;
   column-gap: var(--section-spacing-unit-size);
+}
+
+.blog__filters-item:first-child {
+  padding-inline-start: var(--page-gutter);
+}
+
+.blog__filters-item:last-child {
+  padding-inline-end: var(--page-gutter);
 }
 
 .blog__articles-grid {

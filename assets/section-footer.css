@@ -331,7 +331,7 @@ follow-on-shop-button {
   --reserved-width: fit-content !important;
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 989px) {
   .section-footer .grid {
     grid-template-rows: repeat(var(--section-total-row-count), 1fr);
   }
@@ -359,7 +359,7 @@ follow-on-shop-button {
 }
 
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 990px) {
   .section-footer .grid {
     column-gap: calc(var(--spacing-4) * var(--section-footer-spacing-grid));
     grid-template-columns: repeat(6, minmax(10rem, 1fr));

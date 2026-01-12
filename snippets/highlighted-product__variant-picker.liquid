@@ -62,16 +62,14 @@
         {% endcapture %}
 
         <fieldset class="product-selector__buttons product__variant-options js-product-variants{% if product.has_only_default_variant %} hidden {% endif %}" data-input-wrapper>
-          {%- if block.settings.variant_picker_layout != 'product-selector--stacked' or block.settings.variant_picker_type == 'buttons' -%}
-            <legend class="product-selector__label font-subheading">
-              <span class="product-selector__label-text">
-                {{- option.name -}}
-              </span>
-              {%- if size_guide -%}
-                {{- size_guide -}}
-              {%- endif -%}
-            </legend>
-          {%- endif -%}
+          <legend class="product-selector__label">
+            <span class="product-selector__label-text">
+              {{- option.name -}}
+            </span>
+            {%- if size_guide -%}
+              {{- size_guide -}}
+            {%- endif -%}
+          </legend>
           {%- assign select_options_html = '' -%}
           {%- capture options_html -%}
             {%- for value in option.values -%}
@@ -234,7 +232,7 @@
     option.addEventListener('change', function() {
       const clickedInputValue = event.target.value;
       if (event.target.classList.contains('product-option__input')) {
-        const filteredVariants = initialProductVariants.filter(variant => variant.option2 === clickedInputValue);
+        const filteredVariants = (initialProductVariants || []).filter(variant => variant.option2 === clickedInputValue);
 
         if (filteredVariants.length > 0) {
           document.querySelectorAll('.product-option__input').forEach(input => {

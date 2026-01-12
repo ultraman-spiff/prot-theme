@@ -5,7 +5,8 @@
   - product: {Object} product object.
   - option: {Object} current product_option object.
   - block: {Object} block object.
-  - picker_type: {String} type of picker to dispay
+  - picker_type: {String} Type of picker to display (swatch, button, dropdown, swatch_dropdown)
+  - show_price_as_label: {Boolean} Whether to show variant price instead of option value as label (optional)
 
 
   Usage:
@@ -149,7 +150,7 @@
         assign label_hidden = true
       endif
 
-      render 'product-option', id: input_id, name: input_name, value: value, option: option, form_id: product_form_id, checked: value.selected, disabled: option_disabled, visually_hidden: true, additional_props: input_dataset, variant_img: variant_image_test, swatch_value: swatch_value, label_hidden: label_hidden, label_unavailable: label_unavailable, block: block, product: product, where: 'main-product'
+      render 'product-option', id: input_id, name: input_name, value: value, option: option, form_id: product_form_id, checked: value.selected, disabled: option_disabled, visually_hidden: true, additional_props: input_dataset, variant_img: variant_image_test, swatch_value: swatch_value, label_hidden: label_hidden, label_unavailable: label_unavailable, block: block, product: product, where: 'main-product', show_price_as_label: show_price_as_label
     -%}
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option

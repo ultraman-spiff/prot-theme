@@ -36,9 +36,19 @@
               assign rating_count = product.metafields.reviews.rating_count.value | default: product.metafields.theme.rating_count.value | default: 1 | times: 1
               assign rating_max = product.metafields.reviews.rating.value.scale_max | default: 5 | times: 1
 
-              assign star_full_count = rating_value | floor
-              assign star_half_count = rating_value | minus: star_full_count | ceil
-              assign star_empty_count = rating_max | minus: star_full_count | minus: star_half_count
+              assign star_full_count = rating_value | default: 0 | floor
+              assign star_half_count = rating_value | minus: star_full_count | default: 0 | ceil
+              assign star_empty_count = rating_max | minus: star_full_count | minus: star_half_count | default: 0 | floor
+
+              if star_full_count < 0
+                assign star_full_count = 0
+              endif
+              if star_half_count < 0
+                assign star_half_count = 0
+              endif
+              if star_empty_count < 0
+                assign star_empty_count = 0
+              endif
             %}
             {%- for i in (1..star_full_count) -%}
               {%- render 'icon', icon_name: 'theme-star-filled' -%}
@@ -207,7 +217,7 @@
                     const priceInfoWidth = document.querySelector('.product__price--info').offsetWidth;
                     if (infoWidth > priceInfoWidth) { return; }
                     // update width and show tooltip
-                    if (window.innerWidth < 750) {
+                    if (DeviceDetector.isMobile()) {
                       priceInfo.style.width = (infoWidth - 80) + 'px';
                     } else {
                       priceInfo.style.width = infoWidth + 'px';
@@ -337,7 +347,7 @@
         {%- if is_gift_card -%}
           {%- continue -%}
         {%- endif -%}
-        <div class="{{ product_block_class }}" {{ block.shopify_attributes }}>
+        <div class="{{ product_block_class }} product__block--custom-liquid" {{ block.shopify_attributes }}>
           {{- block.settings.custom_liquid -}}
         </div>
 
@@ -356,9 +366,6 @@
           product_form_id: product_form_id,
           product_block_class: product_block_class
         -%}
-      
-      {%- when 'skio-plan-picker' -%}
-        {%- render 'skio-app-block', block: block, product: product -%}
 
       {%- when 'buy_buttons' -%}
         {%- assign product_block_class = 'product__buy-buttons' | append: ' ' | append: product_block_class -%}
@@ -388,10 +395,12 @@
         >
           {%- if product.metafields.theme.preorder.value -%}
             {% assign product_preorder_date = product.metafields.theme.preorder_shipping_date.value | date: '%b %d, %Y' %}
-            <div class="product__preorder-notice">
-              <span class="product__preorder-dot">&nbsp;</span>
-              <span>{{- 'product.preorder_notice' | t: date: product_preorder_date -}}</span>
-            </div>
+            {%- if product_preorder_date != blank -%}
+              <div class="product__preorder-notice">
+                <span class="product__preorder-dot">&nbsp;</span>
+                <span>{{- 'product.preorder_notice' | t: date: product_preorder_date -}}</span>
+              </div>
+            {%- endif -%}
           {%- else -%}
             {%- render 'icon', icon_name: 'theme-timer' -%}
             {%- if block.settings.notice_just_text -%}
@@ -743,7 +752,7 @@
                 document.addEventListener("DOMContentLoaded", () => {
                   function initSwiper() {
                     const sliderContentGrid = document.querySelector(".swiper__content-grid");
-                    if (window.innerWidth < 750 &&sliderContentGrid) {
+                    if (DeviceDetector.isMobile() && sliderContentGrid) {
                       const swiperContentGrid = new Swiper(sliderContentGrid, {
                         slidesPerView: 1,
                         spaceBetween: 16,
@@ -808,6 +817,25 @@
             {%- endif -%}
           </div>
         {% endif %}
+      {%- when 'promo_banner' -%}
+        {%- assign product_block_class = 'product__promo-banner' | append: ' ' | append: product_block_class -%}
+        <div class="{{ product_block_class }}" {{ block.shopify_attributes }}>
+          <div class="card color-{{ block.settings.color_scheme }} media-position--{{ block.settings.media_position }}" style="--content-alignment: {{ block.settings.content_alignment }};{% if block.settings.media_aspect_ratio != 'auto' %} aspect-ratio: {{ block.settings.media_aspect_ratio }};{% endif %}">
+            {%- if block.settings.image != blank -%}
+              <div class="media">
+                {%- render 'image', image: block.settings.image -%}
+              </div>
+            {%- endif -%}
+            {%- if block.settings.content != blank -%}
+              <div class="content rte">
+                {{ block.settings.content }}
+              </div>
+            {%- endif -%}
+            {%- if block.settings.link != blank -%}
+              <a href="{{ block.settings.link.url }}" class="card-link" aria-label="{{ block.settings.link.title | escape }}">&nbsp;</a>
+            {%- endif -%}
+          </div>
+        </div>
       {%- else -%}
         <div class="product__app-block" {{ block.shopify_attributes }}>
           {%- render block -%}

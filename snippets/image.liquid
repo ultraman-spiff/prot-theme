@@ -105,7 +105,13 @@
     endif
     assign srcset = srcset | append: ' ' | append: srcset_item | append: ' ' | append: width_int | append: 'w,'
   endfor
-  assign srcset = srcset | remove_last: ','
+  assign srcset_item_full = image | image_url
+
+  if width
+    assign srcset = srcset | append: ' ' | append: srcset_item_full | append: ' ' | append: width | append: 'w'
+  elsif image_optimization == 'false'
+    assign srcset = srcset | append: ' ' | append: srcset_item_full | append: ' ' | append: image.width | append: 'w'
+  endif
 
   # generate sizes
   if sizes == 'auto'

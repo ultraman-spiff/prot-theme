@@ -97,9 +97,9 @@ class DynamicLoad extends HTMLElement {
       `.collection-facets__product-count .product-count-of-all`
     );
 
-    if (itemCountOfAll) {
-      itemCountOfAll.innerText = itemCount;
-    }
+    if (!itemCountOfAll) return;
+
+    itemCountOfAll.innerText = itemCount;
   }
 }
 
@@ -146,11 +146,7 @@ if (!customElements.get("dynamic-load-more")) {
 
         if (containerId) {
           const parentContainer = this.itemGrid.closest(`#${containerId}`);
-
-          console.log("Parent Container:", parentContainer, parentContainer.classList);
-
           if (parentContainer && parentContainer.classList.contains('infinity-scroll-active')) {
-            console.log("Infinity Scroll is active for:", this.gridType);
             this.isInfinityScrollActive = true;
             this.setupInfinityScroll();
           } else {

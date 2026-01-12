@@ -39,6 +39,8 @@
       "search": "بحث",
       "share_on": "مشاركة على {{name}}",
       "show_all": "عرض الكل",
+      "show_less": "عرض أقل",
+      "show_more": "عرض المزيد",
       "start_shopping": "ابدأ التسوق",
       "view": "عرض"
     },
@@ -445,7 +447,9 @@
       "search_label": "اعثر على متاجرنا",
       "search_by_location": "ابحث عن متجر بواسطة الرمز البريدي، المدينة أو البلد",
       "search_placeholder": "اكتب الرمز البريدي، المدينة أو البلد",
-      "call": "اتصل"
+      "call": "اتصل",
+      "clear": "واضح",
+      "opening_hours": "ساعات العمل"
     },
     "compare_slider": {
       "image_before": "صورة قبل",

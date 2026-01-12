@@ -55,7 +55,7 @@
                   </li>
                 {%- else -%}
                   <li class='blog__filters-item'>
-                    {{- tag | link_to_tag: tag -}}
+                    <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
                   </li>
                 {%- endif -%}
               {%- endfor -%}
@@ -159,6 +159,34 @@
       "default": false
     },
     {
+      "type": "select",
+      "id": "spacing_grid",
+      "label": "t:sections.global.settings.spacing.settings.spacing_grid.label",
+      "options": [
+        {
+          "value": "0",
+          "label": "No"
+        },
+        {
+          "value": "1",
+          "label": "S"
+        },
+        {
+          "value": "2",
+          "label": "M"
+        },
+        {
+          "value": "4",
+          "label": "L"
+        },
+        {
+          "value": "6",
+          "label": "XL"
+        }
+      ],
+      "default": "2"
+    },
+    {
       "type": "header",
       "content": "t:sections.global.header.card_article.content"
     },
@@ -258,34 +286,6 @@
       "id": "color_scheme",
       "default": "scheme-1",
       "label": "t:sections.global.color_scheme.label"
-    },
-    {
-      "type": "select",
-      "id": "spacing_grid",
-      "label": "t:sections.global.settings.spacing.settings.spacing_grid.label",
-      "options": [
-        {
-          "value": "0",
-          "label": "No"
-        },
-        {
-          "value": "1",
-          "label": "S"
-        },
-        {
-          "value": "2",
-          "label": "M"
-        },
-        {
-          "value": "4",
-          "label": "L"
-        },
-        {
-          "value": "6",
-          "label": "XL"
-        }
-      ],
-      "default": "2"
     },
     {
       "type": "select",

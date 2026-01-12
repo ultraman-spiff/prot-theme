@@ -9,7 +9,6 @@
 
 {% comment %} Variables | Product Badges {% endcomment %}
 {%- liquid
-
   assign not_on_card = block | default: false
   assign show_badges_custom = show_badges_custom | default: false
   assign show_badges_discount = show_badges_discount | default: false
@@ -35,7 +34,6 @@
 
   assign badges = ''
   if product and product != empty
-
     assign product_for_discount = product.selected_or_first_available_variant | default: product
     if product_for_discount.compare_at_price > product_for_discount.price and show_badges_discount
       assign discount_percentage = product_for_discount.compare_at_price | minus: product_for_discount.price | times: 100 | divided_by: product_for_discount.compare_at_price
@@ -65,7 +63,6 @@
       assign tag = 'product.sold_out' | t
       assign badges = badges | append: tag | append: ','
     endif
-
   endif
 -%}
 

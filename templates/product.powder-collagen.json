@@ -47,56 +47,12 @@
         "1e939cd6-0958-4135-a9e5-c50faef01437": {
           "type": "variant_picker",
           "settings": {
-            "spacing_bottom": "3",
-            "title": "Variant picker",
             "enable_back_in_stock": false,
             "picker_type": "swatch",
             "variant_options_with_thumbnails": "Color",
             "size_guide_page": "size-guide",
-            "sizes_option": "Size"
-          }
-        },
-        "skio_plan_picker_AbCCBj": {
-          "type": "skio-plan-picker",
-          "settings": {
-            "form_id": "product-form-{{section.id}}",
-            "external_price_selector": ".price-item--regular",
-            "show_details": false,
-            "show_without_subscription": false,
-            "show_compare_price": true,
-            "legend_content": "Select subscription plan",
-            "show_legend": false,
-            "layout": "vertical",
-            "dropdownPosition": "inside",
-            "additional_frequency_label": "",
-            "start_onetime": true,
-            "onetime_first": true,
-            "group_border_radius": 21,
-            "group_border_width": 1,
-            "group_border_color": "#4a134a",
-            "group_border_selected_color": "#4a134a",
-            "group_background_color": "#fefaf5",
-            "selected_group_background_color": "#f5ece0",
-            "group_text_color": "#4a134a",
-            "group_selected_text_color": "#4a134a",
-            "show_radio_selector": true,
-            "onetime_title": "One time purchase",
-            "subscription_title": "Subscribe",
-            "prepaid_title": "Prepaid",
-            "discount_format": "percent",
-            "discount_style": "bubble",
-            "discount_text": "Save [discount]",
-            "discount_color": "#0fa573",
-            "discount_text_color": "#ffffff",
-            "additional_subscription_content": "",
-            "selector_type": "dropdown",
-            "button_plan_selector_width": 100,
-            "default_subscription": "",
-            "future_price_adjustments_text": "<small>Then [discount] off after the [order_count_ordinal] order</small>",
-            "element_name": "skio-plan-picker",
-            "product_handle": "",
-            "combine_groups": false,
-            "combined_group_name": "Subscription"
+            "sizes_option": "Size",
+            "spacing_bottom": "3"
           }
         },
         "8604a6ff-ad0b-44dd-8068-1de4e062f8e8": {
@@ -146,7 +102,6 @@
         "badge_dC66pN",
         "divider_HGwyhB",
         "1e939cd6-0958-4135-a9e5-c50faef01437",
-        "skio_plan_picker_AbCCBj",
         "8604a6ff-ad0b-44dd-8068-1de4e062f8e8",
         "e6d841d6-2f71-40b3-956a-912df13f9f6e",
         "7be6b89c-da83-4ff2-9b85-44fb28cbfa27",
@@ -195,7 +150,7 @@
             "block_type": "collapsible",
             "heading": "Description",
             "link": "",
-            "content": "<p><strong>Innovation in Advanced Medical Nutrition </strong></p><ul><li>Powdered version of our Nano Hydrolyzed Collagen® protein </li><li>17 grams of complete protein per serving · 30 servings per container </li><li>Features Nano Hydrolyzed Collagen® for fast absorption; in vitro studies show full digestibility in under 15 minutes¹ </li><li>Fortified with 2g of L-Arginine per serving, an amino acid associated with tissue repair and immune function² Includes 62mg of Vitamin C, a key nutrient in collagen formation </li><li>A complete protein with all essential and conditionally essential amino acids: Arginine, Taurine, Tryptophan, Histidine, Methionine, Glutamine, and Cysteine </li><li>0g sugar · 0g fat · 0g carbohydrates Gluten-free · GMO-free · Lactose-free · Soy-free </li><li>Naturally flavored with vanilla · No artificial flavors or colors </li><li>Sweetened with monk fruit</li></ul>",
+            "content": "<p><strong>Innovation in Advanced Medical Nutrition </strong></p><ul><li>Powdered version of our Nano Hydrolyzed Collagen® protein </li><li>17 grams of complete protein per serving ·  30 servings per container </li><li>Features Nano Hydrolyzed Collagen® for fast absorption; in vitro studies show full digestibility in under 15 minutes¹ </li><li>Fortified with 2g of L-Arginine per serving, an amino acid associated with tissue repair and immune function² Includes 62mg of Vitamin C, a key nutrient in collagen formation </li><li>A complete protein with all essential and conditionally essential amino acids: Arginine, Taurine, Tryptophan, Histidine, Methionine, Glutamine, and Cysteine </li><li>0g sugar · 0g fat · 0g carbohydrates Gluten-free · GMO-free · Lactose-free · Soy-free </li><li>Naturally flavored with vanilla · No artificial flavors or colors </li><li>Sweetened with monk fruit</li></ul>",
             "page": ""
           }
         },
@@ -327,7 +282,7 @@
             "banner_layout": "hero-banner--full",
             "color_scheme": "scheme-8",
             "header_menu_text_color": "#ffffff",
-            "heading": "<h5>“I love the taste of this collagen protein. Not only does my hair and nails grow long, but it’s helping my knee injury and it gives me energy to get thru the day. I definitely highly recommend it.”</h5>",
+            "heading": "<h5>“I love the taste of this collagen protein. Not only does my hair and nails grow long, but it’s helping my knee injury and it gives me energy to get thru the day.  I definitely highly recommend it.”</h5>",
             "subheading": "Customer Voices",
             "subheading_link": "",
             "text": "<p>Kiki</p>",
@@ -655,7 +610,7 @@
         "content_DYTDWK": {
           "type": "content",
           "settings": {
-            "content": "<p>ProT Gold was originally developed to meet the high standards of medical nutrition. </p><p>Now it’s available to you.</p>"
+            "content": "<p>ProT Gold was originally developed to meet  the high standards of medical nutrition. </p><p>Now it’s available to you.</p>"
           }
         },
         "buttons_kLLNDD": {

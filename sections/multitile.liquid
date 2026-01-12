@@ -52,16 +52,6 @@
       }
     }
   {% endif %}
-
-  @media screen and (max-width: 749px) {
-    #shopify-section-{{ section.id }} a.section-multitile__content--button.button {
-      width: 100%;
-      padding: calc(20 * 100vw / 720) calc(40 * 100vw / 720);
-      font-size: calc(24px - 10 / 370 * (750px - 100vw));
-      margin-top: calc(42 * 100vw / 720);
-      font-weight: 600;
-    }
-  }
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
@@ -200,7 +190,7 @@
                   {%- elsif item_video != blank -%}
                     {{- item_video | video_tag: image_size: '1440x', loop: true, autoplay: true, muted: true, controls: item_video_controls -}}
                   {%- elsif item_image -%}
-                    {%- render 'image', image: item_image, section_index: section.index, image_per_view: 2, alt: item_image.alt | escape -%}
+                    {%- render 'image', image: item_image, section_index: section.index, image_per_view: 2 -%}
                   {%- endif -%}
                 </div>
 
@@ -211,7 +201,7 @@
                     {%- elsif item_video_mobile != blank -%}
                       {{- item_video_mobile | video_tag: image_size: '720x', loop: true, autoplay: true, muted: true, controls: item_video_controls_mobile -}}
                     {%- elsif item_image_mobile -%}
-                      {%- render 'image', image: item_image_mobile, section_index: section.index, image_for_mobile: true, alt: item_image_mobile.alt | escape -%}
+                      {%- render 'image', image: item_image_mobile, section_index: section.index, image_for_mobile: true -%}
                     {%- endif -%}
                   </div>
                 {%- endif -%}
@@ -363,7 +353,7 @@
                               endif
                               if item_button_label != blank
                                 echo '<div class="section-multitile__slideshow-item-button">'
-                                  render 'button', type: item_button_style, class: 'button section-dual-tiles__content--button', button_style: item_button_style,  value:  item_button_label, href: item_button_link
+                                  render 'button', type: 'link', class: 'button section-dual-tiles__content--button', button_style: item_button_style,  value:  item_button_label, href: item_button_link
                                 echo '</div>'
                               endif
                             echo '</div>'

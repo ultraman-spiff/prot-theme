@@ -109,7 +109,7 @@ html.js .drawer__content {
     visibility var(--drawer-transition-duration) var(--drawer-transition-timing-function);
 }
 html[dir='rtl'].js .drawer__content:not(.drawer__content--search) {
-  transform: translateX(-100%);
+  transform: var(--drawer-transform, translateX(-100%));
 }
 
 @media screen and (min-width: 550px) {
@@ -188,7 +188,7 @@ html.no-js .drawer__container[open] > .drawer__button::after,
   color: rgb(var(--color-foreground));
   position: absolute;
   inset-block-start: 2.4rem;
-  inset-inline-end: 2.4rem;
+  inset-inline-end: var(--page-gutter);
   width: 2.4rem;
   height: 2.4rem;
   display: block;
@@ -203,8 +203,6 @@ html.no-js .drawer__container[open] > .drawer__button::after,
   height: auto;
   pointer-events: none;
 }
-
-
 
 @media screen and (max-width: 749px) {
   .section-complete-the-set .drawer__content {
@@ -245,7 +243,7 @@ html.no-js .drawer__container[open] > .drawer__button::after,
 }
 
 .drawer__row:not(.drawer__row--bottom):last-child {
-  margin-block-end: 0;
+  margin-block-end: var(--spacing-4);
   padding-block-end: 0;
   border-block-end: none;
 }
@@ -458,6 +456,11 @@ html.no-js .drawer__nav details[open] .drawer__nav-link svg {
   gap: 2rem;
 }
 
+.drawer__social-list svg {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
 .drawer__subs-items {
   display: flex;
   align-items: center;
@@ -524,4 +527,11 @@ html.no-js .drawer__nav details[open] .drawer__nav-link svg {
     transform: rotate(90deg) translate(-50%, 0);
   }
   /* ios 14 ios bug fix - end */
+}
+
+/* COUNTRY DRAWER */
+body > country-drawer {
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }

@@ -70,7 +70,7 @@
 %}
 
 {%- style -%}
-  #shopify-section-{{ section.id }} > div {
+  #shopify-section-{{ section.id }} {
     padding-block-start: calc(var(--section-spacing-unit-size) * {{ section.settings.spacing_top }});
     padding-block-end: calc(var(--section-spacing-unit-size) * {{ section.settings.spacing_bottom }});
     --content-padding: calc(var(--section-spacing-unit-size) * {{ section.settings.spacing_inner }});
@@ -85,7 +85,7 @@
     }
   }
   @media screen and (min-width: 750px) {
-    #shopify-section-{{ section.id }} > div {
+    #shopify-section-{{ section.id }} > * {
       --media-aspect-ratio: {{ section.settings.aspect_ratio }};
     }
     {% if has_media %}
@@ -96,7 +96,7 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient{% if enable_transparent_header %} header-is-transparent{% endif %}">
+<animation-observer class="color-{{ section.settings.color_scheme }} gradient{% if enable_transparent_header %} header-is-transparent{% endif %}">
   <div
     class="section-full-width-banner__container container {{ section.settings.section_width }} section-height-{{ section.settings.section_height }} section-height-{{ section.settings.section_height_mobile }}--mobile media-position--{{ section.settings.media_position }} {{ section_media_classes }} js-animation-fade-in"
     data-id="{{ section.id }}"
@@ -123,36 +123,36 @@
       {%- if section.blocks.size > 0 -%}
         {% capture content_element %}
           <div
-            class="section-full-width-banner__content content full-width-banner__animation--body {{ inner_settings_classes | strip }}"
+            class="section-full-width-banner__content content full-width-banner__animation--body {{ inner_settings_classes | strip }} {% if settings.disable_animations_on_mobile %} full-width-banner__no-animation{% endif %}"
             data-animation-delay="150"
             data-animation-duration="450"
+            data-animation-mobile="{{ settings.disable_animations_on_mobile }}"
           >
-            {%- if section.settings.icon != blank -%}
-              <div class="section-full-width-banner__icon full-width-banner__animation">{{ section.settings.icon | image_url: width: 300 | image_tag  }}</div>
-            {%- endif -%}
-
             {%- for block in section.blocks -%}
-              <div class="full-width-banner__animation">
+
                 {% liquid
+
                   assign show_on_class = block.settings.show_on | default: ''
                   if show_on_class == 'mobile'
-                    assign show_on_class = 'large-up-hide'
+                    assign show_on_class = ' large-up-hide'
                   elsif show_on_class == 'desktop'
-                    assign show_on_class = 'small-hide medium-hide'
+                    assign show_on_class = ' small-hide medium-hide'
                   else
                     assign show_on_class = ''
                   endif
+
+                  assign block_class = 'section-full-width-banner__block' | append: ' full-width-banner__animation' | append: show_on_class
                 %}
 
                 {%- case block.type -%}
 
                   {%- when 'breadcrumbs' -%}
-                    <div class="section-full-width-banner__breadcrumbs page-banner__breadcrumbs max-w-sm {{ show_on_class }}">
+                    <div class="section-full-width-banner__breadcrumbs page-banner__breadcrumbs max-w-sm {{ block_class }}">
                       {%- render 'breadcrumbs', alignment: 'center' -%}
                     </div>
 
                   {%- when 'heading' -%}
-                    <div class="section-full-width-banner__heading max-w-sm">
+                    <div class="section-full-width-banner__heading max-w-sm {{ block_class }}">
                       <{{ heading_tag }} class="section__heading {{ block.settings.heading_size }}">
                         {{- block.settings.heading | default: page.title | default: page_title -}}
                       </{{ heading_tag }}>
@@ -163,7 +163,7 @@
                       {%- continue -%}
                     {%- endif -%}
 
-                    <div class="section-full-width-banner__entry max-w-page max-w-sm entry{% unless section.settings.content_position_horizontal contains 'start' %} entry--list-padding-none{% endunless %}">
+                    <div class="section-full-width-banner__entry max-w-page max-w-sm entry{% unless section.settings.content_position_horizontal contains 'start' %} entry--list-padding-none{% endunless %} {{ block_class }}">
                       {{- block.settings.content -}}
                     </div>
 
@@ -173,11 +173,11 @@
                     {%- endif -%}
 
                     {%- if block.settings.link != blank -%}
-                      <a href="{{- block.settings.link -}}" class="section-full-width-banner__subtitle max-w-sm">
+                      <a href="{{- block.settings.link -}}" class="section-full-width-banner__subtitle max-w-sm {{ block_class }}">
                         {{- block.settings.subheading -}}
                       </a>
                     {%- else -%}
-                      <p class="section-full-width-banner__subheading max-w-sm font-subheading">
+                      <p class="section-full-width-banner__subheading max-w-sm {{ block_class }}">
                         {{- block.settings.subheading -}}
                       </p>
                     {%- endif -%}
@@ -191,24 +191,22 @@
                       {%- continue -%}
                     {%- endif -%}
 
-                    <div class="section-full-width-banner__buttons max-w-sm {{ section.settings.content_position_horizontal }}">
+                    <div class="section-full-width-banner__buttons max-w-sm {{ section.settings.content_position_horizontal }} {{ block_class }}">
                       {%- liquid
                         if block.settings.button_label_1 != blank and block.settings.button_link_1 != blank
-                          render 'button', type: 'link', class: 'button section-full-width-banner__button', button_style: block.settings.button_style_1 | default: 'default', value: block.settings.button_label_1, href: block.settings.button_link_1, color_scheme: block.settings.color_scheme_first_button
+                          assign button_style_1 = block.settings.button_style_1 | default: 'default'
+                          render 'button', type: 'link', class: 'button section-full-width-banner__button', button_style: button_style_1, value: block.settings.button_label_1, href: block.settings.button_link_1, color_scheme: block.settings.color_scheme_first_button
                         endif
 
                         if block.settings.button_label_2 != blank and block.settings.button_link_2 != blank
-                          render 'button', type: 'link', class: 'button section-full-width-banner__button', button_style: block.settings.button_style_2 | default: 'default', value: block.settings.button_label_2, href: block.settings.button_link_2, color_scheme: block.settings.color_scheme_second_button
+                          assign button_style_2 = block.settings.button_style_2 | default: 'default'
+                          render 'button', type: 'link', class: 'button section-full-width-banner__button', button_style: button_style_2, value: block.settings.button_label_2, href: block.settings.button_link_2, color_scheme: block.settings.color_scheme_second_button
                         endif
                       -%}
                     </div>
                 {%- endcase -%}
-              </div>
-            {%- endfor -%}
 
-            {%- if section.settings.icon != blank -%}
-              <div class="section-full-width-banner__icon full-width-banner__animation">{{ section.settings.icon | image_url: width: 300 | image_tag  }}</div>
-            {%- endif -%}
+            {%- endfor -%}
 
             {%- liquid
               assign section_buttons = section.blocks | where: 'type', 'buttons'
@@ -262,7 +260,7 @@
       {%- endif -%}
 
     </div>
-</div>
+</animation-observer>
 
 {% schema %}
 {
@@ -372,11 +370,6 @@
       "label": "t:sections.global.element.image.label"
     },
     {
-      "type": "image_picker",
-      "id": "icon",
-      "label": "t:sections.global.element.icon.label"
-    },
-    {
       "type": "video",
       "id": "video",
       "label": "t:sections.global.element.video.label",
@@ -403,6 +396,7 @@
       "type": "select",
       "id": "aspect_ratio",
       "label": "t:sections.global.aspect_ratio.for__tile.label",
+      "info": "t:sections.full-width-banner.settings.aspect_ratio.info",
       "options": [
         {
           "value": "auto",
@@ -579,6 +573,7 @@
       "type": "select",
       "id": "aspect_ratio_mobile",
       "label": "t:sections.global.aspect_ratio.for__tile.label",
+      "info": "t:sections.full-width-banner.settings.aspect_ratio.info",
       "options": [
         {
           "value": "auto",

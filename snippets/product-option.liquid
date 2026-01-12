@@ -1,4 +1,39 @@
+{% comment %}
+  Renders a product variant option (radio button/swatch/dropdown option)
+
+  Accepts:
+  - id: {String} Input element ID (required)
+  - name: {String} Input element name (required)
+  - value: {Object} Option value object (required)
+  - option: {Object} Product option object (required)
+  - product: {Object} Product object (required)
+  - block: {Object} Block object (required)
+  - type: {String} Input type (default: 'radio')
+  - form_id: {String} Associated form ID (optional)
+  - checked: {Boolean} Whether option is selected (optional)
+  - disabled: {Boolean} Whether option is disabled (optional)
+  - visually_hidden: {Boolean} Whether to visually hide the input (optional)
+  - additional_props: {String} Additional HTML attributes (optional)
+  - variant_img: {Object} Variant image object (optional)
+  - swatch_value: {String} Swatch value/color (optional)
+  - label_hidden: {Boolean} Whether to hide the label text (optional)
+  - label_unavailable: {String} Unavailable label text (optional)
+  - where: {String} Context where option is rendered (e.g., 'main-product', 'facet') (optional)
+  - show_price_as_label: {Boolean} Whether to show variant price instead of option value as label (optional)
+
+  Usage:
+  {% render 'product-option',
+    id: 'option-1',
+    name: 'options[Color]',
+    value: value,
+    option: option,
+    product: product,
+    block: block
+  %}
+{% endcomment %}
+
 {%- liquid
+  assign show_price_as_label = show_price_as_label | default: false
   assign swatch_value = swatch_value | default: value.swatch
 
   if swatch_value == blank
@@ -63,7 +98,6 @@
     assign variant_img = false
   endif
 
-
   # use custom thumbnails if option name is listed in settings -- start
   assign variant_options_use_custom_thumbnails = settings.variant_options_use_custom_thumbnails | split: ','
   assign product_options_type_values_metaobject = shop.metaobjects[settings.metaobject_for_product_options_type_values]
@@ -91,14 +125,10 @@
     endif
   endif
 
-  assign label_class = label_class | default: ''
 
   if variant_img == blank
     assign input_class = class | append: ' variant-option-radio-input'
     assign label_hidden = false
-    if settings.input_border_radius != '0'
-      assign label_class = 'product-option__label--rounded'
-    endif
   else
     assign input_class = class
     assign label_hidden = true
@@ -116,7 +146,11 @@
     name="{{ name }}"
     class="product-option__input {{ input_class }}{% if visually_hidden %} visually-hidden{% endif %}{% if disabled %} disabled{% endif %}"
     {% if value != blank %}
-      value="{{ value | escape }}"
+      {% if show_price_as_label %}
+        value="{{ value.variant.price | money }}"
+      {% else %}
+        value="{{ value | escape }}"
+      {% endif %}
     {% endif %}
     {% if form_id %}
       form="{{- form_id -}}"
@@ -131,7 +165,7 @@
   <label
     for="{{ id }}"
     title="{{ value | escape }}"
-    class="product-option__label {{ label_class }} product-option__label--{% if variant_img %}square{% else %}{{ swatch_shape }}{% endif %}{% if variant_img %} product-option__label--image{% endif %}{% if variant_img %} product-swatch__inner-border--{{ settings.swatches_inner_border_color }}{% endif %}"
+    class="product-option__label product-option__label--{{ swatch_shape }} {% if variant_img %} product-option__label--image{% endif %}{% if variant_img %} product-swatch__inner-border--{{ settings.swatches_inner_border_color }}{% endif %}"
     {% if tabindex  %} tabindex={{- tabindex -}} {% endif %}
   >
 
@@ -147,7 +181,13 @@
       {% render 'swatch', swatch: swatch_value, shape: block.settings.swatch_shape, variant_img: variant_img, where: where %}
     {% endif %}
 
-    <span class="{% if label_hidden %}visually-hidden{% endif %}">{{ value }}</span>
+    <span class="{% if label_hidden %}visually-hidden{% endif %}">
+      {%- if show_price_as_label -%}
+        {%- render 'price', variant: value.variant -%}
+      {% else %}
+        {{ value }}
+      {%- endif -%}
+    </span>
 
     {% if label_unavailable %}
       {{ label_unavailable }}

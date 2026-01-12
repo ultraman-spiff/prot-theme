@@ -39,6 +39,8 @@
       "search": "Cerca",
       "share_on": "Condividi su {{name}}",
       "show_all": "Mostra tutto",
+      "show_less": "Mostra di meno",
+      "show_more": "Mostra di più",
       "start_shopping": "Inizia lo shopping",
       "view": "Visualizza"
     },
@@ -445,7 +447,9 @@
       "search_label": "Trova i nostri negozi",
       "search_by_location": "Cerca un negozio per CAP, città o paese",
       "search_placeholder": "Digita CAP, città o paese",
-      "call": "Chiama"
+      "call": "Chiama",
+      "clear": "Libero",
+      "opening_hours": "Orari di apertura"
     },
     "compare_slider": {
       "image_before": "Immagine prima",

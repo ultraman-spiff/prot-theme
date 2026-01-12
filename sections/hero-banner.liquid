@@ -11,7 +11,15 @@
 
 {% style %}
   #shopify-section-{{ section.id }} {
-    --inner-height: {{ section.settings.slider_height | default: '100' | append: 'vh' }};
+    {%- if section.settings.slider_height_auto -%}
+      --inner-height: auto;
+    {%- else -%}
+      {%- if section.index0 == nil or section.index0 == 0 -%}
+        --inner-height: calc({{ section.settings.slider_height | default: '100' | append: 'vh' }} - var(--hero-banner-top, var(--announcement-bar-height)));
+      {%- else -%}
+        --inner-height: calc({{ section.settings.slider_height | default: '100' | append: 'vh' }});
+      {%- endif -%}
+    {%- endif -%}
     --slideshow-pagination-progress-time: {{ section.settings.slideshow_autoplay_interval | times: slide_progress_multiplier }}ms;
   }
   main + #shopify-section-{{ section.id }} {
@@ -21,7 +29,7 @@
     #shopify-section-{{ section.id }} .hero__inner {
       z-index: 1;
     }
-  {% endunless %};
+  {% endunless %}
   {%- if section.settings.slideshow_autoplay_interval == 0 -%}
     #shopify-section-{{ section.id }} .progress,
     #shopify-section-{{ section.id }} .hero__swiper-pagination-horizontal::before,
@@ -33,7 +41,7 @@
     }
   {%- endif -%}
 
-  {%- if section.settings.floating_bar -%}
+  {%- if section.settings.slideshow_pagination_style == 'style-1' and section.settings.floating_bar -%}
   .section-hero-banner + .section-marquees {
     --marquee-element-margin: 1.6rem 1.2rem;
   }
@@ -53,7 +61,7 @@
   }
   {%- endif -%}
 
-  {%- if section.settings.floating_bar -%}
+  {%- if section.settings.slideshow_pagination_style == 'style-1' and section.settings.floating_bar -%}
       html.js:not(.shopify-design-mode) .section-hero-banner + .section-marquees .js-animation-fade-in {
         animation: none;
       }
@@ -172,7 +180,8 @@
         <div class="media media--overlay hero__media {% if has_mobile_media %} small-hide{% endif %}">
           {%- liquid
             if block.settings.image != blank
-              render 'image', image: block.settings.image, width: 2160, alt: image.alt | default: block.settings.heading
+              assign image_alt = block.settings.image.alt | default: block.settings.heading
+              render 'image', image: block.settings.image, width: 2160, alt: image_alt
             else
               echo 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg'
             endif
@@ -194,7 +203,8 @@
           <div class="media media--overlay hero__media small-up-hide">
             {%- liquid
               if block.settings.image_mobile != blank
-                render 'image', image: block.settings.image_mobile, image_for_mobile: true, alt: block.settings.image_mobile.alt | default: block.settings.heading
+                assign image_alt = block.settings.image_mobile.alt | default: block.settings.heading
+                render 'image', image: block.settings.image_mobile, image_for_mobile: true, alt: image_alt
               else
                 echo 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg'
               endif
@@ -205,10 +215,10 @@
 
       {%- comment -%}CONTENT{%- endcomment -%}
       {%- if block.settings.heading != blank or block.settings.text != blank or block.settings.button_label != blank and block.settings.button_link != blank -%}
-        <div class="hero__content {{ hero_inner_setting_classes | strip }}">
+        <div class="hero__content {{ hero_inner_setting_classes | strip }} {% if settings.disable_animations_on_mobile %} hero__content__no-animation{% endif %}">
           {%- if block.settings.subheading != blank -%}
-            <div class="hero__animation {% unless section.blocks.size == 1 %} in-delay{% endunless %}">
-              <p class="hero__subheading font-subheading">
+            <div class="hero__animation{% unless section.blocks.size == 1 %} in-delay{% endunless %}">
+              <p class="hero__subheading">
                 {%- if block.settings.subheading_link != blank -%}
                   <a href="{{- block.settings.subheading_link -}}">
                     {{- block.settings.subheading -}}
@@ -221,7 +231,7 @@
           {%- endif -%}
 
           {%- if block.settings.heading != blank -%}
-            <div class="hero__animation {% unless section.blocks.size == 1 %} in-delay{% endunless %}">
+            <div class="hero__animation{% unless section.blocks.size == 1 %} in-delay{% endunless %}">
               <div class="hero__heading">
                 {{- block.settings.heading -}}
               </div>
@@ -229,7 +239,7 @@
           {%- endif -%}
 
           {%- if block.settings.text != blank -%}
-            <div class="hero__animation {% unless section.blocks.size == 1 %} in-delay{% endunless %}">
+            <div class="hero__animation{% unless section.blocks.size == 1 %} in-delay{% endunless %}">
               <div class="hero__entry entry{% unless block.settings.content_position contains 'start' %} entry--list-padding-none{% endunless %}">
                 {{- block.settings.text -}}
               </div>
@@ -237,7 +247,7 @@
           {%- endif -%}
 
           {%- if block.settings.button_label_1 != blank or block.settings.button_label_2 -%}
-            <div class="hero__animation {% unless section.blocks.size == 1 %} in-delay{% endunless %}">
+            <div class="hero__animation{% unless section.blocks.size == 1 %} in-delay{% endunless %}">
               <div class="hero__button">
                 {%- if block.settings.button_label_1 != blank -%}
                   {%- render 'button',
@@ -330,10 +340,18 @@
       "content": "t:sections.global.header.slideshow.content"
     },
     {
+      "type": "checkbox",
+      "id": "slider_height_auto",
+      "label": "t:sections.hero-banner.settings.slider_height_auto.label",
+      "info": "t:sections.hero-banner.settings.slider_height_auto.info",
+      "default": false
+    },
+    {
       "type": "range",
       "id": "slider_height",
       "label": "t:sections.hero-banner.settings.slider_height.label",
       "info": "t:sections.hero-banner.settings.slider_height.info",
+      "visible_if": "{{ section.settings.slider_height_auto == false }}",
       "min": 50,
       "max": 100,
       "step": 5,
@@ -412,6 +430,7 @@
       "id": "floating_bar",
       "label": "t:sections.hero-banner.settings.floating_bar.label",
       "info": "t:sections.hero-banner.settings.floating_bar.info",
+      "visible_if": "{{ section.settings.slideshow_pagination_style == 'style-1' }}",
       "default": false
     }
   ],

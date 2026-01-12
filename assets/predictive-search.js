@@ -29,7 +29,7 @@ if (!customElements.get('predictive-search')) {
 
           if (searchTerm.length <= 0) {
             this.close();
-            if(window.innerWidth < 990) {
+            if(DeviceDetector.isMobile() || DeviceDetector.isTablet()) {
               searchDrawerContent.style.height = 'auto';
             }
             if(searchSuggestions) {
@@ -40,7 +40,7 @@ if (!customElements.get('predictive-search')) {
 
           this.isOpen = true;
           this.getSearchResults(searchTerm);
-          if(window.innerWidth <= 990) {
+          if(DeviceDetector.isMobile() || DeviceDetector.isTablet()) {
             searchDrawerContent.style.height = '100%';
           }
           if(searchSuggestions) {

@@ -52,7 +52,7 @@
     render 'css', css: 'component-facets.css'
 
     capture facets_html
-      render 'facets', results: collection, filters: section.settings.filters, enable_sorting: section.settings.enable_sorting, section_id: section.id, container_width: section.settings.section_width, opened_accordions: section.settings.enable_opened_accordions, pagination_style: section.settings.pagination_style, products_per_page: products_per_page
+      render 'facets', results: collection, filters: section.settings.filters, enable_sorting: section.settings.enable_sorting, section_id: section.id, container_width: section.settings.section_width, opened_accordions: section.settings.enable_opened_accordions, pagination_style: section.settings.pagination_style, products_per_page: products_per_page, enable_range_slider_for_price_filter: section.settings.enable_range_slider_for_price_filter
     endcapture
   endif
 -%}
@@ -72,7 +72,7 @@
                   <span class="facets__accordion-header">{{- 'collection.filter_by' | t -}}</span>
                   {% assign total_active_values = 0 %}
                   {%- for filter in collection.filters -%}
-                    {%- render 'facet', index: forloop.index, section_id: section.id, filter: filter, opened_accordions: section.settings.enable_opened_accordions, total_active_values: total_active_values -%}
+                    {%- render 'facet', index: forloop.index, section_id: section.id, filter: filter, opened_accordions: section.settings.enable_opened_accordions, total_active_values: total_active_values, enable_range_slider_for_price_filter: section.settings.enable_range_slider_for_price_filter -%}
                   {%- endfor -%}
                 </accordion-default>
               </div>
@@ -92,7 +92,6 @@
           {% endif %}
           <div id="product-grid"
             class="collection__grid{% if section.settings.products_per_row_mobile != '2' %} collection__grid-single{% endif %}{% if section.settings.filters == 'drawer' %} collection-grid-container__products{% endif %}"
-            id="product-grid"
             data-id="{{- section.id -}}"
             data-cols="{{- section.settings.products_per_row -}}"
           >
@@ -205,6 +204,12 @@
         }
       ],
       "default": "drawer"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_range_slider_for_price_filter",
+      "label": "t:sections.main-collection.settings.enable_range_slider_for_price_filter.label",
+      "default": false
     },
     {
       "type": "header",

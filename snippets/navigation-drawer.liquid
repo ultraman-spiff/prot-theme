@@ -132,7 +132,6 @@
                     {% for block in section.blocks %}
                       {%- liquid
                         assign link_handle = link.title | handleize
-                        assign block_link_handle = block.settings.menu_link_title | handleize
                         assign show_on_class = block.settings.show_on
                         if show_on_class == 'mobile'
                           assign show_on_class = 'large-up-hide'
@@ -146,7 +145,7 @@
                         <div class="card header__card header__card-text color-{{ block.settings.color_scheme }} block-{{ block.id }} {{ show_on_class }} media-position--background">
                           {%- if block.settings.image != blank -%}
                             <div class="media media--overlay card__media media--{{ block.settings.card_aspect_ratio }}">
-                              {%- render 'image', image: block.settings.image, alt: block.settings.image.alt | escape -%}
+                              {%- render 'image', image: block.settings.image -%}
                             </div>
                           {%- endif -%}
 
@@ -237,13 +236,7 @@
             </li>
             {%- if section.settings.country_drawer_navigation_menu -%}
               <li class="drawer__subs-item">
-                <menu-drawer class="drawer">
-                  {%- render 'country-drawer',
-                    button_class: ' drawer__subs-link',
-                    section: section,
-                    append_id: 'header-drawer-' | append: section.id
-                  -%}
-                </menu-drawer>
+                {%- render 'country-drawer', append_id: 'navigation-drawer', type: 'trigger' -%}
               </li>
             {%- endif -%}
           </ul>

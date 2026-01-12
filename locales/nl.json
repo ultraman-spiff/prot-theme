@@ -39,6 +39,8 @@
       "search": "Zoeken",
       "share_on": "Delen op {{name}}",
       "show_all": "Alles tonen",
+      "show_less": "Minder tonen",
+      "show_more": "Meer tonen",
       "start_shopping": "Begin met winkelen",
       "view": "Bekijken"
     },
@@ -445,7 +447,9 @@
       "search_label": "Vind onze winkels",
       "search_by_location": "Zoek een winkel op postcode, stad of land",
       "search_placeholder": "Typ postcode, stad of land",
-      "call": "Bellen"
+      "call": "Bellen",
+      "clear": "Duidelijk",
+      "opening_hours": "Openingstijden"
     },
     "compare_slider": {
       "image_before": "Afbeelding voor",

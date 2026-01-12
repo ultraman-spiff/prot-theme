@@ -1,158 +1,163 @@
-/**
- * Intersection Observer
- * Component for multiple sections animations
- * Optimized for performance and iOS compatibility
- */
-
-// Cache frequently used values
-const MOBILE_BREAKPOINT = 750;
-const DEFAULT_DELAY = 300;
-const DEFAULT_DURATION = 900;
-
-// Performance helper functions
-const parseIntSafe = (value, fallback) => {
-  const parsed = parseInt(value);
-  return isNaN(parsed) ? fallback : parsed;
-};
-
-const isMobileDevice = () => window.innerWidth < MOBILE_BREAKPOINT;
-
-document.querySelectorAll("[data-intersection-observer]").forEach((intersectElement, i) => {
-  // Cache DOM queries
-  const intersectionID = intersectElement.dataset.id;
-  const observerElement = document.querySelector(`[data-id="${intersectionID}"]`);
-
-  // Early return if observer element not found
-  if (!observerElement) {
-    console.warn(`Observer element not found for ID: ${intersectionID}`);
-    return;
-  }
-
-  const intersectOnce = observerElement.dataset.intersectOnce !== "false";
-  const observerOptions = {
-    rootMargin: "0px 0px -50% 0px",
-    threshold: 0,
-    ...((() => {
-      try {
-        return JSON.parse(observerElement.dataset.intersectionObserver || "{}");
-      } catch {
-        return {};
-      }
-    })())
-  };
-
-  // Cache animation elements
-  const animationBody = observerElement.querySelector(".full-width-banner__animation--body");
-  const animationElements = observerElement.querySelectorAll(".full-width-banner__animation");
-
-  const intersectionObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting || intersectionID !== entry.target.dataset.id) {
-        return;
+if(!customElements.get("animation-observer")) {
+  customElements.define(
+    "animation-observer",
+    class AnimationObserver extends HTMLElement {
+      static get observedAttributes() {
+        return [
+          "data-intersect-once",
+          "data-animation-mobile",
+          "data-intersection-observer"
+        ];
       }
 
-      const isMobile = isMobileDevice();
-      const allowMobileAnimation = observerElement.dataset.animationMobile !== "false";
-
-      // Exit if mobile and mobile animation is disabled
-      if (isMobile && !allowMobileAnimation) {
-        return;
+      constructor() {
+        super();
+        this.observer = null;
+        this.isAnimated = false;
+        this.DEFAULT_DELAY = 300;
+        this.DEFAULT_DURATION = 900;
       }
 
-      // Check if already animated
-      if (observerElement.classList.contains("isAnimated") && intersectOnce) {
-        return;
+      connectedCallback() {
+        this.initObserver();
       }
 
-      // Clear previous animation classes
-      observerElement.classList.remove("inAnimation", "isAnimated");
-
-      // Get timing values
-      const animationDelay = animationBody ? parseIntSafe(animationBody.dataset.animationDelay, DEFAULT_DELAY) : DEFAULT_DELAY;
-      const animationDuration = animationBody ? parseIntSafe(animationBody.dataset.animationDuration, DEFAULT_DURATION) : DEFAULT_DURATION;
-
-      setAnimation({ observerElement, animationBody, animationElements });
-
-      // Cleanup timeout
-      const cleanupDelay = (animationElements.length * animationDelay) + (animationDelay + animationDuration);
-      setTimeout(() => {
-        if (observerElement.classList.contains("isAnimated") && intersectOnce) {
-          intersectionObserver.unobserve(observerElement);
-        } else if (observerElement.classList.contains("isAnimated") && !intersectOnce) {
-          observerElement.classList.remove("isAnimated");
+      disconnectedCallback() {
+        if (this.observer) {
+          this.observer.disconnect();
         }
-      }, cleanupDelay);
-    });
-  }, observerOptions);
-
-  intersectionObserver.observe(observerElement);
-
-  function setAnimation(params) {
-    const { observerElement, animationBody, animationElements } = params;
-
-    if (!animationElements?.length) {
-      // If no animation elements, still add isAnimated class
-      observerElement.classList.add("isAnimated");
-      return;
-    }
-
-    // Get base timing values
-    const baseAnimationDelay = animationBody ? parseIntSafe(animationBody.dataset.animationDelay, DEFAULT_DELAY) : DEFAULT_DELAY;
-    const baseAnimationDuration = animationBody ? parseIntSafe(animationBody.dataset.animationDuration, DEFAULT_DURATION) : DEFAULT_DURATION;
-
-    // Add inAnimation class to observer element
-    observerElement.classList.add("inAnimation");
-
-    let completedAnimations = 0;
-    const totalAnimations = animationElements.length;
-
-    // Use requestAnimationFrame for better performance
-    const scheduleAnimation = (element, index) => {
-      const elementDelay = parseIntSafe(element.dataset.animationDelay, baseAnimationDelay);
-      const elementDuration = parseIntSafe(element.dataset.animationDuration, baseAnimationDuration);
-      const startDelay = (index + 1) * elementDelay;
-      const endDelay = startDelay + elementDuration;
-
-      // Start animation
-      setTimeout(() => {
-        requestAnimationFrame(() => {
-          element.classList.add("inAnimation");
-          const childElement = element.querySelector("*");
-          if (childElement) {
-            childElement.style.animationDuration = `${elementDuration}ms`;
-          }
-        });
-      }, startDelay);
-
-      // End animation
-      setTimeout(() => {
-        requestAnimationFrame(() => {
-          const childElement = element.querySelector("*");
-          if (childElement) {
-            childElement.style.animationDuration = "";
-            if (!childElement.style.length) {
-              childElement.removeAttribute("style");
-            }
-          }
-          element.classList.remove("inAnimation");
-          element.classList.add("isAnimated");
-
-          completedAnimations++;
-
-          // Mark observer element as animated when all animations complete
-          if (completedAnimations === totalAnimations) {
-            observerElement.classList.remove("inAnimation");
-            observerElement.classList.add("isAnimated");
-          }
-        });
-      }, endDelay);
-    };
-
-    // Schedule all animations
-    animationElements.forEach((element, i) => {
-      if (element) {
-        scheduleAnimation(element, i);
       }
-    });
-  }
-});
+
+      attributeChangedCallback(name, oldValue, newValue) {
+        if (this.observer) {
+          this.observer.disconnect();
+        }
+        this.initObserver();
+      }
+
+      parseIntSafe(value, fallback) {
+        const parsed = parseInt(value);
+        return isNaN(parsed) ? fallback : parsed;
+      }
+
+      initObserver() {
+        const observerElement = this;
+        const intersectOnce =
+          observerElement.dataset.intersectOnce !== "false";
+        const observerOptions = {
+          rootMargin: "0px 0px -50% 0px",
+          threshold: 0,
+          ...this.getIntersectionOptions()
+        };
+
+        this.observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            const allowMobileAnimation = observerElement.dataset.animationMobile !== "false";
+            if (DeviceDetector.isMobile() && !allowMobileAnimation) {
+              return;
+            }
+
+            if (this.isAnimated && intersectOnce) {
+              return;
+            }
+
+            this.isAnimated = true;
+            this.triggerAnimation();
+
+            if (intersectOnce) {
+              this.observer.unobserve(observerElement);
+            }
+          });
+        }, observerOptions);
+
+        this.observer.observe(observerElement);
+      }
+
+      getIntersectionOptions() {
+        try {
+          return JSON.parse(this.dataset.intersectionObserver || "{}");
+        } catch (e) {
+          console.error("Invalid JSON in data-intersection-observer:", e);
+          return {};
+        }
+      }
+
+      triggerAnimation() {
+        const animationBody = this.querySelector(
+          ".full-width-banner__animation--body"
+        );
+        const animationElements = this.querySelectorAll(
+          ".full-width-banner__animation"
+        );
+
+        this.addEventListener(
+          "animationend",
+          () => {
+            this.isAnimated = false;
+          },
+          { once: true }
+        );
+
+        if (!animationElements.length) {
+          this.classList.add("isAnimated");
+          return;
+        }
+
+        const baseAnimationDelay = animationBody
+          ? this.parseIntSafe(
+              animationBody.dataset.animationDelay,
+              this.DEFAULT_DELAY
+            )
+          : this.DEFAULT_DELAY;
+        const baseAnimationDuration = animationBody
+          ? this.parseIntSafe(
+              animationBody.dataset.animationDuration,
+              this.DEFAULT_DURATION
+            )
+          : this.DEFAULT_DURATION;
+
+        this.classList.add("inAnimation");
+
+        let completedAnimations = 0;
+        const totalAnimations = animationElements.length;
+
+        animationElements.forEach((element, i) => {
+          const elementDelay = this.parseIntSafe(
+            element.dataset.animationDelay,
+            baseAnimationDelay
+          );
+          const elementDuration = this.parseIntSafe(
+            element.dataset.animationDuration,
+            baseAnimationDuration
+          );
+          const startDelay = i * (elementDelay / 2);
+
+          setTimeout(() => {
+            element.classList.add("inAnimation");
+            const childElement = element.querySelector("*");
+            if (childElement) {
+              childElement.style.animationDuration = `${elementDuration}ms`;
+            }
+          }, startDelay);
+
+          setTimeout(() => {
+            element.classList.remove("inAnimation");
+            element.classList.add("isAnimated");
+
+            completedAnimations++;
+
+            if (completedAnimations === totalAnimations) {
+              this.classList.remove("inAnimation");
+              this.classList.add("isAnimated");
+              this.isAnimated = true;
+            }
+          }, startDelay + baseAnimationDuration);
+        });
+      }
+    }
+  );
+}

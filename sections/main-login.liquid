@@ -10,7 +10,7 @@
     {%- if section.settings.image_aside != blank -%}
       <div class="account__col small-hide medium-hide">
         <div class="account__image media">
-          {%- render 'image', image: section.settings.image_aside, alt: section.settings.image_aside.alt | escape, section_index: section.index -%}
+          {%- render 'image', image: section.settings.image_aside, section_index: section.index -%}
         </div>
       </div>
     {%- endif -%}
@@ -99,10 +99,6 @@
                 {%- endif -%}
 
                 <div class="form-row">
-                    <a href="https://protgold.com/a/account/login"
-     class="button button--outlined uppercase full-width-btn">
-    Manage Subscription
-  </a>
                   {%- if shop.features.login_with_shop_classic_customer_accounts? -%}
                   <section name="sign-in-with-shop-provider" class="sign-in-with-shop-provider">
                     {{ shop | login_button: hide_button: hide_shop_login_button }}

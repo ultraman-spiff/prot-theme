@@ -3,21 +3,6 @@
     padding-block-start: calc(var(--section-spacing-unit-size) * {{ section.settings.spacing_top }});
     padding-block-end: calc(var(--section-spacing-unit-size) * {{ section.settings.spacing_bottom }});
   }
-  
-  .section-carousel__media {
-    border-radius: 10px;
-    overflow: hidden
-  }
-
-  @media screen and (max-width: 749px) {
-    .{{ section.id }}-carousel-button a {
-      width: 100%;
-      padding: calc(20 * 100vw / 720) calc(40 * 100vw / 720);
-      font-size: calc(24px - 10 / 370 * (750px - 100vw));
-      margin-top: calc(42 * 100vw / 720);
-      font-weight: 600;
-    }
-  }
 {%- endstyle -%}
 
 {%- liquid
@@ -188,7 +173,7 @@
       </div>
 
       <div class="section__foot">
-        <div class="section__head--buttons {{ section.id }}-carousel-button">
+        <div class="section__head--buttons">
           {{ section_button | replace_first: 'custom_class' }}
           {% if section.settings.show_navigation_arrows %}
             {% if section.settings.layout == 'layout-2'  %}

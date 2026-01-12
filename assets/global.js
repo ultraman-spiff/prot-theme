@@ -1,18 +1,37 @@
-/* Release Theme - v2.0.1 */
+/* Release Theme - v2.0.3 */
+const body = document.querySelector('body');
+const main = document.querySelector('main');
 
 /* Define Breakpoints -- START */
 const mobileWidth = 750;
 const tabletWidth = 990;
 const windowDynamicEvents = ["scroll", "resize"];
 
-// define desktop, tablet, mobile
-const isDesktop = window.innerWidth > tabletWidth;
-const isTablet = window.innerWidth <= tabletWidth && window.innerWidth >= mobileWidth;
-const isMobile = window.innerWidth < mobileWidth;
-/* Define Breakpoints -- END */
-
-const body = document.querySelector("body");
-const main = document.querySelector("main");
+/* DEVICE DETECTOR -- START */
+const DeviceDetector = {
+  getUserAgent() {
+    return navigator.userAgent.toLowerCase();
+  },
+  isMobile() {
+    const ua = this.getUserAgent();
+    const mobileRegex = /android|webos|iphone|ipod|blackberry|iemobile|opera mini/i;
+    return mobileRegex.test(ua) || window.innerWidth <= 750;
+  },
+  isTablet() {
+    const ua = this.getUserAgent();
+    const tabletRegex = /ipad|android(?!.*mobile)|tablet|kindle|playbook|silk/i;
+    return tabletRegex.test(ua) || (window.innerWidth > 750 && window.innerWidth <= 990 && 'ontouchstart' in window);
+  },
+  isDesktop() {
+    return !this.isMobile() && !this.isTablet();
+  },
+  isIOS() {
+    const ua = this.getUserAgent();
+    const iosRegex = /iphone|ipad|ipod/i;
+    return iosRegex.test(ua);
+  },
+};
+/* DEVICE DETECTOR -- END */
 
 /* SECTIONS: HEADER GROUP */
 const sectionsOfHeaderGroup = Array.from(
@@ -57,22 +76,13 @@ if (sectionsOfAnnouncementBar) {
     let totalHeights = 0;
 
     sectionsOfAnnouncementBar.forEach((section) => {
-      const sectionIndex = Array.prototype.indexOf.call(section.parentNode.children, section);
-
-      if (sectionIndex < headerIndex) {
-        // calculate total heights and visible heights of all announcement bars before the header
-        Array.from(sectionsOfAnnouncementBar)
-          .filter((section) => {
-            const index = Array.prototype.indexOf.call(section.parentNode.children, section);
-            return index < headerIndex;
-          })
-          .forEach((section) => {
-            // console.log(sectionIndex, section);
-            const { height, visibleHeight } = calcSectionHeights(section);
-            totalHeights += height;
-            totalVisibleHeights += visibleHeight;
-        });
-      }
+      // calculate total heights and visible heights of all announcement bars before the header
+      Array.from(sectionsOfAnnouncementBar)
+        .forEach((section) => {
+          const { height, visibleHeight } = calcSectionHeights(section);
+          totalHeights += height;
+          totalVisibleHeights += visibleHeight;
+      });
     });
     setCustomProperty(`--announcement-bars-before-header-heights`, `${parseFloat(totalHeights)}px`);
     setCustomProperty(`--announcement-bars-before-header-visible-heights`, `${parseFloat(totalVisibleHeights)}px`);
@@ -225,8 +235,6 @@ function setRootCustomProperties() {
 
   // sections of header group - height
   if (sectionsOfHeaderGroup.length > 0) {
-    // console.log(sectionsOfHeaderGroup);
-
     const totalHeight = Array.from(sectionsOfHeaderGroup).reduce((sum, section) => {
       return sum + section.offsetHeight;
     }, 0);
@@ -235,7 +243,7 @@ function setRootCustomProperties() {
 
   // header height
   let headerHeight = 0;
-  if (header) {
+  if (header && isHeaderSticky) {
     headerHeight = header.getBoundingClientRect().height.toFixed(2);
   }
   setCustomProperty("--header-height", `${parseFloat(headerHeight)}px`);
@@ -640,12 +648,19 @@ class MenuDrawer extends HTMLElement {
         toggleButton.classList.remove("menu-is-open");
         toggleButton.setAttribute("aria-expanded", false);
       });
-      body.style.overflow = "";
-      body.style.position = "";
-      body.style.top = "";
-      body.style.width = "";
-      window.scrollTo(0, this.scrollTopValue);
-      body.classList.remove("drawer--is-open");
+
+      const header = document.getElementById('header');
+      const navDrawerHeader = header ? header.querySelector('#Navigation-drawer-header') : null;
+
+      if (navDrawerHeader && navDrawerHeader.classList.contains('menu-opening')) {
+        body.style.overflow = 'hidden';
+      } else {
+        body.style.overflow = '';
+        body.style.top = '';
+        body.style.width = '';
+        body.classList.remove('drawer--is-open');
+      }
+
       if (this.isParentDrawerOpen) {
         this.parentDrawer.style.overflow = "";
       }
@@ -821,7 +836,6 @@ class MenuDrawer extends HTMLElement {
     this.summary.setAttribute("aria-expanded", isDetailsOpen);
   }
 }
-
 customElements.define("menu-drawer", MenuDrawer);
 
 class HeaderDrawer extends MenuDrawer {
@@ -830,16 +844,12 @@ class HeaderDrawer extends MenuDrawer {
 
     window.addEventListener("resize", e => {
       const isMobileDrawer = this.classList.contains("mobile-drawer");
-
       if (!isMobileDrawer) {
         return;
       }
 
-      const isDesktop = window.innerWidth < tabletWidth;
-      const isMenuOpen =
-        this.details.classList.contains("menu-opening");
-
-      if (isDesktop || !isMenuOpen) {
+      const isMenuOpen = this.details.classList.contains("menu-opening");
+      if (DeviceDetector.isMobile() || !isMenuOpen) {
         return;
       }
 
@@ -896,11 +906,9 @@ class DesktopDrawer extends MenuDrawer {
     super();
 
     window.addEventListener("resize", e => {
-      const isDesktop = window.innerWidth < tabletWidth;
-      const isMenuOpen =
-        this.details.classList.contains("menu-opening");
+      const isMenuOpen = this.details.classList.contains("menu-opening");
 
-      if (!isDesktop || !isMenuOpen) {
+      if (!DeviceDetector.isMobile() || !isMenuOpen) {
         return;
       }
 
@@ -937,6 +945,26 @@ class SearchDrawer extends MenuDrawer {
   }
 }
 customElements.define("search-drawer", SearchDrawer);
+
+class CountryDrawer extends MenuDrawer {
+  constructor() {
+    super();
+  }
+  connectedCallback() {
+    const triggers = document.querySelectorAll('[id^="country-drawer-button"]');
+    if (triggers) {
+      triggers.forEach(trigger => {
+        trigger.addEventListener("click", (e) => {
+          e.preventDefault();
+          this.toggleDrawer();
+        });
+      });
+    } else {
+      // console.log('No triggers found for country drawer');
+    }
+  }
+}
+customElements.define("country-drawer", CountryDrawer);
 
 function pauseAllMedia() {
   document.querySelectorAll(".js-youtube").forEach(video => {
@@ -1155,31 +1183,148 @@ class DeferredMedia extends HTMLElement {
     }
   }
 }
-
 customElements.define("deferred-media", DeferredMedia);
 
-/**
- * Additions
- */
-
-class LocalizationForm extends HTMLElement {
+class ThemeDropdown extends HTMLElement {
   constructor() {
     super();
+    this.button = this.querySelector('.dropdown-button');
+    this.content = this.querySelector('.dropdown-content');
 
-    this.form = this.querySelector("form");
-    this.localizationInputElements = this.querySelectorAll(
-      '[name="country_code"], [name="language_code"]'
-    );
+    this.direction = this.dataset.direction || 'down';
+    this.closeOnClick = this.dataset.closeOnClick !== 'false';
+    this.closeOnOutsideClick = this.dataset.closeOnOutsideClick !== 'false';
+    this.closeOnEscape = this.dataset.closeOnEscape !== 'false';
 
-    this.localizationInputElements.forEach(inputElement => {
-      inputElement.addEventListener("input", () => {
-        this.form.submit();
+    this.toggle = this.toggle.bind(this);
+    this.handleContentClick = this.handleContentClick.bind(this);
+    this.handleOutsideClick = this.handleOutsideClick.bind(this);
+    this.handleKeydown = this.handleKeydown.bind(this);
+
+    // update button span with active item's text
+    const activeItem = this.querySelector('li.is-active');
+    if (activeItem && this.button) {
+      const buttonSpan = this.button.querySelector('span');
+      if (buttonSpan) buttonSpan.textContent = activeItem.textContent.trim();
+    }
+  }
+
+  connectedCallback() {
+    if (this.button && this.content) {
+      this.button.addEventListener('click', this.toggle);
+
+      if (this.closeOnClick) {
+        this.content.addEventListener('click', this.handleContentClick);
+      }
+      if (this.closeOnOutsideClick) {
+        // Close when clicking anywhere outside this element
+        document.addEventListener('click', this.handleOutsideClick);
+      }
+      if (this.closeOnEscape) {
+        document.addEventListener('keydown', this.handleKeydown);
+      }
+    }
+  }
+
+  disconnectedCallback() {
+    // Clean up listeners when element is removed
+    if (this.button) this.button.removeEventListener('click', this.toggle);
+    if (this.content && this.closeOnClick)
+      this.content.removeEventListener('click', this.handleContentClick);
+    if (this.closeOnOutsideClick)
+      document.removeEventListener('click', this.handleOutsideClick);
+    if (this.closeOnEscape)
+      document.removeEventListener('keydown', this.handleKeydown);
+  }
+
+  toggle(event) {
+    event.stopPropagation();
+    document.querySelectorAll('theme-dropdown[open], localization-form[open]').forEach(dropdown => {
+      if (dropdown !== this) dropdown.removeAttribute('open');
+    });
+
+    if (this.hasAttribute('open')) {
+      this.removeAttribute('open');
+    } else {
+      this.setAttribute('open', '');
+    }
+
+    const activeItem = this.querySelector('li.is-active');
+    if (activeItem && this.button) {
+      const buttonSpan = this.button.querySelector('span');
+      if (buttonSpan) buttonSpan.textContent = activeItem.textContent.trim();
+    }
+  }
+
+  handleContentClick(event) {
+    this.removeAttribute('open');
+  }
+
+  handleOutsideClick(event) {
+    if (this.hasAttribute('open') && !this.contains(event.target)) {
+      this.removeAttribute('open');
+    }
+  }
+
+  handleKeydown(event) {
+    if (event.code && event.code.toUpperCase() === 'ESCAPE' && this.hasAttribute('open')) {
+      this.removeAttribute('open');
+    }
+  }
+}
+customElements.define('theme-dropdown', ThemeDropdown);
+
+
+class LocalizationForm extends ThemeDropdown {
+  constructor() {
+    super();
+    this.form = this.closest('form');
+    this.inputName = this.button?.id.includes('language') ? 'language_code' : 'country_code';
+    this.handleLinkClick = this.handleLinkClick.bind(this);
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+
+    // Add click handlers to links
+    const links = this.content?.querySelectorAll('a[data-value]') || [];
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        this.handleLinkClick(link);
       });
     });
   }
-}
 
-customElements.define("localization-form", LocalizationForm);
+  handleLinkClick(link) {
+    const value = link.getAttribute('data-value');
+    if (!value || !this.form) return;
+
+    // Find and update hidden input
+    const input = this.form.querySelector(`input[name="${this.inputName}"]`);
+    if (!input) return;
+
+    input.value = value;
+
+    // Update active state
+    this.querySelectorAll('li').forEach(li => li.classList.remove('is-active'));
+    link.closest('li')?.classList.add('is-active');
+
+    // Update button text
+    const buttonTextContent = this.button.querySelector('.dropdown-button__text-content');
+    if (buttonTextContent) {
+      buttonTextContent.textContent = link.textContent.trim();
+    }
+
+    // Close dropdown
+    this.removeAttribute('open');
+
+    // Submit form directly
+    this.form.submit();
+  }
+}
+customElements.define('localization-form', LocalizationForm);
 
 class AccordionDefault extends HTMLElement {
   constructor() {
@@ -1737,14 +1882,16 @@ class CountdownTimer extends HTMLElement {
     super();
 
     const timezone = this.dataset.timezone,
-      date = this.dataset.date.split("-").filter(function (el) { return el != ""; }),
+      date = this.dataset.date.split("-").filter(function (el) {
+        return el != "";
+      }),
       day = parseInt(date[0]),
       month = parseInt(date[1]),
       year = parseInt(date[2]);
 
     let time = this.dataset.time,
-      tarhour,
-      tarmin;
+      tarhour = 0,
+      tarmin = 0;
 
     if (time != null) {
       time = time.split(":");
@@ -1752,17 +1899,16 @@ class CountdownTimer extends HTMLElement {
       tarmin = parseInt(time[1]);
     }
 
-    // Set the date we're counting down to
-    let date_string =
+    const date_string =
       month +
       "/" +
       day +
       "/" +
       year +
       " " +
-      tarhour +
+      (tarhour < 10 ? "0" + tarhour : tarhour) +
       ":" +
-      tarmin +
+      (tarmin < 10 ? "0" + tarmin : tarmin) +
       " GMT" +
       timezone;
     // Time without timezone
@@ -1778,113 +1924,102 @@ class CountdownTimer extends HTMLElement {
 
     // Time with timezone
     this.countDownDate = new Date(date_string).getTime();
-  }
+    this.timerInterval = null;
 
-  convertDateForIos(date) {
-    var arr = date.split(/[- :]/);
-    date = new Date(
-      arr[0],
-      arr[1] - 1,
-      arr[2],
-      arr[3],
-      arr[4],
-      arr[5]
-    );
-    return date;
+    // Son güncellenen değerleri saklamak için yeni özellikler
+    this.lastDays = -1;
+    this.lastHours = -1;
+    this.lastMinutes = -1;
   }
   connectedCallback() {
-    let _this = this;
-    let timer_layout = _this.dataset.timerLayout;
-    let timer_ended_message = _this.dataset.endMessage;
+    this.startTimer();
+  }
 
-    const updateTime = function () {
-      // Get todays date and time
-      const now = new Date().getTime();
+  disconnectedCallback() {
+    this.stopTimer();
+  }
 
-      // Find the distance between now an the count down date
-      const distance = _this.countDownDate - now;
+  startTimer() {
+    this.updateTime(true);
 
-      // Time calculations for days, hours, minutes and seconds
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor(
-        (distance % (1000 * 60 * 60)) / (1000 * 60)
-      );
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    this.timerInterval = setInterval(() => {
+      this.updateTime(false);
+    }, 1000);
+  }
 
-      let countdownTimerColumns = _this.querySelector(
-        ".countdown-timer__columns"
-      );
-      let countdownTimerMessage = _this.querySelector(
-        ".countdown-timer__message"
-      );
+  stopTimer() {
+    if (this.timerInterval) {
+      clearInterval(this.timerInterval);
+      this.timerInterval = null;
+    }
+  }
 
-      // set .countdown-timer__column-number blocks
-      let daysBlock = _this.querySelector(
-        ".days .countdown-timer__column-number"
-      );
-      let hoursBlock = _this.querySelector(
-        ".hours .countdown-timer__column-number"
-      );
-      let minutesBlock = _this.querySelector(
-        ".minutes .countdown-timer__column-number"
-      );
-      let secondsBlock = _this.querySelector(
-        ".seconds .countdown-timer__column-number"
-      );
+  updateTime(initialUpdate = false) {
+    const _this = this;
+    const timer_layout = _this.dataset.timerLayout;
+    const now = new Date().getTime();
+    let distance = _this.countDownDate - now;
 
-      if (distance < 0) {
-        if (daysBlock) daysBlock.innerHTML = 0;
-        if (hoursBlock) hoursBlock.innerHTML = 0;
-        if (minutesBlock) minutesBlock.innerHTML = 0;
-        if (secondsBlock) secondsBlock.innerHTML = 0;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        _this.classList.add("loading-effect");
+    let daysBlock = _this.querySelector(".days .countdown-timer__column-number");
+    let hoursBlock = _this.querySelector(".hours .countdown-timer__column-number");
+    let minutesBlock = _this.querySelector(".minutes .countdown-timer__column-number");
+    let secondsBlock = _this.querySelector(".seconds .countdown-timer__column-number");
+    let countdownTimerColumns = _this.querySelector(".countdown-timer__columns");
+    let countdownTimerMessage = _this.querySelector(".countdown-timer__message");
 
-        // update data-is-ended attribute
-        _this.setAttribute("data-is-ended", "true");
+    if (distance < 0) {
+      _this.stopTimer();
 
-        // if data-timer-layout is not '1', hide the countdown
-        if (timer_layout !== "1") {
-          // if the countdown is over, show the message and hide the countdown
-          if (countdownTimerColumns)
-            countdownTimerColumns.classList.add("hidden");
-          if (countdownTimerMessage)
-            countdownTimerMessage.classList.remove("hidden");
-        }
+      if (daysBlock) daysBlock.innerHTML = 0;
+      if (hoursBlock) hoursBlock.innerHTML = 0;
+      if (minutesBlock) minutesBlock.innerHTML = 0;
+      if (secondsBlock) secondsBlock.innerHTML = 0;
 
-        if (timer_layout === "1") {
-          // change nearest .callout-banner__content-heading text with timer is ended message
-          let calloutBannerContentHeading = _this
-            .closest(".callout-banner")?.querySelector(".callout-banner__content-heading");
-          if (calloutBannerContentHeading)
-            calloutBannerContentHeading.innerHTML =
-              _this.dataset.endMessage;
-        }
-      } else {
-        requestAnimationFrame(updateTime);
+      _this.classList.add("loading-effect");
+      _this.setAttribute("data-is-ended", "true");
 
-        if (daysBlock)
-          daysBlock.innerHTML = CountdownTimer.addZero(days);
-        if (hoursBlock)
-          hoursBlock.innerHTML = CountdownTimer.addZero(hours);
-        if (minutesBlock)
-          minutesBlock.innerHTML = CountdownTimer.addZero(minutes);
-        if (secondsBlock)
-          secondsBlock.innerHTML = CountdownTimer.addZero(seconds);
-
-        // if days is 0, remove the days block
-        if (days === 0) {
-          if (daysBlock)
-            daysBlock.parentElement.parentElement.remove();
-        }
-
-        _this.classList.remove("loading-effect");
+      if (timer_layout !== "1") {
+        if (countdownTimerColumns) countdownTimerColumns.classList.add("hidden");
+        if (countdownTimerMessage) countdownTimerMessage.classList.remove("hidden");
       }
-    };
-    requestAnimationFrame(updateTime);
+
+      if (timer_layout === "1") {
+        let calloutBannerContentHeading = _this.closest(".callout-banner")?.querySelector(".callout-banner__content-heading");
+        if (calloutBannerContentHeading) calloutBannerContentHeading.innerHTML = _this.dataset.endMessage;
+      }
+    } else {
+      // update time when necessary
+
+      if (secondsBlock) secondsBlock.innerHTML = CountdownTimer.addZero(seconds);
+
+      if (initialUpdate || this.lastMinutes !== minutes) {
+        if (minutesBlock) minutesBlock.innerHTML = CountdownTimer.addZero(minutes);
+        this.lastMinutes = minutes;
+      }
+
+      if (initialUpdate || this.lastHours !== hours) {
+        if (hoursBlock) hoursBlock.innerHTML = CountdownTimer.addZero(hours);
+        this.lastHours = hours;
+      }
+
+      if (initialUpdate || this.lastDays !== days) {
+        if (daysBlock) {
+          daysBlock.innerHTML = CountdownTimer.addZero(days);
+        }
+        this.lastDays = days;
+      }
+
+      if (days === 0 && daysBlock && !initialUpdate) {
+        daysBlock.parentElement.parentElement.remove();
+      }
+
+      _this.classList.remove("loading-effect");
+    }
   }
   static addZero(x) {
     return x < 10 && x >= 0 ? "0" + x : x;
@@ -1978,7 +2113,7 @@ if (!customElements.get("text-truncator")) {
       this.toggleIcons(isHidden ? "minus" : "plus");
 
       // on mobile, if the text is expanded, set max-height to 4rem
-      if (isHidden && window.innerWidth < 768) {
+      if (isHidden && DeviceDetector.isMobile()) {
         textTruncator.style.overflow = "scroll";
       } else {
         textTruncator.style.maxHeight = "";
@@ -2245,11 +2380,10 @@ if (!customElements.get("product-card")) {
       }
       this.submitButton = this.querySelector('button[type="submit"]');
       /** Event Listeners */
-      if (this.addToCartForm) {
-        this.addToCartForm.addEventListener(
-          "submit",
-          this.submitAddToCartForm.bind(this)
-        );
+      if (this.addToCartForm && !this.addToCartForm.hasListener) {
+        this.submitAddToCartFormHandler = this.submitAddToCartFormHandler || this.submitAddToCartForm.bind(this);
+        this.addToCartForm.addEventListener("submit", this.submitAddToCartFormHandler);
+        this.addToCartForm.hasListener = true;
       }
     }
 
@@ -2271,6 +2405,9 @@ if (!customElements.get("product-card")) {
             .getSectionsToRender()
             .map(section => section.section)
         );
+        if (this.hasAttribute('data-has-pre-order')) {
+          formData.append('properties[Pre-order]', '✓');
+        }
         formData.append("sections_url", window.location.pathname);
         this.cart.setActiveElement(document.activeElement);
       }
@@ -2532,28 +2669,19 @@ if (!customElements.get("product-card")) {
 
         if (!priceContainer) return;
         const moneyFormat = priceContainer.dataset.moneyFormat;
-        const price = formatPrice(
-          moneyFormat,
-          selectedVariant.price / 100
-        );
-        const compare_at_price = formatPrice(
-          moneyFormat,
-          selectedVariant.compare_at_price / 100
-        );
-        const labelPriceRegular =
-          priceContainer.dataset.labelPriceRegular;
+        const labelPriceRegular = priceContainer.dataset.labelPriceRegular;
         const labelPriceSale = priceContainer.dataset.labelPriceSale;
 
-        if (parseFloat(compare_at_price) > parseFloat(price)) {
+        if (selectedVariant.compare_at_price && selectedVariant.compare_at_price > selectedVariant.price) {
           // generate html block and append to price container
           const priceHtml = `
             <div class="price__sale">
               <div class="price__sale-inner">
                 <span class="visually-hidden">${labelPriceSale}</span>
-                <s>${compare_at_price}</s>
+                <s>${formatPrice(selectedVariant.compare_at_price, moneyFormat)}</s>
                 <ins>
                   <span class="visually-hidden">${labelPriceRegular}</span>
-                  ${price}
+                  ${formatPrice(selectedVariant.price, moneyFormat)}
                 </ins>
               </div>
             </div>
@@ -2565,7 +2693,7 @@ if (!customElements.get("product-card")) {
             <div class="price__sale">
               <div class="price__sale-inner">
                 <span class="visually-hidden">${labelPriceRegular}</span>
-                ${price}
+                <span>${formatPrice(selectedVariant.price, moneyFormat)}</span>
               </div>
             </div>
           `;
@@ -2600,6 +2728,8 @@ if (!customElements.get("product-card")) {
             discountBadge.classList.remove("hidden");
             const percentageElement =
               discountBadge.querySelector(".percentage");
+
+            if (!percentageElement) return;
             // calculate discount percentage
             const discountPercentage = Math.round(
               ((selectedVariant.compare_at_price -
@@ -2656,7 +2786,6 @@ if (!customElements.get("product-card")) {
         .querySelectorAll(".variant-option-radio-input")
         .forEach(radioInput => {
           radioInput.removeAttribute("checked");
-          // radioInput.closest("div").classList.remove("checked");
         });
     }
 
@@ -2761,7 +2890,7 @@ if (!customElements.get("product-card")) {
         ".product-card__actions"
       );
 
-      if (!hoverableItem || window.innerWidth < 750) {
+      if (!hoverableItem || DeviceDetector.isMobile()) {
         return;
       }
 
@@ -2889,7 +3018,8 @@ async function updateFreeShipping() {
         const moneyMatch = freeShippingTextDefault.match(/<span class="money">(.*)<\/span>/);
         if (moneyMatch) {
           const newFreeShippingText = freeShippingTextDefault.replace(
-            moneyMatch[1], `${formatPrice(moneyFormat, newRemainingAmount / 100)}`
+            moneyMatch[1],
+            `${formatPrice(newRemainingAmount, moneyFormat)}`
           );
           freeShippingTextElement.innerHTML = newFreeShippingText;
         }
@@ -2901,9 +3031,12 @@ async function updateFreeShipping() {
   }
 }
 
-function formatPrice(moneyString, amount) {
-  // convert amount to 00.00 format
-  amount = amount.toFixed(2);
+function formatPrice(amount, moneyString) {
+  if (amount !== null && amount !== undefined) {
+    amount = parseFloat(amount) / 100;
+  } else {
+    return ''; // If data is missing, return empty string
+  }
 
   const money_format = /{{(.*?)}}/;
 

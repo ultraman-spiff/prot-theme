@@ -39,6 +39,8 @@
       "search": "Search",
       "share_on": "Share on {{name}}",
       "show_all": "Show all",
+      "show_less": "Show less",
+      "show_more": "Show more",
       "start_shopping": "Start shopping",
       "view": "View"
     },
@@ -444,8 +446,10 @@
       "search": "Search",
       "search_label": "Find our stores",
       "search_by_location": "Search a store by zip code, city or country",
-      "search_placeholder": "Type zip code, city or country",
-      "call": "Call"
+      "search_placeholder": "Enter city, postal code or street",
+      "call": "Call",
+      "clear": "Clear",
+      "opening_hours": "Opening hours"
     },
     "compare_slider": {
       "image_before": "Image before",

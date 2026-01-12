@@ -185,9 +185,7 @@
               </div>
             {%- when 'localization' -%}
               <div class="announcement-bar__localization {{ show_on_class }}" {{ block.shopify_attributes }}>
-                <menu-drawer>
-                  {%- render 'country-drawer', append_id: 'announcement-' | append: block.id -%}
-                </menu-drawer>
+                {%- render 'country-drawer', append_id: block.id, type: 'trigger' -%}
               </div>
           {%- endcase -%}
         {% endfor %}

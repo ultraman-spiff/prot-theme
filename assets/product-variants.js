@@ -593,6 +593,8 @@ if (!customElements.get('product-info')) {
         if (compare_at_price > price) {
           discountBadge.classList.remove("hidden");
           const percentageElement = discountBadge.querySelector(".percentage");
+
+          if (!percentageElement) return;
           // calculate discount percentage
           const discountPercentage = Math.round(
             ((compare_at_price - price) / compare_at_price) * 100
@@ -643,7 +645,7 @@ if (!customElements.get('product-info')) {
         if (
           this.querySelector(".main-product__media")?.hasAttribute(
             "data-desktop-grid"
-          ) && window.innerWidth >= 750
+          ) && !DeviceDetector.isMobile()
         ) {
           this.scrollToImage(variantFeaturedMediaId);
         }
@@ -856,6 +858,10 @@ if (!customElements.get('product-form')) {
         delete config.headers["Content-Type"];
 
         const formData = new FormData(this.form);
+
+        if (this.hasAttribute('data-has-pre-order')) {
+          formData.append('properties[Pre-order]', '✓');
+        }
         if (this.cart) {
           formData.append(
             "sections",
@@ -967,6 +973,7 @@ if (!customElements.get('product-form')) {
 }
 
 document.querySelectorAll('.product__content > *').forEach((el) => {
+  if (el.classList.contains('product__pickup-availabilities')  || el.classList.contains('product__block--custom-liquid')) return;
   if (!el.textContent.trim()) {
     el.textContent = '';
   }

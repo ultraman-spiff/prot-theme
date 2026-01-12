@@ -257,6 +257,7 @@ html.no-js .hero__swiper-slide {
   flex-flow: row wrap;
   justify-content: center;
   gap: var(--spacing-2);
+  align-items: center;
 }
 
 .hero__entry {
@@ -338,7 +339,7 @@ html.no-js .hero__swiper-slide {
   align-items: center;
   width: auto;
   height: auto;
-  margin: 0 10px;
+  margin: 0 var(--spacing-2);
   background-color: transparent;
   border-radius: 0.5rem;
   border: 0.2rem solid rgba(255, 255, 255, 0);
@@ -373,8 +374,8 @@ html.no-js .hero__swiper-slide {
   stroke: rgb(255, 255, 255);
   stroke-width: 1.5;
   stroke-linecap: round;
-  stroke-dasharray: 155px;
-  stroke-dashoffset: 155px;
+  stroke-dasharray: 15.5rem;
+  stroke-dashoffset: 15.5rem;
 }
 
 .circle-origin {
@@ -382,8 +383,8 @@ html.no-js .hero__swiper-slide {
   stroke: rgb(255, 255, 255);
   stroke-width: 1.5;
   stroke-linecap: round;
-  stroke-dasharray: 56.5487px;
-  stroke-dashoffset: 56.5487px;
+  stroke-dasharray: 5.65rem;
+  stroke-dashoffset: 5.65rem;
 }
 
 .hero__swiper-pagination:not(.hero__swiper-pagination-horizontal) .swiper-pagination-bullet-active {
@@ -464,13 +465,10 @@ html.no-js .hero__swiper-slide {
   visibility: visible;
 }
 
-.hero-banner .swiper-pagination-horizontal {
+.hero__swiper-pagination-horizontal {
   height: 1.6rem;
 }
-.hero__swiper:has(.hero__swiper-pagination-horizontal) .hero-banner--30-70 .hero__content,
-.hero__swiper:has(.hero__swiper-pagination-horizontal) .hero-banner--70-30 .hero__content {
-  padding-block: 0;
-}
+
 .hero-banner:has(.swiper-pagination) .hero__content-inner {
   margin-block-start: calc((var(--spacing-6) + 1.6rem) * -1);
 }
@@ -671,7 +669,7 @@ html.no-js .hero__swiper-slide {
 /* animations */
 @keyframes square-progress {
   0% {
-    stroke-dashoffset: 155px;
+    stroke-dashoffset: 15.5rem;
   }
 
   90% {
@@ -679,13 +677,13 @@ html.no-js .hero__swiper-slide {
   }
 
   100% {
-    stroke-dashoffset: -155px;
+    stroke-dashoffset: -15.5rem;
   }
 }
 
 @keyframes circle-progress {
   0% {
-    stroke-dashoffset: 56.5487px;
+    stroke-dashoffset: 5.65rem;
   }
 
   90% {
@@ -693,6 +691,14 @@ html.no-js .hero__swiper-slide {
   }
 
   100% {
-    stroke-dashoffset: -56.5487px;
+    stroke-dashoffset: -5.65rem;
+  }
+}
+@media screen and (max-width: 749px) {
+  .swiper-pagination.hero__swiper-pagination.hero__swiper-pagination-horizontal {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-block-start: var(--spacing-2);
   }
 }

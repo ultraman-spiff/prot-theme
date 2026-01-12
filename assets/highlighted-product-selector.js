@@ -105,28 +105,19 @@ if (!customElements.get('product-selector')) {
         const priceContainer = this.mainElement.querySelector(".price__container");
         if (!priceContainer) return;
         const moneyFormat = priceContainer.dataset.moneyFormat;
-        const price = formatPrice(
-          moneyFormat,
-          selectedVariant.price / 100
-        );
-        const compare_at_price = formatPrice(
-          moneyFormat,
-          selectedVariant.compare_at_price / 100
-        );
-        const labelPriceRegular =
-          priceContainer.dataset.labelPriceRegular;
+        const labelPriceRegular = priceContainer.dataset.labelPriceRegular;
         const labelPriceSale = priceContainer.dataset.labelPriceSale;
 
-        if (parseFloat(compare_at_price) > parseFloat(price)) {
+        if (selectedVariant.compare_at_price && selectedVariant.compare_at_price > selectedVariant.price) {
           // generate html block and append to price container
           const priceHtml = `
             <div class="price__sale">
               <div class="price__sale-inner">
                 <span class="visually-hidden">${labelPriceSale}</span>
-                <s>${compare_at_price}</s>
+                <s>${formatPrice(selectedVariant.compare_at_price, moneyFormat)}</s>
                 <ins>
                   <span class="visually-hidden">${labelPriceRegular}</span>
-                  ${price}
+                  ${formatPrice(selectedVariant.price, moneyFormat)}
                 </ins>
               </div>
             </div>
@@ -138,7 +129,7 @@ if (!customElements.get('product-selector')) {
             <div class="price__sale">
               <div class="price__sale-inner">
                 <span class="visually-hidden">${labelPriceRegular}</span>
-                ${price}
+                <span>${formatPrice(selectedVariant.price, moneyFormat)}</span>
               </div>
             </div>
           `;
@@ -162,6 +153,8 @@ if (!customElements.get('product-selector')) {
             discountBadge.classList.remove("hidden");
             const percentageElement =
               discountBadge.querySelector(".percentage");
+
+            if (!percentageElement) return;
             // calculate discount percentage
             const discountPercentage = Math.round(
               ((selectedVariant.compare_at_price -
@@ -396,9 +389,6 @@ if (!customElements.get('product-selector')) {
         'variant',
         this.currentVariant.id
       );
-
-      //params.append('section_id', this.dataset.sectionId);
-      
       if (!this.closest('.product').classList.contains('highlighted-product')) {
         params.append('section_id', this.dataset.sectionId);
       }
