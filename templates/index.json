@@ -685,24 +685,6 @@
             "icon": "theme-box",
             "custom_icon": "shopify://shop_images/Group_234.svg"
           }
-        },
-        "indicator_HiiWJ7": {
-          "type": "indicator",
-          "settings": {
-            "title_desktop": "<p>Fortified with amino acids for<br/>a complete protein profile</p>",
-            "title_mobile": "<p>Promotes natural<br/>collagen production</p>",
-            "icon": "theme-box",
-            "custom_icon": "shopify://shop_images/Group_233.svg"
-          }
-        },
-        "indicator_L3t7wR": {
-          "type": "indicator",
-          "settings": {
-            "title_desktop": "<p>Pre-digested,<br/>gut-friendly formula</p>",
-            "title_mobile": "<p>Pre-digested,<br/>gut-friendly formula</p>",
-            "icon": "theme-box",
-            "custom_icon": "shopify://shop_images/Group_237.svg"
-          }
         }
       },
       "block_order": [
